@@ -1,7 +1,14 @@
 ---
-title: '使用 Netlify，cloudflare pages，GitHub pages 为你的博客配置多端镜像站'
-tags: [Netlify,cloudflare,GitHub-pages,blog]
-categories: [Hexo,搭建]
+title: 使用 Netlify，cloudflare pages，GitHub pages 为你的博客配置多端镜像站
+tags:
+  - Netlify
+  - cloudflare
+  - GitHub-pages
+  - blog
+categories:
+  - Hexo
+  - 搭建
+abbrlink: fbbdb8eb
 date: 2024-03-01 22:00:37
 ---
 
@@ -21,7 +28,7 @@ Hexo 博客，在我从一开始的 GitHub pages 转到 Netlify，如今又搭�
 
 首先在 GitHub 开一个 repo，用来存放你的 Hexo 源码，名字随便填（即有_config.yml 文件的目录内所有文件）
 
-比如我的（[已开源](https://github.com/W1ndys/blog-w1ndys#/)）：
+比如我的（[已开源](https://github.com/W1ndys/blog/)）：
 
 ![image-20240301220924303](../img/mirror/image-20240301220924303.png)
 
@@ -91,3 +98,5 @@ Hexo 博客，在我从一开始的 GitHub pages 转到 Netlify，如今又搭�
 点进去看一下，如果你的博客资源比较多的话，首次加载可能比较慢，此处可以挂个科学上网
 
 ![image-20240301223403399](../img/mirror/image-20240301223403399.png)
+
+## 如何在 cloudflare 上部署
