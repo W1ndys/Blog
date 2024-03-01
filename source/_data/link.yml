@@ -1,0 +1,215 @@
+- class_name: Blog
+  class_desc: 博客搭建官方文档
+  link_list:
+    - name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简单且强大的博客框架
+
+    - name: Butterfly开发文档
+      link: https://butterfly.js.org/posts/21cfbf15/#/
+      avatar: https://butterfly.js.org/img/avatar.png
+      descr: A Simple and Card UI Design theme for Hexo
+
+# - class_name: 网站
+#   class_desc: 值得推荐的网站
+#   link_list:
+#     - name: Youtube
+#       link: https://www.youtube.com/
+#       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+#       descr: 视频网站
+#     - name: Weibo
+#       link: https://www.weibo.com/
+#       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
+#       descr: 中国最大社交分享平台
+#     - name: Twitter
+#       link: https://twitter.com/
+#       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+#       descr: 社交分享平台
+
+- class_name: 师哥/同学们的博客
+  class_desc: 大佬们的聚集地
+  link_list:
+    - name: 尔康康康康
+      link: https://erkangkang.top/
+      avatar: https://erkangkang.top/img/red.jpg#/
+      descr: 康哥的博客
+
+    - name: nakaii
+      link: https://nakaii.top/#/
+      avatar: https://s1.imagehub.cc/images/2023/03/31/d3fd3e1ae052e956155fc1711cdccbd2.jpeg#/
+      descr: 寒哥的博客
+
+    - name: xiaowaaa'blog
+      link: http://xiaowaaa.asia/#/
+      avatar: http://xiaowaaa.asia/img/avatar.png
+      descr: 兵哥的博客
+
+    - name: lukzia'blog
+      link: http://lukzia.me/
+      avatar: http://43.134.129.51/wp-content/uploads/2023/03/me.jpg
+      descr: 人如果没有梦想,那和深度神经网络有什么区别
+
+    - name: Ed-Ryan'blog
+      link: https://edryan.top/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2993482892&s=640
+      descr: 想暂停时间
+
+    - name: chi11i
+      link: https://chi111i.github.io/#/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2181218792&s=640
+      descr: 严哥带飞
+
+    - name: xlcm
+      link: https://xlcm001.com/
+      avatar: https://xlcm001.com/img/tubiao.jpg
+      descr: 夏恋初梦
+
+- class_name: Butterfly主题魔改美化大佬
+  class_desc: 主题魔改美化开发设计大佬
+  link_list:
+    - name: 安知鱼
+      link: https://blog.anheyu.com/
+      avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+      descr: 生活明朗，万物可爱
+
+    - name: 张洪Heo
+      link: https://blog.zhheo.com/
+      avatar: https://bu.dusays.com/2022/12/28/63ac2812183aa.png
+      descr: 分享设计与科技生活
+
+    - name: Akilarの糖果屋
+      link: https://akilar.top/
+      siteshot: https://npm.elemecdn.com/akilar-friends@latest/siteshot/akilar.top.jpg
+      avatar: https://npm.elemecdn.com/akilar-friends@latest/avatar/akilar.top.jpg
+      descr: 欢迎光临糖果屋
+
+    - name: 王卓Sco
+      link: https://blog.wzsco.cn/
+      avatar: https://bu.dusays.com/2023/12/19/658179febbfb5.png
+      descr: 宁静致远，热爱生活。
+
+    - name: 偷掉月亮的阿硕
+      link: https://moonshuo.cn/#/
+      avatar: https://moonshuo.cn/img/avatar.gif
+      descr: 偷掉月亮-我们一起去偷月亮吧
+
+- class_name: 大佬的聚集地
+  class_desc: 咕咕咕（摸鱼中）
+  link_list:
+    - name: 曲阜师范大学
+      link: https://www.qfnu.edu.cn/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
+      descr: 学而不厌，诲人不倦
+
+    - name: 曲阜师范大学网络空间安全学院
+      link: https://cyber.qfnu.edu.cn/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
+      descr: 以梦为码，不负韶华
+
+    - name: Naiteiy'blog
+      link: https://www.naiteiy.site/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1820031511&s=640
+      descr: 🍃风带来故事的种子📖 ⌚时间使之发芽🌱
+
+    - name: 浪浪山的染念
+      link: https://dyedd.cn/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1176996982&s=640
+      descr: 炼丹难，炼丹苦
+
+    - name: baokker
+      link: https://baokker.github.io/
+      avatar: https://baokker-oss-blog-hangzhou.oss-cn-hangzhou.aliyuncs.com/cdn_for_blog/blog_default_imgs/avatar.jpg
+      descr: 回忆这理想不够理想，沿途逛世间一趟只有向上。
+
+    # - name: crazyman_army
+    #   link: https://crazymanarmy.github.io/#/
+    #   avatar: https://s2.loli.net/2023/01/27/XA2Yr7TuwcNWhOp.jpg
+    #   descr: r3kapig战队成员<br/>Gcow安全团队追影小组负责人
+
+    # - name: S1mh0
+    #   link: http://www.s1mh0.xyz/blog/#/
+    #   avatar: http://www.s1mh0.xyz/cat.png
+    #   descr: 广外幽灵！
+
+    - name: 苍岚
+      link: https://www.zywvvd.com/
+      avatar: https://www.zywvvd.com/image/avatar.png
+      descr: 蓝天依旧，明眸如初
+
+    - name: Liu✌🏻
+      link: https://ctfrookie.top/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=3039375674&s=640
+      descr: Liu✌🏻Liu✌🏻带我走吧
+
+    - name: 一清✌🏻
+      link: http://www.yiqing.asia/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2383170770&s=640
+      descr: 一清✌🏻一清佬呜呜呜带带
+
+    # - name: 人间工作P
+    #   link: https://www.mrxiaom.top/#/
+    #   avatar: https://avatars.githubusercontent.com/u/35788433?s=88
+    #   descr: 当你热爱某前人已踏足的领域决心去钻研的时候，能否成功只是时间问题。
+
+    - name: Mcenahle的个人博客
+      link: https://mcenahle.com
+      avatar: https://mcenahle.com/wp-content/uploads/2023/12/IMG_7687.png#/
+      descr: 这是Mcenahle的个人博客，记录美好生活。
+
+    - name: Asteri5m
+      link: https://asteri5m.icu/
+      avatar: https://asteri5m.icu/upload/20af907e-4769-4251-8e8c-0f0b52355380.png
+      descr: 别等时间不够的时候再后悔
+
+    - name: MUKAPP
+      link: https://www.mukapp.top/
+      avatar: https://www.mukapp.top/pic/muk/small.webp#/
+      descr: MUK的小窝
+
+    - name: W4J1e's blog
+      avatar: https://cravatar.cn/avatar/8def0c8c73b56dc0e18744a9a43d70f4
+      link: https://hin.cool
+      descr: 总是偏爱不务正业
+
+    - name: Mojade@破站
+      avatar: https://data.chahuyun.cn/config/a520573c8f012816539af41fbd8ecc65.jpg#/
+      link: https://chahuyun.cn/
+      descr: 放空每一天~
+# class_name: Butterfly官方配置
+# link_list:
+#   1:
+#     name: 官方页面
+#     link: https://butterfly.js.org/#/
+#     avatar: https://butterfly.js.org/img/avatar.png
+#     descr: A Simple and Card UI Design theme for Hexo
+#   2:
+#     name: 开发文档
+#     link: https://butterfly.js.org/posts/21cfbf15/#/
+#     avatar: https://butterfly.js.org/img/avatar.png
+#     descr: 开发！
+
+# class3:
+# - class_name: 友情鏈接
+#   class_desc: 那些人，那些事
+#   link_list:
+#     - name: Hexo
+#       link: https://hexo.io/zh-tw/
+#       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+#       descr: 快速、簡單且強大的網誌框架
+
+# - class_name: 網站
+#   class_desc: 值得推薦的網站
+#   link_list:
+#     - name: Youtube
+#       link: https://www.youtube.com/
+#       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+#       descr: 視頻網站
+#     - name: Weibo
+#       link: https://www.weibo.com/
+#       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
+#       descr: 中國最大社交分享平台
+#     - name: Twitter
+#       link: https://twitter.com/
+#       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+#       descr: 社交分享平台

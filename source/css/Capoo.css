@@ -1,0 +1,5 @@
+#follow-img {
+  pointer-events: none; /* 禁止图像接受鼠标事件 */
+  position: absolute; /* 设置图像的定位方式为绝对定位，相对于其最近的具有定位属性的父元素进行定位 */
+  transition: transform 0.3s, top 0.3s, left 0.3s; /* 定义了图像在发生变化时的过渡效果，其中 transform 表示图像的旋转效果，top 表示图像的垂直移动效果，left 表示图像的水平移动效果，0.3s 表示过渡时间为0.3秒 */
+}
