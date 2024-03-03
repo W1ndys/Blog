@@ -809,13 +809,13 @@ katex:
 
 # Algolia search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 6
 
 # Local search
 local_search:
-  enable: false #是否开启本地搜索
+  enable: true #是否开启本地搜索
   # 预加载，开启后，进入网页后会自动加载搜索文件。关闭时，只有点击搜索按钮后，才会加载搜索文件
   preload: true
   # 匹配的文章结果，默认显示最开始的 1段结果
