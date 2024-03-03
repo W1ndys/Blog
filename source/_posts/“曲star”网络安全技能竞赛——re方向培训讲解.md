@@ -62,3 +62,7 @@ IDA快捷键
 https://www.jianshu.com/p/64d184272630#/
 
 https://blog.csdn.net/qq_59700927/article/details/134750273#/
+
+shift+F12
+
+F5
