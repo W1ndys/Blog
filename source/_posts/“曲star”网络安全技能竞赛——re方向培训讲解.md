@@ -53,3 +53,11 @@ CTF 中给出的题目常见形式有 ELF 文件、exe 文件、dll 文件等。
 ## 实战演示
 
 请看 VCR
+
+
+
+IDA快捷键
+
+https://www.jianshu.com/p/64d184272630#/
+
+https://blog.csdn.net/qq_59700927/article/details/134750273#/
