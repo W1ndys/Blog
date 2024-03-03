@@ -887,20 +887,20 @@ livere:
 # gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id: 6f09501a7a72b5c9f815
-  client_secret: 908ab550f31d1d1ba551946a4daffe6ba519b169
-  repo: w1ndys.github.io
-  owner: W1ndys
-  admin: W1ndys
+  client_id:
+  client_secret:
+  repo:
+  owner:
+  admin:
   option:
 
 # valine
 # https://valine.js.org
 valine:
-  appId: HFa8x5LZ9HTP7fe75s2Gt2Vr-MdYXbMMI # leancloud application app id
-  appKey: 4VgMVwgYlWHGN0xEduQd0CfI # leancloud application app key
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
-  serverURLs: https://hfa8x5lz.api.lncldglobal.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
+  avatar: # gravatar style https://valine.js.org/#/avatar
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   bg: # valine background
   visitor: false
   placeholder: 留下你的足迹o(*￣▽￣*)ブ
@@ -984,13 +984,13 @@ chat_hide_show: false
 # https://chatra.io/
 chatra:
   enable: false
-  id: DouTZhBqhf3Qha8Xj
+  id:
 
 # tidio
 # https://www.tidio.com/
 tidio:
   enable: false
-  public_key: 0txdrximuw6czebealdnr16rzaygu9zo
+  public_key:
 
 # daovoice
 # http://dashboard.daovoice.io/app
@@ -1348,7 +1348,7 @@ inject:
   bottom:
     # - <script data-pjax src="xxxx"></script>
     - <script data-pjax src="/js/foot.js"></script>
-    - <script data-pjax src="/js/ip.js"></script> 
+    - <script data-pjax src="/js/ip.js"></script>
     - <img id="follow-img" src="../img/Capoo/Capoo.gif"/>
     - <script data-pjax src="/js/Capoo.js"></script>
     # - <script data-pjax src="/js/404.js"></script>
