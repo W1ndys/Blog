@@ -11,22 +11,11 @@
       avatar: https://butterfly.js.org/img/avatar.png
       descr: A Simple and Card UI Design theme for Hexo
 
-# - class_name: 网站
-#   class_desc: 值得推荐的网站
-#   link_list:
-#     - name: Youtube
-#       link: https://www.youtube.com/
-#       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-#       descr: 视频网站
-#     - name: Weibo
-#       link: https://www.weibo.com/
-#       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-#       descr: 中国最大社交分享平台
-#     - name: Twitter
-#       link: https://twitter.com/
-#       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-#       descr: 社交分享平台
 
+
+
+# 下面是师哥师姐师弟师妹同学朋友
+# ——————————————————————————————————————————————————————————————————————————————————————————————
 - class_name: 师哥/同学们的博客
   class_desc: 大佬们的聚集地
   link_list:
@@ -65,6 +54,17 @@
       avatar: https://xlcm001.com/img/tubiao.jpg
       descr: 夏恋初梦
 
+
+
+
+
+# 同学/朋友/师哥/师姐/师弟/师妹，填在这上面，与上一个友链中间隔一个换行
+# ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+
+# 下面是Hexo主题美化博主
+# ——————————————————————————————————————————————————————————————————————————————————————————————
 - class_name: Butterfly主题魔改美化大佬
   class_desc: 主题魔改美化开发设计大佬
   link_list:
@@ -94,6 +94,9 @@
       avatar: https://moonshuo.cn/img/avatar.gif
       descr: 偷掉月亮-我们一起去偷月亮吧
 
+
+# 下面是大类
+# ——————————————————————————————————————————————————————————————————————————————————————————————
 - class_name: 大佬的聚集地
   class_desc: 咕咕咕（摸鱼中）
   link_list:
@@ -167,4 +170,5 @@
 
 
 
+# 我的同学/朋友/师哥等的博客，请定位到第30行代码下面进行添加
 # 请将我的友链加入到你的博客，然后在上方添加你的友链配置数据，注意，请与上一条间隔一个换行

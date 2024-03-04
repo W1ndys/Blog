@@ -19,7 +19,7 @@ type: "link"
 
 ### 申请流程
 
-#### 法一（Pull request）
+#### 法一（Pull request）（有 Github 基础的推荐用此方法）
 
 1. 在您的博客中添加本博客的友链，并在申请时提供友链位置。
 2. 点击进入本 [链接](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml)
