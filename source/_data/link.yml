@@ -122,16 +122,6 @@
       avatar: https://baokker-oss-blog-hangzhou.oss-cn-hangzhou.aliyuncs.com/cdn_for_blog/blog_default_imgs/avatar.jpg
       descr: 回忆这理想不够理想，沿途逛世间一趟只有向上。
 
-    # - name: crazyman_army
-    #   link: https://crazymanarmy.github.io/#/
-    #   avatar: https://s2.loli.net/2023/01/27/XA2Yr7TuwcNWhOp.jpg
-    #   descr: r3kapig战队成员<br/>Gcow安全团队追影小组负责人
-
-    # - name: S1mh0
-    #   link: http://www.s1mh0.xyz/blog/#/
-    #   avatar: http://www.s1mh0.xyz/cat.png
-    #   descr: 广外幽灵！
-
     - name: 苍岚
       link: https://www.zywvvd.com/
       avatar: https://www.zywvvd.com/image/avatar.png
@@ -146,11 +136,6 @@
       link: http://www.yiqing.asia/
       avatar: https://q1.qlogo.cn/g?b=qq&nk=2383170770&s=640
       descr: 一清✌🏻一清佬呜呜呜带带
-
-    # - name: 人间工作P
-    #   link: https://www.mrxiaom.top/#/
-    #   avatar: https://avatars.githubusercontent.com/u/35788433?s=88
-    #   descr: 当你热爱某前人已踏足的领域决心去钻研的时候，能否成功只是时间问题。
 
     - name: Mcenahle的个人博客
       link: https://mcenahle.com
@@ -176,40 +161,10 @@
       avatar: https://data.chahuyun.cn/config/a520573c8f012816539af41fbd8ecc65.jpg#/
       link: https://chahuyun.cn/
       descr: 放空每一天~
-# class_name: Butterfly官方配置
-# link_list:
-#   1:
-#     name: 官方页面
-#     link: https://butterfly.js.org/#/
-#     avatar: https://butterfly.js.org/img/avatar.png
-#     descr: A Simple and Card UI Design theme for Hexo
-#   2:
-#     name: 开发文档
-#     link: https://butterfly.js.org/posts/21cfbf15/#/
-#     avatar: https://butterfly.js.org/img/avatar.png
-#     descr: 开发！
 
-# class3:
-# - class_name: 友情鏈接
-#   class_desc: 那些人，那些事
-#   link_list:
-#     - name: Hexo
-#       link: https://hexo.io/zh-tw/
-#       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-#       descr: 快速、簡單且強大的網誌框架
 
-# - class_name: 網站
-#   class_desc: 值得推薦的網站
-#   link_list:
-#     - name: Youtube
-#       link: https://www.youtube.com/
-#       avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-#       descr: 視頻網站
-#     - name: Weibo
-#       link: https://www.weibo.com/
-#       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-#       descr: 中國最大社交分享平台
-#     - name: Twitter
-#       link: https://twitter.com/
-#       avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-#       descr: 社交分享平台
+
+
+
+
+# 请将我的友链加入到你的博客，然后在上方添加你的友链配置数据，注意，请与上一条间隔一个换行
