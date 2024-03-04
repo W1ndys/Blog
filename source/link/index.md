@@ -24,7 +24,7 @@ type: "link"
 1. 在您的博客中添加本博客的友链，并在申请时提供友链位置。
 2. 点击进入链接
    1. 如果你是我的同学/朋友/师哥师姐师弟师妹，请点击→ [链接](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml#L17)
-   2. 如果你是非上一条的大佬，请点击：[链接](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml#L98)
+   2. 如果你是非上一条的大佬，请点击：[链接](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml#L100)
 
 3. 在下方填写你的友链配置参数，提交 pr 等待合并
 4. 请注意查看注释的添加须知
