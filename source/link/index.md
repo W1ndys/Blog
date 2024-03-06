@@ -48,7 +48,7 @@ type: "link"
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: http://blog.w1ndys.top/img/logo/700/whiten.png#/
+  avatar: https://blog.w1ndys.top/img/about/avatar.png
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -61,7 +61,7 @@ type: "link"
       title: 'W1ndysの小屋',
       intro: '欲戴皇冠，必承其重',
       link: 'https://blog.w1ndys.top/',
-      avatar: 'http://blog.w1ndys.top/img/logo/700/whiten.png#/'
+      avatar: 'https://blog.w1ndys.top/img/about/avatar.png'
     }
 ```
 
@@ -72,7 +72,7 @@ type: "link"
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: http://blog.w1ndys.top/img/logo/700/whiten.png#/
+  avatar: https://blog.w1ndys.top/img/about/avatar.png
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -83,7 +83,7 @@ type: "link"
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: http://blog.w1ndys.top/img/logo/700/whiten.png#/
+  avatar: https://blog.w1ndys.top/img/about/avatar.png
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -91,14 +91,14 @@ type: "link"
 
 <!-- tab  🌴General-->
 
-| 名称       | 数值                                             |
-| ---------- | ------------------------------------------------ |
-| 站点名称   | W1ndys の小屋                                     |
-| 站点链接   | https://blog.w1ndys.top/                         |
-| 站长头像   | http://blog.w1ndys.top/img/logo/700/whiten.png#/ |
-| 站点描述   | 欲戴皇冠，必承其重                               |
-| 站点关键词 | W1ndys, 个人博客， 生活，技术，网络安全，道观    |
-| 站点主题色 | #49B1F5                                          |
+| 名称       | 数值                                          |
+| ---------- | --------------------------------------------- |
+| 站点名称   | W1ndys の小屋                                 |
+| 站点链接   | https://blog.w1ndys.top/                      |
+| 站长头像   | https://blog.w1ndys.top/img/about/avatar.png  |
+| 站点描述   | 欲戴皇冠，必承其重                            |
+| 站点关键词 | W1ndys, 个人博客， 生活，技术，网络安全，道观 |
+| 站点主题色 | #49B1F5                                       |
 
 <!-- endtab -->
 
