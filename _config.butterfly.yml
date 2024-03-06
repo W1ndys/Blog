@@ -7,7 +7,7 @@
 # see https://butterfly.js.org/posts/4aa8abbe/#%E5%B0%8E%E8%88%AA%E6%AC%84%E8%A8%AD%E7%BD%AE-Navigation-bar-settings
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
 nav:
-  logo: /img/logo/icon.jpg # 网站的 logo，支持图片，直接填入图片链接
+  logo: /img/about/icon.jpg # 网站的 logo，支持图片，直接填入图片链接
   display_title: true #是否显示网站标题，填写 true 或者 false
   fixed: true # 是否固定状态栏，填写 true 或者 false
 
@@ -68,12 +68,12 @@ social:
 # Image (图片设置)
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
 # Favicon（网站图标）
-favicon: /img/logo/icon.jpg
+favicon: /img/about/icon.jpg
 
 # Avatar (头像)
 # https://butterfly.js.org/posts/4aa8abbe/#%E9%A0%AD%E5%83%8F
 avatar:
-  img: /img/logo/700/whiten.png
+  img: /img/about/avatar.png
   effect: false
 
 # 顶部图
