@@ -62,7 +62,7 @@ date: 2024-03-07 19:26:05
 
 2. 进入下面地址，点击 `安装脚本`
 
-[FCQ 网课通助手[全网题库\][通用智能适配答题] [刷课] (scriptcat.org)](https://scriptcat.org/zh-CN/script-show-page/1338#/)
+[https://scriptcat.org/zh-CN/script-show-page/1338#/](https://scriptcat.org/zh-CN/script-show-page/1338#/)
 
 ![image-20240307193748656](../img/classscript/image-20240307193748656.png)
 
