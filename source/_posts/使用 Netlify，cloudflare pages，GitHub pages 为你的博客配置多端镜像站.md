@@ -1,9 +1,10 @@
 ---
-title: 使用 Netlify，cloudflare pages，GitHub pages 为你的博客配置多端镜像站
+title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel 为你的博客配置多端镜像站
 tags:
   - Netlify
   - cloudflare
   - GitHub-pages
+  - Vercel
   - blog
 categories:
   - Hexo
@@ -12,7 +13,7 @@ abbrlink: fbbdb8eb
 date: 2024-03-01 22:00:37
 ---
 
-# 使用 Netlify，cloudflare pages，GitHub pages 为你的博客配置多端镜像站
+# 使用 Netlify，cloudflare pages，GitHub pages , Vercel 为你的博客配置多端镜像站
 
 Hexo 博客，在我从一开始的 GitHub pages 转到 Netlify，如今又搭建了 cloudflare，但万变不离其宗，我们没有服务器，没有经济实力支持服务器，于是选择静态部署平台，pages 给我们提供了很好的平台途径，我也是踩了不少的坑，下面将从 Netlify，cloudflare 讲解如何部署。
 
