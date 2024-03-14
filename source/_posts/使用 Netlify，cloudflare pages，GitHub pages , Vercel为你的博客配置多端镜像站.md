@@ -151,7 +151,7 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 
 点击 pages，然后连接到 Git，选择你的 Github 仓库
 
-![image-20240314204940289](C:/Users/W1ndys/AppData/Roaming/Typora/typora-user-images/image-20240314204940289.png)
+![image-20240314204940289](../img/mirror/image-20240314204940289.png)
 
 `项目名称` 自定义
 
