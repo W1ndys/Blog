@@ -6,8 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "server": "hexo server",
-    "netlify": "npm run clean && npm run build", 
-    "cloudflare": "npm run clean && npm run build", 
+    "netlify": "npm run clean && npm run build",
+    "cloudflare": "npm run clean && npm run build",
     "vercel": "npm run clean && npm run build"
   },
   "hexo": {
@@ -30,7 +30,6 @@
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-anzhiyu": "^1.6.12",
     "hexo-theme-butterfly": "^4.13.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-wordcount": "^6.0.1"
