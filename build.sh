@@ -1,0 +1,2 @@
+hexo cl
+hexo g
