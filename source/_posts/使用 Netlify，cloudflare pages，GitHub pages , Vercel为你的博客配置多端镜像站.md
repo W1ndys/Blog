@@ -1,5 +1,5 @@
 ---
-title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel 为你的博客配置多端镜像站
+title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel 部署你的 Hexo
 tags:
   - Netlify
   - cloudflare
@@ -149,11 +149,11 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 
 ![image-20240314204845021](../img/mirror/image-20240314204845021.png)
 
-点击pages，然后连接到Git，选择你的Github仓库
+点击 pages，然后连接到 Git，选择你的 Github 仓库
 
 ![image-20240314204940289](C:/Users/W1ndys/AppData/Roaming/Typora/typora-user-images/image-20240314204940289.png)
 
-`项目名称`自定义
+`项目名称` 自定义
 
 `构建命令`：npm run build
 
@@ -170,6 +170,6 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 比如我的
 
 - 主站：[https://blog.w1ndys.top/](https://blog.w1ndys.top/)
-- Vercel镜像站：[https://v.blog.w1ndys.top/](https://v.blog.w1ndys.top/)
-- Netlify镜像站：[https://n.blog.w1ndys.top/](https://n.blog.w1ndys.top/)
-- cloudflare镜像站：[https://c.blog.w1ndys.top/](https://c.blog.w1ndys.top/)
+- Vercel 镜像站：[https://v.blog.w1ndys.top/](https://v.blog.w1ndys.top/)
+- Netlify 镜像站：[https://n.blog.w1ndys.top/](https://n.blog.w1ndys.top/)
+- cloudflare 镜像站：[https://c.blog.w1ndys.top/](https://c.blog.w1ndys.top/)
