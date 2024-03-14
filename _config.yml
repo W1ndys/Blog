@@ -19,7 +19,7 @@ permalink: posts/:abbrlink.html ## 此处可以自己设置
 permalink_defaults: permalink_defaults
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 ## abbrlink config
 abbrlink:
