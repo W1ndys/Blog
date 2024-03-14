@@ -6,9 +6,6 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "server": "hexo server",
-    "netlify": "npm run clean && npm run build",
-    "cloudflare": "npm run clean && npm run build",
-    "vercel": "npm run clean && npm run build"
   },
   "hexo": {
     "version": "7.1.1"
