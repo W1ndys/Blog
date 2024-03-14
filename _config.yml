@@ -15,7 +15,7 @@ email: w1ndys@outlook.com
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://blog.w1ndys.top
 ## permalink: :year/:month/:day/:title/
-permalink: posts/:abbrlink.html ## 此处可以自己设置
+permalink: posts/:abbrlink.html  # 此处可以自己设置
 permalink_defaults: permalink_defaults
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
@@ -58,7 +58,7 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
-relative_link: false  #####重大bug出现地，2024年2月5日18:41:35记录，你真是个大沙比，找了一个月的bug,就因为一个布尔值
+relative_link: false #####重大bug出现地，2024年2月5日18:41:35记录，你真是个大沙比，找了一个月的bug,就因为一个布尔值
 future: true
 highlight:
   enable: true
@@ -155,7 +155,6 @@ search:
   field: post
   content: true
   template:
-
 
 browsersync:
   logLevel: "warn"
