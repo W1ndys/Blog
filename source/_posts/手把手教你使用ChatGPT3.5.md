@@ -57,7 +57,7 @@ password: chatGPT_1s_g0od
 
 ## Sakuracat注册
 
-注册教程看这里：https://blog.w1ndys.top/post/80f8b1da
+注册教程看这里：https://blog.w1ndys.top/post/80f8b1da.html
 
 ## Google /Microsoft 账号的注册
 
@@ -71,7 +71,7 @@ https://zhuanlan.zhihu.com/p/562697383#/
 
 关于 Google 账号如何注册可以看下面链接另一篇博客
 
-https://w1ndys.top/2023/12/23/Google_account/
+https://blog.w1ndys.top/posts/f286f4f8.html
 
 ## 进入 OpenAI 官网
 
