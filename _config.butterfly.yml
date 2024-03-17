@@ -947,13 +947,20 @@ giscus:
   repo: W1ndys/blog.w1ndys.top
   repo_id: R_kgDOLaRaXw
   category_id: DIC_kwDOLaRaX84CeBp5
-  mapping: url
-  lang: zh-CN
-  loading: lazy
   theme:
     light: light
     dark: dark
   option:
+    data-category-id: DIC_kwDOLaRaX84CeBp5
+    data-mapping: url
+    data-strict: 0
+    data-reactions-enabled: 1
+    data-emit-metadata: 1
+    data-input-position: top
+    data-theme: preferred_color_scheme
+    data-lang: zh-CN
+    data-loading: lazy
+    crossorigin: anonymous
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
