@@ -57,7 +57,7 @@ password: chatGPT_1s_g0od
 
 ## Sakuracat注册
 
-注册教程看这里：https://blog.w1ndys.top/post/80f8b1da.html
+注册教程看这里：https://blog.w1ndys.top/posts/80f8b1da.html
 
 ## Google /Microsoft 账号的注册
 
