@@ -944,23 +944,23 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo: W1ndys/blog.w1ndys.top
-  repo_id: R_kgDOLaRaXw
-  category_id: DIC_kwDOLaRaX84CeBp5
+  repo: W1ndys/blog.w1ndys.top   # 存储评论的GitHub仓库
+  repo_id: R_kgDOLaRaXw           # 仓库ID
+  category_id: DIC_kwDOLaRaX84CeBp5  # Giscus分类ID
   theme:
-    light: light
-    dark: dark
+    light: light                  # 亮色主题
+    dark: dark                    # 暗色主题
   option:
-    data-category-id: DIC_kwDOLaRaX84CeBp5
-    data-mapping: url
-    data-strict: 0
-    data-reactions-enabled: 1
-    data-emit-metadata: 1
-    data-input-position: top
-    data-theme: preferred_color_scheme
-    data-lang: zh-CN
-    # data-loading: lazy # 懒加载
-    crossorigin: anonymous
+    data-category-id: DIC_kwDOLaRaX84CeBp5  # Giscus分类ID（冗余）
+    data-mapping: url             # 映射选项
+    data-strict: 0                # 严格程度（0表示不严格）
+    data-reactions-enabled: 1     # 启用反应（1表示启用）
+    data-emit-metadata: 1         # 启用元数据发射（1表示启用）
+    data-input-position: top      # 评论输入位置（顶部）
+    data-theme: preferred_color_scheme  # 首选颜色方案
+    data-lang: zh-CN              # 语言偏好（中文）
+    # data-loading: lazy          # 懒加载（已注释掉）
+    crossorigin: anonymous        # 跨源资源共享策略（匿名）
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
