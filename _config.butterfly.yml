@@ -959,7 +959,7 @@ giscus:
     data-input-position: top
     data-theme: preferred_color_scheme
     data-lang: zh-CN
-    data-loading: lazy
+    # data-loading: lazy # 懒加载
     crossorigin: anonymous
 
 # Remark42
