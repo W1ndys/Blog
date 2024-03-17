@@ -951,7 +951,6 @@ giscus:
     light: light                  # 亮色主题
     dark: dark                    # 暗色主题
   option:
-    data-category-id: DIC_kwDOLaRaX84CeBp5  # Giscus分类ID（冗余）
     data-mapping: url             # 映射选项
     data-strict: 0                # 严格程度（0表示不严格）
     data-reactions-enabled: 1     # 启用反应（1表示启用）
