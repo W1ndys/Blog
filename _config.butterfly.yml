@@ -854,7 +854,7 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
-  use: #valine #Waline #使用的评论（请注意，最多支持两个，如果不需要请留空）
+  use: Giscus #valine #Waline #使用的评论（请注意，最多支持两个，如果不需要请留空）
   # 注意：双评论不能是 Disqus 和 Disqusjs 一起，由于其共用同一个 ID，会出错
   text: true # 是否显示评论服务商的名字
   # lazyload: 是否为评论开启lazyload，开启后，只有滚动到评论位置时才会加载评论所需要的资源
@@ -944,9 +944,12 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo:
-  repo_id:
-  category_id:
+  repo: W1ndys/blog.w1ndys.top
+  repo_id: R_kgDOLaRaXw
+  category_id: DIC_kwDOLaRaX84CeBp5
+  mapping: url
+  lang: zh-CN
+  loading: lazy
   theme:
     light: light
     dark: dark
