@@ -21,27 +21,17 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  # 清单||fa fa-heartbeat:
-  #   音乐: /music/ || fas fa-music
-  #   照片: /Gallery/ || fas fa-images
-  #   电影: /movies/ || fas fa-video
   友链: /link/ || fas fa-link
-  异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
+  友链接力 || fa fa-heart:
+      异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
+      MIIT Travel: https://beian.miit.cn.com/go.php#/ || fas fa-rotate-right
+      博客录: https://bokelu.suijiboke.gs || fas fa-tree
   项目||fa fa-pencil||hide:
     选课指北: /posts/216d9006#/ || fa fa-arrow-up
     速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
   关于: /about/ || fas fa-heart
   主页: https://w1ndys.top/ || fas fa-bed
   导航页: https://nav.w1ndys.top/ || fas fa-map
-  # Home: / || fas fa-home
-  # Archives: /archives/ || fas fa-archive
-  # Tags: /tags/ || fas fa-tags
-  # Categories: /categories/ || fas fa-folder-open
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
-  # Link: /link/ || fas fa-link
-  # About: /about/ || fas fa-heart
 
 # Code Blocks (代码相关)
 # https://butterfly.js.org/posts/4aa8abbe/#%E4%BB%A3%E7%A2%BC-Code-Blocks
@@ -303,7 +293,7 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text: <a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify提供部署服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a>
+  custom_text: <a href:"https://boke.lu" >博客录</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify提供部署服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a>
 
 # aside (侧边栏)
 # https://butterfly.js.org/posts/4aa8abbe/#%E5%81%B4%E9%82%8A%E6%8E%92%E7%89%88
