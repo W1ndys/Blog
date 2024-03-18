@@ -260,7 +260,7 @@ related_post:
 
 # Displays outdated notice for a post (文章过期提醒)
 # 可设置是否显示文章过期提醒，以更新时间为基准。
-#这个配置报错，先保留
+# 这个配置报错，先保留
 noticeOutdate:
   enable: true
   style: flat # style: simple/flat
