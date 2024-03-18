@@ -1,5 +1,22 @@
-#follow-img {
-  pointer-events: none; /* 禁止图像接受鼠标事件 */
-  position: absolute; /* 设置图像的定位方式为绝对定位，相对于其最近的具有定位属性的父元素进行定位 */
-  transition: transform 0.3s, top 0.3s, left 0.3s; /* 定义了图像在发生变化时的过渡效果，其中 transform 表示图像的旋转效果，top 表示图像的垂直移动效果，left 表示图像的水平移动效果，0.3s 表示过渡时间为0.3秒 */
+/* CSS样式用于设置 GIF 容器的位置和样式 */
+.gif-container {
+  position: fixed;
+  bottom: 10px;
+  /* 调整 GIF 在底部的距离 */
+  left: 10px;
+  /* 调整 GIF 在左侧的距离 */
+  z-index: 9999;
+  /* 确保 GIF 显示在其他内容的上方 */
+}
+
+.gif-container img {
+  max-width: 180px;
+  /* 设置 GIF 最大宽度 */
+  height: auto;
+  /* 自动调整高度 */
+}
+
+.gif-hidden {
+  display: none;
+  /* 在移动设备上隐藏 GIF */
 }

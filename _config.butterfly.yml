@@ -1349,7 +1349,6 @@ inject:
     # - <script data-pjax src="xxxx"></script>
     - <script data-pjax src="/js/foot.js"></script>
     - <script data-pjax src="/js/ip.js"></script>
-    - <img id="follow-img" src="../img/Capoo/Capoo.gif"/>
     - <script data-pjax src="/js/Capoo.js"></script>
     # - <script data-pjax src="/js/404.js"></script>
 
