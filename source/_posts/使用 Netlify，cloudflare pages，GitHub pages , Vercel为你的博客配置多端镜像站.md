@@ -5,6 +5,7 @@ tags:
   - cloudflare
   - GitHub-pages
   - Vercel
+  - Render
   - blog
 categories:
   - Hexo
@@ -35,7 +36,7 @@ Hexo 博客，在我从一开始的 GitHub pages 转到 Netlify，如今又搭�
 
 ## 前期准备
 
-首先在 GitHub 开一个 repo，用来存放你的 Hexo 源码，名字随便填（即有_config.yml 文件的目录内所有文件）
+首先在 GitHub 开一个 repo，用来存放你的 Hexo 源码，名字随便填（即有\_config.yml 文件的目录内所有文件）
 
 比如我的（[已开源](https://github.com/W1ndys/blog.w1ndys.top#/)）：
 
@@ -119,8 +120,6 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 - `build command` 填 **默认（npm run build）** 的就可以，不要修改
 - `publish directory` 同上（**public**）
 
-
-
 ![image-20240314195457434](../img/mirror/image-20240314195457434.png)
 
 完成之后点击绿色的按钮 **deploy**
@@ -163,9 +162,15 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 
 当然这个也支持自定义域名
 
+## 如何在 Render 上部署
+
+这里先不写了，基本都是一个样的跟之前的
+
+Render 官网：[https://dashboard.render.com/](https://dashboard.render.com/)
+
 ---
 
-现在你有三个博客站点了，可以设置一个主站，另外俩当做镜像站
+现在你有四个博客站点了，可以设置一个主站，另外俩当做镜像站
 
 比如我的
 
@@ -173,3 +178,4 @@ Vercel 给出了 Hexo 模板，直接默认即可，点击 deploy
 - Vercel 镜像站：[https://v.blog.w1ndys.top/](https://v.blog.w1ndys.top/)
 - Netlify 镜像站：[https://n.blog.w1ndys.top/](https://n.blog.w1ndys.top/)
 - cloudflare 镜像站：[https://c.blog.w1ndys.top/](https://c.blog.w1ndys.top/)
+- Render 镜像站：[https://r.blog.w1ndys.top/](https://r.blog.w1ndys.top/)
