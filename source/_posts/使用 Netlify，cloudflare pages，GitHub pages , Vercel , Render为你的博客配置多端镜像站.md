@@ -1,5 +1,5 @@
 ---
-title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel 部署你的 Hexo
+title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel , Render部署你的 Hexo
 tags:
   - Netlify
   - cloudflare
