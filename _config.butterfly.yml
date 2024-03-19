@@ -23,13 +23,13 @@ menu:
   分类: /categories/ || fas fa-folder-open
   友链: /link/ || fas fa-link
   友链接力 || fa fa-heart:
-      异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
-      MIIT Travel: https://beian.miit.cn.com/go.php#/ || fas fa-rotate-right
-      博客录: https://bokelu.suijiboke.gs || fas fa-tree
-      笔墨迹: https://blogscn.fun/random.html || fas fa-pen
+    异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
+    MIIT Travel: https://beian.miit.cn.com/go.php#/ || fas fa-rotate-right
+    博客录: https://bokelu.suijiboke.gs || fas fa-tree
+    笔墨迹: https://blogscn.fun/random.html || fas fa-pen
   项目||fa fa-pencil||hide:
-      选课指北: /posts/216d9006#/ || fa fa-arrow-up
-      速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
+    选课指北: /posts/216d9006#/ || fa fa-arrow-up
+    速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
   关于: /about/ || fas fa-heart
   主页: https://w1ndys.top/ || fas fa-bed
   导航页: https://nav.w1ndys.top/ || fas fa-map
@@ -294,7 +294,7 @@ footer:
   owner:
     enable: true
     since: 2023
-  custom_text: <a href="https://boke.lu" >博客录</a> || <a href="https://blogwe.com/" >BlogMe</a> || <a href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify提供部署服务</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a>
+  custom_text: <a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a href="https://boke.lu" >博客录</a> || <a href="https://blogwe.com/" >BlogMe</a> || <a href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a href="https://app.netlify.com/teams/w1ndys/overview#/">Netlify</a> || <a href="https://vercel.com/dashboard/">Vercel || <a href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a href="https://dashboard.render.com/#/">Render</a>提供部署服务
 
 # aside (侧边栏)
 # https://butterfly.js.org/posts/4aa8abbe/#%E5%81%B4%E9%82%8A%E6%8E%92%E7%89%88
@@ -935,22 +935,22 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo: W1ndys/blog.w1ndys.top   # 存储评论的GitHub仓库
-  repo_id: R_kgDOLaRaXw           # 仓库ID
-  category_id: DIC_kwDOLaRaX84CeBp5  # Giscus分类ID
+  repo: W1ndys/blog.w1ndys.top # 存储评论的GitHub仓库
+  repo_id: R_kgDOLaRaXw # 仓库ID
+  category_id: DIC_kwDOLaRaX84CeBp5 # Giscus分类ID
   theme:
-    light: light                  # 亮色主题
-    dark: dark                    # 暗色主题
+    light: light # 亮色主题
+    dark: dark # 暗色主题
   option:
-    data-mapping: url             # 映射选项
-    data-strict: 0                # 严格程度（0表示不严格）
-    data-reactions-enabled: 1     # 启用反应（1表示启用）
-    data-emit-metadata: 1         # 启用元数据发射（1表示启用）
-    data-input-position: top      # 评论输入位置（顶部）
-    data-theme: preferred_color_scheme  # 首选颜色方案
-    data-lang: zh-CN              # 语言偏好（中文）
+    data-mapping: url # 映射选项
+    data-strict: 0 # 严格程度（0表示不严格）
+    data-reactions-enabled: 1 # 启用反应（1表示启用）
+    data-emit-metadata: 1 # 启用元数据发射（1表示启用）
+    data-input-position: top # 评论输入位置（顶部）
+    data-theme: preferred_color_scheme # 首选颜色方案
+    data-lang: zh-CN # 语言偏好（中文）
     # data-loading: lazy          # 懒加载（已注释掉）
-    crossorigin: anonymous        # 跨源资源共享策略（匿名）
+    crossorigin: anonymous # 跨源资源共享策略（匿名）
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
