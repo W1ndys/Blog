@@ -147,7 +147,7 @@ error_img:
 # A simple 404 page
 error_404:
   enable: true
-  subtitle: "页面被怪物吃掉了哦~"
+  subtitle: "页面被怪物吃掉了哦~<br/>页面可能有改动，回到首页看看吧"
   background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
 # 页面meta显示
