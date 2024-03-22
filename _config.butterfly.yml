@@ -23,13 +23,13 @@ menu:
   分类: /categories/ || fas fa-folder-open
   友链: /link/ || fas fa-link
   友链接力 || fa fa-heart:
-    异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
-    MIIT Travel: https://beian.miit.cn.com/go.php#/ || fas fa-rotate-right
-    博客录: https://bokelu.suijiboke.gs || fas fa-tree
-    笔墨迹: https://blogscn.fun/random.html || fas fa-pen
-  项目||fa fa-pencil||hide:
-    选课指北: /posts/216d9006#/ || fa fa-arrow-up
-    速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
+      异次元之旅: https://travel.moe/go.html?travel=on || fa fa-bomb
+      MIIT Travel: https://beian.miit.cn.com/go.php#/ || fas fa-rotate-right
+      博客录: https://bokelu.suijiboke.gs || fas fa-tree
+      笔墨迹: https://blogscn.fun/random.html || fas fa-pen
+  项目||fa fa-pencil:
+      选课指北: /posts/216d9006#/ || fa fa-arrow-up
+      速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
   关于: /about/ || fas fa-heart
   主页: https://w1ndys.top/ || fas fa-bed
   导航页: https://nav.w1ndys.top/ || fas fa-map
