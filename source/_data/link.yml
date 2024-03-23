@@ -113,6 +113,11 @@
       avatar: https://moonshuo.cn/img/avatar.gif
       descr: 偷掉月亮-我们一起去偷月亮吧
 
+    - name: 追梦境
+      link: https://hexo.dreamerhe.qianxun7747.eu.org/
+      avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
+      descr: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
+
 # 下面是各路大佬，请下滑找到空位置添加
 # ——————————————————————————————————————————————————————————————————————————————————————————————
 - class_name: 大佬的聚集地
@@ -187,15 +192,6 @@
       link: https://howiehz.top
       avatar: https://howiehz.top/upload/ico.ico
       descr: 互联网上的一座小岛
-
-    - name: 追梦境
-      link: https://hexo.dreamerhe.qianxun7747.eu.org/
-      avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
-      descr: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
-
-
-
-
 # 锚点2
 # 我的同学/朋友/师哥等的博客，请定位到第17行代码下面进行添加
 # 请将我的友链加入到你的博客，然后在上方添加你的友链配置数据，注意，请与上一条间隔一个换行
