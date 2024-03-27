@@ -1,0 +1,32 @@
+name: Deploy Hexo Blog
+
+on:
+  push:
+    branches:
+      - main  # 可以根据你的分支设置触发条件
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # 根据你的需求设置 Node.js 版本
+
+    - name: Install dependencies
+      run: npm install  # 确保你的 Hexo 项目已经添加了 package.json 文件
+
+    - name: Build Hexo
+      run: npm run build  # 这里假设你的 Hexo 项目的构建命令是 npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public  # 设置输出目录为 public
+        keep_files: true  # 如果需要保留其他文件，可以设置为 true
