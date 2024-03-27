@@ -19,7 +19,7 @@ date: 2024-03-07 19:26:05
 >
 > 脚本有概率无法做，非选择填空题，如连线题，图片题等
 >
-> <span style="background:#00FFFF;">图片加载较慢请用浏览器打开本网址</span>
+> <span style="background:#00FFFF;"> 图片加载较慢请用浏览器打开本网址 </span>
 
 ## 免责声明
 
@@ -63,6 +63,10 @@ date: 2024-03-07 19:26:05
 2. 进入下面地址，点击 `安装脚本`
 
 [https://scriptcat.org/zh-CN/script-show-page/1338#/](https://scriptcat.org/zh-CN/script-show-page/1338#/)
+
+<span style="color:#FF0000;">经测试，该脚本不适合刷 welearn，刷 welearn 用下面这个</span>
+
+https://scriptcat.org/zh-CN/script-show-page/174#/
 
 ![image-20240307193748656](../img/classscript/image-20240307193748656.png)
 
