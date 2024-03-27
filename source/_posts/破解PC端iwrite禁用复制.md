@@ -1,7 +1,13 @@
 ---
-title: "破解PC端iwrite禁用复制"
-tags: [刷课脚本, JavaScript, iwrite]
-categories: [刷课脚本, iwrite]
+title: 破解PC端iwrite禁用复制
+tags:
+  - 刷课脚本
+  - JavaScript
+  - iwrite
+categories:
+  - 刷课脚本
+  - iwrite
+abbrlink: 9a26b151
 date: 2024-03-27 21:35:04
 ---
 

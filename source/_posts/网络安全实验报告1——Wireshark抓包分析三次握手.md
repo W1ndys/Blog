@@ -1,7 +1,12 @@
 ---
-title: "网络安全实验报告1——Wireshark抓包分析三次握手"
-tags: [网络安全实验报告, Wireshark]
-categories: [网络安全, 实验报告]
+title: 网络安全实验报告1——Wireshark抓包分析三次握手
+tags:
+  - 网络安全实验报告
+  - Wireshark
+categories:
+  - 网络安全
+  - 实验报告
+abbrlink: 80a244c8
 date: 2024-03-27 10:25:29
 ---
 
