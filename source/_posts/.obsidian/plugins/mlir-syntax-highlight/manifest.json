@@ -1,0 +1,10 @@
+{
+  "id": "mlir-syntax-highlight",
+  "name": "MLIR Syntax Highlight",
+  "author": "Lewuathe",
+  "authorUrl": "https://github.com/Lewuathe",
+  "description": "Show syntax highlighing for MLIR in code blocks the editor",
+  "isDesktopOnly": false,
+  "version": "0.0.7",
+  "minAppVersion": "1.3.5"
+}
