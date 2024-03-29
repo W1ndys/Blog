@@ -17,14 +17,6 @@
       "key": "Q"
     }
   ],
-  "editor:toggle-source": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "."
-    }
-  ],
   "open-with-default-app:open": [
     {
       "modifiers": [
@@ -32,6 +24,14 @@
         "Shift"
       ],
       "key": "R"
+    }
+  ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
     }
   ]
 }

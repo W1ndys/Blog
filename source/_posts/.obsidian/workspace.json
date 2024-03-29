@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "about/about.md",
+                "file": "【福音】我推荐你通过Poe来使用各大AI产品.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               }
             }
           },
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "about/about.md",
+                "file": "【福音】我推荐你通过Poe来使用各大AI产品.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "about/about.md",
+                "file": "【福音】我推荐你通过Poe来使用各大AI产品.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,11 +125,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "about/about.md"
+                "file": "【福音】我推荐你通过Poe来使用各大AI产品.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -138,6 +139,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "vscode-editor:新建代码文件": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -146,8 +148,14 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "18abcdb7d09fc2f6",
+  "active": "6021c9ee68140b06",
   "lastOpenFiles": [
+    "image-20240329165158784.png",
+    "【福音】我推荐你通过Poe来使用各大AI产品.md",
+    "曲阜师范大学选课指北.md",
+    "Pasted image 20240329165240.png.md",
+    "Pasted image 20240329165240.png",
+    "Pasted image 20240329165123.png",
     "about/agreement.md",
     "about/about.md"
   ]
