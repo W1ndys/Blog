@@ -1,5 +1,5 @@
 ---
-title: 【福音】通过Poe来使用各大AI产品
+title: 【福音】我推荐你通过Poe来使用各大AI产品
 tags:
   - AI
   - ChatGPT
