@@ -274,10 +274,10 @@ noticeOutdate:
 # Easily browse and edit blog source code online.
 # 在文章标题旁边显示一个编辑按钮，点击会跳转到对应的链接去。
 post_edit:
-  enable: false
+  enable: true
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
+  url: https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/
 
 # post_pagination (分页)
 # 当文章封面设置为 false 时，或者没有获取到封面配置，分页背景将会显示主题色。
