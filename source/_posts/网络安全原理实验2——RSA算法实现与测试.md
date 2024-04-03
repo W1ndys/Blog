@@ -139,8 +139,8 @@ def rsa():
 
 
 print("RSA加密算法\n")
-print("姓名: 吴硕\n")
-print("学号: 2022416246\n")
+print("姓名: W1ndys\n")
+print("学号: 10000001\n")
 
 rsa()
 
