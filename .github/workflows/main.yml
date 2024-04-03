@@ -28,5 +28,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages  # GitHub Pages 所使用的分支，通常是 gh-pages
+        BRANCH: gh-pages
+        FOLDER: public  # 这里指定了要部署的文件夹，可以根据实际情况进行修改
 
