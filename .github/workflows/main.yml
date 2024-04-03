@@ -1,33 +1,26 @@
-name: Deploy Hexo
-
+name: Generate Hexo Blog
 on:
   push:
     branches:
-      - main  # 指定你的 Hexo 博客源代码所在的分支，比如 main 或 master
-
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
+    - name: Checkout source
       uses: actions/checkout@v2
-
+      with:
+        submodules: 'true'
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build
-      run: npm run build
-
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: public  # 这里指定了要部署的文件夹，可以根据实际情况进行修改
-
+    - name: Setup hexo environment
+      run: |
+        npm install -g hexo-cli
+        npm ci
+    - name: Generate pages
+      run: |
+        hexo cl
+        hexo generate
+        ls -R public/
