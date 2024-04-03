@@ -139,12 +139,13 @@ def rsa():
 
 
 print("RSA加密算法\n")
-print("姓名：W1ndysn")
-print("学号：1234567891\n")
+print("姓名: 吴硕\n")
+print("学号: 2022416246\n")
 
 rsa()
 
 input("按Ctrl+C退出")
+
 
 ```
 
