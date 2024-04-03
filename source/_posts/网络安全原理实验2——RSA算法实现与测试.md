@@ -120,22 +120,22 @@ def rsa():
 
     # 输出公钥和私钥
     if d == 0:
-        print("出错了!")
+        print("出错了!\n")
     else:
-        print("公钥(%d,%d)" % (e, fn))
-        print("私钥:(%d,%d)" % (d, fn))
+        print("公钥(%d,%d)\n" % (e, fn))
+        print("私钥:(%d,%d)\n" % (d, fn))
 
         # 输入明文 m，并确保 m < p * q
-        m = int(input("Enc: 输入明文:"))
+        m = int(input("Enc: 输入明文:\n"))
         while m >= p * q:
-            print("错误！明文需要小于p*q=%d!" % (p * q))
+            print("错误！明文需要小于p*q=%d!\n" % (p * q))
             m = int(input())
 
         # 加密并输出密文
-        print("密文:%d" % f(e, m, n))
+        print("密文:%d\n" % f(e, m, n))
 
         # 解密并输出明文
-        print("解密:m=%d" % f(d, f(e, m, n), n))
+        print("解密:m=%d\n" % f(d, f(e, m, n), n))
 
 
 print("RSA加密算法\n")
