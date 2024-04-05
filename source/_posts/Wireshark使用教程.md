@@ -179,6 +179,88 @@ ip host 60.207.246.216 and icmp 表示只捕获主机 IP 为 60.207.246.216 的 
 
 4. 端口过滤
 
+   tcp.port ==80, 显示源主机或者目的主机端口为 80 的数据包列表。
+
+   tcp.srcport == 80, 只显示 TCP 协议的源主机端口为 80 的数据包列表。
+
+   tcp.dstport == 80，只显示 TCP 协议的目的主机端口为 80 的数据包列表。
+
+![image-20240405165615171](../img/Wireshark/image-20240405165615171.png)
+
+5. http 模式过滤
+
+   http.request.method==“GET”, 只显示 HTTP GET 方法的。
+
+6. 逻辑运算符为 and/or/not
+
+   过滤多个条件组合时，使用 and/or。比如获取 IP 地址为 192.168.1.104 的 ICMP 数据包表达式为 ip.addr == 192.168.1.104 and icmp
+
+![image-20240405165713136](../img/Wireshark/image-20240405165713136.png)
+
+7. 按照数据包内容过滤。假设我要以 IMCP 层中的内容进行过滤，可以单击选中界面中的码流，在下方进行选中数据。如下
+
+![image-20240405165744003](../img/Wireshark/image-20240405165744003.png)
+
+右键单击选中后出现如下界面（作为过滤器应用）
+
+![image-20240405165822954](../img/Wireshark/image-20240405165822954.png)
+
+选中 Select 后在过滤器中显示如下
+
+![image-20240405165856429](../img/Wireshark/image-20240405165856429.png)
+
+后面条件表达式就需要自己填写。如下我想过滤出 data 数据包中包含"abcd"内容的数据流。**包含的关键词是 contains 后面跟上内容。**
+
+![image-20240405165918897](../img/Wireshark/image-20240405165918897.png)
+
+#### 常见用显示过滤需求及其对应表达式
+
+**数据链路层**：
+
+筛选 mac 地址为 04:f9:38:ad:13:26 的数据包
+
+eth.src == 04:f9:38:ad:13:26
+
+筛选源 mac 地址为 04:f9:38:ad:13:26 的数据包----
+
+eth.src == 04:f9:38:ad:13:26
+
+**网络层**：
+
+筛选 ip 地址为 192.168.1.1 的数据包
+
+ip.addr == 192.168.1.1
+
+筛选 192.168.1.0 网段的数据
+
+ip contains "192.168.1"
+
+**传输层**：
+
+筛选端口为 80 的数据包
+
+tcp.port == 80
+
+筛选 12345 端口和 80 端口之间的数据包
+
+tcp.port == 12345 &&tcp.port == 80
+
+筛选从 12345 端口到 80 端口的数据包
+
+tcp.srcport == 12345 &&tcp.dstport == 80
+
+**应用层**：
+
+特别说明: http 中 http.request 表示请求头中的第一行（如 GET index.jsp HTTP/1.1） http.response 表示响应头中的第一行（如 HTTP/1.1 200 OK），其他头部都用 http.header_name 形式。
+
+筛选 url 中包含.php 的 http 数据包
+
+http.request.uri contains ".php"
+
+筛选内容包含 username 的 http 数据包
+
+http contains "username"
+
 > 参考链接：
 >
-> https://blog.csdn.net/zzwwhhpp/article/details/113077747#/
+> https://www.cnblogs.com/linyfeng/p/9496126.html#/ > https://blog.csdn.net/zzwwhhpp/article/details/113077747#/
