@@ -1071,7 +1071,7 @@ theme_color:
   paginator: "#00c4b6"
   button_hover: "#FF7242"
   text_selection: "#00c4b6"
-  link_color: "#99a9bf"
+  link_color: "#00ceffa3"
   meta_color: "#858585"
   hr_color: "#A4D8FA"
   code_foreground: "#F47466"
