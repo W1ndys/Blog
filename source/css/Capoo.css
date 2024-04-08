@@ -10,7 +10,7 @@
 }
 
 .gif-container img {
-  max-width: 180px;
+  max-width: 130px;
   /* 设置 GIF 最大宽度 */
   height: auto;
   /* 自动调整高度 */
