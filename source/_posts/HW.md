@@ -278,3 +278,26 @@ sql 手注的一般步骤
    3. 重启服务器
 
    4. 使用杀软全盘查杀
+
+### Java 反序列化的 CC 链构造原理
+
+Java 反序列化的 CC 链构造原理涉及了 Java 反序列化机制、Commons Collections 库中的 Transformer 接口以及漏洞利用的过程。以下是构造 CC 链的基本原理：
+
+**Java 反序列化机制：**
+Java 的反序列化机制允许将对象从字节流中重新构建成实例。这个过程涉及到将对象的状态信息从字节流中读取出来，并使用这些信息来构造对象的实例。Java 中的反序列化由 ObjectInputStream 类来执行。
+
+**Commons Collections 库中的 Transformer 接口：**
+Commons Collections 库提供了一组 Transformer 接口和实现，用于对对象进行转换和操作。其中，Transformer 接口定义了一个单一方法 transform，用于对输入对象进行转换并返回转换后的对象。攻击者可以构造一个 Transformer 链，将多个 Transformer 对象串联起来，形成一个 CC 链。
+
+**漏洞利用过程：**
+构造的 CC 链会利用 Commons Collections 库中的某些 Transformer 实现中的漏洞，通过反序列化触发漏洞，并最终实现攻击者预期的恶意操作。通常情况下，这些漏洞会导致在反序列化过程中执行任意代码或者执行特定的恶意操作。
+
+具体来说，构造 CC 链的过程可能包括以下步骤：
+
+1. 选择合适的 Transformer 实现，并组成一个 Transformer 链。
+2. 构造一个带有 CC 链的序列化数据，通常使用 Java 的序列化机制实现。
+3. 将序列化数据输入到目标应用程序中，通过反序列化触发漏洞，使 CC 链得以执行。
+
+最终，CC 链中的 Transformer 将按照预期执行，并实现攻击者的目标，例如执行任意代码或者获取系统权限。
+
+总的来说，Java 反序列化的 CC 链构造原理涉及了利用 Commons Collections 库中的 Transformer 接口和 Java 的反序列化机制，通过构造特定的 Transformer 链并利用漏洞来实现攻击目标。
