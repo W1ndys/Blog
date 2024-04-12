@@ -22,8 +22,8 @@ bottom:
     html: '<script data-pjax id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/3HPYFt9znqKItrHZ/quote.js?theme=#4C4948,#4C4948,#4C4948,#4C4948,#FFFFFF,#176CE4,13&col=true&f=12"></script>'
   - class_name: "widget"
     id_name: ad
-    name: 广告位招租
-    icon: fas fa-ad
-    order: 
-    html: "<div style=\"width: 200px; height: 200px; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center;\"><h2>广告位招租</h2><p>联系我们以了解更多信息</p><p><a href=\"mailto:w1ndys@outlook.com\">Email: w1ndys@outlook.com</a></p></div>"
+    name: Easy-QFNU制作中
+    icon: fas fa-tools
+    order: 7
+    html: 地址：<a href="https://Easy-qfnu.top/">https://Easy-qfnu.top/</a>
 

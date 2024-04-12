@@ -320,7 +320,7 @@ aside:
       link: https://github.com/W1ndys
   card_announcement:
     enable: true
-    content: '如果访问存在问题，请 <b>Ctrl + Shift + R</b> 强制刷新页面，如果可以的话<a href="https://wmimg.com/i/41/2023/08/64cf770f0a003.png" alt="手动注销本站 Service Worker" title="手动注销本站 Service Worker">手动注销本站 Service Worker</a> 应该可以解决大部分问题'
+    content: Easy-QFNU重做中<a href="https://Easy-qfnu.top/" target="_blank">Easy-QFNU</a>，欢迎访问！'<br/>'如果访问存在问题，请 <b>Ctrl + Shift + R</b> 强制刷新页面，如果可以的话<a href="https://wmimg.com/i/41/2023/08/64cf770f0a003.png" alt="手动注销本站 Service Worker" title="手动注销本站 Service Worker">手动注销本站 Service Worker</a> 应该可以解决大部分问题
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
