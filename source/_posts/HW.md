@@ -384,3 +384,5 @@ User-Agent 字段（弱特征），如果采用默认的情况，会暴露使用
 Accept 字段（弱特征），默认是 Accept:text/html, image/gif, image/jpeg, \*; q=.2, /; q=.2。同上，这个也可修改，只能作为辅助检测的特征。
 Cookie 中有一个非常关键的特征，最后会有个分号。估计后续的版本会修复。
 响应体的数据有一定特征，哥斯拉会把一个 32 位的 md5 字符串按照一半拆分，分别放在 base64 编码的数据的前后两部分。整个响应包的结构体征为：md5 前十六位+base64+md5 后十六位。
+
+https://www.cnblogs.com/-andrea/p/17473499.html#/
