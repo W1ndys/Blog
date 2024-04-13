@@ -83,6 +83,11 @@
       avatar: https://strongwillpro.oss-cn-beijing.aliyuncs.com/img/QQ%E5%9B%BE%E7%89%8720240111033823.jpg
       descr: 堃门！
 
+    - name: 阿秀的学习笔记
+      link: https://interviewguide.cn/
+      avatar: https://interviewguide.cn/images/personal/logo.png
+      descr: 职场多年的计算机自学总结，包括但不限计算机基础知识、算法、前端后端、校招&社招、互联网一线大厂中的工作体验等记录，坚持学习，持续成长！
+
 # 锚点1
 # 同学/朋友/师哥/师姐/师弟/师妹，填在这上面，与上一个友链中间隔一个换行
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -212,7 +217,6 @@
       link: https://lennychen.top/
       avatar: https://s2.loli.net/2024/03/31/Ht3QBqhgLYNAuwj.png
       descr: 天地不仁，以万物为刍狗
- 
 # 锚点2
 # 我的同学/朋友/师哥等的博客，请定位到第17行代码下面进行添加
 # 请将我的友链加入到你的博客，然后在上方添加你的友链配置数据，注意，请与上一条间隔一个换行
