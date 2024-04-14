@@ -22,6 +22,9 @@ def create_markdown_file(title, tags, categories):
         # 获取当前日期
         current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+        # 生成唯一的时间戳
+        unique_timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")[:-3]
+
         # 将输入的空格隔开的标签和分类转换为英文逗号隔开的形式
         tags = ",".join(map(str.strip, tags.split()))
         categories = ",".join(map(str.strip, categories.split()))
@@ -33,7 +36,7 @@ def create_markdown_file(title, tags, categories):
             f"tags: [{tags}]\n"
             f"categories: [{categories}]\n"
             f"date: {current_date}\n"
-            f"cover: https://t.mwm.moe/fj\n"
+            f"cover: https://t.mwm.moe/fj?{unique_timestamp}\n"
             f"---\n\n"
         )
 
@@ -56,7 +59,6 @@ print("该文件必须放置在与 _config.yml 相同的目录下")
 print("生成的文件将保存在当前目录下的 source/_posts 文件夹中")
 print("请注意文件位置")
 print("——————————————————————————————————————————————————————————")
-
 
 title = input("请输入标题: ")
 tags = input("请输入标签（多个标签用空格隔开）: ")
