@@ -9,6 +9,7 @@ categories:
   - 技术教程
 abbrlink: e7a38f19
 date: 2024-03-29 16:35:02
+cover: https://is4-ssl.mzstatic.com/image/thumb/Purple126/v4/ba/c4/30/bac4306a-4acf-fe79-4e31-a294c38cba32/AppIcon_Poe-0-1x_U007emarketing-0-0-0-7-0-0-85-220.png/1200x630wa.png
 ---
 
 # 【福音】我推荐你通过 Poe 来使用各大 AI 产品

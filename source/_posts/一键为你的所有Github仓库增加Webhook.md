@@ -11,6 +11,8 @@ categories:
   - Github
 abbrlink: "697195e9"
 date: 2024-04-14 20:10:38
+cover: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2Fv2-9c9dd400bbc84c9c867e3abd7d866509_250x0.jpg%3Fsource%3D172ae18b&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656388450&t=260c93d853396c41ec080eff13c2f512
+
 ---
 
 GitHub 提供了 Webhooks 功能，允许开发者在仓库发生特定事件时接收 HTTP 请求通知。如果你有大量的 GitHub 仓库，并希望为它们统一添加 Webhook，手动操作将是一项繁琐的任务。本文介绍了如何利用 Python 脚本实现一键为所有 GitHub 仓库添加 Webhook，以及如何一键删除这些 Webhook。
