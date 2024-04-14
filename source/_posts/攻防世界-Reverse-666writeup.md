@@ -1,12 +1,14 @@
 ---
-date: 2023-08-26 07:26
-title: 攻防世界-Reverse-666writeup
-tags: CTF
-categories:
-  - CTF
-  - WP
-  - RE
 abbrlink: 117d354d
+categories:
+- CTF
+- WP
+- RE
+cover: https://t.mwm.moe/fj/?98
+date: 2023-08-26 07:26
+tags: CTF
+title: 攻防世界-Reverse-666writeup
+
 ---
 
 # 查壳

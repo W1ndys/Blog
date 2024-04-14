@@ -1,13 +1,15 @@
 ---
-date: 2023-11-03 14:16
-title: 数据结构期中考试wp
-tags: 数据结构作业
-categories:
-  - 学习笔记
-  - 数据结构作业
-  - 考试
-message: 作业答案被加密了，快暴揍W1ndys让他说出密码(输完按回车解开)
 abbrlink: c0eaf0d7
+categories:
+- 学习笔记
+- 数据结构作业
+- 考试
+cover: https://t.mwm.moe/fj/?101
+date: 2023-11-03 14:16
+message: 作业答案被加密了，快暴揍W1ndys让他说出密码(输完按回车解开)
+tags: 数据结构作业
+title: 数据结构期中考试wp
+
 ---
 
 > 以下内容全部来自ChatGPT和Microsoft bing ai解答，正确率为85%左右，<font color='red'>仅参考，本人对本页答案概不负责</font>

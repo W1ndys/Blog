@@ -1,11 +1,13 @@
 ---
-date: 2023-10-04 22:53
-title: CTF-crypto&misc常用解密工具
-tags: CTF
-categories:
-  - CTF
-  - 工具
 abbrlink: 85db357
+categories:
+- CTF
+- 工具
+cover: https://t.mwm.moe/fj/?11
+date: 2023-10-04 22:53
+tags: CTF
+title: CTF-crypto&misc常用解密工具
+
 ---
 
 # 编码解码

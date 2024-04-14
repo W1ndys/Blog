@@ -1,10 +1,12 @@
 ---
-date: 2023-11-18 10:04
-title: “卷卷”W1ndys_bot使用手册
-tags: QQbot
-categories:
-  - QQbot
 abbrlink: bc040c54
+categories:
+- QQbot
+cover: https://t.mwm.moe/fj/?56
+date: 2023-11-18 10:04
+tags: QQbot
+title: “卷卷”W1ndys_bot使用手册
+
 ---
 
 # 主要功能

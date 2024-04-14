@@ -1,12 +1,14 @@
 ---
-date: 2023-09-13 20:20
-title: CTF入门指北——reserve
-tags:
-  - CTF
-categories:
-  - CTF
-  - CTF入门指北
 abbrlink: 7237d71d
+categories:
+- CTF
+- CTF入门指北
+cover: https://t.mwm.moe/fj/?12
+date: 2023-09-13 20:20
+tags:
+- CTF
+title: CTF入门指北——reserve
+
 ---
 
 > 来自西安电子科技大学Moectf

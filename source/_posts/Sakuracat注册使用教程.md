@@ -1,13 +1,15 @@
 ---
-title: Sakuracat注册使用教程
-tags:
-  - ChatGPT
-  - AI
-  - Sakuracat
-categories:
-  - 技术教程
 abbrlink: 80f8b1da
+categories:
+- 技术教程
+cover: https://t.mwm.moe/fj/?47
 date: 2024-02-20 19:55:03
+tags:
+- ChatGPT
+- AI
+- Sakuracat
+title: Sakuracat注册使用教程
+
 ---
 
 # Sakuracat注册使用教程

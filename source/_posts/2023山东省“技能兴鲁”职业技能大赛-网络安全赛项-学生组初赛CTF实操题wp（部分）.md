@@ -1,13 +1,15 @@
 ---
-date: 2023-11-14 19:35
-title: 2023山东省“技能兴鲁”职业技能大赛-网络安全赛项-学生组初赛CTF实操题wp（部分）
-tags:
-  - CTF
-  - 技能兴鲁
+abbrlink: '25815978'
 categories:
-  - CTF
-  - WP
-abbrlink: "25815978"
+- CTF
+- WP
+cover: https://t.mwm.moe/fj/?1
+date: 2023-11-14 19:35
+tags:
+- CTF
+- 技能兴鲁
+title: 2023山东省“技能兴鲁”职业技能大赛-网络安全赛项-学生组初赛CTF实操题wp（部分）
+
 ---
 
 # RE

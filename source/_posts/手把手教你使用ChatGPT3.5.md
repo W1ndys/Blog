@@ -1,17 +1,19 @@
 ---
-date: 2023-12-21 23:34
-title: 手把手教你使用ChatGPT3.5
-tags:
-  - 手把手教程
-  - ChatGPT
-categories:
-  - 技术教程
 abbrlink: acc7bbca
 abstract: 输入任意内容回车查看解锁指引
+categories:
+- 技术教程
+cover: https://t.mwm.moe/fj/?93
+date: 2023-12-21 23:34
 message: 输入任意内容回车查看解锁指引
-wrong_pass_message: 微信关注公众号：W1ndys，根据指引获取密码
-wrong_hash_message: 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。
 password: chatGPT_1s_g0od
+tags:
+- 手把手教程
+- ChatGPT
+title: 手把手教你使用ChatGPT3.5
+wrong_hash_message: 抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。
+wrong_pass_message: 微信关注公众号：W1ndys，根据指引获取密码
+
 ---
 
 > 爆肝一晚上写完教程，且看且珍惜

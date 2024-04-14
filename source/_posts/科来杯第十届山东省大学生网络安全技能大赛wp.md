@@ -1,14 +1,16 @@
 ---
-date: 2023-10-23 21:24
-title: 科来杯第十届山东省大学生网络安全技能大赛wp
-tags:
-  - CTF
-  - 科来杯
-categories:
-  - CTF
-  - WP
-  - 第十届科来杯
 abbrlink: '41329285'
+categories:
+- CTF
+- WP
+- 第十届科来杯
+cover: https://t.mwm.moe/fj/?117
+date: 2023-10-23 21:24
+tags:
+- CTF
+- 科来杯
+title: 科来杯第十届山东省大学生网络安全技能大赛wp
+
 ---
 
 > 原文始发于微信公众号（山警网络空间安全实验室）：[科来杯第十届山东省大学生网络安全技能大赛wp](http://mp.weixin.qq.com/s?__biz=MjM5Njc1OTYyNA==&mid=2450786565&idx=1&sn=ecd301d5f308bc7e4f5901f6187beb8e&chksm=b104f8228673713458801f4e84e0726a382df97bb09be1ae1750073b40483d9c79812ae35a38&scene=126&sessionid=1698029627&key=47ecebb9f9a1a9ab37c23e2ab716e98f757cd43b66b9ad462906ba0d95aa0c311338df2b6a7be5217c18b6f8e0ecc3fe0b3593d1d83e569f93e61662305bc67a41fa74f80d8ba959eb1beacdb48156642618c50bfeecdf568ee4e32fd7bf89f0aeafe201cfc09580e84c5ed97ece0d93b923605a9b90ec6157a83efc7ab9b32a&ascene=15&uin=NTY2NTA4NjQ%3D&devicetype=Windows+10+x64&version=63060012&lang=zh_CN&session_us=gh_544c8c38eeaf&countrycode=AL&exportkey=n_ChQIAhIQTgqEnpI5i9%2FUgoicLHi%2BDBLuAQIE97dBBAEAAAAAAAn6Da%2FhwEkAAAAOpnltbLcz9gKNyK89dVj0n9PVNOKQBdN8rFDq8A9WHKDE7wDDJw1sWdUYSzYiQ48kYwjfuTQa3OR8YYoUe0NrX35xA%2BmChNNxZFcZC51KYRhk%2FSiovCpzuXNc0DbIZCC3PaiSPNEY1FpsLPksd9Q%2FAAPZATi0k7TjwBb5HTVpyn4qJxyoNe2ehnJ%2BU%2Fn%2FkLQVFEklAE8UOxh1EVUNMUECRQItPitOSLpXdVq6fq%2Bl5ucDwa0M9Sfvx2MDNscY6GTwoY%2B0HK6Lbc5UobrfYhWM0HjKfGP9Eec%3D&acctmode=0&pass_ticket=tg1T215QyFg8xQQl%2BCQeEL%2BQWFNoq2hjb6qpAGBy38ocTI5ZUM9OXfIibItwtoRN&wx_header=0&fontgear=2)

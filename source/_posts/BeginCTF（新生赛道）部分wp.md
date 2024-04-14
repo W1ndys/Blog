@@ -1,14 +1,16 @@
 ---
-title: BeginCTF（新生赛道）部分wp
-tags:
-  - CTF
-  - WP
-  - BeginCTF
-categories:
-  - CTF
-  - WP
 abbrlink: c4767082
+categories:
+- CTF
+- WP
+cover: https://t.mwm.moe/fj/?7
 date: 2024-01-31 14:45:51
+tags:
+- CTF
+- WP
+- BeginCTF
+title: BeginCTF（新生赛道）部分wp
+
 ---
 
 菜鸡呜呜呜，就写了两道题

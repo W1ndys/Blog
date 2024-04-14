@@ -1,13 +1,15 @@
 ---
-title: “曲star”网络安全技能竞赛——re方向培训讲解
-tags:
-  - QFNU
-  - CTF
-categories:
-  - CTF
-  - QFNUCTF
 abbrlink: 450391f2
+categories:
+- CTF
+- QFNUCTF
+cover: https://t.mwm.moe/fj/?57
 date: 2024-03-03 12:30:59
+tags:
+- QFNU
+- CTF
+title: “曲star”网络安全技能竞赛——re方向培训讲解
+
 ---
 
 # “曲 star”网络安全技能竞赛——re 方向培训讲解

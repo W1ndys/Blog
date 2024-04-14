@@ -1,12 +1,14 @@
 ---
-date: 2023-11-11 21:50
-title: CTF学习日记（每天学点新东西，就是成功）
-tags:
-  - CTF
-  - CTF学习笔记
-categories:
-  - CTF
 abbrlink: cdf7e434
+categories:
+- CTF
+cover: https://t.mwm.moe/fj/?14
+date: 2023-11-11 21:50
+tags:
+- CTF
+- CTF学习笔记
+title: CTF学习日记（每天学点新东西，就是成功）
+
 ---
 
 （坚持一天一更新……可能吧）

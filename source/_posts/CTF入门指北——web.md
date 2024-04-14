@@ -1,11 +1,13 @@
 ---
-date: 2023-09-15 01:01
-title: CTF入门指北——web
-tags: CTF
-categories:
-  - CTF
-  - CTF入门指北
 abbrlink: c162917a
+categories:
+- CTF
+- CTF入门指北
+cover: https://t.mwm.moe/fj/?13
+date: 2023-09-15 01:01
+tags: CTF
+title: CTF入门指北——web
+
 ---
 
 # moectf2023 web 入门指南

@@ -1,14 +1,16 @@
 ---
-title: 使用Typora_plugin实现Markdown代码块一键填充指定编程语言
-tags:
-  - Typora
-  - Hexo
-  - Typora-plugin
-categories:
-  - 技术教程
-  - Typora
 abbrlink: 979ed90f
+categories:
+- 技术教程
+- Typora
+cover: https://t.mwm.moe/fj/?72
 date: 2024-02-18 18:31:25
+tags:
+- Typora
+- Hexo
+- Typora-plugin
+title: 使用Typora_plugin实现Markdown代码块一键填充指定编程语言
+
 ---
 
 # 使用 Typora_plugin 实现 Markdownd 代码块一键填充指定编程语言

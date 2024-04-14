@@ -1,12 +1,14 @@
 ---
-date: 2023-09-30 20:52
-title: Hexo博文中front-matter的用法
-tags:
-  - Hexo
-categories:
-  - Hexo
-  - 文档
 abbrlink: 8217ff3e
+categories:
+- Hexo
+- 文档
+cover: https://t.mwm.moe/fj/?25
+date: 2023-09-30 20:52
+tags:
+- Hexo
+title: Hexo博文中front-matter的用法
+
 ---
 
 https://Hexo.io/zh-cn/docs/front-matter

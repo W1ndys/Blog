@@ -1,11 +1,13 @@
 ---
-date: 2023-09-17 18:47
-title: C++类的基本学习
-tags:
-  - C++
-categories:
-  - C++
 abbrlink: a8f20fc2
+categories:
+- C++
+cover: https://t.mwm.moe/fj/?9
+date: 2023-09-17 18:47
+tags:
+- C++
+title: C++类的基本学习
+
 ---
 
 （因为上学期C++选修课没认真听，导致这学期数据结构啥也不会，好吧，出来混迟早是要还的，现在开始恶补C++）

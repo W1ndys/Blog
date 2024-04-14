@@ -1,13 +1,15 @@
 ---
-date: 2023-10-11 20:24
-title: 全自动解密脚本Ciphey官方安装文档
-tags:
-  - CTF
-  - Crypto
-categories:
-  - CTF
-  - 工具
 abbrlink: bc236d8e
+categories:
+- CTF
+- 工具
+cover: https://t.mwm.moe/fj/?73
+date: 2023-10-11 20:24
+tags:
+- CTF
+- Crypto
+title: 全自动解密脚本Ciphey官方安装文档
+
 ---
 
 # [Python 3.7 and above](https://github.com/Ciphey/Ciphey/wiki/Installation#python-37-and-above)

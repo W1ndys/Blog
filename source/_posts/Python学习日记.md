@@ -1,11 +1,13 @@
 ---
-title: Python学习日记
-tags:
-  - Python
-categories:
-  - Python
 abbrlink: 7c404c2f
+categories:
+- Python
+cover: https://t.mwm.moe/fj/?42
 date: 2024-01-22 12:01:27
+tags:
+- Python
+title: Python学习日记
+
 ---
 
 > 水个蓝桥算了

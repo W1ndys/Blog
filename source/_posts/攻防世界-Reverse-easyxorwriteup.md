@@ -1,12 +1,14 @@
 ---
-date: 2023-09-16 18:22
-title: 攻防世界-Reverse-easyxorwriteup
-tags: CTF
-categories:
-  - CTF
-  - WP
-  - RE
 abbrlink: c57101a0
+categories:
+- CTF
+- WP
+- RE
+cover: https://t.mwm.moe/fj/?99
+date: 2023-09-16 18:22
+tags: CTF
+title: 攻防世界-Reverse-easyxorwriteup
+
 ---
 
 # 查壳

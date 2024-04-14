@@ -1,13 +1,15 @@
 ---
-title: Python蓝桥杯常用函数以及问题
-tags:
-  - Python
-  - 蓝桥
-categories:
-  - Python
-  - 蓝桥
 abbrlink: 7bb4fcd
+categories:
+- Python
+- 蓝桥
+cover: https://t.mwm.moe/fj/?44
 date: 2024-02-17 18:37:18
+tags:
+- Python
+- 蓝桥
+title: Python蓝桥杯常用函数以及问题
+
 ---
 
 > 摘自 <https://blog.csdn.net/m0_46204224/article/details/109049999#/>

@@ -1,12 +1,14 @@
 ---
-date: 2023-10-10 22:35
-title: Kali Linux如何修改语言为中文
-tags:
-  - Linux
-categories:
-  - Linux
-  - kali
 abbrlink: 4c6d962f
+categories:
+- Linux
+- kali
+cover: https://t.mwm.moe/fj/?28
+date: 2023-10-10 22:35
+tags:
+- Linux
+title: Kali Linux如何修改语言为中文
+
 ---
 
 ### 友情提示

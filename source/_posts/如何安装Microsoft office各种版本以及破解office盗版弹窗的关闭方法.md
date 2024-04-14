@@ -1,13 +1,15 @@
 ---
-date: 2023-09-22 21:52
-title: 如何安装Microsoft office各种版本以及破解||office盗版弹窗的关闭方法
-tags:
-  - Windows
-  - office
-categories:
-  - 技术教程
-  - Windows
 abbrlink: 9b07533a
+categories:
+- 技术教程
+- Windows
+cover: https://t.mwm.moe/fj/?79
+date: 2023-09-22 21:52
+tags:
+- Windows
+- office
+title: 如何安装Microsoft office各种版本以及破解||office盗版弹窗的关闭方法
+
 ---
 
 ---

@@ -1,15 +1,16 @@
 ---
-title: 适合个体用户使用的国内AI大模型
-tags:
-  - AI
-  - ChatGPT
-  - 人工智能
-categories:
-  - AI
-  - ChatGPT
-  - 人工智能
 abbrlink: 75294ae4
+categories:
+- AI
+- ChatGPT
+- 人工智能
+cover: https://t.mwm.moe/fj/?128
 date: 2024-02-18 13:09:45
+tags:
+- AI
+- ChatGPT
+- 人工智能
+title: 适合个体用户使用的国内AI大模型
 
 ---
 

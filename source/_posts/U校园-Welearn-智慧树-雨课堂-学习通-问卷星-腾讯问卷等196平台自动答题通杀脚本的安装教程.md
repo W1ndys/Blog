@@ -1,16 +1,18 @@
 ---
-title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等196平台自动答题通杀脚本的安装教程
-tags:
-  - QFNU
-  - 智慧树
-  - 学习通
-  - U校园
-  - Welearn
-  - 脚本
-categories:
-  - 技术教程
 abbrlink: 1ff200e1
+categories:
+- 技术教程
+cover: https://t.mwm.moe/fj/?48
 date: 2024-03-07 19:26:05
+tags:
+- QFNU
+- 智慧树
+- 学习通
+- U校园
+- Welearn
+- 脚本
+title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等196平台自动答题通杀脚本的安装教程
+
 ---
 
 # U 校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等 196 平台自动答题通杀脚本的安装教程

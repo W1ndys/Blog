@@ -1,12 +1,14 @@
 ---
-date: 2023-12-10 20:30
-title: 手把手教你用新版OBS虚拟摄像头
-tags:
-  - 手把手教程系列
-  - OBS
-categories:
-  - 技术教程
 abbrlink: f885f05a
+categories:
+- 技术教程
+cover: https://t.mwm.moe/fj/?95
+date: 2023-12-10 20:30
+tags:
+- 手把手教程系列
+- OBS
+title: 手把手教你用新版OBS虚拟摄像头
+
 ---
 
 > 本教程基于B站https://www.bilibili.com/read/cv11603378/编写

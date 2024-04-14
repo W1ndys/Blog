@@ -1,14 +1,16 @@
 ---
-title: 在你的网站中添加Capoo！（调皮的猫猫虫）
-tags:
-  - Hexo
-  - Hexo美化
-  - butterfly美化
-categories:
-  - 技术教程
-  - Hexo
 abbrlink: 3a360f71
+categories:
+- 技术教程
+- Hexo
+cover: https://t.mwm.moe/fj/?78
 date: 2024-02-11 21:49:37
+tags:
+- Hexo
+- Hexo美化
+- butterfly美化
+title: 在你的网站中添加Capoo！（调皮的猫猫虫）
+
 ---
 
 > 本教程基于 https://docs.api.ecylt.top/kemomimi-jiang#/ 进行魔改

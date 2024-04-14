@@ -1,13 +1,15 @@
 ---
-date: 2023-12-23 00:58
-title: 手把手教你注册Google账号
-tags:
-  - 手把手教程系列
-  - Google-account
-categories:
-  - 技术教程
-index_img: ../img/Google/logo.png
 abbrlink: f286f4f8
+categories:
+- 技术教程
+cover: https://t.mwm.moe/fj/?94
+date: 2023-12-23 00:58
+index_img: ../img/Google/logo.png
+tags:
+- 手把手教程系列
+- Google-account
+title: 手把手教你注册Google账号
+
 ---
 
 # Google账号的注册教程

@@ -1,10 +1,12 @@
 ---
-date: 2023-11-17 00:42
-title: HuYanSession2——壶言会话2使用手册
-tags: QQbot
-categories:
-  - QQbot
 abbrlink: 7a43906e
+categories:
+- QQbot
+cover: https://t.mwm.moe/fj/?26
+date: 2023-11-17 00:42
+tags: QQbot
+title: HuYanSession2——壶言会话2使用手册
+
 ---
 
 [壶言手册发布页](https://mirai.mamoe.net/topic/1377/%E5%A3%B6%E8%A8%802-huyansession2-%E5%A3%B6%E8%A8%80%E4%BC%9A%E8%AF%9D2)

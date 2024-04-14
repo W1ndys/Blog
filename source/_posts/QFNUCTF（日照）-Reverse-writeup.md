@@ -1,13 +1,15 @@
 ---
-date: 2023-10-13 00:25
-title: QFNUCTF（日照）-Reverse-writeup
-tags:
-  - CTF
-categories:
-  - CTF
-  - WP
-  - QFNUCTF
 abbrlink: 44b69183
+categories:
+- CTF
+- WP
+- QFNUCTF
+cover: https://t.mwm.moe/fj/?45
+date: 2023-10-13 00:25
+tags:
+- CTF
+title: QFNUCTF（日照）-Reverse-writeup
+
 ---
 
 # base64++

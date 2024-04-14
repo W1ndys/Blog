@@ -1,13 +1,15 @@
 ---
-date: 2023-11-23 23:14
-title: RSA的一些解密脚本
-tags:
-  - CTF
-  - Crypto
-categories:
-  - CTF
-  - Crypto
 abbrlink: 10f5a405
+categories:
+- CTF
+- Crypto
+cover: https://t.mwm.moe/fj/?46
+date: 2023-11-23 23:14
+tags:
+- CTF
+- Crypto
+title: RSA的一些解密脚本
+
 ---
 
 # 目录

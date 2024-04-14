@@ -1,10 +1,12 @@
 ---
-date: 2023-11-20 11:25
-title: Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁
-tags: QQbot
-categories:
-  - QQbot
 abbrlink: 369f16e7
+categories:
+- QQbot
+cover: https://t.mwm.moe/fj/?30
+date: 2023-11-20 11:25
+tags: QQbot
+title: Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁
+
 ---
 
 # Mirai Administrator

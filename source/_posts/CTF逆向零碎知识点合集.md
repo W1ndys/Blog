@@ -1,13 +1,15 @@
 ---
-date: 2023-10-19 22:41
-title: CTF逆向零碎知识点合集
-tags:
-  - CTF
-  - Reverse
-categories:
-  - CTF
-  - Reverse
 abbrlink: c1e61dd7
+categories:
+- CTF
+- Reverse
+cover: https://t.mwm.moe/fj/?18
+date: 2023-10-19 22:41
+tags:
+- CTF
+- Reverse
+title: CTF逆向零碎知识点合集
+
 ---
 
 # 1.Python字节码的学习

@@ -1,11 +1,13 @@
 ---
-date: 2023-10-05 13:52
-title: C++常用的代码模板
-tags:
-  - C++
-categories:
-  - C++
 abbrlink: b138fb0c
+categories:
+- C++
+cover: https://t.mwm.moe/fj/?8
+date: 2023-10-05 13:52
+tags:
+- C++
+title: C++常用的代码模板
+
 ---
 
 # 生成随机数

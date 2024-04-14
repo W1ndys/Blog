@@ -1,11 +1,13 @@
 ---
-date: 2023-08-25 22:45
-title: CTF常用刷题平台
-tags: CTF
-categories:
-  - CTF
-  - 平台
 abbrlink: eed2fa14
+categories:
+- CTF
+- 平台
+cover: https://t.mwm.moe/fj/?16
+date: 2023-08-25 22:45
+tags: CTF
+title: CTF常用刷题平台
+
 ---
 
 1.NSSCTF，适合新手

@@ -1,14 +1,16 @@
 ---
-title: 使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠
-tags:
-  - Typora
-  - Hexo
-  - Typora-plugin
-categories:
-  - 技术教程
-  - Typora
 abbrlink: 520cc65
+categories:
+- 技术教程
+- Typora
+cover: https://t.mwm.moe/fj/?71
 date: 2024-02-08 15:24:23
+tags:
+- Typora
+- Hexo
+- Typora-plugin
+title: 使用Typora_plugin实现Hexo博客绝对路径一键替换相对路径|正斜杠替换为反斜杠
+
 ---
 
 # 使用 Typora_plugin 实现 Hexo 博客绝对路径一键替换相对路径|正斜杠替换为反斜杠

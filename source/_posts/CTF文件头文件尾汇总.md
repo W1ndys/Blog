@@ -1,13 +1,15 @@
 ---
-date: 2023-12-09 14:25
-title: CTF文件头文件尾汇总
-tags:
-  - CTF
-  - Misc
-categories:
-  - CTF
-  - Misc
 abbrlink: 4db76617
+categories:
+- CTF
+- Misc
+cover: https://t.mwm.moe/fj/?17
+date: 2023-12-09 14:25
+tags:
+- CTF
+- Misc
+title: CTF文件头文件尾汇总
+
 ---
 
 > 转自https://blog.csdn.net/Ahuuua/article/details/109165473#/

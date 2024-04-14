@@ -1,13 +1,15 @@
 ---
-title: 网络安全实验报告1——Wireshark抓包分析三次握手
-tags:
-  - 网络安全原理实验报告
-  - Wireshark
-categories:
-  - 网络安全
-  - 实验报告
 abbrlink: 80a244c8
+categories:
+- 网络安全
+- 实验报告
+cover: https://t.mwm.moe/fj/?119
 date: 2024-03-27 10:25:29
+tags:
+- 网络安全原理实验报告
+- Wireshark
+title: 网络安全实验报告1——Wireshark抓包分析三次握手
+
 ---
 
 # 网络安全原理实验 1——Wireshark 抓包分析三次握手

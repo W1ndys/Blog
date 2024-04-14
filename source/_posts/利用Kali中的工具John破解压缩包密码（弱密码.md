@@ -1,12 +1,14 @@
 ---
-date: 2023-10-03 21:08
-title: 利用Kali中的工具John破解压缩包密码（弱密码
-tags:
-  - Linux
-categories:
-  - Linux
-  - kali
 abbrlink: b63d2e4e
+categories:
+- Linux
+- kali
+cover: https://t.mwm.moe/fj/?75
+date: 2023-10-03 21:08
+tags:
+- Linux
+title: 利用Kali中的工具John破解压缩包密码（弱密码
+
 ---
 
 推荐一篇文章
