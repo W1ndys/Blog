@@ -50,12 +50,12 @@ def create_markdown_file(title, tags, categories):
 
 
 # 示例用法
-print("—————————————————————————————————————————————————————————— ")
-print("|    Powerd by W1ndys           update:2024年1月18日      |")
-print("|        本文件必须放在和_config.yml同级目录               |")
-print("|  并且生成的文件会保存在当前目录下source/_posts文件夹内   |")
-print("|                  请注意文件位置                         |")
+print("Powerd by W1ndys           update:2024年4月14日")
+print("该文件必须放置在与 _config.yml 相同的目录下")
+print("生成的文件将保存在当前目录下的 source/_posts 文件夹中")
+print("请注意文件位置")
 print("——————————————————————————————————————————————————————————")
+
 
 title = input("请输入标题: ")
 tags = input("请输入标签（多个标签用空格隔开）: ")
