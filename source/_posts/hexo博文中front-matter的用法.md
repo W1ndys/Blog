@@ -1,14 +1,14 @@
 ---
 date: 2023-09-30 20:52
-title: hexo博文中front-matter的用法
-tags: hexo
+title: Hexo博文中front-matter的用法
+tags: Hexo
 categories:
-  - hexo
+  - Hexo
   - 用法
 abbrlink: 8217ff3e
 ---
 
-https://hexo.io/zh-cn/docs/front-matter
+https://Hexo.io/zh-cn/docs/front-matter
 
 # Front-matter
 
@@ -25,7 +25,7 @@ date: 2013/7/13 20:46:25
 
 | 参数              | 描述                                                         | 默认值                                                       |
 | :---------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| `layout`          | 布局                                                         | [`config.default_layout`](https://hexo.io/zh-cn/docs/configuration#文章) |
+| `layout`          | 布局                                                         | [`config.default_layout`](https://Hexo.io/zh-cn/docs/configuration#文章) |
 | `title`           | 标题                                                         | 文章的文件名                                                 |
 | `date`            | 建立日期                                                     | 文件建立日期                                                 |
 | `updated`         | 更新日期                                                     | 文件更新日期                                                 |
@@ -33,16 +33,16 @@ date: 2013/7/13 20:46:25
 | `tags`            | 标签（不适用于分页）                                         |                                                              |
 | `categories`      | 分类（不适用于分页）                                         |                                                              |
 | `permalink`       | 覆盖文章的永久链接，永久链接应该以 `/` 或 `.html` 结尾       | `null`                                                       |
-| `excerpt`         | 纯文本的页面摘要。使用 [该插件](https://hexo.io/zh-cn/docs/tag-plugins#文章摘要和截断) 来格式化文本 |                                                              |
-| `disableNunjucks` | 启用时禁用 Nunjucks 标签 `{{ }}`/`{% %}` 和 [标签插件](https://hexo.io/zh-cn/docs/tag-plugins) 的渲染功能 | false                                                        |
-| `lang`            | 设置语言以覆盖 [自动检测](https://hexo.io/zh-cn/docs/internationalization#路径) | 继承自 `_config.yml`                                         |
+| `excerpt`         | 纯文本的页面摘要。使用 [该插件](https://Hexo.io/zh-cn/docs/tag-plugins#文章摘要和截断) 来格式化文本 |                                                              |
+| `disableNunjucks` | 启用时禁用 Nunjucks 标签 `{{ }}`/`{% %}` 和 [标签插件](https://Hexo.io/zh-cn/docs/tag-plugins) 的渲染功能 | false                                                        |
+| `lang`            | 设置语言以覆盖 [自动检测](https://Hexo.io/zh-cn/docs/internationalization#路径) | 继承自 `_config.yml`                                         |
 | `published`       | 文章是否发布                                                 | 对于 `_posts` 下的文章为 `true`，对于 `_draft` 下的文章为 `false` |
 
 ## 布局
 
-根据 `_config.yml` 中 [`default_layout`](https://hexo.io/zh-cn/docs/configuration#文章) 的设置，默认布局是 `post` 。当文章中的布局被禁用(`layout: false`)，它将不会使用主题处理。然而，它仍然会被任何可用的渲染引擎渲染：如果一篇文章是用 Markdown 写的，并且安装了 Markdown 渲染引擎（比如默认的 [hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked))，它将被渲染成HTML。
+根据 `_config.yml` 中 [`default_layout`](https://Hexo.io/zh-cn/docs/configuration#文章) 的设置，默认布局是 `post` 。当文章中的布局被禁用(`layout: false`)，它将不会使用主题处理。然而，它仍然会被任何可用的渲染引擎渲染：如果一篇文章是用 Markdown 写的，并且安装了 Markdown 渲染引擎（比如默认的 [Hexo-renderer-marked](https://github.com/Hexojs/Hexo-renderer-marked))，它将被渲染成HTML。
 
-除非通过 `disableNunjucks` 设置或 [渲染引擎](https://hexo.io/zh-cn/api/renderer#禁用-Nunjucks-标签) 禁用，否则无论布局如何，[标签插件](https://hexo.io/zh-cn/docs/tag-plugins) 总是被处理。
+除非通过 `disableNunjucks` 设置或 [渲染引擎](https://Hexo.io/zh-cn/api/renderer#禁用-Nunjucks-标签) 禁用，否则无论布局如何，[标签插件](https://Hexo.io/zh-cn/docs/tag-plugins) 总是被处理。
 
 ## 分类和标签
 

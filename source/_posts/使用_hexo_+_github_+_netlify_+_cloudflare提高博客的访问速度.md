@@ -1,12 +1,12 @@
 ---
 title: 使用 Hexo + GitHub + Netlify + Cloudflare提高博客的访问速度
 tags:
-  - hexo
+  - Hexo
   - GitHub
   - Netlify
   - Cloudflare
 categories:
-  - hexo
+  - Hexo
 abbrlink: cb064b79
 date: 2024-01-24 11:31:37
 ---
@@ -15,13 +15,11 @@ date: 2024-01-24 11:31:37
 
 今天也是看大佬的教程改了自己的配置发现访问速度确实快了许多，遂自己写一份教程加深一些理解。
 
-> 大佬的教程：https://blog.grin.cool/blog/hexo-blog#/
+> 大佬的教程：https://blog.grin.cool/blog/Hexo-blog#/
 
-> 注意本教程不适合纯 Hexo 小白（其实只要略微了解过一丢丢 hexo 的就能看懂这篇教程），适合前期有过 GitHub pages 建立经验的进阶用户
+> 注意本教程不适合纯 Hexo 小白（其实只要略微了解过一丢丢 Hexo 的就能看懂这篇教程），适合前期有过 GitHub pages 建立经验的进阶用户
 >
 > 食用本教程若有进不去网站等情况请检查你的代理或者开魔法再进
-
-
 
 > 食用本教程请确保
 >
@@ -35,8 +33,8 @@ date: 2024-01-24 11:31:37
 1. 本方法不再局限于只有一个仓库可以生成静态页面
 2. 国内访问速度飞快
 3. 每月有 100G 流量带宽额度，300 分钟的构建时间，对于个人博客记录来讲完全够用甚至还余下很多
-3. 静态页面生成速度高于 GitHub pages 至少一倍
-3. Netlify可以启用免费的 TLS 证书,启用 HTTPS
+4. 静态页面生成速度高于 GitHub pages 至少一倍
+5. Netlify 可以启用免费的 TLS 证书,启用 HTTPS
 
 <br/>
 
@@ -50,7 +48,7 @@ date: 2024-01-24 11:31:37
 
 > GitHub pages 是本地编译然后把编译好的前端页面推送到 GitHub repo
 >
-> 这里采用的改进方法是直接把 hexo 源码推送到 GitHub repo，用 Netlify 进行自动编译
+> 这里采用的改进方法是直接把 Hexo 源码推送到 GitHub repo，用 Netlify 进行自动编译
 
 这里的好处就是
 
@@ -76,7 +74,7 @@ date: 2024-01-24 11:31:37
 
 有了这个工具，你不只是能进 ai，还可以高速浏览 GitHub 等网站，以及............
 
-点击下方任意链接跳转注册界面↓（有进不去的换一个）
+点击下方任意链接跳转注册界面 ↓（有进不去的换一个）
 
 <span style="font-size:1.3em;"> [链接 1](https://sakuracat.shop/user/#/register?code=Fo7cS2WA)          [链接 2](https://sakuracat-cdn02.com/user/#/register?code=Fo7cS2WA)             [链接 3](https://sakuracat-cdn01.com/user/#/register?code=Fo7cS2WA)          [链接 4](https://sakuracat-004.com/user/#/register?code=Fo7cS2WA)          [链接 5](https://sakuracat-003.com/user/#/register?code=Fo7cS2WA)         [链接 6](https://sakuracat-b.com/user/#/register?code=Fo7cS2WA)          [链接 7](https://sakuracat-a.com/user/#/register?code=Fo7cS2WA) </span>
 
@@ -91,8 +89,6 @@ date: 2024-01-24 11:31:37
 根据需求选择你合适的方案，如果你只是想尝鲜的话，毫无疑问，选最便宜的，能用就行
 
 ![购买订阅](../img/VPN/购买订阅.png)
-
-
 
 我本人用的是 <font color="#FF0000"> 38.8 巨量不限时，推荐这个 </font>，大约可以用 2 年左右，平均下来大约 0.6/天，而且是实打实的买多少用多少，不会出现超时浪费
 
@@ -132,42 +128,42 @@ date: 2024-01-24 11:31:37
 git clone 你的仓库地址
 ```
 
-然后在目录下初始化 hexo，由于不是新手向教程，这里不过多赘述
+然后在目录下初始化 Hexo，由于不是新手向教程，这里不过多赘述
 
-> 有关于 hexo 的安装可以看这位大佬的博客 https://akilar.top/posts/6ef63e2d/#/
+> 有关于 Hexo 的安装可以看这位大佬的博客 https://akilar.top/posts/6ef63e2d/#/
 
-初始化完成之后，安装你想安装的 hexo 主题，我这里以 anzhiyu 主题为例
+初始化完成之后，安装你想安装的 Hexo 主题，我这里以 anzhiyu 主题为例
 
-下面是可供参考的 shell 脚本    **一键安装 anzhiyu 主题.sh**
+下面是可供参考的 shell 脚本 **一键安装 anzhiyu 主题.sh**
 
 ```shell
 printf "\033[32mINFO \033[0m 正在安装主题...\n"
-npm install hexo-theme-anzhiyu
+npm install Hexo-theme-anzhiyu
 printf "\033[32mINFO \033[0m 主题安装完成\n"
 
 printf "\033[32mINFO \033[0m 正在安装依赖...\n"
-npm install hexo-renderer-pug hexo-renderer-stylus --save
+npm install Hexo-renderer-pug Hexo-renderer-stylus --save
 printf "\033[32mINFO \033[0m 依赖安装完成\n"
 
 printf "\033[32mINFO \033[0m 正在停顿10s可供查看情况！无异常可Ctrl+C退出\n"
 sleep 10s
 ```
 
-主题安装完成后别忘了在你的_config.yml 文件里改掉主题，并且复制主题配置到博客根目录
+主题安装完成后别忘了在你的\_config.yml 文件里改掉主题，并且复制主题配置到博客根目录
 
->  _config.anzhiyu.yml
->  _config.yml
+> \_config.anzhiyu.yml
+> \_config.yml
 >
->  就是这俩文件
+> 就是这俩文件
 
 然后改一下 package.json 里面 script 的内容，涉及到后面的参数填写
 
 ```
 // package.json
 "scripts": {
-  "build": "hexo generate",
-  "clean": "hexo clean",
-  "server": "hexo server",
+  "build": "Hexo generate",
+  "clean": "Hexo clean",
+  "server": "Hexo server",
   "netlify": "npm run clean && npm run build"
 }
 ```
@@ -176,16 +172,16 @@ sleep 10s
 
 ```
 git add .
-git commit -m "deploy from hexo-admin"
+git commit -m "deploy from Hexo-admin"
 git push
 ```
 
 可以用 Hexo 命令在本地部署一下看看有没有 bug
 
 ```shell
-hexo clean
-hexo generate
-hexo s
+Hexo clean
+Hexo generate
+Hexo s
 ```
 
 刷新一下看看有没有推送上去
@@ -260,7 +256,7 @@ hexo s
 
 修改之后会等待一段时间审查，一般十分钟左右，但不会超过 24 小时
 
-审核完之后如图 
+审核完之后如图
 
 ![image-20240124144042122](../img/Netlify/image-20240124144042122.png)
 

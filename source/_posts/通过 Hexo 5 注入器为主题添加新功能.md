@@ -1,16 +1,16 @@
 ---
 date: 2023-09-13 23:35
 title: 通过 Hexo 5 注入器为主题添加新功能
-tags: hexo
+tags: Hexo
 categories:
-  - hexo
+  - Hexo
   - 用法
 abbrlink: de3182ad
 ---
 
 ## Hexo 注入器
 
-[Hexo 注入器](https://hexo.io/zh-cn/api/injector.html)是 Hexo 5 版本自身加入的一项新功能，所以在所有 Hexo 主题都是支持这个功能的。
+[Hexo 注入器](https://Hexo.io/zh-cn/api/injector.html)是 Hexo 5 版本自身加入的一项新功能，所以在所有 Hexo 主题都是支持这个功能的。
 
 该注入器可以将 HTML 片段注入生成页面的 `<head>` 和 `<body>` 节点中。
 
@@ -19,7 +19,7 @@ abbrlink: de3182ad
 例如创建一个 `/blog/scripts/example.js`，内容为：
 
 ```
-hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 'default');
+Hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 'default');
 ```
 
 上述代码会在生成的页面 `</body>` 注入加载 `jquery.js` 的代码。
@@ -49,7 +49,7 @@ hexo.extend.injector.register('body_end', '<script src="/jquery.js"></script>', 
 例如创建一个 `/source/js/custom.js`，里面包含初始化的代码，然后在 `/scripts/injector.js` 里写入：
 
 ```
-hexo.extend.injector.register('body_end', `
+Hexo.extend.injector.register('body_end', `
   <script src="/js/custom.js"></script>
 `)
 ```
@@ -59,7 +59,7 @@ hexo.extend.injector.register('body_end', `
 ### APlayer 音乐播放器
 
 ```
-hexo.extend.injector.register('body_end', `
+Hexo.extend.injector.register('body_end', `
   <div id="aplayer"></div>
   <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
   <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
@@ -101,7 +101,7 @@ hexo.extend.injector.register('body_end', `
 先在 [https://daovoice.io](https://daovoice.io/) 注册一个账号，按其中的引导获得 appId，然后添加如下代码：
 
 ```
-hexo.extend.injector.register('body_end', `
+Hexo.extend.injector.register('body_end', `
   <script defer src="/js/daovoice.js"></script>
 `);
 ```
