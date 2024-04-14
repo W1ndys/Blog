@@ -33,7 +33,7 @@ def create_markdown_file(title, tags, categories):
             f"tags: [{tags}]\n"
             f"categories: [{categories}]\n"
             f"date: {current_date}\n"
-            f"cover: \n"
+            f"cover: https://t.mwm.moe/fj\n"
             f"---\n\n"
         )
 
