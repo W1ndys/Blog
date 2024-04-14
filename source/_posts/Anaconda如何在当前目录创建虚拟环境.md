@@ -8,6 +8,7 @@ categories:
   - Anaconda
 abbrlink: c85e665e
 date: 2024-02-25 00:00:50
+cover: https://ts1.cn.mm.bing.net/th/id/R-C.3b91e8cc1c09baeb1854b8de7c404608?rik=o7x9yx4cxoI3EQ&riu=http%3a%2f%2fwww.downxia.com%2fuploadfiles%2f2019%2f0118%2f20190118033157229.jpg&ehk=%2fRRjbqyHmb%2becz4jYIDICqsBCoW9vvE3wvJo4%2fuFRrY%3d&risl=&pid=ImgRaw&r=0
 ---
 
 # Anaconda如何在当前目录创建虚拟环境
