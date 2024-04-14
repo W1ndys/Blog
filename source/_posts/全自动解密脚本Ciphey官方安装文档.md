@@ -1,7 +1,9 @@
 ---
 date: 2023-10-11 20:24
 title: 全自动解密脚本Ciphey官方安装文档
-tags: CTF
+tags:
+  - CTF
+  - Crypto
 categories:
   - CTF
   - 工具

@@ -1,11 +1,11 @@
 ---
 date: 2023-10-03 21:08
 title: 利用Kali中的工具John破解压缩包密码（弱密码
-tags: Linux
+tags:
+  - Linux
 categories:
   - Linux
   - kali
-  - john
 abbrlink: b63d2e4e
 ---
 

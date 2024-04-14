@@ -1,10 +1,11 @@
 ---
 date: 2023-09-13 23:35
 title: 通过 Hexo 5 注入器为主题添加新功能
-tags: Hexo
-categories:
+tags:
   - Hexo
-  - 用法
+categories:
+  - 技术教程
+  - Hexo
 abbrlink: de3182ad
 ---
 

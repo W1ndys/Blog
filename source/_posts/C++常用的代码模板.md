@@ -1,10 +1,10 @@
 ---
 date: 2023-10-05 13:52
 title: C++常用的代码模板
-tags: C++
+tags:
+  - C++
 categories:
   - C++
-  - 常用代码
 abbrlink: b138fb0c
 ---
 

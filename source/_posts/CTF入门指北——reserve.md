@@ -1,7 +1,8 @@
 ---
 date: 2023-09-13 20:20
 title: CTF入门指北——reserve
-tags: CTF
+tags:
+  - CTF
 categories:
   - CTF
   - CTF入门指北

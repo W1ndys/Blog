@@ -1,24 +1,26 @@
 ---
 date: 2023-09-22 21:52
 title: 如何安装Microsoft office各种版本以及破解||office盗版弹窗的关闭方法
-tags: Windows技术分享
-categories:
+tags:
   - Windows
-  - office破解
+  - office
+categories:
+  - 技术教程
+  - Windows
 abbrlink: 9b07533a
 ---
 
 ---
 
-<p class="note note-warning">这篇文章需要重写，有空再改改</p>
+<font color="red">这篇文章需要重写，有空再改改</font>
 
-----
+---
 
-想必大家都认识Microsoft office
+想必大家都认识 Microsoft office
 
-就是常说的Word  Excel  PPT三大办公套件
+就是常说的 Word Excel PPT 三大办公套件
 
-当然也有Outlook OneNote Publisher Access  Teams等这些不常用的
+当然也有 Outlook OneNote Publisher Access Teams 等这些不常用的
 
 但是，正版购买要七百多甚至一千多！太贵了怎么办
 
@@ -103,7 +105,7 @@ Office 是支持账户、密钥、KMS 激活的，前两者基本都是正版授
 
 具体的技术性资料可从网上搜索得到，这里就简单粗暴地描述一下。
 
-------
+---
 
 KMS 激活类似于签名一样，在大多数现实情况下，签名可以仿写，就像是“家长签名”一样，很多时候其实不是真的家长签名吧 ![:huaji:](https://www.coolhub.top/wp-content/themes/kratos-pjax-0.4.3/static/images/smilies/huaji.png)
 
@@ -115,7 +117,7 @@ KMS 激活也是有正规的，正规的来讲就是要经过微软授权的（�
 
 一句话讲晒，就是冒名顶替，没人查确实不知道，一查出来你就 gg
 
-------
+---
 
 这就是 Office 与 KMS 的关系，简单来讲就是这样。再补充一下：
 
@@ -131,8 +133,8 @@ KMS 激活也是有正规的，正规的来讲就是要经过微软授权的（�
 
 目前网上公开的基本都是基于 vlmcs 的 KMS 服务器，非正版，无激活限制，谁都可以访问。
 
-# office提示你的许可证不是正版，你可能是盗版软件的受害者？
+# office 提示你的许可证不是正版，你可能是盗版软件的受害者？
 
 看这个
 
-[office提示你的许可证不是正版，你可能是盗版软件的受害者？](https://blog.csdn.net/qq_44275213/article/details/128543910)
+[office 提示你的许可证不是正版，你可能是盗版软件的受害者？](https://blog.csdn.net/qq_44275213/article/details/128543910)

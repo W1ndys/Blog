@@ -1,10 +1,11 @@
 ---
 date: 2023-12-08 22:08
 title: 解决Windows11“为了对电脑进行保护，已经阻止此应用。”
-tags: Windows技术分享
+tags:
+  - Windows技术分享
 categories:
+  - 技术教程
   - Windows
-  - 报错
 abbrlink: 8847716f
 ---
 

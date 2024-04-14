@@ -34,7 +34,6 @@ def create_markdown_file(title, tags, categories):
             f"categories: [{categories}]\n"
             f"date: {current_date}\n"
             f"---\n\n"
-            f"# {title}\n"
         )
 
         # 创建Markdown文件并写入front-matter

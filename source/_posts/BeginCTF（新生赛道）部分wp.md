@@ -7,10 +7,8 @@ tags:
 categories:
   - CTF
   - WP
-  - BeginCTF
 abbrlink: c4767082
 date: 2024-01-31 14:45:51
-
 ---
 
 菜鸡呜呜呜，就写了两道题

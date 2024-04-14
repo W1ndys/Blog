@@ -5,8 +5,7 @@ tags:
   - JavaScript
   - iwrite
 categories:
-  - 刷课脚本
-  - iwrite
+  - 技术教程
 abbrlink: 9a26b151
 date: 2024-03-27 21:35:04
 ---

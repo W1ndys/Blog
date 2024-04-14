@@ -5,8 +5,8 @@ tags:
   - Hexo美化
   - butterfly美化
 categories:
+  - 技术教程
   - Hexo
-  - Hexo美化
 abbrlink: 3a360f71
 date: 2024-02-11 21:49:37
 ---

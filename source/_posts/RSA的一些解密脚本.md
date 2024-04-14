@@ -1,10 +1,12 @@
 ---
 date: 2023-11-23 23:14
 title: RSA的一些解密脚本
-tags: CTF
+tags:
+  - CTF
+  - Crypto
 categories:
   - CTF
-  - 密码学
+  - Crypto
 abbrlink: 10f5a405
 ---
 

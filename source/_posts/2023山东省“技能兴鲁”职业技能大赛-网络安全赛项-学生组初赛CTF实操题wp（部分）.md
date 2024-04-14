@@ -7,8 +7,7 @@ tags:
 categories:
   - CTF
   - WP
-  - 技能兴鲁
-abbrlink: '25815978'
+abbrlink: "25815978"
 ---
 
 # RE

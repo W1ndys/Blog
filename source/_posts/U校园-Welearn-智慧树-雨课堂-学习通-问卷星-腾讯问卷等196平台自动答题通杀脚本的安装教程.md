@@ -8,7 +8,7 @@ tags:
   - Welearn
   - 脚本
 categories:
-  - 刷课脚本
+  - 技术教程
 abbrlink: 1ff200e1
 date: 2024-03-07 19:26:05
 ---

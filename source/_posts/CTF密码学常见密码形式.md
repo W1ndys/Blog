@@ -1,10 +1,12 @@
 ---
 date: 2023-10-04 21:01
 title: CTF密码学常见密码形式
-tags: CTF
+tags:
+  - CTF
+  - Crypto
 categories:
   - CTF
-  - 密码学
+  - Crypto
 abbrlink: 965c7bf3
 ---
 

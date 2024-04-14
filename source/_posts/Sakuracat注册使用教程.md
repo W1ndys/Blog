@@ -5,9 +5,7 @@ tags:
   - AI
   - Sakuracat
 categories:
-  - 手把手教程
-  - ChatGPT
-  - Sakuracat
+  - 技术教程
 abbrlink: 80f8b1da
 date: 2024-02-20 19:55:03
 ---

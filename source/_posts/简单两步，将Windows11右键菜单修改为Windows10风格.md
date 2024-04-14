@@ -1,10 +1,11 @@
 ---
 date: 2023-09-23 16:14
 title: 简单两步，将Windows11右键菜单修改为Windows10风格
-tags: Windows技术分享
+tags:
+  - Windows技术分享
 categories:
+  - 技术教程
   - Windows
-  - 系统设置
 abbrlink: 831f896e
 ---
 

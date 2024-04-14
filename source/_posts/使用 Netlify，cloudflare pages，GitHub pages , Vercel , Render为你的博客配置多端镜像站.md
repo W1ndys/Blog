@@ -8,8 +8,8 @@ tags:
   - Render
   - blog
 categories:
+  - 技术教程
   - Hexo
-  - 搭建
 abbrlink: fbbdb8eb
 date: 2024-03-01 22:00:37
 ---

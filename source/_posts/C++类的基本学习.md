@@ -1,10 +1,10 @@
 ---
 date: 2023-09-17 18:47
 title: C++类的基本学习
-tags: C++
+tags:
+  - C++
 categories:
   - C++
-  - 类
 abbrlink: a8f20fc2
 ---
 

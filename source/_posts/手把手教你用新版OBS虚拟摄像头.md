@@ -1,10 +1,11 @@
 ---
 date: 2023-12-10 20:30
 title: 手把手教你用新版OBS虚拟摄像头
-tags: 手把手教程系列
-categories:
-  - 手把手教程
+tags:
+  - 手把手教程系列
   - OBS
+categories:
+  - 技术教程
 abbrlink: f885f05a
 ---
 

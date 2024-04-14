@@ -3,10 +3,9 @@ date: 2023-11-11 21:50
 title: CTF学习日记（每天学点新东西，就是成功）
 tags:
   - CTF
-  - CTF学习日记
+  - CTF学习笔记
 categories:
   - CTF
-  - CTF学习日记
 abbrlink: cdf7e434
 ---
 

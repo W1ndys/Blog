@@ -6,8 +6,7 @@ tags:
   - Gemini-Pro
   - Claude-3
 categories:
-  - AI
-  - Poe-chat
+  - 技术教程
 abbrlink: e7a38f19
 date: 2024-03-29 16:35:02
 ---

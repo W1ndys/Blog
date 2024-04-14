@@ -1,10 +1,11 @@
 ---
 date: 2023-09-30 20:52
 title: Hexo博文中front-matter的用法
-tags: Hexo
+tags:
+  - Hexo
 categories:
   - Hexo
-  - 用法
+  - 文档
 abbrlink: 8217ff3e
 ---
 

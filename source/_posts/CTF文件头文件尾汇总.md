@@ -1,10 +1,12 @@
 ---
 date: 2023-12-09 14:25
 title: CTF文件头文件尾汇总
-tags: CTF
+tags:
+  - CTF
+  - Misc
 categories:
   - CTF
-  - MISC
+  - Misc
 abbrlink: 4db76617
 ---
 

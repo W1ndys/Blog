@@ -1,11 +1,11 @@
 ---
 date: 2023-10-01 15:03
-title: kali如何切换源
-tags: Linux
+title: Kali如何切换源
+tags:
+  - Linux
 categories:
   - Linux
   - kali
-  - 切换源
 abbrlink: 3073af94
 ---
 

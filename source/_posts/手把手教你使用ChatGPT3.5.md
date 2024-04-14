@@ -1,13 +1,11 @@
 ---
 date: 2023-12-21 23:34
 title: 手把手教你使用ChatGPT3.5
-tags: 
+tags:
   - 手把手教程
   - ChatGPT
 categories:
-  - 手把手教程
-  - ChatGPT
-  - AI
+  - 技术教程
 abbrlink: acc7bbca
 abstract: 输入任意内容回车查看解锁指引
 message: 输入任意内容回车查看解锁指引

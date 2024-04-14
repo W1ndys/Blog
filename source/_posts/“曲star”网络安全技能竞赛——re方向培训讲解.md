@@ -5,7 +5,7 @@ tags:
   - CTF
 categories:
   - CTF
-  - qfnuctf
+  - QFNUCTF
 abbrlink: 450391f2
 date: 2024-03-03 12:30:59
 ---

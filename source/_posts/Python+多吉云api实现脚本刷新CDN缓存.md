@@ -6,8 +6,8 @@ tags:
   - 多吉云
   - CDN
 categories:
-  - Hexo
-  - 多吉云CDN
+  - 技术教程
+  - 多吉云
 abbrlink: 51225c3e
 date: 2024-02-10 23:40:31
 ---

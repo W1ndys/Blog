@@ -5,9 +5,8 @@ tags:
   - Hexo
   - Typora-plugin
 categories:
+  - 技术教程
   - Typora
-  - Hexo
-  - Typora-plugin
 abbrlink: 979ed90f
 date: 2024-02-18 18:31:25
 ---

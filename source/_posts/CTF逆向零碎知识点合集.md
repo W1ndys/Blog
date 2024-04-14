@@ -1,10 +1,12 @@
 ---
 date: 2023-10-19 22:41
 title: CTF逆向零碎知识点合集
-tags: CTF
+tags:
+  - CTF
+  - Reverse
 categories:
   - CTF
-  - 逆向工程
+  - Reverse
 abbrlink: c1e61dd7
 ---
 
