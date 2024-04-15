@@ -14,30 +14,38 @@ cover: https://ts1.cn.mm.bing.net/th/id/R-C.aa5ec1661251ce3a8a572e5372963682?rik
 ## HW
 
 linux 系统
-首先查看一下基础信息
-netstat -ano/-a #查看端口情况
-uname -a #系统信息
-ps -aux ps -ef #进程信息
-cat /etc/passwd #用户情况
-ls /home/ #用户情况
+
+> 首先查看一下基础信息
+>
+> netstat -ano/-a #查看端口情况
+>
+> uname -a #系统信息
+>
+> ps -aux ps -ef #进程信息
+>
+> cat /etc/passwd #用户情况
+>
+> ls /home/ #用户情况
 
 查看日志文件
-/var/log/nginx/ #默认 Nginx 日志目录
-/var/log/apache/ #默认 Apache 日志目录
-/var/log/apache2/ #默认 Apache 日志目录
-/usr/local/tomcat/logs #Tomcat 日志目录
 
-tail -f xxx.log #实时刷新滚动日志文件
+> /var/log/nginx/ #默认 Nginx 日志目录
+> /var/log/apache/ #默认 Apache 日志目录
+> /var/log/apache2/ #默认 Apache 日志目录
+> /usr/local/tomcat/logs #Tomcat 日志目录
+
+`tail -f xxx.log` #实时刷新滚动日志文件
 
 通过命令查看可疑文件
-find /var/www/html -name _.php -mmin -20 #查看最近 20 分钟修改文件
-find ./ -name '_.php' | xargs wc -l | sort -u #寻找行数最短文件
-grep -r --include=_.php '[^a-z]eval($\_POST' /var/www/html #查包含关键字的 php 文件
-find /var/www/html -type f -name "_.php" | xargs grep "eval(" |more
+
+> find /var/www/html -name _.php -mmin -20 #查看最近 20 分钟修改文件
+> find ./ -name '_.php' | xargs wc -l | sort -u #寻找行数最短文件
+> grep -r --include=_.php '[^a-z]eval($\_POST' /var/www/html #查包含关键字的 php 文件
+> find /var/www/html -type f -name "_.php" | xargs grep "eval(" |more
 
 不死马查杀命令（只是临时解决方案，彻底解决请重启服务器）
 
-<?php system("kill -9 pid;rm -rf .shell.php"); ?>  #pid和不死马名称根据实际情况定
+`<?php system("kill -9 pid;rm -rf .shell.php"); ?> ` #pid和不死马名称根据实际情况定
 
 后门用户查杀：
 UID 大于 500 的都是非系统账号，500 以下的都为系统保留的账号，使用 userdel -r username 完全删除账户
@@ -355,7 +363,7 @@ Accept ： Accept: application/json, text/javascript, /; q=0.01
 Content-Type ：大量的 Content-type: Application/x-www-form-urlencoded
 User-Agent ： 随机的
 Port：端口通常在 49700 附近
-代码：webshell 固定代码，不同开发语言的 webshell 代码不同。如 $post=Decrypt(file_get_contents(“php://input”)); eval($post)
+代码：webshell 固定代码，不同开发语言的 webshell 代码不同。如 `$post=Decrypt(file_get_contents(“php://input”)); eval($post)`
 连接：冰蝎为了减少开销，默认使用长链接，请求头和响应头中会带有 Connection: Keep-Alive
 
 冰蝎流量特征
