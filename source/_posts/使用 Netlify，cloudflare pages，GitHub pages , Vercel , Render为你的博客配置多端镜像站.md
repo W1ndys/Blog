@@ -15,7 +15,7 @@ date: 2024-03-01 22:00:37
 cover: https://ts1.cn.mm.bing.net/th/id/R-C.15156de8ecdaca0e208f755572b5217b?rik=SCL92Je0wYHVXg&riu=http%3a%2f%2fheibanbai.com.cn%2fimg%2fhexo.png&ehk=VywdH%2f1oS1u8iXWWEm11T%2bm0ntJ9pczrqS%2bktzxU3Mo%3d&risl=&pid=ImgRaw&r=0
 ---
 
-# 使用 Netlify，cloudflare pages，GitHub pages , Vercel 部署你的 Hexo
+# 使用 Netlify，cloudflare pages，GitHub pages , Vercel, Render部署你的 Hexo
 
 Hexo 博客，在我从一开始的 GitHub pages 转到 Netlify，如今又搭建了 cloudflare，但万变不离其宗，我们没有服务器，没有经济实力支持服务器，于是选择静态部署平台，pages 给我们提供了很好的平台途径，我也是踩了不少的坑，下面将从 Netlify，cloudflare 讲解如何部署。
 
