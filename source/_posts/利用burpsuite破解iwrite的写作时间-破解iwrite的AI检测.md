@@ -6,7 +6,7 @@ tags:
   - burpsuite
 categories:
   - 技术教程
-cover: "https://t.mwm.moe/fj?20240416220230728"
+cover: "../img/iwrite/iwrite&bp.png"
 abbrlink: 4d6a074b
 date: 2024-04-16 22:02:30
 ---
