@@ -17,7 +17,7 @@ date: 2024-04-16 22:02:30
 
 这边需要注意的是，千万不要用[谷歌翻译](https://translate.google.cn/)，因为谷歌翻译的能力太强了，他会很高水平的还原你的作文，导致你无法降低判断出 AI 生成的可能性。直接用[百度翻译](https://fanyi.baidu.com/)就可以了。
 
-下面我以一篇ChatGPT生成的作文为例，来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”。
+下面我以一篇 ChatGPT 生成的作文为例，来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”。
 
 ### 原文
 
@@ -52,8 +52,6 @@ Fiscal regulation worsened the situation. In the first stage, financial difficul
 In addition, adaptability and toughness are necessary for the field of control. Refusal and failure are inevitable, and one's patience and determination are being tested. In addition, the balance of personal life and work life increases the complexity, and it sometimes causes fatigue.
 
 In short, the transition from academic to professional is full of challenges. But with patience, continuous learning and tough psychological conditions, graduates can overcome these obstacles and open up a profitable career for themselves.
-
-### 翻译成英文
 
 ![翻译之后](../img/iwrite/PixPin_2024-04-16_23-50-49.png)
 
