@@ -15,9 +15,9 @@ date: 2024-04-16 22:02:30
 
 先说方法总结: “谷歌翻译 20 次”
 
-这边需要注意的是，千万不要用[谷歌翻译](https://translate.google.cn/)，因为谷歌翻译的能力太强了，他会很高水平的还原你的作文，导致你无法降低判断出 AI 生成的可能性。直接用[百度翻译](https://fanyi.baidu.com/)就可以了。
+这边需要注意的是,千万不要用[谷歌翻译](https://translate.google.cn/),因为谷歌翻译的能力太强了,他会很高水平的还原你的作文,导致你无法降低判断出 AI 生成的可能性。直接用[百度翻译](https://fanyi.baidu.com/)就可以了。
 
-下面我以一篇 ChatGPT 生成的作文为例，来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”。
+下面我以一篇 ChatGPT 生成的作文为例,来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”。
 
 ### 原文
 
@@ -59,8 +59,99 @@ In short, the transition from academic to professional is full of challenges. Bu
 
 ### 成品
 
-![成品](../img/iwrite/image.png)
+![成品](../img/iwrite/../img/iwrite/PJ/image.png)
 
-待编辑
+> 首先你需要两个工具
+>
+> 时间戳转换工具: https://tool.lu/timestamp/
+>
+> burpsuite: https://portswigger.net/burp/download (这里只提供正版不提供学习版)
 
-时间戳转换工具：https://tool.lu/timestamp/
+### 步骤
+
+1. 打开 burpsuite,点击菜单栏中的 `代理`,打开`内置浏览器`
+
+2. 进入[iwrite 官网](https://iwrite.unipus.cn/login/),登录你的账号
+
+3. 进入写作页面
+
+   写上作文之后(其实可以直接复制,禁用 js 之后直接粘贴,怎么操作可以看我之前的[博客](/posts/9a26b151))
+
+   一定要出现`自动保存`的提示,不然不会保存到服务器
+
+   ![自动保存](../img/iwrite/PJ/image.png)
+
+4. 打开拦截
+
+   ![拦截](../img/iwrite/PJ/image-1.png)
+
+5. 点提交作文
+
+6. 查看请求包
+
+   一开始这个不用管,都是些班级,任务,学生信息之类的东西
+
+   ![这个不用管](../img/iwrite/PJ/image-2.png)
+
+   把这个包`放行`
+
+   ![放行请求包](../img/iwrite/PJ/image-3.png)
+
+   下面这个继续放行
+
+   ![继续放行](../img/iwrite/PJ/image-4.png)
+
+7. 修改请求包
+
+   到这里才是需要修改的东西,这里可以看到你写的作文题目和正文
+
+   ![真正的请求包](../img/iwrite/PJ/image-5.png)
+
+   我们需要修改的是时间戳,把它改成以前的时间,这样就能修改你的写作耗时
+
+   ```json
+   {
+     "studentId": 908508079,
+     "source": 0,
+     "savePattern": 0,
+     "taskId": 232395,
+     "title": "你的作文题目", // 这里应该是你写的作文题目
+     "article": "你的作文数据", // 这里应该是你写的作文正文
+     "simpleArticle": "你的作文数据", // 这里应该是你写的作文正文
+     "classId": 10155377, // 这里应该是你班级的 id
+     "startTime": 1713331204412, //这可能是代表的开始写作时间，但实际测试中发现，这个数据无法被利用修改
+     "words": 167, // 这里应该是你写的字数
+     "autoSaveReturnStartTime": 1713331204413 // 这里是需要修改的时间戳,把他改成以前的时间
+   }
+   ```
+
+   写作耗时的计算公式是：`现实的时间`-`autoSaveReturnStartTime`=`写作耗时`
+
+   PS：这里的写作词数也可以改
+
+   进入[时间戳转换工具](https://tool.lu/timestamp/)
+
+   我现在的时间是 2024 年 4 月 17 日 13:30:28
+
+   为了更明显一些我改成 2023 年 2023-04-17 13:30:00，对应的时间戳是 `1681709400000`
+
+   单词数我改成 `999`
+
+   修改之后放行
+
+   ![放行修改后的请求包](../img/iwrite/PJ/image-6.png)
+
+   继续放行
+
+#### 二次修改
+
+  
+   ![继续提交](../img/iwrite/PJ/image-7.png)
+
+   这里也要提交，跟之前一样，总共修改两次
+
+   修改完之后继续发包
+
+### 看成品
+
+![成品](../img/iwrite/PJ/image-8.png)
