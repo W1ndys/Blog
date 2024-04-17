@@ -59,7 +59,7 @@ In short, the transition from academic to professional is full of challenges. Bu
 
 ### 成品
 
-![成品](../img/iwrite/../img/iwrite/PJ/image.png)
+![成品](../img/iwrite/image.png)
 
 > 首先你需要两个工具
 >
