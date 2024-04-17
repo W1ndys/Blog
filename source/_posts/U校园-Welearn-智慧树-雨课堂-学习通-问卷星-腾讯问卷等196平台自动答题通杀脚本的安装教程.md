@@ -1,18 +1,17 @@
 ---
 abbrlink: 1ff200e1
 categories:
-- 技术教程
+  - 技术教程
 cover: https://t.mwm.moe/fj/?48
 date: 2024-03-07 19:26:05
 tags:
-- QFNU
-- 智慧树
-- 学习通
-- U校园
-- Welearn
-- 脚本
+  - QFNU
+  - 智慧树
+  - 学习通
+  - U校园
+  - Welearn
+  - 脚本
 title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等196平台自动答题通杀脚本的安装教程
-
 ---
 
 # U 校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等 196 平台自动答题通杀脚本的安装教程
@@ -40,7 +39,7 @@ title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等19
 
 ## 前排提醒
 
-<span style="color:#FF0000;"> 如果你觉得教程麻烦 </span>，可以联系→ [w1ndys@outlook.com](mailto:w1ndys@outlook.com)，几块钱（具体看题量）付费代刷题，但本人不对后果负任何责任
+<span style="color:#FF0000;"> 如果你觉得教程麻烦 </span>，可以联系 → [w1ndys@outlook.com](mailto:w1ndys@outlook.com)，几块钱（具体看题量）付费代刷题，但本人不对后果负任何责任
 
 本教程所用的脚本与教程编写者无任何关系，教程只是一个引导作用，实际出任何问题请联系脚本开发者
 
