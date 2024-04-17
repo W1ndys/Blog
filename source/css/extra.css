@@ -1,0 +1,5 @@
+/* 调整目录的圆角 */
+#aside-content #card-toc .toc-content .toc-link.active {
+    border-radius: 7px;
+    /* 可以根据需要调整圆角的大小 */
+}

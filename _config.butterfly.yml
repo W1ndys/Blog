@@ -1343,6 +1343,7 @@ inject:
     - <script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script>
     - <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
     - <link rel="stylesheet" type="text/css" href="/css/foot.css">
+    - <link rel="stylesheet" type="text/css" href="/css/extra.css">
   # jscss
 
   # - <link rel="stylesheet" href="/xxx.css">
