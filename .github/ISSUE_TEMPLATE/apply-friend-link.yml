@@ -46,7 +46,7 @@ body:
       label: 主题色
       description: 边框及鼠标悬停的背景颜色，允许设置渐变色
       options:
-        - default
+        - 默认
         - red
         - green
         - blue
