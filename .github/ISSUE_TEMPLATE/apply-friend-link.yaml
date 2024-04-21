@@ -39,4 +39,4 @@ body:
     attributes:
       label: 友链分组
       placeholder: 大佬的聚集地
-      description: 可自定义，非必填，默认为"大佬的聚集地"
+      description: 非必填，默认为"大佬的聚集地"，如果你是我的同学/朋友/师哥师姐，请填写
