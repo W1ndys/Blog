@@ -13,21 +13,21 @@ body:
     validations:
       required: true
   - type: input
-    id: url
+    id: link
     attributes:
       label: 站点地址
       placeholder: 站点地址
     validations:
       required: true
   - type: input
-    id: word
+    id: descr
     attributes:
       label: 站点描述
       placeholder: 这是站点描述
     validations:
       required: true
   - type: input
-    id: logo
+    id: avatar
     attributes:
       label: 站点图标或个人头像
       description: 站点图标或个人头像
