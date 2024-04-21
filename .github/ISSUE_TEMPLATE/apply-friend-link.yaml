@@ -1,6 +1,6 @@
-name: 申请友链
+name: 友链申请
 description: 申请 https://blog.w1ndys.top 的友链，请先把本站加为友链
-title: "申请友链: "
+title: "友链申请: "
 labels: ["友链申请"]
 assignees:
   - W1ndys # 这里改成你的GitHub ID
