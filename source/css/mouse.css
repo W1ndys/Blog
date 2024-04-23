@@ -1,0 +1,42 @@
+/* 设置页面的鼠标样式 */
+
+/* 默认鼠标样式 */
+html,
+body {
+	cursor: url(/img/mouse/default.png), auto;
+	/* 默认指针 */
+}
+
+
+/* 所有链接 */
+a[href] {
+	cursor: url(/img/mouse/link.png), auto !important;
+	/* 链接指针 */
+}
+
+
+/* 代码复制按钮 */
+.copy-btn.copy-btn-light {
+	cursor: url(/img/mouse/link.png), auto;
+	/* 链接指针 */
+}
+
+/* 按钮 */
+button[class] {
+	cursor: url(/img/mouse/link.png), auto !important;
+	/* 链接指针 */
+}
+
+/* 补充按钮 */
+svg {
+	cursor: url(/img/mouse/link.png), auto !important;
+	/* 链接指针 */
+}
+
+
+
+/* 代码复制键 */
+.icon-copy:before {
+	cursor: url(/img/mouse/link.png), auto !important;
+	/* 链接指针 */
+}
