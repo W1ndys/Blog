@@ -12,7 +12,7 @@ abbrlink: fa88f28c
 date: 2024-04-30 23:25:19
 ---
 
-There is another Chinese translation for this article：https://blog.w1ndys.com/posts/512a6b20
+There is another Chinese translation for this article：https://blog.w1ndys.top/posts/512a6b20
 
 ## Question background.
 

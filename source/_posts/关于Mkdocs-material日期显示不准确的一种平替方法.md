@@ -12,7 +12,7 @@ abbrlink: 512a6b20
 date: 2024-04-30 23:25:19
 ---
 
-本文另有英文版：https://blog.w1ndys.com/posts/fa88f28c
+本文另有英文版：https://blog.w1ndys.top/posts/fa88f28c
 
 ## 问题背景
 
