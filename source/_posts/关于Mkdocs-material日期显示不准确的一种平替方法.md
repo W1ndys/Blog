@@ -1,10 +1,18 @@
 ---
-title: "关于Mkdocs-material日期显示不准确的一种平替方法"
-tags: [Mkdocs, material, Python, Vercel]
-categories: [技术教程]
+title: 关于Mkdocs-material日期显示不准确的一种平替方法
+tags:
+  - Mkdocs
+  - material
+  - Python
+  - Vercel
+categories:
+  - 技术教程
+cover: 'https://img2.imgtp.com/2024/05/01/w6bIr0g4.png'
+abbrlink: 512a6b20
 date: 2024-04-30 23:25:19
-cover: https://t.mwm.moe/fj?20240430232519475
 ---
+
+本文另有英文版：https://blog.w1ndys.com/posts/fa88f28c
 
 ## 问题背景
 
