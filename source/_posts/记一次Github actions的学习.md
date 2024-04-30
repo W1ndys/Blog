@@ -1,5 +1,5 @@
 ---
-title: 记一次Github actions的学习——AI代替不了人类！
+title: 记一次Github actions的学习
 tags:
   - ChatGPT
   - Github
@@ -10,3 +10,5 @@ cover: 'https://t.mwm.moe/fj?20240429173412159'
 abbrlink: dce14753
 date: 2024-04-29 17:34:12
 ---
+
+## 前言
