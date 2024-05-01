@@ -1,31 +1,26 @@
-# 定义一个名为 Pages 的动作
-name: Pages
+name: Hexo Deploy
 
-# 当有一个新的推送（push）到名为 main 的分支时，执行部署任务
 on:
   push:
     branches:
       - main
 
-# 定义一个名为 build-and-deploy 的 job
 jobs:
-  build-and-deploy:
-    # 在 Ubuntu 最新版本上运行此 job
-    runs-on: ubuntu-latest
-    steps:
-      # 检出 hexooo 分支的代码
-      - name: Checkout code from hexo branch
-        uses: actions/checkout@v4
-        with:
-          ref: main
+  build:
+    runs-on: ubuntu-18.04
+    if: github.event.repository.owner.id == github.event.sender.id
 
-      # 设置 Node.js 20.x 版本
-      - name: Set up Node.js 20.x
-        uses: actions/setup-node@v2
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
           node-version: "20"
 
-      # 使用环境变量 ACTION_DEPLOY_KEY 部署到主分支
       - name: Setup Hexo
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
@@ -35,21 +30,11 @@ jobs:
           chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name "W1ndys"
-          git config --global user.email "w1ndys@outlook.com"
+          git config --global user.email "john@doe.com"
+          git config --global user.name "John Doe"
           npm install hexo-cli -g
           npm install
 
-      # 缓存 NPM 依赖
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-
-      # 部署
       - name: Deploy
         run: |
           hexo clean
