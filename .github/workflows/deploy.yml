@@ -1,17 +1,26 @@
-name: Hexo Deploy
+name: Hexo Deployment
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '**/README.md' # 排除README.md等文件
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '20.x'
-      - run: npm install
-      - run: npm run deploy
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Configure SSH Key
+      run: |
+        mkdir -p ~/.ssh
+        echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+    - name: Run Deployment Script
+      run: sh deploy.sh
