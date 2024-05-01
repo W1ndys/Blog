@@ -18,13 +18,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          persist-credentials: false
-
-      # 设置 Git 用户信息
-      - name: Set up Git user information
-        run: |
-          git config --global user.name "W1ndys"
-          git config --global user.email "w1ndys@outlook.com"
 
       # 设置 Node.js 20.x 版本
       - name: Set up Node.js 20.x
@@ -32,10 +25,19 @@ jobs:
         with:
           node-version: "20"
 
-      # 全局安装 Hexo
-      - name: Install Hexo globally
+      # 使用环境变量 ACTION_DEPLOY_KEY 部署到主分支
+      - name: Setup Hexo
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
-          npm install -g hexo-cli
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "W1ndys"
+          git config --global user.email "w1ndys@outlook.com"
+          npm install hexo-cli -g
           npm install
 
       # 缓存 NPM 依赖
@@ -46,17 +48,6 @@ jobs:
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-node-
-
-      # 使用环境变量 ACTION_DEPLOY_KEY 部署到主分支
-      - name: Deploy to main branch
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       # 部署
       - name: Deploy
