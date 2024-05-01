@@ -45,12 +45,15 @@ jobs:
             ${{ runner.OS }}-node-
 
       # 配置 SSH 密钥
-      - name: Configure SSH Key
+      - name: Deploy to main branch
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
         run: |
-          mkdir -p ~/.ssh
-          echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Run Deployment
         run: hexo clean && hexo generate && hexo deploy
