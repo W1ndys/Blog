@@ -29,6 +29,12 @@ jobs:
         run: |
           npm install -g hexo-cli
           npm install
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "w1ndys@outlook.com"
+          git config --global user.name "W1ndys"
+
       # 缓存 NPM 依赖
       - name: Cache NPM dependencies
         uses: actions/cache@v2
