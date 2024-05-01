@@ -31,8 +31,3 @@ hexo deploy
 # 输出提示信息
 printf "${GREEN}INFO ${RESET} 部署完成，您的网站已经是最新版本！\n"
 
-# 输出提示信息
-printf "${GREEN}INFO ${RESET} 按 Enter 键退出\n"
-
-# 等待用户按下 Enter 键
-read -r
