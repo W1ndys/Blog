@@ -129,13 +129,12 @@ ignore:
 theme: butterfly
 
 # Deployment
-# 海克斯上传法这边已经弃用了
-## Docs: https://hexo.io/docs/one-command-deployment
-# deploy:
-#   type: git
-#   repo:
-#     github: https://github.com/W1ndys/w1ndys.github.io.git
-#   branch: master
+# Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo:
+    github: git@github.com:W1ndys/Blog.git
+  branch: gh-pages
 
 markdown:
   render:
