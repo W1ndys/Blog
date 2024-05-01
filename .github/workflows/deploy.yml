@@ -6,27 +6,27 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**/README.md' # 排除 README.md 等文件
-      - '**/.github/**' # 排除 .github 目录及其子目录
-      - '**/LICENSE' # 排除 LICENSE 文件
+      - "**/README.md" # 排除 README.md 等文件
+      # - "**/.github/**" # 排除 .github 目录及其子目录
+      - "**/LICENSE" # 排除 LICENSE 文件
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Configure SSH Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - name: Configure SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-    - name: Run Deployment Script
-      run: sh deploy.sh
+      - name: Run Deployment
+        run: hexo clean && hexo generate && hexo deploy
