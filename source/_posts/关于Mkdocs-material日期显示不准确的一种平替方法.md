@@ -14,6 +14,8 @@ date: 2024-04-30 23:25:19
 
 本文另有英文版：https://blog.w1ndys.top/posts/fa88f28c
 
+<font color="red">注意：</font>更高效的方法：https://github.com/squidfunk/mkdocs-material/discussions/7135#discussioncomment-9277842
+
 ## 问题背景
 
 在一次部署到 Vercel 之后，发现日期显示不准确。我向社区求助，详情可见：https://github.com/squidfunk/mkdocs-material/discussions/6924/，最后发现是 Vercel 并不支持此操作，于是我经过长达两周的测试，找到了一种平替的解决方案

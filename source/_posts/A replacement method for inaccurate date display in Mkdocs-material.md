@@ -14,6 +14,8 @@ date: 2024-04-30 23:25:19
 
 There is another Chinese translation for this article：https://blog.w1ndys.top/posts/512a6b20
 
+<font color="red">Note:</font>A more efficient approach:https://github.com/squidfunk/mkdocs-material/discussions/7135#discussioncomment-9277842
+
 ## Question background.
 
 After a deployment to Vercel, the date display was found to be inaccurate.
