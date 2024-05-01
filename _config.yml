@@ -132,8 +132,7 @@ theme: butterfly
 # Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo:
-    github: git@github.com:W1ndys/Blog.git
+  repository: https://github.com/W1ndys/Blog.git
   branch: gh-pages
 
 markdown:
@@ -170,7 +169,7 @@ feed:
   hub:
   content:
   content_limit: 140
-  content_limit_delim: ' '
+  content_limit_delim: " "
   order_by: -date
   icon: icon.png
   autodiscovery: true
