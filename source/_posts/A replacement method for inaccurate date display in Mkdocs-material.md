@@ -43,6 +43,10 @@ import datetime
 import os
 import requests
 
+# Constants
+modification_date_pattern = r':material-clock-edit-outline:{ title="Modification date" } (\d{4}-\d{2}-\d{2})'
+creation_date_pattern = r':material-clock-plus-outline:{ title="Creation date" } (\d{4}-\d{2}-\d{2})'
+
 # Get the create and update time of the file from the repository
 def get_github_file_info(repo_owner, repo_name, file_path, github_token):
     api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/commits?path={file_path}"
@@ -76,78 +80,49 @@ def update_markdown_files(dir_path, exclude_paths, repo_owner, repo_name, github
             file_path = os.path.join(root, file)
 
             # Exclude files that do not need to be updated
-            if file_path in exclude_paths:
-                print(f"Skipping excluded file：{file_path}")
+            if file_path in exclude_paths or not file.endswith(".md"):
+                print(f"Skipping excluded file: {file_path}")
                 continue
 
-            # Only update Markdown files
-            if file.endswith(".md"):
-                file_path = file_path.replace("\\", "/")  # The path separator is unified as /
-                relative_path = get_relative_path_from_docs(file_path) # Get the relative path of the file from the docs directory
-                if relative_path is None:
-                    print(f"Skipping non-docs file：{file_path}")
-                    continue
-                create_time, update_time = get_github_file_info(
-                    repo_owner, repo_name, relative_path, github_token
-                )
-                print("-----------------------------------------------------------")
-                print(f"Now processing file：{relative_path}\n")
-                print(f"Create date:{create_time}，Update date:{update_time}\n")
+            file_path = file_path.replace("\\", "/")  # The path separator is unified as /
+            relative_path = get_relative_path_from_docs(file_path) # Get the relative path of the file from the docs directory
+            if relative_path is None:
+                print(f"Skipping non-docs file: {file_path}")
+                continue
+            
+            create_time, update_time = get_github_file_info(
+                repo_owner, repo_name, relative_path, github_token
+            )
+            print("-----------------------------------------------------------")
+            print(f"Now processing file: {relative_path}\n")
+            print(f"Create date: {create_time}, Update date: {update_time}\n")
 
-                # Get the date information from the Markdown file of the repository
-                if create_time is None or update_time is None:
-                    print(f"{file_path} No submission record found, skipping")
-                    continue
-                with open(file_path, "r+", encoding="utf-8") as f:
-                    lines = f.readlines()
-                    has_update_date = False
-                    has_create_date = False
-                    for line in lines:
-                        if re.match(
-                            r':material-clock-edit-outline:{ title="Modification date" } \d{4}-\d{2}-\d{2}',
-                            line.strip(),
-                        ):
-                            has_update_date = True
-                        elif re.match(
-                            r':material-clock-plus-outline:{ title="Creation date" } \d{4}-\d{2}-\d{2}',
-                            line.strip(),
-                        ):
-                            has_create_date = True
-
-                    # If there is already a date, update it
-                    if has_update_date and has_create_date:
-                        for i in range(len(lines)):
-                            if re.match(
-                                r':material-clock-edit-outline:{ title="Modification date" } \d{4}-\d{2}-\d{2}',
-                                lines[i].strip(),
-                            ):
-                                if (
-                                    lines[i].strip()
-                                    == f':material-clock-edit-outline:{{ title="Modification date" }} {update_time}'
-                                ):
-                                    print(f"{file_path} The date is up to date.")
-                                    break
-                                else:
-                                    lines[i] = (
-                                        f':material-clock-edit-outline:{{ title="Modification date" }} {update_time}\n'
-                                    )
-                                    f.seek(0)
-                                    f.writelines(lines)
-                                    print(
-                                        f"{file_path} The date has been modified, and the modified date is:{update_time}"
-                                    )
-                                    break
-                    # If there is no date, add it to the end of the file
-                    else:
-                        lines.extend(
-                            [
-                                f'\n\n---\n\n:material-clock-edit-outline:{{ title="Modification date" }} {update_time}\n:material-clock-plus-outline:{{ title="Creation date" }} {create_time}\n'
-                            ]
-                        )
-                        f.seek(0)
-                        f.writelines(lines)
-                        print(f"{file_path} No date, added")
-                print("-----------------------------------------------------------")
+            # Get the date information from the Markdown file of the repository
+            if create_time is None or update_time is None:
+                print(f"{file_path} No submission record found, skipping")
+                continue
+            with open(file_path, "r+", encoding="utf-8") as f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
+                    line = line.strip()
+                    result = re.search(modification_date_pattern, line)
+                    if result:
+                        current_date = result.groups(1)[0]
+                        if current_date == update_time:
+                            print(f"{file_path} The date is up to date.")
+                            break
+                        else:
+                            lines[i] = f':material-clock-edit-outline:{{ title="Modification date" }} {update_time}\n'
+                            f.seek(0)
+                            f.writelines(lines)
+                            print(f"{file_path} The date has been modified, and the modified date is: {update_time}")
+                            break
+                else:
+                    lines.append(f'\n\n---\n\n:material-clock-edit-outline:{{ title="Modification date" }} {update_time}\n:material-clock-plus-outline:{{ title="Creation date" }} {create_time}\n')
+                    f.seek(0)
+                    f.writelines(lines)
+                    print(f"{file_path} No date, added")
+            print("-----------------------------------------------------------")
 
 
 if __name__ == "__main__":
@@ -164,6 +139,7 @@ if __name__ == "__main__":
     github_token = os.environ.get("GITHUB_TOKEN")
 
     update_markdown_files(docs_dir, exclude_paths, repo_owner, repo_name, github_token)
+
 ```
 
 ### GitHub Actions
