@@ -1,22 +1,30 @@
-name: Hexo Deployment
+# 定义一个名为 Pages 的动作
+name: Pages
 
+# 当有一个新的推送（push）到名为 main 的分支时，执行部署任务
 on:
-  workflow_dispatch: # 手动触发
   push:
     branches:
       - main
-    paths-ignore:
-      - "**/README.md" # 排除 README.md 等文件
-      # - "**/.github/**" # 排除 .github 目录及其子目录
-      - "**/LICENSE" # 排除 LICENSE 文件
 
+# 定义一个名为 build-and-deploy 的 job
 jobs:
-  deploy:
+  build-and-deploy:
+    # 在 Ubuntu 最新版本上运行此 job
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      # 检出 hexooo 分支的代码
+      - name: Checkout code from hexo branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      # 设置 Git 用户信息
+      - name: Set up Git user information
+        run: |
+          git config --global user.name "W1ndys"
+          git config --global user.email "w1ndys@outlook.com"
 
       # 设置 Node.js 20.x 版本
       - name: Set up Node.js 20.x
@@ -30,11 +38,6 @@ jobs:
           npm install -g hexo-cli
           npm install
 
-      - name: Configure Git User
-        run: |
-          git config --global user.email "w1ndys@outlook.com"
-          git config --global user.name "W1ndys"
-
       # 缓存 NPM 依赖
       - name: Cache NPM dependencies
         uses: actions/cache@v2
@@ -44,7 +47,7 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
 
-      # 配置 SSH 密钥
+      # 使用环境变量 ACTION_DEPLOY_KEY 部署到主分支
       - name: Deploy to main branch
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
@@ -55,5 +58,9 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - name: Run Deployment
-        run: hexo clean && hexo generate && hexo deploy
+      # 部署
+      - name: Deploy
+        run: |
+          hexo clean
+          hexo generate
+          hexo deploy
