@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**/README.md' # 排除README.md等文件
+      - '**/README.md' # 排除 README.md 等文件
+      - '**/.github/**' # 排除 .github 目录及其子目录
+      - '**/LICENSE' # 排除 LICENSE 文件
 
 jobs:
   deploy:
@@ -14,6 +16,9 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
 
     - name: Configure SSH Key
       run: |
