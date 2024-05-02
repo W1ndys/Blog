@@ -1,11 +1,8 @@
 ---
 title: 友情链接
-date: 2018-06-07 22:17:49 
-type: "link" 
-
+date: 2018-06-07 22:17:49
+type: "link"
 ---
-
-
 
 ### 友链申请标准
 
@@ -23,16 +20,16 @@ type: "link"
 #### 法一（Pull request）（有 Github 基础的推荐用此方法）
 
 1. 在您的博客中添加本博客的友链，并在申请时提供友链位置。
-2. 点击进入链接[在GitHub编辑↗️](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml)
+2. 点击进入链接[在 GitHub 编辑 ↗️](https://github.com/W1ndys/blog.w1ndys.top/blob/main/source/_data/link.yml)
 3. 阅读页面开头的说明
 4. 在相应位置填写你的友链配置参数，提交 pr 等待合并
 5. 请注意查看注释的添加须知
 
 #### 法二（评论）
 
-2024年3月17日我已经开启了博客Giscus评论，您可以直接在评论区添加友链。
+2024 年 3 月 17 日我已经开启了博客 Giscus 评论，您可以直接在评论区添加友链。
 
-评论区支持Markdown语法。
+评论区支持 Markdown 语法。
 
 #### 法三（问卷）
 
@@ -50,12 +47,13 @@ type: "link"
 下面是我的友链信息，您可以直接复制添加
 
 {% tabs link %}
+
 <!-- tab butterfly -->
 
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: https://blog.w1ndys.top/img/about/avatar.png
+  avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -65,11 +63,11 @@ type: "link"
 
 ```yml
 - {
-      title: 'W1ndysの小屋',
-      intro: '欲戴皇冠，必承其重',
-      link: 'https://blog.w1ndys.top/',
-      avatar: 'https://blog.w1ndys.top/img/about/avatar.png'
-    }
+    title: "W1ndysの小屋",
+    intro: "欲戴皇冠，必承其重",
+    link: "https://blog.w1ndys.top/",
+    avatar: "https://avatars.githubusercontent.com/u/109416673?v=4",
+  }
 ```
 
 <!-- endtab -->
@@ -79,7 +77,7 @@ type: "link"
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: https://blog.w1ndys.top/img/about/avatar.png
+  avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -90,7 +88,7 @@ type: "link"
 ```yml
 - name: W1ndysの小屋
   link: https://blog.w1ndys.top/
-  avatar: https://blog.w1ndys.top/img/about/avatar.png
+  avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
 ```
 
@@ -98,14 +96,14 @@ type: "link"
 
 <!-- tab  🌴General-->
 
-| 名称       | 数值                                          |
-| ---------- | --------------------------------------------- |
-| 站点名称   | W1ndys の小屋                                 |
-| 站点链接   | https://blog.w1ndys.top/                      |
-| 站长头像   | https://blog.w1ndys.top/img/about/avatar.png  |
-| 站点描述   | 欲戴皇冠，必承其重                            |
-| 站点关键词 | W1ndys, 个人博客， 生活，技术，网络安全，道观 |
-| 站点主题色 | #49B1F5                                       |
+| 名称       | 数值                                                  |
+| ---------- | ----------------------------------------------------- |
+| 站点名称   | W1ndys の小屋                                         |
+| 站点链接   | https://blog.w1ndys.top/                              |
+| 站长头像   | https://avatars.githubusercontent.com/u/109416673?v=4 |
+| 站点描述   | 欲戴皇冠，必承其重                                    |
+| 站点关键词 | W1ndys, 个人博客， 生活，技术，网络安全，道观         |
+| 站点主题色 | #49B1F5                                               |
 
 <!-- endtab -->
 
