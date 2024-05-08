@@ -1,5 +1,5 @@
 ---
-title: '网络安全实验报告7--慢 DDos 拒绝服务攻击'
+title: '网络安全实验报告7——慢 DDos 拒绝服务攻击'
 categories:
   - QFNU
   - 网络安全
