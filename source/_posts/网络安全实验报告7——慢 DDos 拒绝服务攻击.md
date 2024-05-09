@@ -1,5 +1,5 @@
 ---
-title: '网络安全实验报告7——慢 DDos 拒绝服务攻击'
+title: 网络安全实验报告7——慢 DDos 拒绝服务攻击
 categories:
   - QFNU
   - 网络安全
@@ -9,8 +9,9 @@ tags:
   - DDoS攻击
   - Java
   - QFNU
+cover: 'https://www.xinruiyun.cn/ms-mcms/upload/1/editor/1564027475603.png'
+abbrlink: dadf3090
 date: 2024-05-08 10:30:32
-cover: https://www.xinruiyun.cn/ms-mcms/upload/1/editor/1564027475603.png
 ---
 
 ## 安装 Java 环境
