@@ -97,10 +97,10 @@
       avatar: https://strongwillpro.oss-cn-beijing.aliyuncs.com/img/QQ%E5%9B%BE%E7%89%8720240111033823.jpg
       descr: 堃门！
 
-    - name: 阿秀的学习笔记
-      link: https://interviewguide.cn/
-      avatar: https://interviewguide.cn/images/personal/logo.png
-      descr: 职场多年的计算机自学总结，包括但不限计算机基础知识、算法、前端后端、校招&社招、互联网一线大厂中的工作体验等记录，坚持学习，持续成长！
+   # - name: 阿秀的学习笔记
+    #  link: https://interviewguide.cn/
+     # avatar: https://interviewguide.cn/images/personal/logo.png
+      #descr: 职场多年的计算机自学总结，包括但不限计算机基础知识、算法、前端后端、校招&社招、互联网一线大厂中的工作体验等记录，坚持学习，持续成长！
 
     - name: 茕茕の博客
       link: https://zhf521.github.io/MyBlog/
