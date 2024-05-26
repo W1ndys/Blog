@@ -6,6 +6,8 @@ comments: true
 layout: about
 ---
 
+本人个人博客始于 2023-08-22 18:48:55
+
 <center> <font color='red'>“欲戴皇冠，必承其重”  </font> </center> <br/>
 
 当有人赋予你`神`的帽子时，你就该考虑怎么带上这顶帽子，怎么让这顶帽子在你的头上稳住，不会掉下。
