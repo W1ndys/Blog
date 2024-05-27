@@ -1,15 +1,16 @@
 ---
 abbrlink: 450391f2
 categories:
-- CTF
-- QFNUCTF
+  - CTF
+  - QFNUCTF
 cover: https://t.mwm.moe/fj/?57
 date: 2024-03-03 12:30:59
 tags:
-- QFNU
-- CTF
+  - QFNU
+  - CTF
 title: “曲star”网络安全技能竞赛——re方向培训讲解
-
+password: QFNUCTF
+message: 密码：QFNUCTF
 ---
 
 # “曲 star”网络安全技能竞赛——re 方向培训讲解
@@ -24,7 +25,7 @@ title: “曲star”网络安全技能竞赛——re方向培训讲解
 
 ## re 有什么
 
-> 内容来自 hello-CTF	
+> 内容来自 hello-CTF
 
 逆向类题目是 CTF 中难度相对较高的题型，现已覆盖 Windows 逆向、Linux 逆向和 Android 逆向，再加上 Flash 逆向、Python 逆向、.NET 逆向、ARM 逆向等。
 
@@ -57,9 +58,7 @@ CTF 中给出的题目常见形式有 ELF 文件、exe 文件、dll 文件等。
 
 请看 VCR
 
-
-
-IDA快捷键
+IDA 快捷键
 
 https://www.jianshu.com/p/64d184272630#/
 
