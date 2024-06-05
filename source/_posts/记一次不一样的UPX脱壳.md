@@ -1,9 +1,16 @@
 ---
-title: "记一次不一样的UPX脱壳"
-tags: [UPX, 脱壳, 逆向工程, CTF]
-categories: [CTF, Reverse]
+title: 记一次不一样的UPX脱壳
+tags:
+  - UPX
+  - 脱壳
+  - 逆向工程
+  - CTF
+categories:
+  - CTF
+  - Reverse
+cover: 'https://t.mwm.moe/fj?20240601164618157'
+abbrlink: 44452f5b
 date: 2024-06-01 16:46:18
-cover: https://t.mwm.moe/fj?20240601164618157
 ---
 
 # 记一次不一样的 UPX 脱壳
