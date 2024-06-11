@@ -3,7 +3,6 @@ title: 关于我
 date: 2023-08-22 20:13:41
 type: "about"
 comments: true
-layout: about
 ---
 
 看了 LilRan 大佬的博客，觉得博客的关于不应该如此繁杂，有时间得重新写一下这个页面了。
