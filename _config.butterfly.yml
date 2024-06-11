@@ -17,7 +17,7 @@ nav:
 # 默认子目录是展开的，如果你想要隐藏，在子目录里添加 hide 。清单||fa fa-heartbeat||hide
 # 注意： 导航的文字可自行更改
 menu:
-  首页: /#/ || fas fa-home
+  首页: / || fas fa-home
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
@@ -29,8 +29,8 @@ menu:
     笔墨迹: https://blogscn.fun/random.html || fas fa-pen
     博客圈: https://bokequan.cn/?suiji || fas fa-car
   项目||fa fa-pencil:
-    选课指北: /posts/216d9006#/ || fa fa-arrow-up
-    速通指南: /posts/8f8bbaa8#/ || fa fa-arrow-down
+    选课指北: /posts/216d9006 || fa fa-arrow-up
+    速通指南: /posts/8f8bbaa8 || fa fa-arrow-down
   关于: /about/ || fas fa-heart
   主页: https://w1ndys.top/ || fas fa-bed
   导航页: https://nav.w1ndys.top/ || fas fa-map
