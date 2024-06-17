@@ -66,7 +66,7 @@ favicon: /img/about/icon.jpg
 # Avatar (头像)
 # https://butterfly.js.org/posts/4aa8abbe/#%E9%A0%AD%E5%83%8F
 avatar:
-  img: /img/about/avatar.png
+  img: https://avatars.githubusercontent.com/u/109416673?v=4
   effect: false
 
 # 顶部图
