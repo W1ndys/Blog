@@ -34,7 +34,13 @@ title: Sakuracat注册使用教程
 
 点击下方任意链接跳转注册界面↓（有进不去的换一个）
 
-<span style="font-size:1.3em;"> [链接 1](https://sakuracat.shop/user/#/register?code=Fo7cS2WA)          [链接 2](https://sakuracat-cdn02.com/user/#/register?code=Fo7cS2WA)             [链接 3](https://sakuracat-cdn01.com/user/#/register?code=Fo7cS2WA)          [链接 4](https://sakuracat-004.com/user/#/register?code=Fo7cS2WA)          [链接 5](https://sakuracat-003.com/user/#/register?code=Fo7cS2WA)         [链接 6](https://sakuracat-b.com/user/#/register?code=Fo7cS2WA)          [链接 7](https://sakuracat-a.com/user/#/register?code=Fo7cS2WA) </span>
+- [链接 1](https://sakuracat.shop/user/#/register?code=Fo7cS2WA)
+- [链接 2](https://sakuracat-cdn02.com/user/#/register?code=Fo7cS2WA)
+- [链接 3](https://sakuracat-cdn01.com/user/#/register?code=Fo7cS2WA)
+- [链接 4](https://sakuracat-004.com/user/#/register?code=Fo7cS2WA)
+- [链接 5](https://sakuracat-003.com/user/#/register?code=Fo7cS2WA)
+- [链接 6](https://sakuracat-b.com/user/#/register?code=Fo7cS2WA)
+- [链接 7](https://sakuracat-a.com/user/#/register?code=Fo7cS2WA)
 
 输入邮箱密码注册账号，注册完成后登陆
 
