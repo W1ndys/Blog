@@ -34,15 +34,15 @@
 - class_name: 漫漫求学路，同窗夜下读
   class_desc: 大佬们的聚集地
   link_list:
-    - name: 曲阜师范大学
-      link: https://www.qfnu.edu.cn/
-      avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
-      descr: 学而不厌，诲人不倦
+  #   - name: 曲阜师范大学
+  #     link: https://www.qfnu.edu.cn/
+  #     avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
+  #     descr: 学而不厌，诲人不倦
 
-    - name: 曲阜师范大学网络空间安全学院
-      link: https://cyber.qfnu.edu.cn/
-      avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
-      descr: 以梦为码，不负韶华
+  #   - name: 曲阜师范大学网络空间安全学院
+  #     link: https://cyber.qfnu.edu.cn/
+  #     avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
+  #     descr: 以梦为码，不负韶华
 
     - name: Naiteiy'blog
       link: https://www.naiteiy.site/
