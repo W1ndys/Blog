@@ -1,7 +1,7 @@
 ---
 title: 一句话
 date: 2024-06-11 18:22:00
-type: "posts"
+type: "post"
 comments: true
 ---
 
