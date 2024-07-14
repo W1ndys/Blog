@@ -34,21 +34,21 @@
 - class_name: 漫漫求学路，同窗夜下读
   class_desc: 大佬们的聚集地
   link_list:
-  #   - name: 曲阜师范大学
-  #     link: https://www.qfnu.edu.cn/
-  #     avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
-  #     descr: 学而不厌，诲人不倦
+    #   - name: 曲阜师范大学
+    #     link: https://www.qfnu.edu.cn/
+    #     avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
+    #     descr: 学而不厌，诲人不倦
 
-  #   - name: 曲阜师范大学网络空间安全学院
-  #     link: https://cyber.qfnu.edu.cn/
-  #     avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
-  #     descr: 以梦为码，不负韶华
+    #   - name: 曲阜师范大学网络空间安全学院
+    #     link: https://cyber.qfnu.edu.cn/
+    #     avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
+    #     descr: 以梦为码，不负韶华
 
     - name: Naiteiy'blog
       link: https://www.naiteiy.site/
       avatar: https://q1.qlogo.cn/g?b=qq&nk=1820031511&s=640
       descr: 🍃风带来故事的种子📖 ⌚时间使之发芽🌱
-      
+
     - name: 尔康康康康
       link: https://erkangkang.top/
       avatar: https://erkangkang.top/img/red.jpg#/
@@ -132,10 +132,10 @@
       avatar: https://q1.qlogo.cn/g?b=qq&nk=3039375674&s=640
       descr: Liu✌🏻Liu✌🏻带我走吧
 
-    - name: 一清✌🏻
+    - name: 一清
       link: http://www.yiqing.asia/
       avatar: https://q1.qlogo.cn/g?b=qq&nk=2383170770&s=640
-      descr: 一清✌🏻一清佬呜呜呜带带
+      descr: 密码的神
 
     - name: Asteri5m
       link: https://asteri5m.icu/
