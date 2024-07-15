@@ -16,7 +16,7 @@ email: w1ndys@outlook.com
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://blog.w1ndys.top
 ## permalink: :year/:month/:day/:title/
-permalink: posts/:abbrlink.html # 此处可以自己设置
+permalink: posts/:abbrlink # 此处可以自己设置
 permalink_defaults: permalink_defaults
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
