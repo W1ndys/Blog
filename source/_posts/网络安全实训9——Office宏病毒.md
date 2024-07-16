@@ -44,6 +44,10 @@ ifconfig eth0
 
 新建配置文件，连接 CS 服务器 
 
+```
+java -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar
+```
+
 admin
 
 user
@@ -68,7 +72,7 @@ user
 
 - HTML Application（生成 **hta** HTML 应用程序）
 
-### 生成hta文件 （木马文件）
+### 生成 hta 文件 （木马文件）
 
 ![image-20240715090201960](../img/zuolao/9/image-20240715090201960.png)
 
@@ -88,7 +92,7 @@ user
 
 当有目标主机以任何方式运行了生成的被控端，出现在主机列表。
 
-选中要操作的目标主机 **->** 鼠标右键 **->** 进入beacon（交互命令界面），在此使用 Beacon Commands对目标主机执行各种操作。
+选中要操作的目标主机 **->** 鼠标右键 **->** 进入 beacon（交互命令界面），在此使用 Beacon Commands 对目标主机执行各种操作。
 
 ![image-20240715094102087](../img/zuolao/9/image-20240715094102087.png)
 
@@ -98,7 +102,7 @@ user
 
 ![image-20240715094210812](../img/zuolao/9/image-20240715094210812.png)
 
-查看IP
+查看 IP
 
 ![image-20240715094242078](../img/zuolao/9/image-20240715094242078.png)
 
@@ -112,7 +116,7 @@ user
 
 ### 生成后门木马 - Office 宏病毒
 
-##### **创建**Office 宏病毒 代码
+##### **创建** Office 宏病毒 代码
 
 ![image-20240715094926084](../img/zuolao/9/image-20240715094926084.png)
 
