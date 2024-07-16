@@ -22,3 +22,4 @@ hexo generate
 # 提示性语句
 printf "${GREEN}INFO ${RESET} Hexo Generate 完成\n"
 
+explorer.exe public
