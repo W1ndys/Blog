@@ -25,7 +25,7 @@ printf "${GREEN}INFO ${RESET} Hexo Generate 完成\n"
 explorer.exe public
 
 # 定义要复制的路径
-path_to_copy="/opt/1panel/apps/openresty/openresty/www/sites/easy-qfnu.top/index"
+path_to_copy="/opt/1panel/apps/openresty/openresty/www/sites/blog.w1ndys.top/index"
 
 printf "\n\n已复制路径到剪贴板： $path_to_copy\n"
 
