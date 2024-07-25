@@ -22,36 +22,37 @@ comments: true
 <br>
 
 <div align="center">
-  <font color='#a4c9cc'> 仰望高山的人 </font>
-</div>
-<br>
-
-<div align="center">
-  <font color='#6ca8af'> 以为山巅是巍峨巅峰 </font>
+  <font color='#5f3dc4'> 仰望高山的人 </font>
 </div>
 
 <br>
 
 <div align="center">
-  <font color='#509296'> 峻峭、挺拔，无可挑剔 </font>
+  <font color='#364fc7'> 以为山巅是巍峨巅峰 </font>
 </div>
 
 <br>
 
 <div align="center">
-  <font color='#226b68'> 攀登高峰的人方知 </font>
+  <font color='#f03e3e'> 峻峭、挺拔，无可挑剔 </font>
 </div>
 
 <br>
 
 <div align="center">
-  <font color='#88bfb8'> 那里有荆棘、险滩 </font>
+  <font color='#868e96'> 攀登高峰的人方知 </font>
 </div>
 
 <br>
 
 <div align="center">
-  <font color='#007175'> 远不止眼前风光俏丽 </font>
+  <font color='#1098ad'> 那里有荆棘、险滩 </font>
+</div>
+
+<br>
+
+<div align="center">
+  <font color='#c2255c'> 远不止眼前风光俏丽 </font>
 </div>
 
 <br>
