@@ -46,6 +46,12 @@ date: 2024-07-28 17:57:32
 
 #### 安装 QQ
 
+安装必要的依赖
+
+```bash
+sudo apt install libgbm1 libasound2
+```
+
 进入 [NapCatQQ 文档](https://napneko.github.io/zh-CN/guide/version)，文档提供了可用的 LinuxQQ 的下载
 
 这里以 `linuxqq_3.2.7-23361_amd64.deb` 为例
