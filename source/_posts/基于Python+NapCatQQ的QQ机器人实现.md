@@ -46,19 +46,20 @@ date: 2024-07-28 17:57:32
 
 #### 安装 QQ
 
-进入 LinuxQQ 官网 [QQ Linux 版-从心出发·趣无止境](https://im.qq.com/linuxqq/download.html#/)
+进入 LinuxQQ 官网 [QQ Linux 版-从心出发·趣无止境](https://im.qq.com/linuxqq/index.shtml)
 
-下载 shell 脚本，**注意这里下最新版，是否是最新版要在官方看**
+下载安装包，**注意这里下最新版，是否是最新版要在官方看，不同Linux系统要下载的安装包不同**
 
 ```bash
-curl -o linuxqq.sh https://down.qq.com/qqweb/LinuxQQ/linuxqq_2.0.0-b2-1089_x86_64.sh
+wget https://dldir1.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.10_240715_amd64_01.deb
 ```
 
 下载完成后给予权限并运行安装
 
 ```bash
-chmod +x linuxqq.sh
-./linuxqq.sh
+chmod +x QQ_3.2.10_240715_amd64_01.deb
+apt install ***.deb
+# 这边有问题，我有空改改
 ```
 
 #### 安装 NapCatQQ
