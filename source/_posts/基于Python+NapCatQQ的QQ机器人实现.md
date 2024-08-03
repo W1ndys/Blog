@@ -28,7 +28,21 @@ date: 2024-07-28 17:57:32
 
 真正的编程语言实现，真正方便的环境搭建一切都得益于开箱即用的 Python 和万能的 ChatGPT 四年，终于找到当年的感觉了。
 
-## 基础准备
+## 安装方法
+
+### 新版安装方法
+
+我推荐使用 Linux docker 容器安装，如果运行环境崩了可以重新导入镜像
+
+docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://github.com/NapNeko/NapCat-Docker)
+
+一键安装脚本：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/guide/getting-started#一键安装)
+
+进行完这一步可以直接跳到 [实现功能](#实现功能) 部分
+
+### 旧版安装方法
+
+**!!! 注意旧版安装方法已经废弃，请使用新版安装方法，使用旧版安装方法可能会遇到无法估计的报错**
 
 1. 安装环境：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/)
 
@@ -110,123 +124,18 @@ chmod u+x ./napcat.sh
 
 ## 实现功能
 
-我自己用的机器人的所有代码都开源在 [W1ndys/W1ndys_QQ_Bot: 基于 Python 和 NapcatQQ 的 QQ 机器人 (github.com)](https://github.com/W1ndys/W1ndys_QQ_Bot#/)，可以参考更方便理解
+我自己用的机器人的所有代码都开源在 [W1ndys/W1ndys_QQ_Bot: 基于 Python 和 NapcatQQ 的 QQ 机器人 (github.com)](https://github.com/W1ndys-bot/W1ndys-bot)，可以参考更方便理解
 
-### API 接口
-
-NapCatQQ 实现了 [OneBot 11](https://11.onebot.dev/) 以及 [go-cqhttp](https://docs.go-cqhttp.org/api) 的大部分 API，可以直接点击查看 API，详细可查看 https://napneko.github.io/zh-CN/develop/api
+2024 年 8 月 3 日我学习模块化编程之后，写出了模块加载器，[W1ndys-bot/Module-Loader: 对接 OneBot 的 Python 模块加载器 (github.com)](https://github.com/W1ndys-bot/Module-Loader)，可以前往模块加载器继续开发
 
 ### 测试消息发送
 
 假设小号与大号创建了一个群聊，这里测试的是群聊中是否出现指定字符串，出现则发送一条消息，以“测试”和“测试成功”为例
 
-```Python
-import json
-import logging
-import asyncio
-import websockets
-import re
-import colorlog
-
-# 全局配置
-global owner, ws_url, token
-
-owner = [123456789]  # 机器人管理员 QQ 号
-ws_url = "ws://127.0.0.1:3001"  # napcatQQ 监听的 WebSocket API 地址
-token = None  # 如果需要认证，请填写认证 token
-
-# 日志等级配置
-handler = colorlog.StreamHandler()
-handler.setFormatter(
-    colorlog.ColoredFormatter(
-        "%(log_color)s%(levelname)s:%(name)s:%(message)s",
-        log_colors={
-            "DEBUG": "cyan",
-            "INFO": "green",
-            "WARNING": "yellow",
-            "ERROR": "red",
-            "CRITICAL": "red,bg_white",
-        },
-    )
-)
-logging.basicConfig(level=logging.DEBUG, handlers=[handler])
-
-# 连接到 QQ 机器人
-async def connect_to_bot():
-    logging.info("正在连接到机器人...")
-    async with websockets.connect(ws_url) as websocket:
-        logging.info("已连接到机器人。")
-        # 发送认证信息，如果需要的话
-        await authenticate(websocket)
-
-        async for message in websocket:
-            logging.info(f"收到消息: {message}")
-            await handle_message(websocket, message)
-
-# 发送认证信息
-async def authenticate(websocket):
-    if token:
-        auth_message = {"action": "authenticate", "params": {"token": token}}
-        await websocket.send(json.dumps(auth_message))
-        logging.info("已发送认证信息。")
-    else:
-        logging.info("未提供 token，跳过认证。")
-
-# 发送群消息
-async def send_group_msg(websocket, group_id, content):
-    message = {
-        "action": "send_group_msg",
-        "params": {"group_id": group_id, "message": content},
-    }
-    await websocket.send(json.dumps(message))
-    logging.info(f"已发送消息到群 {group_id}: {content}")
-
-async def handle_message(websocket, message):
-    try:
-        msg = json.loads(message)
-        logging.info(f"\n\n{msg}\n\n")
-
-        # 处理群聊消息
-        if (
-            "post_type" in msg
-            and msg["post_type"] == "message"
-            and msg["message_type"] == "group"
-        ):
-            user_id = msg["sender"]["user_id"]
-            group_id = msg["group_id"]
-            raw_message = msg["raw_message"]
-
-            # 检查是否为管理员发送的"测试"消息
-            if user_id in owner and (raw_message == "测试" or raw_message == "test"):
-                logging.info("收到管理员的测试消息。")
-                await send_group_msg(websocket, group_id, "测试成功")
-
-    # 处理异常
-    except Exception as e:
-        logging.error(f"处理消息时出错: {e}")
-
-# 主函数
-async def main():
-    await connect_to_bot()  # 连接到 QQ 机器人
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
 ![image-20240728191204205](./../img/QQbot/image-20240728191204205.png)
-
-### 群管
-
-#### 违禁词监控
-
-#### 禁言解禁
-
-#### 踢出群聊
-
-有空再写吧
 
 ## 致谢
 
 [ChatGPT](https://chatgpt.com/)
 
-[使用 NapCatQQ 搭建 QQ 机器人 | mumuzi 的 blog (mumuzi7179.github.io)](https://mumuzi7179.github.io/docs/Blog/QQBot/使用NapCatQQ搭建QQBot)
+[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/)
