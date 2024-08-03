@@ -30,8 +30,6 @@ date: 2024-07-28 17:57:32
 
 ## 安装方法
 
-### 新版安装方法
-
 我推荐使用 Linux docker 容器安装，如果运行环境崩了可以重新导入镜像
 
 docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://github.com/NapNeko/NapCat-Docker)
@@ -39,88 +37,6 @@ docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://gith
 一键安装脚本：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/guide/getting-started#一键安装)
 
 进行完这一步可以直接跳到 [实现功能](#实现功能) 部分
-
-### 旧版安装方法
-
-**!!! 注意旧版安装方法已经废弃，请使用新版安装方法，使用旧版安装方法可能会遇到无法估计的报错**
-
-1. 安装环境：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/)
-
-   我这里基于 Linux 服务器运行的机器人，所以下面环境几乎都是基于 Linux 命令行的，如果你用 Windows 的话，应该也能看懂，Windows 图形化比 Linux 命令行简单一些
-
-2. 对于 Linux 服务器来说，你需要拥有一个公网 IP，可以在腾讯云或者阿里云购买一个 win 服务器或者 linux 服务器，我用的是在阿里云的 2c2g 的 Ubuntu
-
-3. 我默认你阅读过提问的智慧、有基本的 Linux 操作系统经验、有对 Github 基本的认识、有 pip 安装的基础，不会可以问我
-
-### 安装运行环境
-
-请仔细阅读 [NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/)，写的已经很详细了
-
-这里详细说一下一些细节
-
-#### 安装 QQ
-
-安装必要的依赖
-
-```bash
-sudo apt install libgbm1 libasound2
-```
-
-进入 [NapCatQQ 文档](https://napneko.github.io/zh-CN/guide/version)，文档提供了可用的 LinuxQQ 的下载
-
-这里以 `linuxqq_3.2.7-23361_amd64.deb` 为例
-
-下载安装包
-
-```bash
-wget https://dldir1.qq.com/qqfile/qq/QQNT/8b4fdf81/linuxqq_3.2.7-23361_amd64.deb
-```
-
-下载完成后给予权限并运行安装
-
-```bash
-chmod +x linuxqq_3.2.7-23361_amd64.deb
-sudo apt install./linuxqq_3.2.7-23361_amd64.deb -y
-```
-
-#### 安装 NapCatQQ
-
-下载地址: https://github.com/NapNeko/NapCatQQ/releases
-
-由于服务器对于 Github 的连接性不稳定，魔法也不好开，建议在本机下载之后上传到服务器
-
-#### 启动 NatCatQQ
-
-在 `NapCat.linux.x64` 目录下能看到 `napcat.sh` 文件，添加权限并启动
-
-```bash
-chmod u+x ./napcat.sh
-./napcat.sh
-```
-
-此时让扫码登录，用手机 QQ 登录上提前准备好的 QQ 小号，上号之后扫描二维码，推荐扫描保存到本地的二维码
-
-#### 后续启动该 QQ
-
-使用-q 重新登录即可无需扫码，例如 `napcat.sh -q 1234567`
-
-#### 配置通信连接
-
-安全组放行 `6099` 端口
-
-访问你的 `http://IP:6099/webui/login.html`，token 密码可在 `./config/webui.json` 下找到
-
-进入后到以下界面
-
-我是基于 `正向 WebSocket 协议`（以下简称 `ws、ws协议`） 进行通信，你也可以选择基于 `http 协议` 进行通信
-
-**这一步至关重要，这决定了以后脚本的书写方法的实现**
-
-> 有关于 `http 协议` 的通信实现，可以看套神的博客 [使用 NapCatQQ 搭建 QQ 机器人 | mumuzi 的 blog (mumuzi7179.github.io)](https://mumuzi7179.github.io/docs/Blog/QQBot/使用NapCatQQ搭建QQBot)
-
-![image-20240728190134771](./../img/QQbot/image-20240728190134771.png)
-
-这里我设置的 3001 端口，可以自定义，只要是不冲突的即可，如果你是在内网的话，可以不设置 AsscessToken，可以留空（但是不要在安全组开放这个端口），如果你是公网通过外部公网进行通信，安全起见一定要设置 AccessToken，这样别人就无法直接访问你的机器人了，需要通过你的 AccessToken 才可以访问。
 
 ## 实现功能
 
