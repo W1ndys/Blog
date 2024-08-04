@@ -6,7 +6,7 @@ comments: true
 ---
 
 - W1ndys（[w1ndys.top](https://www.w1ndys.top/)）
-- 二十岁，普通双飞本科
+- 二十岁，普通双非本科
 - **网络空间安全** 专业，**CTF** 爱好者
 - **绩点倒数**
 - “欲戴皇冠，必承其重”
