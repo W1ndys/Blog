@@ -50,6 +50,10 @@ docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://gith
 
 ![image-20240728191204205](./../img/QQbot/image-20240728191204205.png)
 
+## W1ndys-bot 的开发
+
+请看我的其他博客，待更新
+
 ## 致谢
 
 [ChatGPT](https://chatgpt.com/)
