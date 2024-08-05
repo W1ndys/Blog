@@ -1,15 +1,14 @@
 ---
-title: 基于Python+NapCatQQ的W1ndys-bot 的开发——模块引用中环境变量的学习
+title: 基于 Python 和 Onebot11 的QQ机器人开发——模块引用中环境变量的学习
 tags:
   - QQbot
   - QQ机器人
   - Python
+  - Onebot11
   - NapCatQQ
-  - 功能开发
 categories:
   - QQbot
-  - 功能开发
-cover: 'https://t.mwm.moe/fj?20240804164717802'
+cover: https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg
 abbrlink: 55d6cfbc
 date: 2024-08-04 16:47:17
 ---
