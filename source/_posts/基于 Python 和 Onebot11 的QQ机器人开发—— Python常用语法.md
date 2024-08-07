@@ -1,5 +1,5 @@
 ---
-title: '基于 Python 和 Onebot11 的QQ机器人开发—— Python常用语法'
+title: 基于 Python 和 Onebot11 的QQ机器人开发—— Python常用语法
 tags:
   - QQbot
   - QQ机器人
@@ -8,8 +8,9 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
+cover: 'https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg'
+abbrlink: d5fe3115
 date: 2024-08-07 10:24:36
-cover: https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg
 ---
 
 ## 背景
