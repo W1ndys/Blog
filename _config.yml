@@ -135,10 +135,8 @@ deploy:
   type: git
   repository:
     github: git@github.com:W1ndys/Blog.git
-    gitee: git@gitee.com:W1ndys/Blog.git
-  branch:
-    github: gh-pages
-    gitee: master
+    gitee: git@gitee.com:W1ndys/blog.git
+  branch: gh-pages
 
 markdown:
   render:
