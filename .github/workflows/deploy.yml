@@ -6,7 +6,7 @@ on:
       - main
 env:
   TZ: Asia/Shanghai
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,3 +41,21 @@ jobs:
           hexo clean
           hexo generate
           hexo deploy
+
+      - name: ECS clone Gitee # 连接服务器并克隆Gitee
+        uses: cross-the-world/ssh-pipeline@master
+        env:
+          WELCOME: "ssh pipeline"
+        with:
+          host: ${{ secrets.USER_HOST }} # 服务器的 IP 地址
+          user: ${{ secrets.USER_NAME }} # 服务器的用户名
+          pass: ${{ secrets.USER_PASS }} # 服务器的密码
+          connect_timeout: 10s
+          script: |
+            cd ${{ secrets.ECS_SITE }}
+            rm -rf *
+            git clone -b master https://gitee.com/${{ secrets.GITEE_USERNAME }}/blog.git
+            cd Blog
+            cp -r . ..
+            cd ..
+            rm -rf Blog
