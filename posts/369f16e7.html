@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁 | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="Mirai Administrator  基于 Mirai Console 的 管理员 Bot 及其标准      使用前应该查阅的相关文档或项目  User Manual Permission Command Chat Command  本插件实现的功能有:  联系人相关 自动审批，指令查看，用户留言 消息相关 发送消息，撤回消息 群管理相关 群消息审核，自动宵禁，自动清理不发言，禁言自动退群">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mirai Administrator 机器人管理插件，好友&#x2F;群管理，黑名单，宵禁">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/369f16e7.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="Mirai Administrator  基于 Mirai Console 的 管理员 Bot 及其标准      使用前应该查阅的相关文档或项目  User Manual Permission Command Chat Command  本插件实现的功能有:  联系人相关 自动审批，指令查看，用户留言 消息相关 发送消息，撤回消息 群管理相关 群消息审核，自动宵禁，自动清理不发言，禁言自动退群">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://t.mwm.moe/fj/?30">
+<meta property="article:published_time" content="2023-11-20T03:25:00.000Z">
+<meta property="article:modified_time" content="2024-08-09T13:25:49.911Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="QQbot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://t.mwm.moe/fj/?30"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/369f16e7.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"这篇文章已经有","messageNext":"天没有更新了，请注意甄别时效性，可能有部分已失效"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-09 21:25:49'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">171</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">141</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">74</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/216d9006"><i class="fa-fw fa fa-arrow-up"></i><span> 选课指北</span></a></li><li><a class="site-page child" href="/posts/8f8bbaa8"><i class="fa-fw fa fa-arrow-down"></i><span> 速通指南</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="W1ndysの小屋"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg"/><span class="site-name">W1ndysの小屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/posts/216d9006"><i class="fa-fw fa fa-arrow-up"></i><span> 选课指北</span></a></li><li><a class="site-page child" href="/posts/8f8bbaa8"><i class="fa-fw fa fa-arrow-down"></i><span> 速通指南</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/Mirai Administrator 机器人管理插件，好友群管理，黑名单，宵禁.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-20T03:25:00.000Z" title="发表于 2023-11-20 11:25:00">2023-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-09T13:25:49.911Z" title="更新于 2024-08-09 21:25:49">2024-08-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QQbot/">QQbot</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Mirai Administrator 机器人管理插件，好友/群管理，黑名单，宵禁"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="mirai-administrator">Mirai Administrator</h1>
+<blockquote>
+<p>基于 Mirai Console 的 管理员 Bot 及其标准</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/cssxsh/mirai-administrator/releases"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/github/v/release/cssxsh/mirai-administrator" alt="Release"></a><br>
+<a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/xyz/cssxsh/mirai/mirai-administrator/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/github/downloads/cssxsh/mirai-administrator/total" alt="Downloads"></a><br>
+<a target="_blank" rel="noopener" href="https://search.maven.org/artifact/xyz.cssxsh.mirai/mirai-administrator"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/maven-central/v/xyz.cssxsh.mirai/mirai-administrator" alt="maven-central"></a><br>
+<a target="_blank" rel="noopener" href="https://www.codacy.com/gh/cssxsh/mirai-administrator/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cssxsh/mirai-administrator&amp;utm_campaign=Badge_Grade"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://app.codacy.com/project/badge/Grade/8be173fe96c74059bfedd6268b8e6f0c" alt="Codacy Badge"></a></p>
+<p><strong>使用前应该查阅的相关文档或项目</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/docs/UserManual.md">User Manual</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/mirai-console/docs/BuiltInCommands.md#permissioncommand">Permission Command</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/project-mirai/chat-command">Chat Command</a></li>
+</ul>
+<p>本插件实现的功能有:</p>
+<ul>
+<li>联系人相关 自动审批，指令查看，用户留言</li>
+<li>消息相关 发送消息，撤回消息</li>
+<li>群管理相关 群消息审核，自动宵禁，自动清理不发言，禁言自动退群</li>
+</ul>
+<p>本插件提供<a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/972/mirai-administrator-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6-%E5%A5%BD%E5%8F%8B-%E7%BE%A4%E7%AE%A1%E7%90%86-%E9%BB%91%E5%90%8D%E5%8D%95-%E5%AE%B5%E7%A6%81/2?page=1#%E6%9C%8D%E5%8A%A1%E6%8E%A5%E5%8F%A3">服务接口</a>以供其他插件拓展功能<br>
+例如使用 <a target="_blank" rel="noopener" href="https://github.com/gnuf0rce/mirai-content-censor">Mirai Content Censor</a> 依靠百度API审查群消息<br>
+例如使用 <a target="_blank" rel="noopener" href="https://github.com/cssxsh/mirai-authenticator">Mirai Authenticator</a> 验证加群请求</p>
+<h2 id="mcl-指令安装">MCL 指令安装</h2>
+<p><strong>请确认 mcl.jar 的版本是 2.1.0+</strong><br>
+<code>./mcl --update-package xyz.cssxsh.mirai:mirai-administrator --channel maven-stable --type plugin</code></p>
+<h2 id="指令">指令</h2>
+<p>注意: 使用前请确保可以 <a target="_blank" rel="noopener" href="https://github.com/project-mirai/chat-command">在聊天环境执行指令</a><br>
+<code>&lt;...&gt;</code>中的是指令名<br>
+<code>[...]</code>表示参数，当<code>[...]</code>后面带<code>?</code>时表示参数可选</p>
+<p>本插件指令权限ID 格式为 <code>xyz.cssxsh.mirai.plugin.mirai-administrator:command.*</code>, <code>*</code> 是指令的第一指令名<br>
+例如 <code>/send to 12345</code> 的权限ID为 <code>xyz.cssxsh.mirai.plugin.mirai-administrator:command.send</code><br>
+对 机器人发送的<strong>联系人请求</strong>通知消息 回复 <code>同意</code> 或 <code>不同意</code> 或 <code>拉黑</code> 即可处理<br>
+插件提供黑名单功能，使用指令 <code>/contact black u12345</code>, 即可拉黑用户，Bot将不响应用户动作（包括其他插件的功能）</p>
+<h3 id="admincontactcommand">ADMINCONTACTCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;delete&gt; [contact]</code></td>
+<td style="text-align:left">删除联系人</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;handle&gt; [id] [accept]? [black]?</code></td>
+<td style="text-align:left">处理联系人申请</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;request&gt;</code></td>
+<td style="text-align:left">查看申请列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;black&gt; &#123;permitteeIds&#125;</code></td>
+<td style="text-align:left">拉黑</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;white&gt; &#123;permitteeIds&#125;</code></td>
+<td style="text-align:left">取消拉黑</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;contact&gt; &lt;backup&gt;</code></td>
+<td style="text-align:left">触发备份功能</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>id</code> 是 事件id 或 好友id 或 群id</li>
+<li><code>accept</code> 和 <code>black</code> 参数为 <code>true</code>, <code>yes</code>, <code>enabled</code>, <code>on</code>, <code>1</code> 时表示 <code>true</code> (不区分大小写)</li>
+<li>对 机器人发送的新联系人通知消息 回复 <code>同意</code> 或 <code>不同意</code> 或 <code>拉黑</code> 即可处理，详见 <a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/972/mirai-administrator-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6-%E5%A5%BD%E5%8F%8B-%E7%BE%A4%E7%AE%A1%E7%90%86-%E9%BB%91%E5%90%8D%E5%8D%95-%E5%AE%B5%E7%A6%81/2?page=1#%E8%81%94%E7%B3%BB%E4%BA%BA%E5%AE%A1%E6%89%B9%E9%85%8D%E7%BD%AE">联系人审批配置</a></li>
+<li><code>permitteeIds</code> 是 权限系统的用户标识符，例如 <code>m12345.6789</code>, 可以提供多个 <a target="_blank" rel="noopener" href="https://github.com/mamoe/mirai/blob/dev/mirai-console/docs/Permissions.md#%E8%A2%AB%E8%AE%B8%E5%8F%AF%E4%BA%BA-id">PermitteeId</a> 一次性拉黑/取消拉黑</li>
+<li>黑名单通过 <code>@EventHandler(priority = EventPriority.HIGH, concurrency = ConcurrencyKind.LOCKED)</code> 拦截消息</li>
+</ol>
+<h3 id="adminfriendcommand">ADMINFRIENDCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;friend&gt; &lt;list&gt;</code></td>
+<td style="text-align:left">好友列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;friend&gt; &lt;delete&gt; [friend]</code></td>
+<td style="text-align:left">删除好友</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admingroupcommand">ADMINGROUPCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;list&gt;</code></td>
+<td style="text-align:left">群列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;member&gt; [group]</code></td>
+<td style="text-align:left">群成员</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;quit&gt; [group]</code></td>
+<td style="text-align:left">退出群聊</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;kick&gt; [member] [reason]? [black]?</code></td>
+<td style="text-align:left">踢出群员</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;nick&gt; [member] [nick]</code></td>
+<td style="text-align:left">群昵称</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;title&gt; [member] [title]</code></td>
+<td style="text-align:left">群头衔</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;mute&gt; [member] [second]</code></td>
+<td style="text-align:left">禁言</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;quiet&gt; [group] [open]?</code></td>
+<td style="text-align:left">全体禁言</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;admin&gt; [member] [operation]?</code></td>
+<td style="text-align:left">设置管理员</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;announce&gt; [group]</code></td>
+<td style="text-align:left">设置公告</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;group&gt; &lt;rank&gt; [group] &#123;levels&#125;</code></td>
+<td style="text-align:left">设置等级头衔</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adminrecallcommand">ADMINRECALLCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;recall&gt; [contact]?</code></td>
+<td style="text-align:left">撤回消息</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>不指定<code>contact</code>时，可以通过<strong>回复消息</strong>指定要撤销的消息，如果没有指定，将尝试撤销最后一条不是由指令发送者发送的消息</li>
+<li><code>contact</code>是群员时，将尝试撤销这个群员的最后一条消息</li>
+<li><code>contact</code>是群或好友时，将尝试撤销bot的最后一条消息</li>
+</ol>
+<h3 id="adminregisteredcommand">ADMINREGISTEREDCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;registered&gt;</code></td>
+<td style="text-align:left">查看已注册指令</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;reg&gt;</code></td>
+<td style="text-align:left">查看已注册指令</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adminsendcommand">ADMINSENDCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;send&gt; &lt;groups&gt; [bot]? [at]? [second]?</code></td>
+<td style="text-align:left">发送给所有群</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;send&gt; &lt;friends&gt; [bot]? [second]?</code></td>
+<td style="text-align:left">发送给所有好友</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;send&gt; &lt;to&gt; [contact] [at]?</code></td>
+<td style="text-align:left">发送给指定联系人</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;send&gt; &lt;nudge&gt; [user]</code></td>
+<td style="text-align:left">戳一戳指定联系人</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;send&gt; &lt;log&gt; &#123;addresses&#125;</code></td>
+<td style="text-align:left">备份日志到邮箱</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>bot</code> 参数在命令行模式下需要指定</li>
+<li><code>at</code> 参数为 <code>true</code>, <code>yes</code>, <code>enabled</code>, <code>on</code>, <code>1</code> 时表示 <code>true</code>, 将附加一个At</li>
+<li><code>second</code> 参数为 延迟的秒数 例如 <code>/send groups 123456 false 10</code></li>
+<li><code>addresses</code> 参数为 邮箱地址</li>
+</ol>
+<h3 id="admintimercommand">ADMINTIMERCOMMAND</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/&lt;timer&gt; &lt;config&gt;</code></td>
+<td style="text-align:left">显示当前设置</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;timer&gt; &lt;mute&gt; [moment] [cron] [group]?</code></td>
+<td style="text-align:left">宵禁</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;timer&gt; &lt;cleaner&gt; [day] [cron] [group]?</code></td>
+<td style="text-align:left">清理不发言</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;timer&gt; &lt;status&gt; [cron] [bot]?</code></td>
+<td style="text-align:left">定时发送机器人状态</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;timer&gt; &lt;message&gt; [cron] [target] [at]</code></td>
+<td style="text-align:left">定时发送消息</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>group</code> 为 要操作的群，在群聊中可以不指定</li>
+<li><code>cron</code>, 为 CRON 表达式, 由 <code>秒 分钟 小时 日 月 周</code> 组成<br>
+例如 <code>0 0 1 * * ?</code> 表示每天 01:00 执行一次，<code>0 30 2 ? * 2-6</code> 表示星期一至星期五 每天 02:30 执行一次<br>
+可以使用在线编辑器生成 <a target="_blank" rel="noopener" href="https://www.bejson.com/othertools/cron/">https://www.bejson.com/othertools/cron/</a><br>
+为防止被 空格 分成多个参数，请使用 <code>&quot;</code> 包裹参数</li>
+<li><code>moment</code> 为 DURATION 表达式, 由 <code>PnDTnHnMn.nS</code> 组成<br>
+例如 <code>P1DT2H3M4.5S</code> 表示 一天二小时三分钟四点五秒，<code>PT5H</code> 表示 五小时</li>
+<li>mute 指令，moment 小于 <code>0</code> 宵禁就会关闭<br>
+例如 <code>/timer mute PT5H &quot;0 0 1 ? * 2-6&quot;</code>, 将会在 星期一到星期五的凌晨01:00 禁言 5 小时<br>
+例如 <code>/timer mute PT0S &quot;0 0 0 1 * ?&quot;</code>, 将会 取消 禁言定时器</li>
+<li>day 单位为天数的发言期限, 小于 <code>0</code> 宵禁就会关闭<br>
+例如 <code>/timer cleaner 365 &quot;0 0 12 ? * 0&quot;</code>, 将会 取消 禁言定时器</li>
+</ol>
+<h2 id="配置">配置</h2>
+<h3 id="联系人审批配置">联系人审批配置</h3>
+<ol>
+<li><code>AdminAutoApproverConfig.yml</code></li>
+</ol>
+<h3 id="禁言自动退群配置">禁言自动退群配置</h3>
+<ol>
+<li><code>AdminAutoQuitConfig.yml</code></li>
+<li><code>mute_limit</code> 大于这个设置秒数的禁言会触发自动退群</li>
+</ol>
+<h3 id="留言配置">留言配置</h3>
+<ol>
+<li><code>AdminCommentConfig.yml</code></li>
+<li><code>xyz.cssxsh.mirai.plugin.mirai-administrator:comment.include</code> 作用: 拥有此权限的用户，可以给机器人留言</li>
+</ol>
+<h3 id="机器人上线消息配置">机器人上线消息配置</h3>
+<ol>
+<li><code>AdminOnlineMessageConfig.yml</code></li>
+<li><code>xyz.cssxsh.mirai.plugin.mirai-administrator:online.include</code> 作用: 拥有此权限的群，会发送上线通知</li>
+</ol>
+<h3 id="消息审查及机器人所有者">消息审查及机器人所有者</h3>
+<ol>
+<li><code>AdminSetting.yml</code></li>
+<li><code>censor_types</code> 可选值 <code>IMAGE, FLASH, SERVICE, APP, AUDIO, FORWARD, VIP, MARKET, MUSIC, POKE</code></li>
+<li>正则词库, 须手动添加，将会加载 censor 文件夹中的 txt 文件，每一行对应一个正则匹配，会监听文件改动，无需重启</li>
+</ol>
+<h3 id="邮件配置">邮件配置</h3>
+<ol>
+<li><code>AdminMailConfig.yml</code> 配置一些默认的发送对象</li>
+<li><code>admin.mail.properties</code> 配置邮箱账号等</li>
+</ol>
+<p>格式参考</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mail.host</span>=<span class="string">smtp.mail.qq.com</span></span><br><span class="line"><span class="attr">mail.auth</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.user</span>=<span class="string">xxx</span></span><br><span class="line"><span class="attr">mail.password</span>=<span class="string">***</span></span><br><span class="line"><span class="attr">mail.from</span>=<span class="string">cssxsh@qq.com</span></span><br><span class="line"><span class="attr">mail.store.protocol</span>=<span class="string">smtp</span></span><br><span class="line"><span class="attr">mail.transport.protocol</span>=<span class="string">smtp</span></span><br><span class="line"><span class="comment"># smtp</span></span><br><span class="line"><span class="attr">mail.smtp.starttls.enable</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.smtp.auth</span>=<span class="string">true</span></span><br><span class="line"><span class="attr">mail.smtp.timeout</span>=<span class="string">15000</span></span><br></pre></td></tr></table></figure>
+<p>QQ邮箱帮助： <a target="_blank" rel="noopener" href="https://service.mail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=28&amp;&amp;no=1001256">https://service.mail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=28&amp;&amp;no=1001256</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/369f16e7.html">https://blog.w1ndys.top/posts/369f16e7.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/QQbot/">QQbot</a></div><div class="post_share"><div class="social-share" data-image="https://t.mwm.moe/fj/?30" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/10f5a405.html" title="RSA的一些解密脚本"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?46" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">RSA的一些解密脚本</div></div></a></div><div class="next-post pull-right"><a href="/posts/527dba8e.html" title="DS作业-7-Ch5-22网安物联网-20231113"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?24" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">DS作业-7-Ch5-22网安物联网-20231113</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/edeaa258.html" title="ChatLearning————学群友说话使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?10" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">ChatLearning————学群友说话使用手册</div></div></a></div><div><a href="/posts/7a43906e.html" title="HuYanSession2——壶言会话2使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?26" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-17</div><div class="title">HuYanSession2——壶言会话2使用手册</div></div></a></div><div><a href="/posts/7183a269.html" title="MuteGames使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?31" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="title">MuteGames使用手册</div></div></a></div><div><a href="/posts/542f29fd.html" title="docker部署GZCTF-QQBOT"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/GZTimeWalker/GZCTF/raw/develop/assets/banner.light.svg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="title">docker部署GZCTF-QQBOT</div></div></a></div><div><a href="/posts/bc040c54.html" title="“卷卷”W1ndys_bot使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?56" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-18</div><div class="title">“卷卷”W1ndys_bot使用手册</div></div></a></div><div><a href="/posts/e35cbf79.html" title="基于Python + OneBot 11的QQ机器人模块加载器的实现"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-03</div><div class="title">基于Python + OneBot 11的QQ机器人模块加载器的实现</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mirai-administrator"><span class="toc-number">1.</span> <span class="toc-text">Mirai Administrator</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mcl-%E6%8C%87%E4%BB%A4%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">MCL 指令安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#admincontactcommand"><span class="toc-number">1.2.1.</span> <span class="toc-text">ADMINCONTACTCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adminfriendcommand"><span class="toc-number">1.2.2.</span> <span class="toc-text">ADMINFRIENDCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#admingroupcommand"><span class="toc-number">1.2.3.</span> <span class="toc-text">ADMINGROUPCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adminrecallcommand"><span class="toc-number">1.2.4.</span> <span class="toc-text">ADMINRECALLCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adminregisteredcommand"><span class="toc-number">1.2.5.</span> <span class="toc-text">ADMINREGISTEREDCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adminsendcommand"><span class="toc-number">1.2.6.</span> <span class="toc-text">ADMINSENDCOMMAND</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#admintimercommand"><span class="toc-number">1.2.7.</span> <span class="toc-text">ADMINTIMERCOMMAND</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E4%BA%BA%E5%AE%A1%E6%89%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">联系人审批配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%81%E8%A8%80%E8%87%AA%E5%8A%A8%E9%80%80%E7%BE%A4%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">禁言自动退群配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%99%E8%A8%80%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">留言配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%BA%BF%E6%B6%88%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.4.</span> <span class="toc-text">机器人上线消息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E5%AE%A1%E6%9F%A5%E5%8F%8A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%89%80%E6%9C%89%E8%80%85"><span class="toc-number">1.3.5.</span> <span class="toc-text">消息审查及机器人所有者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.6.</span> <span class="toc-text">邮件配置</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : getScript('https://cdn.jsdelivr.net/npm/abcjs@6.3.0/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+})()</script><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

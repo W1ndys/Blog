@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ资料</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/img/bg/bg1.png') center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+            /* 重置默认的body边距 */
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        .qr-code {
+            width: 100%;
+            /* 使二维码宽度占据父容器的100% */
+            max-width: 300px;
+            /* 设置二维码最大宽度 */
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 4px solid #fff;
+        }
+
+        .friend-link-button {
+            text-decoration: none;
+        }
+
+        .copy-button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .instructions {
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* 添加媒体查询 */
+        @media (min-width: 768px) {
+
+            /* 如果屏幕宽度大于等于768px，调整样式 */
+            .qr-code {
+                max-width: 400px;
+                /* 设置二维码在大屏幕上的最大宽度 */
+            }
+        }
+
+        /* 修改使用方法的样式 */
+        .instructions span {
+            color: black;
+        }
+
+        .instructions span.black {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>我的QQ资料</h1>
+
+        <!-- 居中显示的二维码容器 -->
+        <div class="qr-code-container">
+            <!-- QQ二维码 -->
+            <img class="qr-code" src="/img/about/qrcode_1715732782842.jpg" alt="QQ二维码">
+        </div>
+
+        <!-- 直接跳转链接的按钮 -->
+        <a href="https://qm.qq.com/q/dJjlDIFJfM" target="_blank" rel="noopener noreferrer"
+            class="friend-link-button">
+            <button class="copy-button">点击加好友</button>
+        </a>
+
+        <!-- 复制链接的按钮 -->
+        <button onclick="copyLink()" class="copy-button">点击复制链接</button>
+
+        <!-- 备注 -->
+        <p class="instructions">
+            <span class="black">欢迎添加我的QQ与我交流。<span style="color:rgb(0, 0, 0);"></span></span><br>
+            <span class="black">你有三种加QQ的方法：<span style="color:rgb(0, 0, 0);"></span></span><br>
+            <span class="black">1. 截图打开QQ扫描二维码</span><br>
+            <span class="black">2. 点击左侧按钮直接跳转<span style="color:rgb(255, 0, 0);">（最快）</span></span><br>
+            <span class="black">3. 点击右侧按钮复制链接<span style="color:rgb(0, 0, 0);"></span></span>
+        </p>
+    </div>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({ id: "3HPYFt9znqKItrHZ", ck: "3HPYFt9znqKItrHZ", autoTrack: true })</script>
+    <script>
+        // 复制链接的函数
+        function copyLink() {
+            var link = document.createElement("input");
+            link.value = "https://qm.qq.com/q/dJjlDIFJfM";
+            document.body.appendChild(link);
+            link.select();
+            document.execCommand("copy");
+            document.body.removeChild(link);
+            alert("链接复制成功，请打开QQ客户端发送给任意好友（如：我的电脑，我的Pad，小号等），点击发出去的链接即可成功跳转QQ资料。");
+        }
+    </script>
+
+</body>
+
+</html>
