@@ -148,11 +148,35 @@ file 对象使用 open 函数来创建，下表列出了 file 对象常用的函
 | 12   | [file.write(str)](https://www.runoob.com/python/python-file-write.html) 将字符串写入文件，返回的是写入的字符长度。                                                       |
 | 13   | [file.writelines(sequence)](https://www.runoob.com/python/file-writelines.html) 向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。                     |
 
-### 函数阻断
+### 函数处理
+
+#### 函数阻断
 
 在执行过程中，不免要进行一些函数阻断，以防满足两个条件，导致运行两次。
 
 在要执行的函数下面写个`return`，就可以阻断函数继续执行。
+
+#### 函数并发
+
+函数并发可以用 `async` 和 `await` 来实现，`async` 用于定义一个异步函数，`await` 用于等待一个异步函数执行完成。
+
+当然如果你想让函数并发，那么可以使用 `asyncio` 模块来实现，`asyncio` 模块提供了一些函数来实现异步编程。
+
+下面是一个具体例子
+
+```python
+async def Example_main(websocket, msg):
+
+    # 确保数据目录存在
+    os.makedirs(DATA_DIR, exist_ok=True)
+
+    # 并发执行任务
+    await asyncio.gather(
+        handle_Example_group_message(websocket, msg),
+        handle_Example_group_notice(websocket, msg),
+        handle_Example_private_message(websocket, msg),
+    )
+```
 
 ### 变量的使用
 
