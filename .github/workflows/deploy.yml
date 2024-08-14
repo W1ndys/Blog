@@ -60,4 +60,4 @@ jobs:
             cd blog
             cp -r . ..
             cd ..
-            rm -rf blog
+            rm -rf blog 
