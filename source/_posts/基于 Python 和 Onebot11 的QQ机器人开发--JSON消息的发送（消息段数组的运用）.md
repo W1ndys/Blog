@@ -1,5 +1,5 @@
 ---
-title: "基于 Python 和 Onebot11 的QQ机器人开发--JSON消息的发送（消息段数组的运用）"
+title: 基于 Python 和 Onebot11 的QQ机器人开发--JSON消息的发送（消息段数组的运用）
 tags:
   - QQbot
   - QQ机器人
@@ -8,8 +8,9 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
+cover: 'https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg'
+abbrlink: 9bd67233
 date: 2024-08-15 00:18:29
-cover: https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg
 ---
 
 ## 什么是消息段数组
