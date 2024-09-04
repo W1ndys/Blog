@@ -1,0 +1,149 @@
+---
+title: Python课后题
+tags: [Python]
+categories: [Python]
+cover: "https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7"
+abbrlink: 9974513c
+date: 2024-09-04 08:59:59
+---
+
+### 编写程序，输入本金、年利率和年数、计算复利（结果保留两位小数）
+
+#### 代码
+
+```py
+def calculate_compound_interest(principal, rate, years):
+    # 计算复利
+    amount = principal * (1 + rate / 100) ** years
+    # 保留两位小数
+    return round(amount, 2)
+
+
+# 示例用法
+principal = float(input("请输入本金: "))
+rate = float(input("请输入年利率: "))
+years = int(input("请输入年数: "))
+
+compound_interest = calculate_compound_interest(principal, rate, years)
+print(f"本金利率和为: {compound_interest}")
+```
+
+#### 输出结果
+
+```
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1\2.py"
+请输入本金: 2000
+请输入年利率: 5.6
+请输入年数: 5
+本金利率和为: 2626.33
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
+
+### 编写程序，输入球的半径，计算球的表面积和体积（结果保留两位小数）
+
+#### 代码
+
+```py
+import math
+
+r = float(input("请输入球的半径: "))
+S = 4 * math.pi * r**2
+V = 4 / 3 * math.pi * r**3
+print(f"球的表面积为: {S:.2f}, 体积为: {V:.2f}")
+```
+
+#### 输出结果
+
+```
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1\3.py"
+请输入球的半径: 2.5
+球的表面积为: 78.54, 体积为: 65.45
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
+
+### 编写程序，声明 getValue(b, r, n)，根据本金 b，年利率 r 和年数 n 计算最终收益 v，v = b(1+r)<sup> n </sup>，然后编写测试代码，提示输入本金、年利率和年数、显示最终收益（保留两位小数）
+
+#### 代码
+
+```python
+def getValue(b, r, n):
+    return b * (1 + r) ** n
+
+
+# 测试代码
+if __name__ == "__main__":
+    b = float(input("请输入本金: "))
+    r = float(input("请输入年利率(小数形式): "))
+    n = int(input("请输入年数: "))
+    v = getValue(b, r, n)
+    print(f"最终收益为: {v:.2f}")
+
+```
+
+#### 运行结果
+
+```
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1\tempCodeRunnerFile.py"
+请输入本金: 100
+请输入年利率(小数形式): 2.5
+请输入年数: 5
+最终收益为: 52521.88
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
+
+### 编写程序，求解一元二次方程 x² - 10x + 16 = 0
+
+#### 代码
+
+```Python
+import math
+
+a = 1
+b = -10
+c = 16
+
+# 判别式
+delta = b**2 - 4 * a * c
+
+if delta > 0:
+    root1 = (-b + math.sqrt(delta)) / (2 * a)
+    root2 = (-b - math.sqrt(delta)) / (2 * a)
+    print(f"方程有两个不同的实数根: {root1} 和 {root2}")
+elif delta == 0:
+    root = -b / (2 * a)
+    print(f"方程有一个实数根: {root}")
+else:
+    print("方程无实数根")
+
+```
+
+#### 输出结果
+
+```
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1\tempCodeRunnerFile.py"
+方程有两个不同的实数根: 8.0 和 2.0
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
+
+### 编写程序，提示输入姓名和出生年份，输出姓名和年龄
+
+#### 代码
+
+```Python
+# 编写程序，提示输入姓名和出生年份，输出姓名和年龄
+name = input("请输入姓名: ")
+year = int(input("请输入出生年份: "))
+age = 2024 - year
+print(f"您好！{name}。今年{age}岁")
+
+```
+
+#### 输出结果
+
+```
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1\6.py"
+请输入姓名: W1ndys
+请输入出生年份: 2004
+您好！W1ndys。今年20岁
+PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
