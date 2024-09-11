@@ -7,6 +7,8 @@ abbrlink: 9974513c
 date: 2024-09-04 08:59:59
 ---
 
+## 作业 1
+
 ### 编写程序，输入本金、年利率和年数、计算复利（结果保留两位小数）
 
 #### 代码
@@ -146,4 +148,79 @@ PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Do
 请输入出生年份: 2004
 您好！W1ndys。今年20岁
 PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
+```
+
+## 作业 2
+
+### 编写程序，格式化输出杨辉三角。杨辉三角即二项式定理的系数表，各元素满足如下条件：第一列及对角线上的元素均为 1；其余每个元素等于它上一行同一列元素与前一列元素之和。
+
+```python
+杨辉三角
+i = int(input("输入行数: "))
+number_list = []
+for j in range(1, i + 1):
+    number_list.insert(0, 1)
+    for k in range(1, len(number_list) - 1):
+        number_list[k] = number_list[k] + number_list[k + 1]
+    line = ""
+    for _ in number_list:
+        line += str(_) + " "
+    print(line.center(i * 2))
+```
+
+### 输入直角三角形的两个直角边，求三角形的周长和面积，以及两个锐角的度数。结果均保留一位小数。其运行效果如图 44 所示。
+
+```python
+import math
+
+i, j = int(input("请输入三角形的直角边A(>0): ")), int(
+    input("请输入三角形的直角边B(>0): ")
+)
+
+print(f"直角三角形的三边分别为: a={i:.1f}, b={j:.1f}, c={math.sqrt(i**2 + j**2):.1f}")
+print(f"三角形的周长 = {i + j + math.sqrt(i**2 + j**2):.1f}，面积 = {i * j / 2:.1f}")
+print(
+    f"三角形两个锐角的度数分别为: {round(math.asin(i / math.sqrt(i**2 + j**2)) * 180 / math.pi, 0):.1f} 和 {round(math.asin(j / math.sqrt(i**2 + j**2)) * 180 / math.pi, 0):.1f}"
+)
+```
+
+### 编程产生 0~100（包含 0 和 100）的 3 个随机数 a、b 和 c,要求至少使用两种不同的方法，将 3 个数按从小到大的顺序排序。其运行效果如图 4-5 所示（其中，a、b 和 c 的值随机生成）。
+
+```python
+import random
+
+
+# 直接排序
+def direct_sort():
+    a = random.randint(1, 100)
+    b = random.randint(1, 100)
+    c = random.randint(1, 100)
+
+    print(f"直接排序前: a={a}, b={b}, c={c}")
+
+    if a > b:
+        a, b = b, a
+    if a > c:
+        a, c = c, a
+    if b > c:
+        b, c = c, b
+
+    print(f"直接排序后: a={a}, b={b}, c={c}")
+
+
+# sort()排序
+def sort_sort():
+    a = random.randint(1, 100)
+    b = random.randint(1, 100)
+    c = random.randint(1, 100)
+
+    print(f"sort()排序前: a={a}, b={b}, c={c}")
+
+    a, b, c = sorted([a, b, c])
+    print(f"sort()排序后: a={a}, b={b}, c={c}")
+
+
+if __name__ == "__main__":
+    direct_sort()
+    sort_sort()
 ```
