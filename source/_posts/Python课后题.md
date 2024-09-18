@@ -462,3 +462,89 @@ for i in range(2000, 3001):
         print(i, end=" ")
 
 ```
+
+### 编写程序，计算 S.= 13+十 5 一 7 十 9 一 11 十…
+
+```py
+n = int(input())
+while n % 2 == 0:
+    print("请输入奇数")
+    n = int(input())
+
+Sn = 0
+sign = 1
+for i in range(1, n + 1, 2):
+    Sn += sign * i
+    sign *= -1
+
+print("Sn =", Sn)
+
+```
+
+### 编写程序，计算 S.= 1 十 1/2 十 1/3 十…
+
+```py
+# 求n分之一
+def fraction_to_decimal(n):
+    return 1 / n
+
+
+n = int(input("请输入一个整数："))
+sum = 0
+for i in range(1, n + 1):
+    sum += fraction_to_decimal(i)
+print(sum)
+```
+
+### 编写程序，打印九九乘法表。要求输出九九乘法表的各种显示效果（上三角、下三角、矩形块等方式)。
+
+```py
+# 打印九九乘法表的矩形块
+def print_multiplication_table():
+    for i in range(1, 10):
+        for j in range(1, 10):
+            print(f"{i}*{j}={i*j}", end="\t")
+        print()
+
+
+# 打印九九乘法表的上三角
+def print_upper_triangle():
+    for i in range(1, 10):
+        for j in range(i, 10):
+            print(f"{i}*{j}={i*j}", end="\t")
+        print()
+
+
+# 打印九九乘法表的下三角
+def print_lower_triangle():
+    for i in range(1, 10):
+        for j in range(1, i + 1):
+            print(f"{i}*{j}={i*j}", end="\t")
+        print()
+
+
+print("矩形块:")
+print_multiplication_table()
+print("\n上三角:")
+print_upper_triangle()
+print("\n下三角:")
+print_lower_triangle()
+```
+
+### 编写程序，输入三角形的 3 条边，先判断是否可以构成三角形，如果可以，则进一步求三角形的周长和面积，否则报错“无法构成三角形！”。其运行效果如图 3-11 所示（结果均保留一位小数)。
+
+```py
+a, b, c = (
+    int(input("请输入三角形的三边长：")),
+    int(input("请输入三角形的三边长：")),
+    int(input("请输入三角形的三边长：")),
+)
+if a + b > c and a + c > b and b + c > a and a > 0 and b > 0 and c > 0:
+    S = (a + b + c) / 2
+    area = (S * (S - a) * (S - b) * (S - c)) ** 0.5
+    print(f"三角形的面积为：{area}")
+else:
+    print("输入的三边长不能构成一个三角形")
+
+```
+
