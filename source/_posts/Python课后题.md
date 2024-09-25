@@ -548,3 +548,72 @@ else:
 
 ```
 
+## 作业 4
+
+### 统计单词个数
+
+```py
+str = input("请输入字符串：")
+space_count = 0
+number_count = 0
+other_count = 0
+for i in str:
+    if i == " ":
+        space_count += 1
+
+print(f"其中单词数为：{space_count+1}")
+```
+
+### 删除 list 重复元素
+
+```py
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]
+new_list = []
+for i in list:
+    if i not in new_list:
+        new_list.append(i)
+print(new_list)
+```
+
+### 求列表中元素个数，最大值，最小值，元素之和，平均值
+
+```py
+s = [9, 7, 8, 3, 2, 1, 55, 6]
+count = 0
+max = s[0]
+min = s[0]
+sum = 0
+avg = 0
+for i in s:
+    if i > max:
+        max = i
+    if i < min:
+        min = i
+    sum += i
+avg = sum / len(s)
+print(f"最大值：{max}，最小值：{min}，和：{sum}，平均值：{avg}")
+```
+
+### 列表内偶数变次方，奇数不变
+
+```py
+s = [9, 7, 8, 3, 2, 1, 5, 6]
+new_s = []
+for i in s:
+    if i % 2 == 0:
+        new_s.append(i**2)
+    else:
+        new_s.append(i)
+print(f"变换前：{s}")
+print(f"变换后：{new_s}")
+```
+
+### 将字符串中的每个字符的 ASCII 码存入列表
+
+```py
+str = input("请输入字符串：")
+list = []
+for i in str:
+    list.append(ord(i))
+print(list)
+```
