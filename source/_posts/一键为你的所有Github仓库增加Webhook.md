@@ -1,7 +1,7 @@
 ---
 title: 一键为你的所有Github仓库增加/删除指定Webhook
 tags:
-  - GitHub
+  - Github
   - Webhook
   - Python脚本
   - 自动化

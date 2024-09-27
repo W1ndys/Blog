@@ -7,7 +7,7 @@ cover: https://t.mwm.moe/fj/?69
 date: 2024-01-24 11:31:37
 tags:
 - Hexo
-- GitHub
+- Github
 - Netlify
 - Cloudflare
 title: 使用 Hexo + GitHub + Netlify + Cloudflare提高博客的访问速度

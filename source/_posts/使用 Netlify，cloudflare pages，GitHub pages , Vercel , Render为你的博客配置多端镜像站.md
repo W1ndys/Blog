@@ -3,7 +3,7 @@ title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel , Render部署�
 tags:
   - Netlify
   - Cloudflare
-  - GitHub-pages
+  - Github-pages
   - Vercel
   - Render
   - blog
