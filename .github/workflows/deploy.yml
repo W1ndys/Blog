@@ -55,11 +55,9 @@ jobs:
           connect_timeout: 10s
           script: |
             cd ${{ secrets.ECS_SITE }}
-            rm -rf *
-            git clone -b master https://gitee.com/${{ secrets.GITEE_USERNAME }}/blog.git
-            cd blog
-            cp -r . ..
-            cd ..
-            rm -rf blog
+            git clone --depth 1 -b gh-pages https://ghp.ci/https://github.com/${{ secrets.GITHUB_USERNAME }}/${{ secrets.GITHUB_REPO }}.git # 从Github克隆博客，填写内容例如：W1ndys和Blog
+            rm -rf index
+            mv ${{ secrets.GITHUB_REPO }} index
+            cd index
             rm -rf .git
             chown -R 1000:1000 .
