@@ -44,20 +44,21 @@ jobs:
           hexo generate
           hexo deploy
 
-      - name: ECS clone Gitee # 连接服务器并克隆Gitee
-        uses: cross-the-world/ssh-pipeline@master
-        env:
-          WELCOME: "ssh pipeline"
-        with:
-          host: ${{ secrets.USER_HOST }} # 服务器的 IP 地址
-          user: ${{ secrets.USER_NAME }} # 服务器的用户名
-          pass: ${{ secrets.USER_PASS }} # 服务器的密码
-          connect_timeout: 10s
-          script: |
-            cd ${{ secrets.ECS_SITE }}
-            git clone --depth 1 -b gh-pages https://ghp.ci/https://github.com/${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git
-            rm -rf index
-            mv ${{ secrets.GH_REPO }} index
-            cd index
-            rm -rf .git
-            chown -R 1000:1000 .
+      - name: ECS clone # 连接服务器并克隆
+      uses: cross-the-world/ssh-pipeline@master
+      env:
+        WELCOME: "ssh pipeline"
+      with:
+        host: ${{ secrets.USER_HOST }} # 服务器的 IP 地址
+        user: ${{ secrets.USER_NAME }} # 服务器的用户名
+        pass: ${{ secrets.USER_PASS }} # 服务器的密码
+        connect_timeout: 10s
+        script:
+          | # 连接服务器并克隆，进入目录并删除旧的文件，移动新的文件，删除.git并修改权限
+          cd ${{ secrets.ECS_SITE }}
+          git clone --depth 1 -b gh-pages https://ghp.ci/https://github.com/${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git
+          rm -rf index
+          mv ${{ secrets.GH_REPO }} index
+          cd index
+          rm -rf .git
+          chown -R 1000:1000 .
