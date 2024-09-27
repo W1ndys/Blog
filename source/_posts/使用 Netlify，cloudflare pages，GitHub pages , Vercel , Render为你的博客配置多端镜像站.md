@@ -2,7 +2,7 @@
 title: 使用 Netlify，cloudflare pages，GitHub pages , Vercel , Render部署你的 Hexo
 tags:
   - Netlify
-  - cloudflare
+  - Cloudflare
   - GitHub-pages
   - Vercel
   - Render
