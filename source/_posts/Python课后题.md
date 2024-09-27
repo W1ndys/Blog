@@ -7,7 +7,7 @@ abbrlink: 9974513c
 date: 2024-09-04 08:59:59
 ---
 
-## 作业 1
+## 作业 1 Python 语言基础
 
 ### 编写程序，输入本金、年利率和年数、计算复利（结果保留两位小数）
 
@@ -150,7 +150,7 @@ PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1> python -u "d:\Do
 PS D:\Documents\StudyData\QFNU\AAA课程\Python\课程\作业1>
 ```
 
-## 作业 2
+## 作业 2 程序流程控制
 
 ### 编写程序，格式化输出杨辉三角。杨辉三角即二项式定理的系数表，各元素满足如下条件：第一列及对角线上的元素均为 1；其余每个元素等于它上一行同一列元素与前一列元素之和。
 
@@ -414,7 +414,7 @@ print(f"当n={n}时，sum_sn={sn}")
 
 ```
 
-## 作业 3
+## 作业 3 常用内置数据类型
 
 ### 编写程序，计算 1+2+3 十十 100 之和。
 
@@ -548,7 +548,7 @@ else:
 
 ```
 
-## 作业 4
+## 作业 4 序列数据类型
 
 ### 统计单词个数
 
@@ -727,3 +727,140 @@ poem = """白日依山尽
 print_poem(poem)
 ```
 
+## 实验 5 输入和输出
+
+### 解析命令行参数
+
+```
+# https://www.cnblogs.com/techflow/p/13631509.html#/
+
+import argparse
+
+
+def calculate_square_properties(side_length):
+    perimeter = 4 * side_length
+    area = side_length * side_length
+    return perimeter, area
+
+
+def main():
+    parser = argparse.ArgumentParser(description="计算正方形的周长和面积。")
+    parser.add_argument("--sidelength", type=int, default=10, help="正方形边长")
+
+    args = parser.parse_args()
+    side_length = args.sidelength
+
+    perimeter, area = calculate_square_properties(side_length)
+
+    print(f"周长={perimeter}, 面积={area}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 读取文本文件
+
+```py
+import argparse
+
+
+def main():
+    parser = argparse.ArgumentParser(description="读取文件的相对路径")
+    parser.add_argument("path", type=str, help="相对文件路径")
+
+    args = parser.parse_args()
+    path = args.path
+
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+            for idx, line in enumerate(lines, start=1):
+                print(f"{idx}: {line.strip()}")
+    except FileNotFoundError:
+        print(f"文件 {path} 未找到")
+    except Exception as e:
+        print(f"读取文件时发生错误: {e}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 输入并格式化保存 logs
+
+```py
+import argparse
+
+
+# 阶乘
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="n的值")
+    parser.add_argument("n", type=int, help="n的值")
+
+    args = parser.parse_args()
+    n = args.n
+
+    for i in range(n + 1):
+        try:
+            with open(f"out.logs", "a", encoding="utf-8") as file:
+                file.write(f"{i} {i*2} {factorial(i)}\n")
+        except Exception as e:
+            print(f"写入0-n时发生错误: {e}")
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+### 创建文本文件写入读取
+
+```py
+def read_file():
+    with open("shige.txt", "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for line in lines:
+            print(line.strip())
+
+
+def write_file():
+    with open("shige.txt", "w", encoding="utf-8") as file:
+        file.write("春晓\n春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。\n")
+
+
+if __name__ == "__main__":
+    write_file()
+    read_file()
+
+```
+
+### csv 文件读取和写入
+
+```py
+import pandas as pd
+
+headers = ["学号", "姓名", "年龄", "专业", "入学成绩"]
+rows = [
+    ("1001", "张三", 19, "物理学", 550),
+    ("1002", "李四", 18, "电子工程", 530),
+    ("1005", "王五", 19, "生物工程", 540),
+    ("1006", "赵四", 19, "软件工程", 530),
+]
+
+# 将数据写入CSV文件
+df = pd.DataFrame(rows, columns=headers)
+df.to_csv("data.csv", index=False, encoding="utf-8")
+
+# 读取CSV文件
+df_read = pd.read_csv("data.csv", encoding="utf-8")
+print(df_read)
+
+```
