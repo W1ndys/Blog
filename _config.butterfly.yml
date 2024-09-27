@@ -29,8 +29,8 @@ menu:
     笔墨迹: https://blogscn.fun/random.html || fas fa-pen
     博客圈: https://bokequan.cn/?suiji || fas fa-car
   项目||fa fa-pencil:
-    选课指北: /posts/216d9006 || fa fa-arrow-up
-    速通指南: /posts/8f8bbaa8 || fa fa-arrow-down
+    Easy-QFNU: https://github.com/W1ndys/Easy-QFNU || fa fa-book
+    W1ndys-bot: https://github.com/W1ndys-bot/W1ndys-bot || fa fa-robot
   关于||fa fa-user:
     关于我: /about/ || fas fa-heart
     一句话: /words/ || fas fa-quote-left
