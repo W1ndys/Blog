@@ -690,3 +690,40 @@ print(f"替换后成绩为{lst}")
 lst = [i for i in lst if i % 2 == 0]
 print(f"删除后成绩为{lst}")
 ```
+
+### 横版竖版输出古诗
+
+```py
+# 5.py
+
+
+def print_poem(poem):
+    # 将诗句按行分割
+    lines = poem.split("\n")
+
+    # 打印横版
+    print("--------横版--------")
+    for line in lines:
+        print(line)
+
+    # 打印竖版
+    print("\n--------竖版--------")
+    max_length = max(len(line) for line in lines)
+    for i in range(max_length):
+        for line in reversed(lines):  # 顺序倒置
+            if i < len(line):
+                print(line[i], end=" ")
+            else:
+                print("  ", end=" ")
+        print()
+
+
+# 输入古诗
+poem = """白日依山尽
+黄河入海流
+欲穷千里目
+更上一层楼"""
+
+print_poem(poem)
+```
+
