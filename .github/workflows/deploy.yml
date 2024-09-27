@@ -55,6 +55,8 @@ jobs:
           script: |
             echo "进入 ECS_SITE 目录"
             cd ${{ secrets.ECS_SITE }}
+            echo "删除旧的 ${{ secrets.GH_REPO }} 目录"
+            rm -rf ${{ secrets.GH_REPO }}
             echo "克隆 gh-pages 分支"
             git clone --depth 1 -b gh-pages https://ghp.ci/https://github.com/${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git
             echo "删除旧的 index 目录"
