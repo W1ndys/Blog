@@ -52,8 +52,8 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh-keyscan gitee.com >> ~/.ssh/known_hosts
-          git config --global user.email "w1ndys@outlook.com"
-          git config --global user.name "W1ndys"
+          git config --global user.email "你的邮箱"
+          git config --global user.name "你的用户名"
           git config --global init.defaultBranch main
           npm install hexo-cli -g
           npm install
@@ -118,6 +118,7 @@ jobs:
      - `name: Setup Hexo`：配置 Hexo 环境。
      - `env: ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}`：使用 GitHub Secrets 中的 `DEPLOY_KEY`。
      - `run:`：执行一系列命令来配置 SSH 密钥、全局 Git 配置和安装 Hexo 及其依赖。
+     - 注意这一步要在脚本中修改自己的邮箱和用户名。
 
    - **部署 Hexo**：
 
