@@ -61,12 +61,12 @@
 
     - name: xiaowaaa'blog
       link: http://xiaowaaa.asia/#/
-      avatar: http://xiaowaaa.asia/img/avatar.png
+      avatar: https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fefe7c481-d5a1-4e42-9614-393c8dfce519%2Fb52b3819-8161-401e-bd5e-f43d3c9f7c03%2F47382af47a274a14ada2db05bb8e5e9.jpg?table=collection&id=d06a509a-0089-4eb5-9042-d0e27a173dd9&t=d06a509a-0089-4eb5-9042-d0e27a173dd9&width=800&cache=v2
       descr: 兵哥的博客
 
     - name: lukzia'blog
       link: https://www.lukzia.site/
-      avatar: https://47.236.60.101/wp-content/uploads/2023/03/me.jpg
+      avatar: https://www.lukzia.site/wp-content/uploads/2023/03/me.jpg
       descr: 人如果没有梦想,那和深度神经网络有什么区别
 
     - name: Ed-Ryan'blog
@@ -105,8 +105,8 @@
       descr: 堃门！
 
     - name: 茕茕の博客
-      link: https://zhf521.github.io/MyBlog/
-      avatar: https://zhf521.github.io/MyBlog/logo.png
+      link: https://blog.azhf8.top/
+      avatar: https://zhf-picture.oss-cn-qingdao.aliyuncs.com/picture/logo.jpg
       descr: 热爱学习和生活的程序员
 
     - name: 上杉九月的博客
@@ -186,17 +186,18 @@
       avatar: https://moonshuo.cn/img/avatar.gif
       descr: 偷掉月亮-我们一起去偷月亮吧
 
-    - name: 追梦境
-      link: https://hexo.dreamerhe.qianxun7747.eu.org/
-      avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
-      descr: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
+    # - name: 追梦境
+    #   link: https://hexo.dreamerhe.qianxun7747.eu.org/
+    #   avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
+    #   descr: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
+
     - name: 浪浪山的染念
       link: https://dyedd.cn/
       avatar: https://q1.qlogo.cn/g?b=qq&nk=1176996982&s=640
       descr: 炼丹难，炼丹苦
 
     - name: baokker
-      link: https://baokker.github.io/
+      link: https://baokker-blog.top/
       avatar: https://baokker-oss-blog-hangzhou.oss-cn-hangzhou.aliyuncs.com/cdn_for_blog/blog_default_imgs/avatar.jpg
       descr: 回忆这理想不够理想，沿途逛世间一趟只有向上。
 
