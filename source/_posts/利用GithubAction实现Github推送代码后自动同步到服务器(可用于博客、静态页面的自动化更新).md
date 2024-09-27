@@ -134,7 +134,7 @@ jobs:
 
 ### 配置 Secrets
 
-![v2-27d495be4c864da8c07582d4fa2b1b17_720w.png (720×349)](https://pic1.zhimg.com/80/v2-27d495be4c864da8c07582d4fa2b1b17_720w.png)
+![v2-27d495be4c864da8c07582d4fa2b1b17.png (720×349)](https://pic1.zhimg.com/80/v2-27d495be4c864da8c07582d4fa2b1b17.png)
 
 在仓库的 `Settings` -> `Secrets` 中添加以下 Secrets：
 

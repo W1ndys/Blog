@@ -12,11 +12,11 @@ date: 2024-09-02 10:21:19
 
 ### 环境搭建
 
-![img](https://pica.zhimg.com/80/v2-80296acae072f8cbe64a998d3427cd80_720w.webp)
+![img](https://pica.zhimg.com/80/v2-80296acae072f8cbe64a998d3427cd80.webp)
 
 ### 配置镜像源
 
-![img](https://pic1.zhimg.com/80/v2-4580204c8c235148c3463805f6ad3d5e_720w.webp)
+![img](https://pic1.zhimg.com/80/v2-4580204c8c235148c3463805f6ad3d5e.webp)
 
 我一般直接是挂代理安装 pip 包，这里防止我本地环境搞乱不配置了，上面是 conda 的信息
 
@@ -47,9 +47,9 @@ date: 2024-09-02 10:21:19
 
 ### 功能演示
 
-![img](https://pica.zhimg.com/80/v2-7c59acaed28397bac321d0bfccb393f4_720w.webp)
+![img](https://pica.zhimg.com/80/v2-7c59acaed28397bac321d0bfccb393f4.webp)
 
-![img](https://pic1.zhimg.com/80/v2-569b1158c55ee1d047013ef15303415e_720w.webp)
+![img](https://pic1.zhimg.com/80/v2-569b1158c55ee1d047013ef15303415e.webp)
 
 ## 代码已实现功能
 
