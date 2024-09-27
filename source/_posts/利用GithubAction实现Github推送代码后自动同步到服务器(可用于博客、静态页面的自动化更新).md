@@ -144,7 +144,7 @@ jobs:
 - `ECS_SITE`：服务器上 Hexo 博客（或其他静态文件）的目录
 - `GH_USERNAME`：GitHub 用户名
 - `GH_REPO`：GitHub 仓库名
-- `DEPLOY_KEY`：用于连接服务器的 SSH 密钥
+- `DEPLOY_KEY`：用于生成静态文件推送到 GitHub 的 SSH 密钥
 
 ### 特点
 
