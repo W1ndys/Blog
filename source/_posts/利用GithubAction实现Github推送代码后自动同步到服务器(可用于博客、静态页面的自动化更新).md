@@ -84,7 +84,7 @@ jobs:
             chown -R 1000:1000 .
 ```
 
-### 工作流解释
+## 工作流解释
 
 这个 GitHub Actions 工作流文件 `deploy.yml` 主要用于在代码推送到 GitHub 仓库的 `main` 分支后，自动化部署 Hexo 博客，并将更新同步到服务器。以下是各个步骤的详细解释：
 
@@ -132,7 +132,7 @@ jobs:
      - `script:`：执行一系列命令来连接服务器、克隆仓库、删除旧文件、移动新文件、删除 `.git` 目录并修改权限。
      - `git clone --depth 1 -b gh-pages https://ghp.ci/https://github.com/${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git` 这一行是关键，通过克隆分支 `gh-pages` 来部署静态页面，并且只进行浅层克隆，节省了时间，其中可以根据自己的实际情况进行修改。
 
-### 配置 Secrets
+## 配置 Secrets
 
 ![v2-27d495be4c864da8c07582d4fa2b1b17.png (720×349)](https://pic1.zhimg.com/80/v2-27d495be4c864da8c07582d4fa2b1b17.png)
 
@@ -146,7 +146,7 @@ jobs:
 - `GH_REPO`：GitHub 仓库名
 - `DEPLOY_KEY`：用于生成静态文件推送到 GitHub 的 SSH 密钥
 
-### 特点
+## 特点
 
 - 使用 SSH 密钥连接服务器，避免了每次部署时输入密码的麻烦。
 - 通过 GitHub Actions 实现自动化部署，提高了效率。
