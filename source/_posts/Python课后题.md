@@ -617,3 +617,76 @@ for i in str:
     list.append(ord(i))
 print(list)
 ```
+
+## 作业 4 附加题
+
+### 列表元素用特定符号连接
+
+```py
+list = ["字符1", "字符2", "字符3", "字符4", "字符5", "字符6"]
+print("-".join(list))
+```
+
+### 删除列表重复元素，去重元素放到新列表
+
+```py
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]
+new_list = []
+for i in list:
+    if i not in new_list:
+        new_list.append(i)
+print(new_list)
+```
+
+### 输入多个分数存在列表，去除最高分和最低分，求平均分
+
+```py
+lst = list(map(int, input("请输入数字，用空格隔开：").split(" ")))
+lst.sort()
+lst = lst[1:-1]
+avg = sum(lst) / len(lst)
+print(avg)
+```
+
+### 空列表的添加，最高最低平均，降序切片，收尾插入，后五替换，奇数删除
+
+```py
+# 空列表的添加，最高最低平均，降序切片，收尾插入，后五替换，奇数删除
+
+# lst = [80, 50, 23, 61, 83, 35, 37, 51, 1, 37]
+
+# 空列表的添加
+lst = []
+for i in range(10):
+    lst.append(int(input("请输入第{}个成绩：".format(i + 1))))
+
+print(f"10个成绩为{lst}")
+
+# 最高最低平均
+print(f"最高分为{max(lst)}")
+print(f"最低分为{min(lst)}")
+print(f"平均分为{sum(lst) / len(lst)}")
+
+# 降序排列
+lst.sort(reverse=True)
+print(f"降序排列后10个成绩为{lst}")
+
+# 前三名
+print(f"前三名成绩为{lst[:3]}")
+
+# 后三名
+print(f"后三名成绩为{lst[-3:]}")
+
+# 首尾插入
+lst.insert(0, 100)
+lst.append(0)
+print(f"插入后成绩为{lst}")
+
+# 后五替换
+lst[-5:] = [60] * 5
+print(f"替换后成绩为{lst}")
+
+# 奇数删除
+lst = [i for i in lst if i % 2 == 0]
+print(f"删除后成绩为{lst}")
+```
