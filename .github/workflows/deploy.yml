@@ -61,4 +61,5 @@ jobs:
             cp -r . ..
             cd ..
             rm -rf blog
+            rm -rf .git
             chown -R 1000:1000 .
