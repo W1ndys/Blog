@@ -864,3 +864,25 @@ df_read = pd.read_csv("data.csv", encoding="utf-8")
 print(df_read)
 
 ```
+
+## 实验 6 异常处理
+
+### 异常处理
+
+```py
+try:
+    a = 10
+    b = 5
+    c = a / b
+    if a > b:
+        raise ValueError("a的值大于b.不符合要求")
+except IndexError:
+    print("索引错误")
+except ValueError as ve:
+    print(f"数值错误: {ve}")
+except ArithmeticError:
+    print("算术错误")
+except Exception as e:
+    print(f"未知异常: {e}")
+
+```
