@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked by W1ndys</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .terminal {
+            background-color: #000;
+            padding: 20px;
+            border: 2px solid #00FF00;
+            box-shadow: 0 0 10px #00FF00;
+            max-width: 80%;
+            text-align: left;
+            white-space: pre-line; /* Allow line breaks */
+            font-size: 20px; /* 调整字体大小 */
+        }
+        
+        .prompt {
+            color: #00FF00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="terminal" id="terminal">
+    </div>
+
+    <script>
+        // 文本数组
+        const textArray = [
+            "Welcome to Hacker page",
+            "Hacked by W1ndys",
+            "A DDoS attack is underway on you...",
+            "你已经被我攻击啦！",
+            "HHahahaha, you have been hacked by me!",
+            "\n",
+            "————W1ndys",
+            "(仅供娱乐，切勿当真)"
+        ];
+
+        // 获取终端元素
+        const terminal = document.getElementById("terminal");
+
+        // 初始化文本索引和间隔时间
+        let textIndex = 0;
+        let charIndex = 0;
+        const typingDelay = 30; // 100毫秒为每个字符的延迟
+
+        // 打字机效果函数
+        function typeText() {
+            if (textIndex < textArray.length) {
+                const currentText = textArray[textIndex];
+                appendText(currentText.charAt(charIndex)); // 将当前字符添加到终端
+                charIndex++;
+                if (charIndex < currentText.length) {
+                    setTimeout(typeText, typingDelay); // 递归调用以继续打字机效果
+                } else {
+                    textIndex++;
+                    charIndex = 0;
+                    appendText("\n"); // 添加换行符
+                    setTimeout(typeText, typingDelay); // 递归调用以继续下一行文字
+                }
+            }
+        }
+
+        // 添加文本到终端
+        function appendText(text) {
+            const span = document.createElement("span");
+            span.innerText = text;
+            terminal.appendChild(span);
+        }
+
+        // 页面加载后开始打字机效果
+        window.onload = function () {
+            typeText();
+        };
+    </script>
+</body>
+
+</html>
