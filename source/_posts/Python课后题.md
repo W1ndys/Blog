@@ -886,3 +886,98 @@ except Exception as e:
     print(f"未知异常: {e}")
 
 ```
+
+## 实验 7 函数和函数式编程
+
+### 递归非递归求阶乘
+
+```py
+# 递归求阶乘
+def fact(n):
+    if n == 1:
+        return 1
+    else:
+        return n * fact(n - 1)
+
+
+# 非递归求阶乘
+def fact_iter(n):
+    result = 1
+    while n > 1:
+        result *= n
+        n -= 1
+    return result
+
+
+n = int(input("请输入一个整数："))
+print("递归求阶乘：", fact(n))
+print("非递归求阶乘：", fact_iter(n))
+
+```
+
+### 斐波那契数列
+
+```
+# 求斐波那契数列
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+
+# 输出前20，每行10个
+for i in range(1, 21):
+    print(fib(i), end="\t")
+    if i % 10 == 0:
+        print()
+```
+
+### 可变参数定义
+
+```
+#  可变参数求任意个数的最小值
+def min_n(a, b, *c):
+    return min(a, b, *c)
+
+
+# 测试代码
+print(min_n(8, 2))
+print(min_n(16, 1, 7, 4, 15))
+
+```
+
+### 元组
+
+```
+def analyze_sequence(seq):
+    max_value = max(seq)
+    min_value = min(seq)
+    count = len(seq)
+    return max_value, min_value, count
+
+
+# 测试数据
+s1 = [9, 7, 8, 3, 2, 1, 55, 6]
+s2 = ["apple", "pear", "melon", "kiwi"]
+s3 = "TheQuickBrownFox"
+
+# 运行测试
+result1 = analyze_sequence(s1)
+result2 = analyze_sequence(s2)
+result3 = analyze_sequence(s3)
+
+print(
+    f"list1 = {s1}\n最大值 = {result1[0]}, 最小值 = {result1[1]}, 元素个数 = {result1[2]}"
+)
+print(
+    f"list2 = {s2}\n最大值 = {result2[0]}, 最小值 = {result2[1]}, 元素个数 = {result2[2]}"
+)
+print(
+    f"list3 = {s3}\n最大值 = {result3[0]}, 最小值 = {result3[1]}, 元素个数 = {result3[2]}"
+)
+
+```
+
