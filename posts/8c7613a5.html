@@ -1,0 +1,711 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HW | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="HW HW linux 系统  首先查看一下基础信息 netstat -ano&#x2F;-a #查看端口情况 uname -a #系统信息 ps -aux ps -ef #进程信息 cat &#x2F;etc&#x2F;passwd #用户情况 ls &#x2F;home&#x2F; #用户情况  查看日志文件  &#x2F;var&#x2F;log&#x2F;nginx&#x2F; #默认 Nginx 日志目录 &#x2F;var&#x2F;log&#x2F;apache&#x2F; #默认 Apache 日志目录 &#x2F;v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HW">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/8c7613a5.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="HW HW linux 系统  首先查看一下基础信息 netstat -ano&#x2F;-a #查看端口情况 uname -a #系统信息 ps -aux ps -ef #进程信息 cat &#x2F;etc&#x2F;passwd #用户情况 ls &#x2F;home&#x2F; #用户情况  查看日志文件  &#x2F;var&#x2F;log&#x2F;nginx&#x2F; #默认 Nginx 日志目录 &#x2F;var&#x2F;log&#x2F;apache&#x2F; #默认 Apache 日志目录 &#x2F;v">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ts1.cn.mm.bing.net/th/id/R-C.aa5ec1661251ce3a8a572e5372963682?rik=PQKLxnZAoj6Jdg&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f40154%2f0058.jpg_wh300.jpg!%2ffh%2f300%2fquality%2f90&ehk=sAm6P8WHj2krqBvO0hscCiA8udGEq6UIsBGHhy9L3fE%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1">
+<meta property="article:published_time" content="2024-04-07T05:21:31.000Z">
+<meta property="article:modified_time" content="2024-10-17T03:14:25.645Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="HW">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ts1.cn.mm.bing.net/th/id/R-C.aa5ec1661251ce3a8a572e5372963682?rik=PQKLxnZAoj6Jdg&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f40154%2f0058.jpg_wh300.jpg!%2ffh%2f300%2fquality%2f90&ehk=sAm6P8WHj2krqBvO0hscCiA8udGEq6UIsBGHhy9L3fE%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/8c7613a5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"这篇文章已经有","messageNext":"天没有更新了，请注意甄别时效性，可能有部分已失效"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HW',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-17 11:14:25'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">179</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">145</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="W1ndysの小屋"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg"/><span class="site-name">W1ndysの小屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HW<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/HW.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-07T05:21:31.000Z" title="发表于 2024-04-07 13:21:31">2024-04-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-17T03:14:25.645Z" title="更新于 2024-10-17 11:14:25">2024-10-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HW/">HW</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HW"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="hw">HW</h1>
+<h2 id="hw">HW</h2>
+<p>linux 系统</p>
+<blockquote>
+<p>首先查看一下基础信息</p>
+<p>netstat -ano/-a #查看端口情况</p>
+<p>uname -a #系统信息</p>
+<p>ps -aux ps -ef #进程信息</p>
+<p>cat /etc/passwd #用户情况</p>
+<p>ls /home/ #用户情况</p>
+</blockquote>
+<p>查看日志文件</p>
+<blockquote>
+<p>/var/log/nginx/ #默认 Nginx 日志目录<br>
+/var/log/apache/ #默认 Apache 日志目录<br>
+/var/log/apache2/ #默认 Apache 日志目录<br>
+/usr/local/tomcat/logs #Tomcat 日志目录</p>
+</blockquote>
+<p><code>tail -f xxx.log</code> #实时刷新滚动日志文件</p>
+<p>通过命令查看可疑文件</p>
+<blockquote>
+<p>find /var/www/html -name <em>.php -mmin -20 #查看最近 20 分钟修改文件<br>
+find ./ -name '</em>.php’ | xargs wc -l | sort -u #寻找行数最短文件<br>
+grep -r --include=<em>.php ‘[^a-z]eval($_POST’ /var/www/html #查包含关键字的 php 文件<br>
+find /var/www/html -type f -name &quot;</em>.php&quot; | xargs grep “eval(” |more</p>
+</blockquote>
+<p>不死马查杀命令（只是临时解决方案，彻底解决请重启服务器）</p>
+<p><code>&lt;?php system(&quot;kill -9 pid;rm -rf .shell.php&quot;); ?&gt; </code> #pid和不死马名称根据实际情况定</p>
+<p>后门用户查杀：<br>
+UID 大于 500 的都是非系统账号，500 以下的都为系统保留的账号，使用 userdel -r username 完全删除账户</p>
+<p>通过主机安全和态势感知发现告警，这类发现告警的话是可以定位到具体的时间的，根据发生时间来上级排查，定位该时间段内服务器上有做修改的文件，可以快速排查到是否存在 webshell 文件</p>
+<p>windows 系统</p>
+<ol>
+<li>
+<p>首先排查 windows 日志查看可疑时间段内的操作，查看 windows 日志方法（通过运行命令。按下“Win+R”键打开运行窗口，输入“eventvwr.msc”后按回车键），需要重点排查的内容是，在被攻击的时间段内的文件打开记录. 自启动运行记录. 软件运行记录，通过排查日志来清理入侵者上传的后门等文件<br>
+[图片]</p>
+</li>
+<li>
+<p>排查目前的进程，按住 Ctrl+Shift+esc 可以打开任务管理器，需要观察的是占用网络比较大的进程，可以按照网络排序查看是否有占用流量比较大的的进程，右键可以定位到该文件在磁盘中的物理位置，查看可疑文件的创建时间来判断是否为攻击者上传的文件（这个时间也可以修改的，只能作为参考，并不代表创建时间较老就不是攻击者上传的文件）<br>
+[图片]</p>
+</li>
+<li>
+<p>查看系统自启动项（通过运行命令。按下“Win+R”键打开运行窗口，输入“msconfig.exe”后按回车键）需要查看的是服务这里面是否有可疑的自启动项，这里面显示的是在开机的时候会自动运行的命令，如果被攻击的话可能在这里看到是否有攻击者为了维持权限添加的自启动项，从而定位到木马文件。<br>
+[图片]</p>
+</li>
+<li>
+<p>查看系统用户是否存在影子用户，打开注册表查看 KEY_LOCAL_MACHINE/SAM/SAM/Domains/Account/Users/下是否存在陌生账户，及时删除。<br>
+影子账户：通过修改注册表内用的 abc<code>$值和已存在用户abc$</code>的相同的手段，可以实现 net user 命令看不到用户；用户管理窗口也看不到用户；只可以通过注册表查看到该用户，攻击者可以利用该账号直接登录到系统</p>
+</li>
+</ol>
+<h2 id="安全设备">安全设备</h2>
+<p>雷池 waf <a target="_blank" rel="noopener" href="https://waf-ce.chaitin.cn/">https://waf-ce.chaitin.cn/</a></p>
+<p>报警</p>
+<p>绝大部分攻击流量都是 http，web 层面，看流量包研判</p>
+<p>其他的应用绝大部分都是密码暴破 mysql，rdp，ssh，mssql，redis 等</p>
+<p>常见协议的端口</p>
+<h2 id="简单的-payload">简单的 payload</h2>
+<p>扫描器的 payload，sql 注入，xss，xxe，ssti，命令注入，代码注入，请求走私，反弹 shell，webshell 上传</p>
+<h2 id="复杂的-payload">复杂的 payload</h2>
+<p>反序列化 payload，编码 payload，webshell 通信</p>
+<p>常见的绕过，{IFS}，%00，<code>/\*\*/</code>，0x1212123213</p>
+<h2 id="溯源">溯源</h2>
+<h3 id="网络层面">网络层面</h3>
+<p>安全设备的记录，态势感知，日志审计，定位源 ip</p>
+<p>定位真实 ip：社工，攻击者工具漏洞，蜜罐</p>
+<h3 id="主机层面">主机层面</h3>
+<h4 id="用户">用户</h4>
+<p>登录记录，突然多出来的用户，隐藏用户</p>
+<h4 id="进程">进程</h4>
+<p>特权进程，隐藏进程，资源占用比较高的进程</p>
+<h4 id="网络连接">网络连接</h4>
+<p>本机和其他机器建立的连接，dns 隧道</p>
+<p>微步在线 IP 和域名是否是恶意的 <a target="_blank" rel="noopener" href="https://x.threatbook.com/">https://x.threatbook.com/</a></p>
+<h4 id="常见的持久化手段">常见的持久化手段</h4>
+<p>webshell，ssh 后门，icmp 隧道，dns 隧道等</p>
+<h2 id="主要的-web-漏洞">主要的 Web 漏洞</h2>
+<h3 id="sql-注入">Sql 注入</h3>
+<p>原理：网站数据过滤不严格，过分信赖用户输入的数据, 没有过滤用户输入的恶意数据，无条件的把用户输入的数据当作 SQL 语句执行，因此导致 sql 注入漏洞产生</p>
+<p>Sql 注入分类：</p>
+<ol>
+<li>以有无闭合字符分类：字符型. 整数型</li>
+<li>以数据传输方式分类：post 类型. get 类型</li>
+<li>注入方式细分：联合查询注入. 报错型注入. 布尔型盲注. 时间型盲注. 宽字节注入</li>
+</ol>
+<p>报错注入常用函数：<code>UpdateXML() </code>. <code>Floor()</code>. <code>Extractvalue()</code></p>
+<p>mysql 默认存在的哪个数据库，注入时经常用到？</p>
+<blockquote>
+<p><code>Information_schema</code></p>
+</blockquote>
+<p>时间型盲注特点？常用函数？易受到什么影响？</p>
+<ol>
+<li>
+<p>场景：应用于无数据回显，无报错，布尔型盲注失效后</p>
+</li>
+<li>
+<p>特点：时间型盲注页面没有明显的回显，只能根据页面刷新时间的长短来去判断构造语句是否正确；</p>
+</li>
+<li>
+<p>常用函数: sleep 函数 if 条件语句 等</p>
+</li>
+<li>
+<p>易受网络波动影响</p>
+</li>
+</ol>
+<p>布尔型盲注特点?常用函数？</p>
+<ol>
+<li>
+<p>特点:根据页面正确和错误的两种状态，来判断构造语句是否正确</p>
+</li>
+<li>
+<p>常用函数：</p>
+<ol>
+<li>length() #用以猜测数据返回字符串的长度</li>
+<li>Sunstr() #截取字符串</li>
+<li>Mid() #取出字符串的一部分值</li>
+<li>Left() #取出字符串左边的几个数据</li>
+<li>Ascii() #返回一个字符的 ascii 码值</li>
+</ol>
+</li>
+</ol>
+<p>sql 手注的一般步骤</p>
+<ol>
+<li>
+<p>判断注入点</p>
+</li>
+<li>
+<p>判断注入类型</p>
+</li>
+<li>
+<p>判断注入点提交方式</p>
+</li>
+<li>
+<p>使用 order by 语句查询数据库有多少字段</p>
+</li>
+<li>
+<p>使用联合查询来查询 union select</p>
+<p>User（） 当前用户</p>
+<p>Database() 数据库</p>
+<p>Version() 数据库版本</p>
+</li>
+<li>
+<p>查询数据库中的表. 列和值</p>
+</li>
+</ol>
+<h2 id="应急响应问题">应急响应问题</h2>
+<h3 id="linux-服务器被上传-webshell-如何进行应急">linux 服务器被上传 webshell，如何进行应急</h3>
+<ol>
+<li>
+<p>在网站的根目录下用下河马或者 d 盾扫下看看，看看能不能扫出 webshell</p>
+</li>
+<li>
+<p>查看网站的 web 日志，使用 weblshell 会在网站的 web 日志中留下 Webshell 页面的访问数据和数据提交记录，主要特征是少量 ip 对其发起访问，总的访问次数少，该页面属于孤立页面</p>
+</li>
+<li>
+<p>看下相关设备的告警流量，看下 web shell 的名字和路径，然后在服务器上使用 find 命令进行查找。并删除</p>
+</li>
+</ol>
+<h3 id="hw-期间的应急响应">hw 期间的应急响应</h3>
+<ol>
+<li>
+<p>一般先封堵攻击源 IP，事件处置组人员根据攻击事件通报信息或报告，封禁攻击源 IP</p>
+</li>
+<li>
+<p>事件处置组人员根据攻击事件报告，处置安全事件，处置方式包括：安全设备策略调整、系统下线、服务器排查、应用排查、加固整改、系统上线</p>
+</li>
+<li>
+<p>上报安全事件，上报接口人根据攻击行为报告和处置报告，对攻击事件、威胁处置上报演习系统上报平台</p>
+</li>
+</ol>
+<h3 id="除了杀进程还有什么方法可以快速找到-webshell-吗？因为有时候占用率高的不一定是木马-也可能是业务相关进程">除了杀进程还有什么方法可以快速找到 webshell 吗？因为有时候占用率高的不一定是木马，也可能是业务相关进程</h3>
+<p>看下相关设备的告警流量，看下 webshell 的名字和路径，然后在服务器上使用 find 命令进行查找。</p>
+<p>或者在网站的根目录下用下河马或者 d 盾扫下看看，看看能不能扫出 webshell。</p>
+<h3 id="应急响应的流程？">应急响应的流程？</h3>
+<h3 id="应急响应常用的工具？">应急响应常用的工具？</h3>
+<p>火绒剑、d 盾、河马(linux 和 windows 通用)、微步云沙箱.</p>
+<h3 id="查看进程-注册表的工具有了解吗？">查看进程、注册表的工具有了解吗？</h3>
+<p>火绒剑可以一键查看进程和注册表. LastActivityView</p>
+<h3 id="windows-应急响应">windows 应急响应</h3>
+<ol>
+<li>
+<p>进程排查 netstat -ano 查看目前的网络连接，定位可以的 ESTABLISHED,根据 netstat 定位的 pid(进程编号)再通过 taskli st 显示运行本地或远程计算机的所有进程</p>
+</li>
+<li>
+<p>用户组情况判断 查看服务器中的，dos 命令 net user 查看隐藏的账户注册表 HKEY_LOCAL MACHINE\SAM\SAM\Domains\Acco unt\Users\Names</p>
+</li>
+<li>
+<p>服务相关判断 运行 command+R m sconfig(打开系统设置)服务</p>
+</li>
+<li>
+<p>系统启动项排查 msconfig 启动</p>
+</li>
+<li>
+<p>计划任务创建/删除检测 cmd 中 scht asks.exe</p>
+</li>
+<li>
+<p>注册表的排查注册表的排查，建议使用杀软去做文件排查查看最近访问的目录：recent webshell:D 盾、河马 webshell C2<br>
+后门：360、卡巴、诺顿</p>
+</li>
+<li>
+<p>日志排查 windows 登录日志排查运行 eventvwr4624 账号成功登录 4625 账号登录失败</p>
+</li>
+<li>
+<p>中间件日志排查 不同中间件有不同日志目录看源 p 目的 ul 时间响应码可以用工具：360 星图日志结尾一般为 acess.logo</p>
+</li>
+</ol>
+<h3 id="linux-应急响应">linux 应急响应</h3>
+<ol>
+<li>
+<p>文件排查：tmp 目录文件（临时文件）Is-alt /tmp</p>
+</li>
+<li>
+<p>启动项排查：查看开启启动项内容 ls-alt/etc/init…d/</p>
+</li>
+<li>
+<p>查看命令执行记录：直接 history 或者 cat~/bash_history</p>
+</li>
+<li>
+<p>用户信息排查/etc/passwd</p>
+</li>
+<li>
+<p>计划任务排查 crontab 查看当前的计划有那些，是否有后门木马程序启动相关信息</p>
+</li>
+<li>
+<p>进程排查：netstat-antlp,根据 n etstat 定位出 pid,使用 ps 命令，分析进程 top</p>
+</li>
+<li>
+<p>系统登录日志排查：ssh 日志：/var/log/lastlog 查看最近登录的记录系统中所有用户最近一次登录信息：lastlog</p>
+</li>
+<li>
+<p>中间件日志查询 Apache:var/log/httpd/Ngix:var/log/nginx//</p>
+</li>
+<li>
+<p>后门排查使用河马 webshell/find(命令)可以用工具：GScan</p>
+</li>
+</ol>
+<h3 id="勒索病毒的应急响应？">勒索病毒的应急响应？</h3>
+<ol>
+<li>
+<p>首先了解现状、了解发病时间和系统架构，确认被感染的主机</p>
+</li>
+<li>
+<p>先进行临时处置，对被感染的主机进行网络隔离，禁止使用移动存储设备，对未感染的主机进行 ACL 隔离，关闭 SSH（Linux 的远控），RDP（Windows 的远控）等协议，也不能适用移动存储设。</p>
+</li>
+<li>
+<p>获取样本，Windows 系统进行文件排查，进程排查，系统信息排查，系统日志排查；Linux 系统排查文件、进程、日志</p>
+</li>
+<li>
+<p>进行进一步的处置，对已经感染的主机，进行断网隔离，等待解密进展，最后重装系统，对位感染的主机进行补丁修复，还可以使用安全软件进行防护并及时更新病毒库/规则库</p>
+</li>
+<li>
+<p>最后是防御，定期打补丁，部署杀软，对口令策略进行加固，部署流量监测设备。</p>
+</li>
+</ol>
+<h3 id="挖矿应急响应">挖矿应急响应</h3>
+<ol>
+<li>
+<p>判断</p>
+<ol>
+<li>
+<p>查看 CPU 占用率（判断 CPU 占用率是否过高）</p>
+</li>
+<li>
+<p>查看天眼的流量分析，是否去别的有危险的网站下载东西，然后在本地执行了挖矿的一些命令（结合天眼设备分析，看是否去可以网站下载过东西，或在本地执行挖矿命令）</p>
+</li>
+<li>
+<p>是否有外连，向远程 IP 的请求（netstat -ano 查看所有端口）</p>
+</li>
+</ol>
+</li>
+<li>
+<p>事件分析（第二步分析）</p>
+<ol>
+<li>
+<p>登录网站服务器，查看进程是否有异常；（查看网站服务器是否有异常进程 系统命令 tasklist）</p>
+</li>
+<li>
+<p>进行查看异常进程的服务项是什么…选择可疑服务项，然后停止服务，其启动类型会变为静止。（并查看它的服务项，尤其是可疑服务（系统命令 services.msc 查看服务项））</p>
+</li>
+<li>
+<p>进行查看一下计划任务有没有可疑的（查看一下有没有可疑的计划任务）</p>
+</li>
+</ol>
+</li>
+<li>
+<p>临时解决方案（最后解决并处置）</p>
+<ol>
+<li>
+<p>停止并禁用可以服务项，有时候服务项的名称会变，但描述不会变，根据描述快速找到服务项，删除服务项（然后根据描述寻找可疑服务项，停用可疑服务项）</p>
+</li>
+<li>
+<p>根据实际存在木马的路径，进行删除木马（如果知道木马的路径的话，直接删除木马）</p>
+</li>
+<li>
+<p>重启服务器</p>
+</li>
+<li>
+<p>使用杀软全盘查杀</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="java-反序列化的-cc-链构造原理">Java 反序列化的 CC 链构造原理</h3>
+<p>Java 反序列化的 CC 链构造原理涉及了 Java 反序列化机制、Commons Collections 库中的 Transformer 接口以及漏洞利用的过程。以下是构造 CC 链的基本原理：</p>
+<p><strong>Java 反序列化机制：</strong><br>
+Java 的反序列化机制允许将对象从字节流中重新构建成实例。这个过程涉及到将对象的状态信息从字节流中读取出来，并使用这些信息来构造对象的实例。Java 中的反序列化由 ObjectInputStream 类来执行。</p>
+<p><strong>Commons Collections 库中的 Transformer 接口：</strong><br>
+Commons Collections 库提供了一组 Transformer 接口和实现，用于对对象进行转换和操作。其中，Transformer 接口定义了一个单一方法 transform，用于对输入对象进行转换并返回转换后的对象。攻击者可以构造一个 Transformer 链，将多个 Transformer 对象串联起来，形成一个 CC 链。</p>
+<p><strong>漏洞利用过程：</strong><br>
+构造的 CC 链会利用 Commons Collections 库中的某些 Transformer 实现中的漏洞，通过反序列化触发漏洞，并最终实现攻击者预期的恶意操作。通常情况下，这些漏洞会导致在反序列化过程中执行任意代码或者执行特定的恶意操作。</p>
+<p>具体来说，构造 CC 链的过程可能包括以下步骤：</p>
+<ol>
+<li>选择合适的 Transformer 实现，并组成一个 Transformer 链。</li>
+<li>构造一个带有 CC 链的序列化数据，通常使用 Java 的序列化机制实现。</li>
+<li>将序列化数据输入到目标应用程序中，通过反序列化触发漏洞，使 CC 链得以执行。</li>
+</ol>
+<p>最终，CC 链中的 Transformer 将按照预期执行，并实现攻击者的目标，例如执行任意代码或者获取系统权限。</p>
+<p>总的来说，Java 反序列化的 CC 链构造原理涉及了利用 Commons Collections 库中的 Transformer 接口和 Java 的反序列化机制，通过构造特定的 Transformer 链并利用漏洞来实现攻击目标。</p>
+<h2 id="讲一下-top10-有哪些？">讲一下 TOP10 有哪些？</h2>
+<p>1.失效的访问控制</p>
+<p>2.加密机制失效</p>
+<p>3.注入（包括跨站脚本攻击 XSS 和 SQL 注入等）</p>
+<p>4.不安全设计</p>
+<p>5.安全配置错误</p>
+<p>6.自带缺陷和过时的组件</p>
+<p>7.身份识别和身份验证错误</p>
+<p>8.软件和数据完整性故障</p>
+<p>9.安全日志和监控故障</p>
+<p>10.服务端请求伪造 SSRF</p>
+<h2 id="冰蝎-菜刀-蚁剑-哥斯拉的特点">冰蝎、菜刀、蚁剑、哥斯拉的特点</h2>
+<p>菜刀：ASP 语言编写的 Windows 远控管理软件，年代比较久，鼻祖级别的，曾经风靡一时，现已经逐渐被其他三个所取代<br>
+冰蝎：基于 Java 编写，有跨平台特性，流量动态加密（AES128 + 随机密钥）<br>
+哥斯拉：基于 C#编写，流量加密能过大部分静态查杀和 WAF（查杀和 WAF 也在更新，随时就可能不行了），自带的各种插件功能异常强大<br>
+蚁剑：基于 Java 编写跨平台远控管理工具，模块化开发，代码简单易懂，可扩展性强</p>
+<h2 id="冰蝎-菜刀-蚁剑-哥斯拉的流量特征">冰蝎、菜刀、蚁剑、哥斯拉的流量特征</h2>
+<p>菜刀： 流量特征主要表现在 HTTP 协议上，使用 HTTP 协议通信，控制命令和数据都通过 POST 请求传输。因此，可以通过 HTTP 请求头中的 User-Agent、Referer 等信息进行识别<br>
+蚁剑： 流量特征主要表现在数据包的加密方式和数据类型。蚁剑使用了 AES 加密算法对数据进行加密，同时还使用了自定义的二进制协议，在通信中传输各种类型的数据<br>
+冰蝎： 流量特征主要表现在数据包中的特殊标记和传输的数据类型。冰蝎的数据包中包含了特定的标记，如”flag=0x52415631”，用于标识该数据包是冰蝎的控制命令。此外，冰蝎还使用了一种自定义的二进制协议，在通信中传输各种类型的数据。<br>
+哥斯拉： 流量特征主要表现在数据包的特殊标记和数据类型。哥斯拉的数据包中包含了特定的标记，如”XORHEAD”和”XORBODY”，用于标识该数据包是哥斯拉的控制命令。此外，哥斯拉还使用了一种自定义的二进制协议，在通信中传输各种类型的数据</p>
+<h2 id="冰蝎的通信原理">冰蝎的通信原理</h2>
+<p>攻击者发送连接请求至服务端，建立 SSL/TLS 协议的加密通道，使用 HTTP 协议进行数据传输，并且对数据进行了加密处理，保证通信内容的机密性<br>
+服务端返回一个随机数作为密钥（目前是 16 位 MD5），存储在 $_SESSION 中返回给客户端<br>
+客户端输入待执行命令，使用上述返回的密钥进行加密（目前是 AES 128），发送至服务端<br>
+服务端解密，执行相关命令，并加密执行结果（目前是 AES 128）<br>
+客户端对执行结果解密<br>
+固定的请求字节头（dFAXQV1LORcHRQtLRlwMAhwFTAg/M 解密后： @error_reporting;\r）和固定的响应字节头（TxcWR1NNExZAD0ZaAWMIPAZjH1BFBFtHThcJSlUXWEd 解密后： {“status”:”c3VjY2Vzcw==”,”msg”:”）<br>
+默认连接密码 rebeyond，冰蝎 4.0 有一串固定密钥 e45e329feb5d925b ，是默认连接密码的 32 位 MD5 值的前 16 位</p>
+<h2 id="冰蝎的流量特征">冰蝎的流量特征</h2>
+<p>Accept ： Accept: application/json, text/javascript, /; q=0.01<br>
+Content-Type ：大量的 Content-type: Application/x-www-form-urlencoded<br>
+User-Agent ： 随机的<br>
+Port：端口通常在 49700 附近<br>
+代码：webshell 固定代码，不同开发语言的 webshell 代码不同。如 <code>$post=Decrypt(file_get_contents(“php://input”)); eval($post)</code><br>
+连接：冰蝎为了减少开销，默认使用长链接，请求头和响应头中会带有 Connection: Keep-Alive</p>
+<p>冰蝎流量特征<br>
+2.1 冰蝎 2.0<br>
+使用<code>AES加密 + base64编码</code>，AES 使用动态密钥对通信进行加密，进行请求时内置了十几个 User-Agent 头，每次请求时会随机选择其中的一个。因此当发现一个 ip 的请求头中的 user-agent 在频繁变换，就可能是冰蝎。<br>
+2.2 冰蝎 3.0<br>
+使用 AES 加密 + base64 编码,取消了 2.0 的动态获取密钥，使用固定的连接密钥，AES 加密的密钥为 webshell 连接密码的 MD5 的前 16 位，默认连接密码是&quot;rebeyond&quot;(即密钥是 md5(‘rebeyond’)[0:16]=e45e329feb5d925b)。进行请求时内置了十几个 User-Agent 头，每次请求时会随机选择其中的一个。因此当发现一个 ip 的请求头中的 user-agent 在频繁变换，就可能是冰蝎。</p>
+<p>3.0 连接 jsp 的 webshell 的请求数据包中的 content-type 字段常见为 application/octet-stream。</p>
+<p>2.3 冰蝎 4.0<br>
+提供了传输协议自定义的功能，让用户对流量的加密和解密进行自定义，实现流量加解密协议的去中心化。v4.0 版本不再有连接密码的概念，自定义传输协议的算法就是连接密码。<br>
+Accept 字段（弱特征），通常是 Accept: application/json, text/javascript, /; q=0.01 意思是浏览器可接受任何文件，但最倾向 application/json 和 text/javascript。<br>
+Content-Type 字段（弱特征），通常是 Content-type: Application/x-www-form-urlencoded<br>
+与冰蝎的前述版本相似，进行请求时内置了十几个 User-Agent 头，每次请求时会随机选择其中的一个。<br>
+连接的端口有一定的特征，冰蝎与 webshell 建立连接的同时，java 也与目的主机建立 tcp 连接，每次连接使用本地端口在 49700 左右(就是比较大的端口)，每连接一次，每建立一次新的连接，端口就依次增加。<br>
+使用长连接，避免了频繁的握手造成的资源开销。默认情况下，请求头和响应头里会带有 Connection：Keep-Alive<br>
+有固定的请求头和响应头，请求字节头：dFAXQV1LORcHRQtLRlwMAhwFTAg/M ，响应字节头：TxcWR1NNExZAD0ZaAWMIPAZjH1BFBFtHThcJSlUXWEd<br>
+默认时，冰蝎 webshell 都有“e45e329feb5d925b” 一串密钥，与冰蝎 3.0 相同。 3. 哥斯拉流量特征<br>
+哥斯拉支持多种加密方式，采用了和冰蝎 2.0 类似的密钥交换方式。它的 webshell 需要动态生成，可以根据需求选择不同的加密方式。</p>
+<p>3.1 哥斯拉静态特征<br>
+在默认脚本编码的情况下，jsp 会出现 xc、pass 字符和 Java 反射(ClassLoader，getClass().getClassLoader())，base64 加解码等特征。</p>
+<p>3.2 哥斯拉动态特征<br>
+User-Agent 字段（弱特征），如果采用默认的情况，会暴露使用的 jdk 信息。不过哥斯拉支持自定义 HTTP 头部，这个默认特征是可以很容易去除的。<br>
+Accept 字段（弱特征），默认是 Accept:text/html, image/gif, image/jpeg, *; q=.2, /; q=.2。同上，这个也可修改，只能作为辅助检测的特征。<br>
+Cookie 中有一个非常关键的特征，最后会有个分号。估计后续的版本会修复。<br>
+响应体的数据有一定特征，哥斯拉会把一个 32 位的 md5 字符串按照一半拆分，分别放在 base64 编码的数据的前后两部分。整个响应包的结构体征为：md5 前十六位+base64+md5 后十六位。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-andrea/p/17473499.html#/">https://www.cnblogs.com/-andrea/p/17473499.html#/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/8c7613a5.html">https://blog.w1ndys.top/posts/8c7613a5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HW/">HW</a></div><div class="post_share"><div class="social-share" data-image="https://ts1.cn.mm.bing.net/th/id/R-C.aa5ec1661251ce3a8a572e5372963682?rik=PQKLxnZAoj6Jdg&amp;riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f40154%2f0058.jpg_wh300.jpg!%2ffh%2f300%2fquality%2f90&amp;ehk=sAm6P8WHj2krqBvO0hscCiA8udGEq6UIsBGHhy9L3fE%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/471190f.html" title="回忆我的Github"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&amp;pid=ImgDetMain" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">回忆我的Github</div></div></a></div><div class="next-post pull-right"><a href="/posts/827e82d0.html" title="汇编语言与逆向工程实验报告6"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?113" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">汇编语言与逆向工程实验报告6</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/8aed0b1c.html" title="2024年4月12日HW面试被拷打"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?2" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-12</div><div class="title">2024年4月12日HW面试被拷打</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hw"><span class="toc-number">1.</span> <span class="toc-text">HW</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hw"><span class="toc-number">1.1.</span> <span class="toc-text">HW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87"><span class="toc-number">1.2.</span> <span class="toc-text">安全设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-payload"><span class="toc-number">1.3.</span> <span class="toc-text">简单的 payload</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84-payload"><span class="toc-number">1.4.</span> <span class="toc-text">复杂的 payload</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%AF%E6%BA%90"><span class="toc-number">1.5.</span> <span class="toc-text">溯源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%E9%9D%A2"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络层面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%B1%82%E9%9D%A2"><span class="toc-number">1.5.2.</span> <span class="toc-text">主机层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">网络连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96%E6%89%8B%E6%AE%B5"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">常见的持久化手段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9A%84-web-%E6%BC%8F%E6%B4%9E"><span class="toc-number">1.6.</span> <span class="toc-text">主要的 Web 漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-%E6%B3%A8%E5%85%A5"><span class="toc-number">1.6.1.</span> <span class="toc-text">Sql 注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.</span> <span class="toc-text">应急响应问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A2%AB%E4%B8%8A%E4%BC%A0-webshell-%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%BA%94%E6%80%A5"><span class="toc-number">1.7.1.</span> <span class="toc-text">linux 服务器被上传 webshell，如何进行应急</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hw-%E6%9C%9F%E9%97%B4%E7%9A%84%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-number">1.7.2.</span> <span class="toc-text">hw 期间的应急响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%A4%E4%BA%86%E6%9D%80%E8%BF%9B%E7%A8%8B%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%BF%AB%E9%80%9F%E6%89%BE%E5%88%B0-webshell-%E5%90%97%EF%BC%9F%E5%9B%A0%E4%B8%BA%E6%9C%89%E6%97%B6%E5%80%99%E5%8D%A0%E7%94%A8%E7%8E%87%E9%AB%98%E7%9A%84%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%98%AF%E6%9C%A8%E9%A9%AC-%E4%B9%9F%E5%8F%AF%E8%83%BD%E6%98%AF%E4%B8%9A%E5%8A%A1%E7%9B%B8%E5%85%B3%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.7.3.</span> <span class="toc-text">除了杀进程还有什么方法可以快速找到 webshell 吗？因为有时候占用率高的不一定是木马，也可能是业务相关进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E7%9A%84%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-number">1.7.4.</span> <span class="toc-text">应急响应的流程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="toc-number">1.7.5.</span> <span class="toc-text">应急响应常用的工具？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B-%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E6%9C%89%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.7.6.</span> <span class="toc-text">查看进程、注册表的工具有了解吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows-%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-number">1.7.7.</span> <span class="toc-text">windows 应急响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux-%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-number">1.7.8.</span> <span class="toc-text">linux 应急响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8B%92%E7%B4%A2%E7%97%85%E6%AF%92%E7%9A%84%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94%EF%BC%9F"><span class="toc-number">1.7.9.</span> <span class="toc-text">勒索病毒的应急响应？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%96%E7%9F%BF%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94"><span class="toc-number">1.7.10.</span> <span class="toc-text">挖矿应急响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84-cc-%E9%93%BE%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86"><span class="toc-number">1.7.11.</span> <span class="toc-text">Java 反序列化的 CC 链构造原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B2%E4%B8%80%E4%B8%8B-top10-%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.8.</span> <span class="toc-text">讲一下 TOP10 有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B0%E8%9D%8E-%E8%8F%9C%E5%88%80-%E8%9A%81%E5%89%91-%E5%93%A5%E6%96%AF%E6%8B%89%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.9.</span> <span class="toc-text">冰蝎、菜刀、蚁剑、哥斯拉的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B0%E8%9D%8E-%E8%8F%9C%E5%88%80-%E8%9A%81%E5%89%91-%E5%93%A5%E6%96%AF%E6%8B%89%E7%9A%84%E6%B5%81%E9%87%8F%E7%89%B9%E5%BE%81"><span class="toc-number">1.10.</span> <span class="toc-text">冰蝎、菜刀、蚁剑、哥斯拉的流量特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B0%E8%9D%8E%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86"><span class="toc-number">1.11.</span> <span class="toc-text">冰蝎的通信原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B0%E8%9D%8E%E7%9A%84%E6%B5%81%E9%87%8F%E7%89%B9%E5%BE%81"><span class="toc-number">1.12.</span> <span class="toc-text">冰蝎的流量特征</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : getScript('https://cdn.jsdelivr.net/npm/abcjs@6.3.0/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+})()</script><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

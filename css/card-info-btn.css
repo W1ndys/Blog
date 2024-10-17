@@ -1,0 +1,15 @@
+#card-info-btn {
+    display: inline-block; /* 使元素成为块级元素，以便可以设置宽度和高度 */
+    /* padding: 10px 20px; 设置内边距，使按钮更具可点击性 */
+    border-radius: 10px; /* 设置边角为圆角，可以根据需要调整半径值 */
+    background-color: #007bff; /* 设置背景颜色，可以根据需要调整 */
+    color: #fff; /* 设置文字颜色，可以根据需要调整 */
+    text-decoration: none; /* 移除下划线样式 */
+    transition: background-color 0.3s ease; /* 添加过渡效果，使颜色变化更平滑 */
+
+    /* 可选：添加其他样式，例如文字阴影、边框等 */
+}
+
+#card-info-btn:hover {
+    background-color: #0056b3; /* 鼠标悬停时改变背景颜色 */
+}
