@@ -981,3 +981,215 @@ print(
 
 ```
 
+## 实验 9 附加题
+
+### 奇偶判断
+
+```
+def isOdd(num):
+    return num % 2 != 0
+
+
+# 示例使用
+num = int(input("请输入一个整数: "))
+if isOdd(num):
+    print(f"{num} 是 奇数")
+else:
+    print(f"{num} 是 偶数")
+
+```
+
+### 阶乘
+
+```
+def factorial(n):
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+def main():
+    m = int(input("请输入一个整数(n>=0): "))
+    total_sum = 0
+    for i in range(m + 1):
+        fact = factorial(i)
+        print(f"{i}的阶乘是{fact}")
+        total_sum += fact
+    print(f"<= {m}的所有数的阶乘之和为{total_sum}")
+
+
+main()
+
+```
+
+### 找最小值
+
+```
+def min_n(a, b, *c):
+    # 将所有参数放入一个列表
+    numbers = [a, b] + list(c)
+    # 找到最小值
+    min_value = min(numbers)
+    return min_value
+
+
+# 测试代码
+print(f"8, 2中最小值为 {min_n(8, 2)}")
+print(f"16, 1, 7, 4, 15中最小值为 {min_n(16, 1, 7, 4, 15)}")
+
+```
+
+### 列表元组
+
+```
+def analyze_sequence(seq):
+    max_value = max(seq)
+    min_value = min(seq)
+    length = len(seq)
+    return max_value, min_value, length
+
+
+# 测试数据
+s1 = [4, 3, 5, 76, 5, 2]
+s2 = ["apple", "pear", "banana", "kiwi"]
+s3 = "TheQuickBrownFox"
+
+# 结果
+result1 = analyze_sequence(s1)
+result2 = analyze_sequence(s2)
+result3 = analyze_sequence(s3)
+
+print(
+    f"list = {s1}\n最大值= {result1[0]}，最小值= {result1[1]}，元素个数= {result1[2]}"
+)
+print(
+    f"list = {s2}\n最大值= {result2[0]}，最小值= {result2[1]}，元素个数= {result2[2]}"
+)
+print(
+    f"list = {s3}\n最大值= {result3[0]}，最小值= {result3[1]}，元素个数= {result3[2]}"
+)
+
+```
+
+### 字频
+
+```
+def count_numbers(input_string):
+    # 将输入字符串转换为列表
+    numbers = list(map(int, input_string.split(',')))
+    
+    # 创建一个字典来统计每个数字出现的次数
+    count_dict = {}
+    for number in numbers:
+        if number in count_dict:
+            count_dict[number] += 1
+        else:
+            count_dict[number] = 1
+    
+    # 打印统计结果
+    print("统计结果为:")
+    for number, count in count_dict.items():
+        print(f"{number} 出现 {count} 次")
+    
+    # 找出出现次数最多的数字
+    max_count = max(count_dict.values())
+    most_frequent_numbers = [number for number, count in count_dict.items() if count == max_count]
+    
+    # 打印出现次数最多的数字和次数
+    print("出现次数最多的数字和它出现的次数是:")
+    for number in most_frequent_numbers:
+        print(f"{number} 出现 {max_count} 次")
+
+# 示例输入
+input_string = "2,3,3,2,4,5,6,6,7,8"
+count_numbers(input_string)
+```
+
+### 找数
+
+```
+def My_Search(lst, target):
+    left, right = 0, len(lst) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if lst[mid] == target:
+            return mid
+        elif lst[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return "未查找到该数"
+
+
+# 示例用法
+lst1 = [12, 15, 33, 34, 35, 39, 42, 45, 45, 49]
+lst2 = [10, 11, 15, 23, 29, 31, 42, 46, 48, 49]
+
+print(My_Search(lst1, 33))  # 输出: 2
+print(My_Search(lst2, 33))  # 输出: 未查找到该数
+
+```
+
+### 斐波那契
+
+```
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+
+def print_fibonacci():
+    for i in range(20):
+        # 计算斐波那契数
+        num = fib(i)
+        # 打印，宽度为5，右对齐
+        print(f"{num:>5}", end=" ")
+        # 每10个数换行
+        if (i + 1) % 10 == 0:
+            print()
+
+
+print_fibonacci()
+
+```
+
+### reduce
+
+```
+from functools import reduce
+
+
+def fn(x, y):
+    return x * 10 + y
+
+
+a = [1, 3, 5, 7, 9]
+result = reduce(fn, a)
+print(result)  # 输出: 13579
+
+```
+
+### 正负分离
+
+```
+# 输入一组整数
+input_numbers = input("输入一组有正有负的整数，用逗号隔开:").split(",")
+
+# 将输入的字符串转换为整数
+numbers = list(map(int, input_numbers))
+
+# 使用 lambda 和 filter 过滤出大于零的元素
+positive_numbers = list(filter(lambda x: x > 0, numbers))
+
+# 输出结果
+print(positive_numbers)
+
+```
+
