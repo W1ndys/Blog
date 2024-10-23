@@ -1193,3 +1193,55 @@ print(positive_numbers)
 
 ```
 
+## 实验 10
+
+pandas 实现 csv 的增删改查
+
+```py
+import pandas as pd
+from tabulate import tabulate
+
+# 读取 CSV 文件
+df = pd.read_csv("pizza_sales.csv")
+
+# 查询数据：查询所有 pizza_name 为 "Margherita" 的订单
+margherita_orders = df[df["pizza_name"] == "Margherita"]
+print("Margherita 订单:")
+print(tabulate(margherita_orders, headers="keys", tablefmt="pretty"))
+
+# 添加数据：创建新订单数据
+new_order = {
+    "pizza_id": 101,
+    "order_id": 202,
+    "pizza_name_id": 303,
+    "quantity": 2,
+    "order_date": "2023-10-01",
+    "order_time": "12:00",
+    "unit_price": 15.0,
+    "total_price": 30.0,
+    "pizza_size": "Medium",
+    "pizza_category": "Vegetarian",
+    "pizza_ingredients": "Tomato, Cheese, Basil",
+    "pizza_name": "Margherita",
+}
+
+# 添加新订单
+df = pd.concat([df, pd.DataFrame([new_order])], ignore_index=True)
+print("\n添加新订单后的数据:")
+print(tabulate(df, headers="keys", tablefmt="pretty"))
+
+# 删除数据：删除 order_id 为 202 的订单
+df = df[df["order_id"] != 202]
+print("\n删除 order_id 为 202 的订单后的数据:")
+print(tabulate(df, headers="keys", tablefmt="pretty"))
+
+# 更新数据：将 order_id 为 101 的订单的 quantity 更新为 3
+df.loc[df["order_id"] == 101, "quantity"] = 3
+print("\n更新 order_id 为 101 的订单的数量后的数据:")
+print(tabulate(df, headers="keys", tablefmt="pretty"))
+
+# 保存修改后的数据到 CSV 文件
+df.to_csv("pizza_sales.csv", index=False)
+
+```
+
