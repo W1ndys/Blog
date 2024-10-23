@@ -1245,3 +1245,10 @@ df.to_csv("pizza_sales.csv", index=False)
 
 ```
 
+![img](https://picx.zhimg.com/80/v2-0331e7c56d87701710d22381ce636e07.png)
+
+![img](https://picx.zhimg.com/80/v2-331eda083261630f6ef17159b492652d.png)
+
+![img](https://pic1.zhimg.com/80/v2-9874008e81469d8c70f7576444596289.png)
+
+![img](https://picx.zhimg.com/80/v2-ce3abe304a50dd29804b194143ed9298.png)
