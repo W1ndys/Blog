@@ -1252,3 +1252,226 @@ df.to_csv("pizza_sales.csv", index=False)
 ![img](https://pic1.zhimg.com/80/v2-9874008e81469d8c70f7576444596289.png)
 
 ![img](https://picx.zhimg.com/80/v2-ce3abe304a50dd29804b194143ed9298.png)
+
+## 实验 11
+
+### 词频统计
+
+```py
+import jieba.posseg as pseg
+import pandas as pd
+from wordcloud import WordCloud
+
+# 读取txt全部文字
+fin = open("射雕英雄传.txt", encoding="utf-8")
+content = fin.read()
+
+# 使用jieba分词并进行词性标注
+words = pseg.cut(content)
+
+# 提取人名
+names = [word for word, flag in words if flag == "nr"]
+
+# 统计人名词频
+name_freq = pd.Series(names).value_counts()
+
+# 打印前10个高频人名
+print(name_freq.head(10))
+
+# 绘制云图
+wc = WordCloud(font_path="simhei.ttf", width=800, height=600, background_color="white")
+wc.generate_from_frequencies(name_freq)
+wc.to_file("name_cloud.png")
+```
+
+![img](https://picx.zhimg.com/80/v2-ec8d044601c9b72b5c54853c3dace8f1.png)
+
+### 兴趣推荐
+
+```py
+import pandas as pd
+
+df = pd.read_excel("./员工数据表.xlsx", engine="openpyxl")
+print(df.head())  # 打印前几行数据
+
+# 查询男女，只保留编号、姓名、性别、部门、爱好的5列
+df_boy = df.loc[df["性别"] == "男", ["编号", "姓名", "性别", "部门", "爱好"]]
+df_girl = df.loc[df["性别"] == "女", ["编号", "姓名", "性别", "部门", "爱好"]]
+print(df_boy.head(3))  # 打印男生数据的前3行
+print(df_girl.head(3))  # 打印女生数据的前3行
+
+df_merge = pd.merge(left=df_boy, right=df_girl, how="cross", suffixes=("_boy", "_girl"))
+print(df_merge.head())  # 打印合并后的数据前几行
+
+print(len(df_boy))  # 打印男生数据的长度
+print(len(df_girl))  # 打印女生数据的长度
+print(df_merge.shape)  # 打印合并数据的形状
+
+
+def compute_score(row):
+    # 使用交集和并集计算相似度
+    hobbies_boy = set(row["爱好_boy"].split("|"))
+    hobbies_girl = set(row["爱好_girl"].split("|"))
+    return len(hobbies_boy & hobbies_girl) / len(hobbies_boy | hobbies_girl)
+
+
+df_merge["相似度"] = df_merge.apply(compute_score, axis=1)
+print(df_merge.sample(6))  # 随机打印6行数据
+
+# 男编号查女性列表
+number = "S00004"
+print(
+    df_merge[df_merge["编号_boy"] == number]
+    .sort_values(by="相似度", ascending=False)
+    .head(3)
+)
+
+# 女编号查男性列表
+number = "S00093"
+print(
+    df_merge[df_merge["编号_girl"] == number]
+    .sort_values(by="相似度", ascending=False)
+    .head(3)
+)
+
+```
+
+![img](https://pic1.zhimg.com/80/v2-0e63b3004f1246f71988203401f3ad75.png)
+
+## 实验 12
+
+### 练习 1
+
+```py
+import numpy as np
+
+# 创建一个长度为10的一维全为0的ndarray对象，然后让第5个元素等于1
+a = np.array([0, 0, 0, 0, 1, 0, 0, 0, 0, 0])
+print(a)
+
+# 创建一个元素从10到49的ndarray对象
+b = np.array(range(10, 50))
+print(b)
+
+# 反转数组
+c = b[::-1]
+print(c)
+
+# 使用随机创建一个10*10的ndarray对象，并打印最大最小元素
+d = np.random.random((10, 10))
+print(d)
+print(d.max())
+print(d.min())
+
+# 创建一个10*10的ndarray对象，且矩阵边框为1，内部为0
+e = np.ones((10, 10))
+e[1:-1, 1:-1] = 0
+print(e)
+
+# 创建每一行都是从0到4的5*5的ndarray对象
+f = np.array([np.arange(5)] * 5)
+print(f)
+
+# 创建一个范围在(0,1)之间的长度为12的等差数列
+g = np.linspace(0, 1, 12)
+print(g)
+
+# 创建一个长度为10的随机数组并排序
+h = np.random.random(10)
+h.sort()
+print(h)
+
+# 创建一个长度为10的随机数组并将最大值替换为0
+i = np.random.randint(0, 10, 10)
+print(i)
+i[i.argmax()] = 0
+print(i)
+
+```
+
+### 练习2
+
+```py
+import numpy as np
+import time
+
+
+# 给定一个4维矩阵，求最后两维的和
+def sum_last_two_dimensions(matrix):
+    return np.sum(matrix, axis=(-1, -2))
+
+
+# 给定一个数组12345，在每个元素之间插入三个0
+def insert_zeros(array):
+    return np.insert(array, np.arange(1, len(array)), 0)
+
+
+# 给定一个二维矩阵，交换其中两行元素
+def swap_rows(matrix, row1, row2):
+    matrix[[row1, row2]] = matrix[[row2, row1]]
+    return matrix
+
+
+# 创建一个100000长度的随机数组
+random_array = np.random.rand(100000)
+
+# 方法一：使用for循环对数组求三次方
+start_time = time.time()
+cubed_array_loop = np.array([x**3 for x in random_array])
+loop_time = time.time() - start_time
+
+# 方法二：使用numpy对数组求三次方
+start_time = time.time()
+cubed_array_numpy = np.power(random_array, 3)
+numpy_time = time.time() - start_time
+
+# 比较所用时间
+print(f"使用for循环求三次方的时间: {loop_time}秒")
+print(f"使用numpy求三次方的时间: {numpy_time}秒")
+
+# 创建一个5 * 3随机矩阵和一个3 * 2随机矩阵
+matrix_5x3 = np.random.rand(5, 3)
+matrix_3x2 = np.random.rand(3, 2)
+
+# 求矩阵积
+matrix_product = np.dot(matrix_5x3, matrix_3x2)
+
+print("5x3矩阵:")
+print(matrix_5x3)
+print("3x2矩阵:")
+print(matrix_3x2)
+print("矩阵积:")
+print(matrix_product)
+
+
+# 矩阵的每一行的元素都减去该行的平均值
+def subtract_row_mean(matrix):
+    row_means = matrix.mean(axis=1, keepdims=True)
+    return matrix - row_means
+
+
+# 打印出以下矩阵（要求使用np.zeros创建8*8的矩阵）
+def create_checkerboard():
+    checkerboard = np.zeros((8, 8), dtype=int)
+    checkerboard[1::2, ::2] = 1
+    checkerboard[::2, 1::2] = 1
+    return checkerboard
+
+
+# 正则化一个5*5随机矩阵
+def normalize_matrix(matrix):
+    min_val = matrix.min()
+    max_val = matrix.max()
+    return (matrix - min_val) / (max_val - min_val)
+
+
+
+matrix = np.random.randint(0, 100, (5, 5))
+normalized_matrix = normalize_matrix(matrix)
+print("原始矩阵:")
+print(matrix)
+print("正则化后的矩阵:")
+print(normalized_matrix)
+
+```
+
