@@ -1106,7 +1106,7 @@ text_align_justify: true
 # 图片格式 url(http://xxxxxx.com/xxx.jpg)
 # 颜色（HEX值/RGB值/顔色单词/渐变色)
 # 留空 不显示背景
-background: url(/img/bg/bg1.png)
+background: https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png
 
 # footer是否显示图片背景(与top_img一致)
 footer_bg: false
