@@ -5,7 +5,7 @@ GREEN='\033[32m'
 RESET='\033[0m'
 
 # 更新 hexo-theme-butterfly
-npm update hexo-theme-butterfly
+pnpm update hexo-theme-butterfly
 
 # 输出提示信息
 printf "${GREEN}INFO ${RESET} hexo-theme-butterfly 更新完成\n"

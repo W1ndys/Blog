@@ -1,9 +1,16 @@
 ---
-title: "0xGame2024wp"
-tags: [CTF, WP, 0xGame2024]
-categories: [CTF, WP, 0xGame2024]
+title: 0xGame2024wp
+tags:
+  - CTF
+  - WP
+  - 0xGame2024
+categories:
+  - CTF
+  - WP
+  - 0xGame2024
+cover: 'https://ctf.njupt.edu.cn/wp-content/uploads/2020/09/2020092712314778.png'
+abbrlink: 2fabe180
 date: 2024-10-06 17:48:47
-cover: https://ctf.njupt.edu.cn/wp-content/uploads/2020/09/2020092712314778.png
 ---
 
 南邮的新生赛，`week1` 对于我这种老年痴呆来说还是能做一做。
