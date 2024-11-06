@@ -1251,15 +1251,11 @@ wordcount:
 
 # Lightbox (圖片大圖查看模式)
 # ----------------------------------------------------------------------------
-# You can only choose one, or neither (只能選擇一個 或者 兩個都不選)
-
-# medium-zoom
+# Choose: fancybox / medium_zoom
 # https://github.com/francoischalifour/medium-zoom
-medium_zoom: true
-
-# fancybox
 # https://fancyapps.com/fancybox/
-fancybox: false
+# Leave it empty if you don't need lightbox
+lightbox: fancybox
 
 # other
 # ----------------------------------------------------------------------------
