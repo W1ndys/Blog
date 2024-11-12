@@ -1080,7 +1080,7 @@ print(
 def count_numbers(input_string):
     # 将输入字符串转换为列表
     numbers = list(map(int, input_string.split(',')))
-    
+
     # 创建一个字典来统计每个数字出现的次数
     count_dict = {}
     for number in numbers:
@@ -1088,16 +1088,16 @@ def count_numbers(input_string):
             count_dict[number] += 1
         else:
             count_dict[number] = 1
-    
+
     # 打印统计结果
     print("统计结果为:")
     for number, count in count_dict.items():
         print(f"{number} 出现 {count} 次")
-    
+
     # 找出出现次数最多的数字
     max_count = max(count_dict.values())
     most_frequent_numbers = [number for number, count in count_dict.items() if count == max_count]
-    
+
     # 打印出现次数最多的数字和次数
     print("出现次数最多的数字和它出现的次数是:")
     for number in most_frequent_numbers:
@@ -1389,7 +1389,7 @@ print(i)
 
 ```
 
-### 练习2
+### 练习 2
 
 ```py
 import numpy as np
@@ -1475,3 +1475,87 @@ print(normalized_matrix)
 
 ```
 
+## 专项知识点-正则表达式
+
+ 1. **匹配 "abbbbbbbbbc" 中的 "abbbbbbbb"（从贪婪非贪婪角度分析）**  
+    正则表达式可以通过贪婪和非贪婪方式进行匹配，分析如下：
+
+    - **贪婪模式**：使用 `.*`，匹配尽可能多的字符。
+
+      ```python
+      import re
+      text = "abbbbbbbbbc"
+      match = re.search(r"ab.*c", text)
+      print(match.group())  # 输出: abbbbbbbbbc
+      ```
+
+    - **非贪婪模式**：使用 `.*?`，尽量匹配少的字符。
+
+      ```python
+      import re
+      text = "abbbbbbbbbc"
+      match = re.search(r"ab.*?c", text)
+      print(match.group())  # 输出: abbbbbbbb
+      ```
+
+    在贪婪模式下，`.*` 会尽量匹配多的字符，所以结果是 `abbbbbbbbbc`。而非贪婪模式下，`.*?` 会尽量匹配少的字符，所以结果是 `abbbbbbbb`。
+
+ 2. **匹配以字母 "c" 开头的单词**  
+    对于这个题目，正则表达式可以通过 `\bc\w*\b` 来匹配以字母 "c" 开头的单词，其中 `\b` 是单词边界，`\w*` 匹配零个或多个字母、数字或下划线。
+
+    ```python
+    import re
+    content = "The cat sat on the mat and the rat chased the cat"
+    matches = re.findall(r'\bc\w*\b', content)
+    print(matches)  # 输出: ['cat', 'chased', 'cat']
+    ```
+
+ 3. **从 HTML 中提取包含 `class="active"` 的列表项中的歌手名和歌曲名**  
+    使用 `re.search` 查找符合 `class="active"` 的 `li` 元素，并提取出歌手名和歌曲名。正则表达式可以使用捕获组来提取歌手名和歌曲名。
+
+    ```python
+    import re
+     
+    html = '''<div id="songs-list">
+    <h2 class ="title">经典老歌</h2>
+    <p class="introduction">
+    经典老歌列表
+    </p>
+    <ul id="list" class="list-group">
+    <li data-view="2">一路上有你</li>
+    <li data-view="7">
+    <a href ="/2.mp3" singer="任贤齐">沧海一卢笑 </a>
+    </li>
+    <li data-view="4" class="active">
+    <a href ="/3.mp3" singer="齐秦">往事随风</a>
+    </li>
+    <li data-view ="6"><a href="/4.mp3" singer="beyond">光辉岁月 </a></li>
+    <li data-view="5"><a href="/5.mp3" singer="除慧琳">记事本</a></li>
+    <li data-view="5">
+    <a href ="/6.mp3" singer="邓丽君"> 但愿人长久 </a>
+    </li>
+    </ul>
+    </div>'''
+     
+    # 使用正则表达式匹配 active 类的 <li> 中的歌手和歌曲名
+    match = re.search(r'<li[^>]*class="active"[^>]*>.*?<a[^>]*singer="([^"]*)"[^>]*>(.*?)</a>', html)
+    if match:
+        singer = match.group(1)
+        song = match.group(2)
+        print(f"歌手: {singer}, 歌曲: {song}")
+    else:
+        print("未找到匹配项")
+    ```
+
+    **输出**:
+
+    ```
+    歌手: 齐秦, 歌曲: 往事随风
+    ```
+
+    **分析**：  
+    这个正则表达式的作用是：
+
+    - `r'<li[^>]*class="active"[^>]*>` 匹配包含 `class="active"` 的 `li` 元素。
+    - `.*?<a[^>]*singer="([^"]*)"[^>]*>` 用来捕获 `<a>` 标签中的 `singer` 属性（即歌手名）。
+    - `(.*?)</a>` 捕获 `<a>` 标签中的歌曲名。
