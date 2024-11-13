@@ -1,13 +1,13 @@
 ---
-title: 'Python实验——数据分析之matplotlib'
+title: Python实验——数据分析之matplotlib
 tags:
   - Python
 categories:
   - Python
 cover: >-
   https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7
+abbrlink: f73f64dd
 date: 2024-11-13 08:49:32
-cover: https://t.mwm.moe/fj?20241113084932952
 ---
 
 ## 代码
