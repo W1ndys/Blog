@@ -1475,6 +1475,10 @@ print(normalized_matrix)
 
 ```
 
+## 爬虫实验
+
+地址：[爬虫实验](https://blog.w1ndys.top/posts/6d67d75.html)
+
 ## 专项知识点-正则表达式
 
  1. **匹配 "abbbbbbbbbc" 中的 "abbbbbbbb"（从贪婪非贪婪角度分析）**  
@@ -1559,3 +1563,6 @@ print(normalized_matrix)
     - `r'<li[^>]*class="active"[^>]*>` 匹配包含 `class="active"` 的 `li` 元素。
     - `.*?<a[^>]*singer="([^"]*)"[^>]*>` 用来捕获 `<a>` 标签中的 `singer` 属性（即歌手名）。
     - `(.*?)</a>` 捕获 `<a>` 标签中的歌曲名。
+
+## 数据分析之matplotlib
+
