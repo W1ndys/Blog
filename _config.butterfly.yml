@@ -800,24 +800,34 @@ katex:
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#%E6%90%9C%E7%B4%A2
 # ----------------------------------------------------------------------------
+search:
+  # Choose: algolia_search / local_search / docsearch
+  # leave it empty if you don't need search
+  use: local_search
+  placeholder:
 
-# Algolia search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 6
+  # Algolia Search
+  algolia_search:
+    # Number of search results per page
+    hitsPerPage: 6
 
-# Local search
-local_search:
-  enable: true #是否开启本地搜索
-  # 预加载，开启后，进入网页后会自动加载搜索文件。关闭时，只有点击搜索按钮后，才会加载搜索文件
-  preload: true
-  # 匹配的文章结果，默认显示最开始的 1段结果
-  top_n_per_article: 1
-  # 将 html 字符串解码为可读字符串
-  unescape: true
-  # 搜索文件的 CDN 地址（默认使用的本地链接）
-  # CDN:
+  # Local Search
+  local_search:
+    # Preload the search data when the page loads.
+    preload: true
+    # Show top n results per article, show all results by setting to -1
+    top_n_per_article: 1
+    # Unescape html strings to the readable one.
+    unescape: true
+    # CDN:
+
+  # Docsearch
+  # https://docsearch.algolia.com/
+  docsearch:
+    appId:
+    apiKey:
+    indexName:
+    option:
 
 # Docsearch
 docsearch:
