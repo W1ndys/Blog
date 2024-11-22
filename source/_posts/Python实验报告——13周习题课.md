@@ -223,7 +223,7 @@ for i in range(3):
      ```python
      class MyError(Exception):
          pass
-
+  
      raise MyError("这是一个自定义错误")
      ```
 
