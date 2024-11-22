@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法 | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="背景在写机器人的过程中不可避免的碰到语法的学习，本页梳理了常用的语法，以及记录开发机器人以来遇到的各种问题，需要注意的点。。 函数调用尽可能的分离函数，让某特殊功能的函数单独定义，以便于反复调用 异常处理每个函数中尽量都要有异常处理，好处一个是方便快速调试报错点，第二个就是不会因为异常导致程序退出。 更详细的内容可以看 Python 异常处理 | 菜鸟教程 (runoob.com) 1234567">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/d5fe3115.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="背景在写机器人的过程中不可避免的碰到语法的学习，本页梳理了常用的语法，以及记录开发机器人以来遇到的各种问题，需要注意的点。。 函数调用尽可能的分离函数，让某特殊功能的函数单独定义，以便于反复调用 异常处理每个函数中尽量都要有异常处理，好处一个是方便快速调试报错点，第二个就是不会因为异常导致程序退出。 更详细的内容可以看 Python 异常处理 | 菜鸟教程 (runoob.com) 1234567">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg">
+<meta property="article:published_time" content="2024-08-07T02:24:36.000Z">
+<meta property="article:modified_time" content="2024-11-22T00:30:07.166Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="QQbot">
+<meta property="article:tag" content="QQ机器人">
+<meta property="article:tag" content="Onebot11">
+<meta property="article:tag" content="NapCatQQ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/d5fe3115.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg" style="background-image: url(https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">184</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">145</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg" alt="Logo"><span class="site-name">W1ndysの小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/基于 Python 和 Onebot11 的QQ机器人开发——Python常用语法.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-07T02:24:36.000Z" title="发表于 2024-08-07 10:24:36">2024-08-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-22T00:30:07.166Z" title="更新于 2024-11-22 08:30:07">2024-11-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QQbot/">QQbot</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:30,&quot;messagePrev&quot;:&quot;这篇文章已经有&quot;,&quot;messageNext&quot;:&quot;天没有更新了，请注意甄别时效性，可能有部分已失效&quot;,&quot;postUpdate&quot;:&quot;2024-11-22 08:30:07&quot;}" hidden></div><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在写机器人的过程中不可避免的碰到语法的学习，本页梳理了常用的语法，以及记录开发机器人以来遇到的各种问题，需要注意的点。<br>。</p>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p>尽可能的分离函数，让某特殊功能的函数单独定义，以便于反复调用</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>每个函数中尽量都要有异常处理，好处一个是方便快速调试报错点，第二个就是不会因为异常导致程序退出。</p>
+<p>更详细的内容可以看 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-exceptions.html#/">Python 异常处理 | 菜鸟教程 (runoob.com)</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#运行别的代码</span></span><br><span class="line"><span class="keyword">except</span> &lt;名字&gt;：</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果在 try 部份  引发了&#x27;name&#x27;异常</span></span><br><span class="line"><span class="keyword">except</span> &lt;名字&gt;，&lt;数据&gt;:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果引发了&#x27;name&#x27;异常，获得附加的数据</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果没有异常发生</span></span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">异常名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BaseException</td>
+<td style="text-align:left">所有异常的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">SystemExit</td>
+<td style="text-align:left">解释器请求退出</td>
+</tr>
+<tr>
+<td style="text-align:left">KeyboardInterrupt</td>
+<td style="text-align:left">用户中断执行(通常是输入^C)</td>
+</tr>
+<tr>
+<td style="text-align:left">Exception</td>
+<td style="text-align:left">常规错误的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">StopIteration</td>
+<td style="text-align:left">迭代器没有更多的值</td>
+</tr>
+<tr>
+<td style="text-align:left">GeneratorExit</td>
+<td style="text-align:left">生成器(generator)发生异常来通知退出</td>
+</tr>
+<tr>
+<td style="text-align:left">StandardError</td>
+<td style="text-align:left">所有的内建标准异常的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">ArithmeticError</td>
+<td style="text-align:left">所有数值计算错误的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">FloatingPointError</td>
+<td style="text-align:left">浮点计算错误</td>
+</tr>
+<tr>
+<td style="text-align:left">OverflowError</td>
+<td style="text-align:left">数值运算超出最大限制</td>
+</tr>
+<tr>
+<td style="text-align:left">ZeroDivisionError</td>
+<td style="text-align:left">除(或取模)零 (所有数据类型)</td>
+</tr>
+<tr>
+<td style="text-align:left">AssertionError</td>
+<td style="text-align:left">断言语句失败</td>
+</tr>
+<tr>
+<td style="text-align:left">AttributeError</td>
+<td style="text-align:left">对象没有这个属性</td>
+</tr>
+<tr>
+<td style="text-align:left">EOFError</td>
+<td style="text-align:left">没有内建输入, 到达 EOF 标记</td>
+</tr>
+<tr>
+<td style="text-align:left">EnvironmentError</td>
+<td style="text-align:left">操作系统错误的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">IOError</td>
+<td style="text-align:left">输入/输出操作失败</td>
+</tr>
+<tr>
+<td style="text-align:left">OSError</td>
+<td style="text-align:left">操作系统错误</td>
+</tr>
+<tr>
+<td style="text-align:left">WindowsError</td>
+<td style="text-align:left">系统调用失败</td>
+</tr>
+<tr>
+<td style="text-align:left">ImportError</td>
+<td style="text-align:left">导入模块/对象失败</td>
+</tr>
+<tr>
+<td style="text-align:left">LookupError</td>
+<td style="text-align:left">无效数据查询的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">IndexError</td>
+<td style="text-align:left">序列中没有此索引(index)</td>
+</tr>
+<tr>
+<td style="text-align:left">KeyError</td>
+<td style="text-align:left">映射中没有这个键</td>
+</tr>
+<tr>
+<td style="text-align:left">MemoryError</td>
+<td style="text-align:left">内存溢出错误(对于 Python 解释器不是致命的)</td>
+</tr>
+<tr>
+<td style="text-align:left">NameError</td>
+<td style="text-align:left">未声明/初始化对象 (没有属性)</td>
+</tr>
+<tr>
+<td style="text-align:left">UnboundLocalError</td>
+<td style="text-align:left">访问未初始化的本地变量</td>
+</tr>
+<tr>
+<td style="text-align:left">ReferenceError</td>
+<td style="text-align:left">弱引用(Weak reference)试图访问已经垃圾回收了的对象</td>
+</tr>
+<tr>
+<td style="text-align:left">RuntimeError</td>
+<td style="text-align:left">一般的运行时错误</td>
+</tr>
+<tr>
+<td style="text-align:left">NotImplementedError</td>
+<td style="text-align:left">尚未实现的方法</td>
+</tr>
+<tr>
+<td style="text-align:left">SyntaxError</td>
+<td style="text-align:left">Python 语法错误</td>
+</tr>
+<tr>
+<td style="text-align:left">IndentationError</td>
+<td style="text-align:left">缩进错误</td>
+</tr>
+<tr>
+<td style="text-align:left">TabError</td>
+<td style="text-align:left">Tab 和空格混用</td>
+</tr>
+<tr>
+<td style="text-align:left">SystemError</td>
+<td style="text-align:left">一般的解释器系统错误</td>
+</tr>
+<tr>
+<td style="text-align:left">TypeError</td>
+<td style="text-align:left">对类型无效的操作</td>
+</tr>
+<tr>
+<td style="text-align:left">ValueError</td>
+<td style="text-align:left">传入无效的参数</td>
+</tr>
+<tr>
+<td style="text-align:left">UnicodeError</td>
+<td style="text-align:left">Unicode 相关的错误</td>
+</tr>
+<tr>
+<td style="text-align:left">UnicodeDecodeError</td>
+<td style="text-align:left">Unicode 解码时的错误</td>
+</tr>
+<tr>
+<td style="text-align:left">UnicodeEncodeError</td>
+<td style="text-align:left">Unicode 编码时错误</td>
+</tr>
+<tr>
+<td style="text-align:left">UnicodeTranslateError</td>
+<td style="text-align:left">Unicode 转换时错误</td>
+</tr>
+<tr>
+<td style="text-align:left">Warning</td>
+<td style="text-align:left">警告的基类</td>
+</tr>
+<tr>
+<td style="text-align:left">DeprecationWarning</td>
+<td style="text-align:left">关于被弃用的特征的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">FutureWarning</td>
+<td style="text-align:left">关于构造将来语义会有改变的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">OverflowWarning</td>
+<td style="text-align:left">旧的关于自动提升为长整型(long)的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">PendingDeprecationWarning</td>
+<td style="text-align:left">关于特性将会被废弃的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">RuntimeWarning</td>
+<td style="text-align:left">可疑的运行时行为(runtime behavior)的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">SyntaxWarning</td>
+<td style="text-align:left">可疑的语法的警告</td>
+</tr>
+<tr>
+<td style="text-align:left">UserWarning</td>
+<td style="text-align:left">用户代码生成的警告</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>专有名词叫做 Python File(文件) 方法</p>
+<h4 id="open-方法"><a href="#open-方法" class="headerlink" title="open() 方法"></a>open() 方法</h4><p>完整的语法格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span>(file, mode=<span class="string">&#x27;r&#x27;</span>, buffering=-<span class="number">1</span>, encoding=<span class="literal">None</span>, errors=<span class="literal">None</span>, newline=<span class="literal">None</span>, closefd=<span class="literal">True</span>, opener=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<ul>
+<li>file: 必需，文件路径（相对或者绝对路径）。</li>
+<li>mode: 可选，文件打开模式</li>
+<li>buffering: 设置缓冲</li>
+<li>encoding: 一般使用 utf8</li>
+<li>errors: 报错级别</li>
+<li>newline: 区分换行符</li>
+<li>closefd: 传入的 file 参数类型</li>
+<li>opener: 设置自定义开启器，开启器的返回值必须是一个打开的文件描述符。</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">t</td>
+<td style="text-align:left">文本模式 (默认)。</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">写模式，新建一个文件，如果该文件已存在则会报错。</td>
+</tr>
+<tr>
+<td style="text-align:left">b</td>
+<td style="text-align:left">二进制模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">打开一个文件进行更新(可读可写)。</td>
+</tr>
+<tr>
+<td style="text-align:left">U</td>
+<td style="text-align:left">通用换行模式（不推荐）。</td>
+</tr>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">rb</td>
+<td style="text-align:left">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td style="text-align:left">r+</td>
+<td style="text-align:left">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td style="text-align:left">rb+</td>
+<td style="text-align:left">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>w</strong></td>
+<td style="text-align:left"><strong>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">wb</td>
+<td style="text-align:left">以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td style="text-align:left">w+</td>
+<td style="text-align:left">打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">wb+</td>
+<td style="text-align:left">以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td style="text-align:left">ab</td>
+<td style="text-align:left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td style="text-align:left">a+</td>
+<td style="text-align:left">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td style="text-align:left">ab+</td>
+<td style="text-align:left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="file-对象"><a href="#file-对象" class="headerlink" title="file 对象"></a>file 对象</h4><p>file 对象使用 open 函数来创建，下表列出了 file 对象常用的函数：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-close.html">file.close()</a> 关闭文件。关闭后文件不能再进行读写操作。</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-flush.html">file.flush()</a> 刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件, 而不是被动的等待输出缓冲区写入。</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-fileno.html">file.fileno()</a> 返回一个整型的文件描述符(file descriptor FD 整型), 可以用在如 os 模块的 read 方法等一些底层操作上。</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-isatty.html">file.isatty()</a> 如果文件连接到一个终端设备返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-next.html">file.next()</a> 返回文件下一行。</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-file-read.html">file.read([size])</a> 从文件读取指定的字节数，如果未给定或为负则读取所有。</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-readline.html">file.readline([size])</a> 读取整行，包括 “\n” 字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-readlines.html">file.readlines([sizeint])</a> 读取所有行并返回列表，若给定 sizeint &gt; 0，则是设置一次读多少字节，这是为了减轻读取压力。</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-seek.html">file.seek(offset[, whence])</a> 设置文件当前位置</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-tell.html">file.tell()</a> 返回文件当前位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-truncate.html">file.truncate([size])</a> 截取文件，截取的字节通过 size 指定，默认为当前文件位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-file-write.html">file.write(str)</a> 将字符串写入文件，返回的是写入的字符长度。</td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-writelines.html">file.writelines(sequence)</a> 向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="函数处理"><a href="#函数处理" class="headerlink" title="函数处理"></a>函数处理</h3><h4 id="函数阻断"><a href="#函数阻断" class="headerlink" title="函数阻断"></a>函数阻断</h4><p>在执行过程中，不免要进行一些函数阻断，以防满足两个条件，导致运行两次。</p>
+<p>在要执行的函数下面写个 <code>return</code>，就可以阻断函数继续执行。</p>
+<h4 id="函数异步"><a href="#函数异步" class="headerlink" title="函数异步"></a>函数异步</h4><blockquote>
+<p>我曾经想用 create_task 实现并发处理，不然的话同一时刻只能处理一条命令，如果出现 API 请求等耗时较长的，会占用时间导致其他命令无法被执行。</p>
+<p>但是失败了，使用 create_task 之后会出现多个接收端，导致接收报错。</p>
+<p>最终得出的结论是，<strong>没必要使用</strong>，本地处理几乎都是毫秒级的，就算是 API 请求，网络畅通的情况下也很快（大模型等需要思考的 API 请求除外）</p>
+</blockquote>
+<p>函数异步可以用 <code>async</code> 和 <code>await</code> 来实现，<code>async</code> 用于定义一个异步函数，<code>await</code> 用于等待一个异步函数执行完成。</p>
+<p>当然如果你想让函数并发，那么可以使用 <code>asyncio</code> 模块来实现，<code>asyncio</code> 模块提供了一些函数来实现异步编程。</p>
+<p>下面是一个具体例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">Example_main</span>(<span class="params">websocket, msg</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 确保数据目录存在</span></span><br><span class="line">    os.makedirs(DATA_DIR, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 并发执行任务</span></span><br><span class="line">    <span class="keyword">await</span> asyncio.gather(</span><br><span class="line">        handle_Example_group_message(websocket, msg),</span><br><span class="line">        handle_Example_group_notice(websocket, msg),</span><br><span class="line">        handle_Example_private_message(websocket, msg),</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3><h4 id="规范数据类型"><a href="#规范数据类型" class="headerlink" title="规范数据类型"></a>规范数据类型</h4><p>例如在获取群号的时候，通常涉及到数据存储，为了方便做处理，一般以 str 类型保存群号，因为 msg 参数给出的是 int 类型，需要注意转换一下</p>
+<p>2024 年 8 月 21 日，补充一句，不要一般了，获取到群号或 QQ 号一定要先转换成字符串，要不然后患无穷（不然就像我一样，JSON 字典存储数据，因为一个 str 和 int 数据类型不一致导致的 bug，找了三个小时才找到）</p>
+<h3 id="数据的存储和交互"><a href="#数据的存储和交互" class="headerlink" title="数据的存储和交互"></a>数据的存储和交互</h3><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>在机器人的开发过程中，不可避免的会遇到数据存储的问题，通常会使用 json 文件进行存储，在 Python 中，可以使用 <code>json</code> 模块来处理 JSON 数据。</p>
+<p>并且不免要进行数据的交互，比如从数据库中获取数据，或者将数据存储到本地，或者从本地获取数据，我习惯使用 <code>json</code> 文件进行存储，因为比较简单，并且容易理解。如果你知道如何使用数据库，那么你可以使用数据库进行存储，这样会更加安全可靠。</p>
+<p>在数据交互的开发过程中，通常会先读取本地文件，然后进行数据处理，最后将数据存储到本地文件中，如此反复。</p>
+<p>可能这个过程看起来比较繁琐耗时间，但实际上这个过程的处理几乎是毫秒级的，所以不用担心时间问题。</p>
+<h4 id="数据库（SQLite）"><a href="#数据库（SQLite）" class="headerlink" title="数据库（SQLite）"></a>数据库（SQLite）</h4><p>JSON 只适合一些数据量小，而且简单，读写频率低的数据存储，如果数据量比较大，或者需要进行复杂的数据处理，那么可以使用数据库进行存储。</p>
+<p>并且 JSON 在读写的时候容易出现数据丢失，所以不建议使用 JSON 进行大量的数据存储。</p>
+<h4 id="数据的匹配（正则表达式）"><a href="#数据的匹配（正则表达式）" class="headerlink" title="数据的匹配（正则表达式）"></a>数据的匹配（正则表达式）</h4><p>在机器人的开发过程中，不免会遇到数据的匹配问题，比如检测是否是某个群，或者检测是否是某个 QQ 号，或者检测是否是某个关键词等。</p>
+<p>可以使用正则表达式来实现数据的匹配，正则表达式是一种强大的文本处理工具，可以用来匹配、查找、替换和分割文本。</p>
+<p>正则表达式相关知识点，可以看 <a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-reg-expressions.html">Python 正则表达式教程</a></p>
+<p>这个正则表达式示例可以一看</p>
+<h5 id="正则表达式实例"><a href="#正则表达式实例" class="headerlink" title="正则表达式实例"></a>正则表达式实例</h5><h6 id="字符匹配"><a href="#字符匹配" class="headerlink" title="字符匹配"></a>字符匹配</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">实例</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">python</td>
+<td style="text-align:left">匹配 “python”.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h6 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">实例</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[Pp] ython</td>
+<td style="text-align:left">匹配 “Python” 或 “python”</td>
+</tr>
+<tr>
+<td style="text-align:left">rub [ye]</td>
+<td style="text-align:left">匹配 “ruby” 或 “rube”</td>
+</tr>
+<tr>
+<td style="text-align:left">[aeiou]</td>
+<td style="text-align:left">匹配中括号内的任意一个字母</td>
+</tr>
+<tr>
+<td style="text-align:left">[0-9]</td>
+<td style="text-align:left">匹配任何数字。类似于 [0123456789]</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-z]</td>
+<td style="text-align:left">匹配任何小写字母</td>
+</tr>
+<tr>
+<td style="text-align:left">[A-Z]</td>
+<td style="text-align:left">匹配任何大写字母</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-zA-Z0-9]</td>
+<td style="text-align:left">匹配任何字母及数字</td>
+</tr>
+<tr>
+<td style="text-align:left"><sup><a href="#fn_aeiou" id="reffn_aeiou">aeiou</a></sup></td>
+<td style="text-align:left">除了 aeiou 字母以外的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup></td>
+<td style="text-align:left">匹配除了数字外的字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h6 id="特殊字符类"><a href="#特殊字符类" class="headerlink" title="特殊字符类"></a>特殊字符类</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">实例</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配除 “\n” 之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用象 ‘[.\n]’ 的模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">匹配一个非数字字符。等价于 <sup><a href="#fn_0-9" id="reffn_0-9">0-9</a></sup>。</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">匹配任何非空白字符。等价于 <sup><a href="#fn_ \f\n\r\t\v" id="reffn_ \f\n\r\t\v"> \f\n\r\t\v</a></sup>。</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">匹配包括下划线的任何单词字符。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">匹配任何非单词字符。等价于 ‘<sup><a href="#fn_A-Za-z0-9_" id="reffn_A-Za-z0-9_">A-Za-z0-9_</a></sup>‘。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="常用函数或库"><a href="#常用函数或库" class="headerlink" title="常用函数或库"></a>常用函数或库</h3><h4 id="日期的处理"><a href="#日期的处理" class="headerlink" title="日期的处理"></a>日期的处理</h4><p>在 Python 中，可以使用 <code>datetime</code> 模块来处理日期，<code>datetime</code> 模块提供了一些函数来处理日期。用 <code>datetime.now()</code> 获取当前时间，用 <code>datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)</code> 获取当前时间的字符串格式。</p>
+<p>此方法可以用在检测日期或时间是否满足某个条件，比如检测是否是某个时间点，或者检测是否是某个时间段。实现 <strong>定时任务等功能</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cmzsteven/article/details/64906245#">Python 日期和时间教程</a></p>
+<p>更方便的定时任务可以使用 <code>schedule</code> 模块，<code>schedule</code> 模块提供了一些函数来处理定时任务。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/d5fe3115.html">https://blog.w1ndys.top/posts/d5fe3115.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/QQbot/">QQbot</a><a class="post-meta__tags" href="/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/">QQ机器人</a><a class="post-meta__tags" href="/tags/Onebot11/">Onebot11</a><a class="post-meta__tags" href="/tags/NapCatQQ/">NapCatQQ</a></div><div class="post-share"><div class="social-share" data-image="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/542f29fd.html" title="docker部署GZCTF-QQBOT"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/GZTimeWalker/GZCTF/raw/develop/assets/banner.light.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">docker部署GZCTF-QQBOT</div></div><div class="info-2"><div class="info-item-1">环境要求 Linux 服务器 docker docker compose  开始部署相关链接：MoRan23/GZCTF-BOT-QQ: GZCTF 对接的 qq 机器人，基于 NapCat+Nonebot 框架 (github.com) 进入 GZBOTGithub 地址，由于服务器对于 Github 的网络连接会偶然连不上，这里使用 docker-compose 部署，Github 的 README 写的很详细了，这里多说几点易错点。  下方监听的赛事名是 GZCTF 的赛事名，不是赛事序号或赛事 ID，赛事名叫什么就写什么，比如下图中的赛事名就是 W1ndys的bot测试   把下面代码参数改好后保存为 docker-compose.yml 123456789101112131415161718192021222324252627version: &quot;3.7&quot;services:  napcat:    image: mlikiowa/napcat-docker:latest    restart: always    ports:      -...</div></div></div></a><a class="pagination-related  no-desc" href="/posts/dc51af4b.html" title="Docker容器的学习"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrrUuvrg3RFYyl4WQsEOOhs48Qcfu9AO4RUQ&amp;s" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Docker容器的学习</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/542f29fd.html" title="docker部署GZCTF-QQBOT"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/GZTimeWalker/GZCTF/raw/develop/assets/banner.light.svg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="info-item-2">docker部署GZCTF-QQBOT</div></div><div class="info-2"><div class="info-item-1">环境要求 Linux 服务器 docker docker compose  开始部署相关链接：MoRan23/GZCTF-BOT-QQ: GZCTF 对接的 qq 机器人，基于 NapCat+Nonebot 框架 (github.com) 进入 GZBOTGithub 地址，由于服务器对于 Github 的网络连接会偶然连不上，这里使用 docker-compose 部署，Github 的 README 写的很详细了，这里多说几点易错点。  下方监听的赛事名是 GZCTF 的赛事名，不是赛事序号或赛事 ID，赛事名叫什么就写什么，比如下图中的赛事名就是 W1ndys的bot测试   把下面代码参数改好后保存为 docker-compose.yml 123456789101112131415161718192021222324252627version: &quot;3.7&quot;services:  napcat:    image: mlikiowa/napcat-docker:latest    restart: always    ports:      -...</div></div></div></a><a class="pagination-related" href="/posts/e35cbf79.html" title="基于Python + OneBot 11的QQ机器人模块加载器的实现"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-03</div><div class="info-item-2">基于Python + OneBot 11的QQ机器人模块加载器的实现</div></div><div class="info-2"><div class="info-item-1">源代码请看：W1ndys-bot/Module-Loader: 对接 OneBot 的 Python 模块加载器 (github.com) 对接 OneBot 的 Python 模块加载器 介绍及背景Python 编写的模块加载器，使用 WebSocket 客户端模式对接上游服务，支持 OneBot 协议，如遇到问题请提 issue 本加载器不以插件的形式进行加载，而是以模块的形式进行加载。 这也就意味着，本加载器的功能增加，直接写代码即可，无需配置相关插件信息。  写这个加载器的原因是，了解到了 mf 师傅的插件式加载器，但我本人并不习惯这种方法，于是就写了这个模块式加载器，整个加载器的配置全部采用 Python 模块化编程，功能的开发模式完全基于原生 Onebot11。 有关插件式加载器的文档请参考：School-Robot/Plugin-Loader: 用于对接 OneBot 的 Python 插件加载器 (github.com)  加载器特色 模块化编程，易于维护 支持断线重连，无需手动重启 支持上线提醒（QQ），掉线提醒（钉钉） 支持 OneBot 11...</div></div></div></a><a class="pagination-related" href="/posts/56783215.html" title="基于 Python 和 Onebot11 的 QQ 机器人实现"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-28</div><div class="info-item-2">基于 Python 和 Onebot11 的 QQ 机器人实现</div></div><div class="info-2"><div class="info-item-1">开发背景 也是我与 QQbot 之间的羁绊吧，作者的一些碎碎念  久违了啊，老友，说不出的感觉涌上心头 😇 还记得那会是初中，忘了上几年级了，大概在 17 年左右认识了酷 Q，只能用别人的插件不会自己开发功能，学了一段时间苦于环境不会配置放弃了，后来 18，19 年左右认识了 QRspeed（-dic），基于关键词的词库程序，看着语法文档自己写出来一套（大概 4000 行左右吧）自己用的源码（严格来说应该叫词库称不上是源码），这是我第一次自己写自己想要的功能。但苦于 qrspeed 词库算不上真正的编程语言，所以一直拿不出手。后来因为寄宿学校，版本更新很快，逐渐跟不上了语法的变化了。 后来，晨风机器人作者喝茶，酷 Q 关站，qrspeed 也停运，受 tx 打压 QQ 机器人几乎死路一条。高中了解到 nonebot2，环境不会搭，放弃了上大学之后了解到 mirai，这是我第三个用了很久一段时间的机器人框架，可惜的是，我认识他的时候他就已经到寒冬了，随处可见的 code = 45，封过 n 次的 QQ 号…..不过我依旧想自己开发自己想要的功能，由于 mirai 基于...</div></div></div></a><a class="pagination-related" href="/posts/9bd67233.html" title="基于 Python 和 Onebot11 的QQ机器人开发——JSON消息的发送（消息段数组的运用）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-15</div><div class="info-item-2">基于 Python 和 Onebot11 的QQ机器人开发——JSON消息的发送（消息段数组的运用）</div></div><div class="info-2"><div class="info-item-1">什么是消息段数组请看 onebot11 官方文档 onebot-11/message/array.md at master · botuniverse/onebot-11 (github.com) 以前我都是直接发的 CQ 码（什么是 CQ 码？onebot-11/message/string.md at master · botuniverse/onebot-11 (github.com)） 今天突发奇想的想试试直接发推荐卡片，当我尝试发 CQ 码的时候失败了，然后我去找 NapCatQQ 开发者拾雪问了一下，大佬是这么说的，不能直接用 CQ 码，因为涉及到签名等东西，需要用扩展接口，让我去看文档。 去文档找了一下，确实找到了，我本以为能顺理成章的解决问题，但是不出意外的话出意外了。 下面内容基于 Python 和正向 Websocket...</div></div></div></a><a class="pagination-related" href="/posts/8b45af9c.html" title="基于 Python 和 Onebot11 的QQ机器人开发——对websocket响应消息的分离处理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-24</div><div class="info-item-2">基于 Python 和 Onebot11 的QQ机器人开发——对websocket响应消息的分离处理</div></div><div class="info-2"><div class="info-item-1">前言一直以来 websocket 相应消息的接收都是有问题，之前想过很多办法，包括设置 sleep 等待，设置标志等的来分离 recv 来处理正确的响应，但是始终都没成功，这次改变了一下思路成功了 修改前1234567891011121314151617发送群消息并获取消息 IDasync def send_group_msg_with_reply(websocket, group_id, content):    try:        message = &#123;            &quot;action&quot;: &quot;send_group_msg&quot;,            &quot;params&quot;: &#123;&quot;group_id&quot;: group_id, &quot;message&quot;: content&#125;,        &#125;        await websocket.send(json.dumps(message))        response =...</div></div></div></a><a class="pagination-related" href="/posts/55d6cfbc.html" title="基于 Python 和 Onebot11 的QQ机器人开发——模块引用中环境变量的学习"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-04</div><div class="info-item-2">基于 Python 和 Onebot11 的QQ机器人开发——模块引用中环境变量的学习</div></div><div class="info-2"><div class="info-item-1">先看一个例子 假设文件结构如下 1234567891011121314project/│├── app/│   ├── scripts/│   │   ├── GroupManager/│   │   │   ├── main.py│   │   │   ├── banned_words.py│   │   │   ├── group_status.py│   │   │   ├── invite_chain.py│   │   │   ├── welcome_farewell.py│   │   │   ├── group_management.py│   ├── api/│   ├── config.py 代码如下 12345678910111213141516171819202122# app/scripts/GroupManager/main.pyimport loggingimport reimport osimport syssys.path.append(   ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">函数调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-number">1.3.</span> <span class="toc-text">文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#open-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">open() 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.2.</span> <span class="toc-text">file 对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">函数处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%98%BB%E6%96%AD"><span class="toc-number">1.4.1.</span> <span class="toc-text">函数阻断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%82%E6%AD%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text">函数异步</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">变量的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">规范数据类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E4%BA%A4%E4%BA%92"><span class="toc-number">1.6.</span> <span class="toc-text">数据的存储和交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON"><span class="toc-number">1.6.1.</span> <span class="toc-text">JSON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88SQLite%EF%BC%89"><span class="toc-number">1.6.2.</span> <span class="toc-text">数据库（SQLite）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8C%B9%E9%85%8D%EF%BC%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89"><span class="toc-number">1.6.3.</span> <span class="toc-text">数据的匹配（正则表达式）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">正则表达式实例</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D"><span class="toc-number">1.6.3.1.1.</span> <span class="toc-text">字符匹配</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-number">1.6.3.1.2.</span> <span class="toc-text">字符类</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%B1%BB"><span class="toc-number">1.6.3.1.3.</span> <span class="toc-text">特殊字符类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E6%88%96%E5%BA%93"><span class="toc-number">1.7.</span> <span class="toc-text">常用函数或库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.7.1.</span> <span class="toc-text">日期的处理</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><script src="/js/tw_cn.js?v=5.2.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => setTimeout(() => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        if (ele.children.length > 0) return
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }, 100)
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : btf.getScript('https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+  btf.addGlobalFn('encrypt', abcjsInit, 'abcjs')
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = {"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
