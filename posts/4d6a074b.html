@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>利用burpsuite破解iwrite的写作时间|破解iwrite的AI检测 | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”？ 先说方法总结: “谷歌翻译 20 次” 这边需要注意的是,千万不要用谷歌翻译,因为谷歌翻译的能力太强了,他会很高水平的还原你的作文,导致你无法降低判断出 AI 生成的可能性。直接用百度翻译就可以了。 下面我以一篇 ChatGPT 生成的作文为例,来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用burpsuite破解iwrite的写作时间|破解iwrite的AI检测">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/4d6a074b.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”？ 先说方法总结: “谷歌翻译 20 次” 这边需要注意的是,千万不要用谷歌翻译,因为谷歌翻译的能力太强了,他会很高水平的还原你的作文,导致你无法降低判断出 AI 生成的可能性。直接用百度翻译就可以了。 下面我以一篇 ChatGPT 生成的作文为例,来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 A">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.w1ndys.top/img/iwrite/iwrite&bp.png">
+<meta property="article:published_time" content="2024-04-16T14:02:30.000Z">
+<meta property="article:modified_time" content="2024-12-17T11:15:24.201Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="技术教程">
+<meta property="article:tag" content="iwrite">
+<meta property="article:tag" content="burpsuite">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.w1ndys.top/img/iwrite/iwrite&bp.png"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/4d6a074b.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '利用burpsuite破解iwrite的写作时间|破解iwrite的AI检测',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg" style="background-image: url(https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">184</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">145</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg" alt="Logo"><span class="site-name">W1ndysの小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">利用burpsuite破解iwrite的写作时间|破解iwrite的AI检测</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">利用burpsuite破解iwrite的写作时间|破解iwrite的AI检测<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/利用burpsuite破解iwrite的写作时间-破解iwrite的AI检测.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-16T14:02:30.000Z" title="发表于 2024-04-16 22:02:30">2024-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-17T11:15:24.201Z" title="更新于 2024-12-17 19:15:24">2024-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:30,&quot;messagePrev&quot;:&quot;这篇文章已经有&quot;,&quot;messageNext&quot;:&quot;天没有更新了，请注意甄别时效性，可能有部分已失效&quot;,&quot;postUpdate&quot;:&quot;2024-12-17 19:15:24&quot;}" hidden></div><h2 id="如何把-作文很有可能是-ai-生成的-改为-作文非常不可能是由-ai-生成的-？">如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”？</h2>
+<p>先说方法总结: “谷歌翻译 20 次”</p>
+<p>这边需要注意的是,千万不要用<a target="_blank" rel="noopener" href="https://translate.google.cn/">谷歌翻译</a>,因为谷歌翻译的能力太强了,他会很高水平的还原你的作文,导致你无法降低判断出 AI 生成的可能性。直接用<a target="_blank" rel="noopener" href="https://fanyi.baidu.com/">百度翻译</a>就可以了。</p>
+<p>下面我以一篇 ChatGPT 生成的作文为例,来说明如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”。</p>
+<h3 id="原文">原文</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Embarking on a career journey after graduation is akin to stepping into a labyrinth of challenges. Primarily, the lack of experience poses a significant hurdle. Despite theoretical knowledge gained in academia, practical application often demands a different skill set altogether. Moreover, the competitive job market intensifies the pressure, leaving graduates grappling with self-doubt.</span><br><span class="line"></span><br><span class="line">Financial constraints further exacerbate the situation. With student loans looming overhead and the need to establish oneself independently, the initial phase becomes financially taxing. Consequently, many find themselves compromising on their career aspirations, opting for any available opportunity to make ends meet.</span><br><span class="line"></span><br><span class="line">Additionally, navigating the professional landscape demands adaptability and resilience. Rejections and setbacks are inevitable, testing one&#x27;s perseverance and determination. Furthermore, striking a balance between personal and professional life adds to the complexity, often leading to burnout.</span><br><span class="line"></span><br><span class="line">In conclusion, the transition from academia to the professional realm is fraught with multifaceted challenges. However, with perseverance, continuous learning, and a resilient mindset, graduates can overcome these obstacles and carve a fulfilling career path for themselves.</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/1713282497160.png" alt="原文"></p>
+<h3 id="翻译成日语">翻译成日语</h3>
+<p>卒業後にプロの旅に出ると、挑戦に満ちた迷宮に足を踏み入れるようなものだ。まず、経験不足は重大な障害である。学界で理論知識を得ているにもかかわらず、実際の応用には全く異なる技能が必要になることが多い。また、競争の激しい就職市場は圧力を強め、卒業生を自己不信に陥れている。</p>
+<p>財政規制はさらに情勢を悪化させた。学生ローンが目前に迫っていることや、独立起業の必要性に伴い、最初の段階では財政難になっている。そのため、多くの人は自分がキャリア志向に妥協し、生計を立てるために利用可能な機会を選んでいることに気づいた。</p>
+<p>また、制御専門分野には適応性と靭性が必要です。拒否と挫折は避けられず、一人の根気と決心が試されている。また、個人生活と職業生活のバランスをとることで複雑さが増し、倦怠感を招くこともあります。</p>
+<p>要するに、学界から専門分野への移行は多方面の挑戦に満ちている。しかし、根気と継続的な学習と強靭な心理状態によって、卒業生はこれらの障害を克服して、自分のために充実した職業の道を切り開くことができます。</p>
+<h3 id="翻译成英语">翻译成英语</h3>
+<p>After graduating from a professional trip, it is like stepping into a challenging labyrinth. First, experience shortage is a serious obstacle. Despite theoretical knowledge in the academic world, real applications often require different skills. In addition, competitive job markets intensify pressure and undergraduate graduates.</p>
+<p>Fiscal regulation worsened the situation. In the first stage, financial difficulties have been made as the student loan is close at hand and the need for independent entrepreneurship. So many people realized that they chose the opportunity to compromise their career orientation and make a living.</p>
+<p>In addition, adaptability and toughness are necessary for the field of control. Refusal and failure are inevitable, and one’s patience and determination are being tested. In addition, the balance of personal life and work life increases the complexity, and it sometimes causes fatigue.</p>
+<p>In short, the transition from academic to professional is full of challenges. But with patience, continuous learning and tough psychological conditions, graduates can overcome these obstacles and open up a profitable career for themselves.</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PixPin_2024-04-16_23-50-49.png" alt="翻译之后"></p>
+<h2 id="如何用-burpsuite-抓包破解-iwrite-的写作时间？">如何用 burpsuite 抓包破解 iwrite 的写作时间？</h2>
+<h3 id="成品">成品</h3>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/image.png" alt="成品"></p>
+<blockquote>
+<p>首先你需要两个工具</p>
+<p>时间戳转换工具: <a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">https://tool.lu/timestamp/</a></p>
+<p>burpsuite: <a target="_blank" rel="noopener" href="https://portswigger.net/burp/download">https://portswigger.net/burp/download</a> (这里只提供正版不提供学习版)</p>
+</blockquote>
+<h3 id="步骤">步骤</h3>
+<ol>
+<li>
+<p>打开 burpsuite,点击菜单栏中的 <code>代理</code>,打开<code>内置浏览器</code></p>
+</li>
+<li>
+<p>进入<a target="_blank" rel="noopener" href="https://iwrite.unipus.cn/login/">iwrite 官网</a>,登录你的账号</p>
+</li>
+<li>
+<p>进入写作页面</p>
+<p>写上作文之后(其实可以直接复制,禁用 js 之后直接粘贴,怎么操作可以看我之前的<a href="/posts/9a26b151">博客</a>)</p>
+<p>一定要出现<code>自动保存</code>的提示,不然不会保存到服务器</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image.png" alt="自动保存"></p>
+</li>
+<li>
+<p>打开拦截</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-1.png" alt="拦截"></p>
+</li>
+<li>
+<p>点提交作文</p>
+</li>
+<li>
+<p>查看请求包</p>
+<p>一开始这个不用管,都是些班级,任务,学生信息之类的东西</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-2.png" alt="这个不用管"></p>
+<p>把这个包<code>放行</code></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-3.png" alt="放行请求包"></p>
+<p>下面这个继续放行</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-4.png" alt="继续放行"></p>
+</li>
+<li>
+<p>修改请求包</p>
+<p>到这里才是需要修改的东西,这里可以看到你写的作文题目和正文</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-5.png" alt="真正的请求包"></p>
+<p>我们需要修改的是时间戳,把它改成以前的时间,这样就能修改你的写作耗时</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;studentId&quot;</span><span class="punctuation">:</span> <span class="number">908508079</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;savePattern&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;taskId&quot;</span><span class="punctuation">:</span> <span class="number">232395</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的作文题目&quot;</span><span class="punctuation">,</span> <span class="comment">// 这里应该是你写的作文题目</span></span><br><span class="line">  <span class="attr">&quot;article&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的作文数据&quot;</span><span class="punctuation">,</span> <span class="comment">// 这里应该是你写的作文正文</span></span><br><span class="line">  <span class="attr">&quot;simpleArticle&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的作文数据&quot;</span><span class="punctuation">,</span> <span class="comment">// 这里应该是你写的作文正文</span></span><br><span class="line">  <span class="attr">&quot;classId&quot;</span><span class="punctuation">:</span> <span class="number">10155377</span><span class="punctuation">,</span> <span class="comment">// 这里应该是你班级的 id</span></span><br><span class="line">  <span class="attr">&quot;startTime&quot;</span><span class="punctuation">:</span> <span class="number">1713331204412</span><span class="punctuation">,</span> <span class="comment">//这可能是代表的开始写作时间，但实际测试中发现，这个数据无法被利用修改</span></span><br><span class="line">  <span class="attr">&quot;words&quot;</span><span class="punctuation">:</span> <span class="number">167</span><span class="punctuation">,</span> <span class="comment">// 这里应该是你写的字数</span></span><br><span class="line">  <span class="attr">&quot;autoSaveReturnStartTime&quot;</span><span class="punctuation">:</span> <span class="number">1713331204413</span> <span class="comment">// 这里是需要修改的时间戳,把他改成以前的时间</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>写作耗时的计算公式是：<code>现实的时间</code>-<code>autoSaveReturnStartTime</code>=<code>写作耗时</code></p>
+<p>PS：这里的写作词数也可以改</p>
+<p>进入<a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">时间戳转换工具</a></p>
+<p>我现在的时间是 2024 年 4 月 17 日 13:30:28</p>
+<p>为了更明显一些我改成 2023 年 2023-04-17 13:30:00，对应的时间戳是 <code>1681709400000</code></p>
+<p>单词数我改成 <code>999</code></p>
+<p>修改之后放行</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-6.png" alt="放行修改后的请求包"></p>
+<p>继续放行</p>
+</li>
+</ol>
+<h4 id="二次修改">二次修改</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-7.png" alt="继续提交"></p>
+<p>这里也要提交，跟之前一样，总共修改两次</p>
+<p>修改完之后继续发包</p>
+<h3 id="看成品">看成品</h3>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/iwrite/PJ/image-8.png" alt="成品"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/4d6a074b.html">https://blog.w1ndys.top/posts/4d6a074b.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a><a class="post-meta__tags" href="/tags/iwrite/">iwrite</a><a class="post-meta__tags" href="/tags/burpsuite/">burpsuite</a></div><div class="post-share"><div class="social-share" data-image="/../img/iwrite/iwrite&amp;bp.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/97781668.html" title="网络安全实验报告4——SSH暴力破解实验"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj?20240417101810774" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">网络安全实验报告4——SSH暴力破解实验</div></div><div class="info-2"><div class="info-item-1">实验环境 虚拟机：Kali_Linux_VMware_Workstation_16_Player_Edition 工具：FoxyProxy、BurpSuit 实验步骤 安装 docker   打开 Kali Linux，在终端输入以下命令安装 docker： 12sudo apt-get updatesudo apt-get install docker.io   检查安装是否成功：    部署 DVWA   打开 Kali Linux，在终端输入以下命令部署 DVWA： 1docker run -d --name w1ndys_dvwa -p 8081:80 vulnerables/web-dvwa   打开浏览器，输入http://127.0.0.1:8081访问 DVWA。    登录 DVWA   输入用户名admin和密码password登录 DVWA。    设置DVWA Security为Low，并点击Start启动 DVWA。    FoxyProxy   安装...</div></div></div></a><a class="pagination-related" href="/posts/65c6afd7.html" title="汇编语言与逆向工程实验报告8"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj?20240415204243695" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">汇编语言与逆向工程实验报告8</div></div><div class="info-2"><div class="info-item-1">在线浏览: https://blog.w1ndys.top/posts/65c6afd7 主函数 12345678910111213141516int __fastcall main(int argc, const char **argv, const char **envp)&#123;  int v3; // ebx  int v4; // ebx  char v6[80]; // [rsp+10h] [rbp-50h] BYREF  printf(&quot;Whats the password: &quot;);  __isoc99_scanf(&quot;%s&quot;, v6);  v3 = check1(v6);  v4 = check2(v6) * v3;  if ( (int)(v4 * check3(v6)) &lt;= 0 )    puts(&quot;Nope, try again.&quot;);  else    puts(&quot;Correct!&quot;);  return...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/9a26b151.html" title="破解PC端iwrite禁用复制"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ts1.cn.mm.bing.net/th/id/R-C.29b7c637d0e32c2251b15e492fba7cb9?rik=AprJLuudx1%2b%2feg&riu=http%3a%2f%2fimg.mp.itc.cn%2fupload%2f20170703%2f64ba7dee4d2845bc8682b9f601e12c7e_th.jpg&ehk=xlUcy2FYNa%2bDw63l1zYBhbUD62ftqv4YDC7a%2feBSxlg%3d&risl=&pid=ImgRaw&r=0" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-27</div><div class="info-item-2">破解PC端iwrite禁用复制</div></div><div class="info-2"><div class="info-item-1">破解 PC 端 iwrite 禁用复制 AI 生成的作文不能粘贴？？？？ 我来救救你  打开 iwrite 进入作文页面 电脑按下 F12 然后按下 F1 找到 禁用JavaScript 勾选   一般是禁用 JavaScript 或者是停用 JavaScript，不同浏览器描述可能不同，但基本意思都一样，一眼就能看出来,之后就能粘贴了   </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8A%8A-%E4%BD%9C%E6%96%87%E5%BE%88%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF-ai-%E7%94%9F%E6%88%90%E7%9A%84-%E6%94%B9%E4%B8%BA-%E4%BD%9C%E6%96%87%E9%9D%9E%E5%B8%B8%E4%B8%8D%E5%8F%AF%E8%83%BD%E6%98%AF%E7%94%B1-ai-%E7%94%9F%E6%88%90%E7%9A%84-%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">如何把“作文很有可能是 AI 生成的”改为“作文非常不可能是由 AI 生成的”？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E6%96%87"><span class="toc-number">1.1.</span> <span class="toc-text">原文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E6%88%90%E6%97%A5%E8%AF%AD"><span class="toc-number">1.2.</span> <span class="toc-text">翻译成日语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E6%88%90%E8%8B%B1%E8%AF%AD"><span class="toc-number">1.3.</span> <span class="toc-text">翻译成英语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%A8-burpsuite-%E6%8A%93%E5%8C%85%E7%A0%B4%E8%A7%A3-iwrite-%E7%9A%84%E5%86%99%E4%BD%9C%E6%97%B6%E9%97%B4%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何用 burpsuite 抓包破解 iwrite 的写作时间？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%93%81"><span class="toc-number">2.1.</span> <span class="toc-text">成品</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.2.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E4%BF%AE%E6%94%B9"><span class="toc-number">2.2.1.</span> <span class="toc-text">二次修改</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E6%88%90%E5%93%81"><span class="toc-number">2.3.</span> <span class="toc-text">看成品</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><script src="/js/tw_cn.js?v=5.2.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => setTimeout(() => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        if (ele.children.length > 0) return
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }, 100)
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : btf.getScript('https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+  btf.addGlobalFn('encrypt', abcjsInit, 'abcjs')
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = {"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

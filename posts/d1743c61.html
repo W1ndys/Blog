@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网络安全实训10——Kali远程控制Android系统 | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="查看 Metasploit 工具中可以在 Android 系统下使用的 payload 类型   这些 payload 可以作为我们后面攻击的软件的生成工具  端口映射问题   如果我们的手机与使用的计算机处在同一局域网，但是虚拟机使用的是 NAT 模式。那么只有我们使用的计算机才可以访问到该虚拟机，其他设备都是无法访问该虚拟机的。那么就需要端口映射了   假设计算机的 IP 为（192.168.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全实训10——Kali远程控制Android系统">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/d1743c61.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="查看 Metasploit 工具中可以在 Android 系统下使用的 payload 类型   这些 payload 可以作为我们后面攻击的软件的生成工具  端口映射问题   如果我们的手机与使用的计算机处在同一局域网，但是虚拟机使用的是 NAT 模式。那么只有我们使用的计算机才可以访问到该虚拟机，其他设备都是无法访问该虚拟机的。那么就需要端口映射了   假设计算机的 IP 为（192.168.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mlmptcyihulf.i.optimole.com/hkHEVoo-hq1NuQ2M/w:auto/h:auto/q:100/https://vcube-sl.lk/wp-content/uploads/2020/06/14618887-1.jpg">
+<meta property="article:published_time" content="2024-07-16T00:01:31.000Z">
+<meta property="article:modified_time" content="2024-12-17T11:15:24.205Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="网络安全实训">
+<meta property="article:tag" content="Kali">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="远程控制">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mlmptcyihulf.i.optimole.com/hkHEVoo-hq1NuQ2M/w:auto/h:auto/q:100/https://vcube-sl.lk/wp-content/uploads/2020/06/14618887-1.jpg"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/d1743c61.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络安全实训10——Kali远程控制Android系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg" style="background-image: url(https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">184</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">145</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg" alt="Logo"><span class="site-name">W1ndysの小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">网络安全实训10——Kali远程控制Android系统</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">网络安全实训10——Kali远程控制Android系统<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/网络安全实训10——Kali远程控制Android系统.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T00:01:31.000Z" title="发表于 2024-07-16 08:01:31">2024-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-17T11:15:24.205Z" title="更新于 2024-12-17 19:15:24">2024-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%AE%9E%E8%AE%AD/">实训</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/%E5%AE%9E%E8%AE%AD/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">实验报告</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">574</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:30,&quot;messagePrev&quot;:&quot;这篇文章已经有&quot;,&quot;messageNext&quot;:&quot;天没有更新了，请注意甄别时效性，可能有部分已失效&quot;,&quot;postUpdate&quot;:&quot;2024-12-17 19:15:24&quot;}" hidden></div><h2 id="查看-metasploit-工具中可以在-android-系统下使用的-payload-类型">查看 Metasploit 工具中可以在 Android 系统下使用的 payload 类型</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716080804249.png" alt="image-20240716080804249"></p>
+<ul>
+<li>这些 payload 可以作为我们后面攻击的软件的生成工具</li>
+</ul>
+<h2 id="端口映射问题">端口映射问题</h2>
+<ul>
+<li>
+<p>如果我们的手机与使用的计算机处在同一局域网，但是虚拟机使用的是 NAT 模式。那么只有我们使用的计算机才可以访问到该虚拟机，其他设备都是无法访问该虚拟机的。那么就需要端口映射了</p>
+</li>
+<li>
+<p>假设计算机的 IP 为（192.168.1.100）。Android 手机的 IP 为（192.168.1.*）。虚拟机的 IP 为（192.168.169.130）：</p>
+</li>
+<li>
+<p>第一步：打开 VMware 虚拟机网络编辑器</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716081134183.png" alt="image-20240716081134183"></p>
+<ul>
+<li>第二步：设置端口的映射（设置之后，凡是发往计算机 9999 端口的流量都会转发到虚拟机的 9999 端口上，这样虚拟机就能够接收到 Android 的连接了）</li>
+</ul>
+<h2 id="远程控制-android-手机演示">远程控制 Android 手机演示</h2>
+<ul>
+<li>本案例中，Linux 采用桥接模式，与 Android 手机连接在同一局域网中</li>
+</ul>
+<h3 id="使用-msfvenom-命令生成被控端-payload">使用 msfvenom 命令生成被控端 payload</h3>
+<ul>
+<li>第一步：下面我以“android/meterpreter/reverse_tcp”类型的 payload 为例，然后查看该类型需要的参数（图片显示需要 IP 和端口）</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716081544495.png" alt="image-20240716081544495"></p>
+<ul>
+<li>
+<p>查看完参数之后，退出 Metasploit</p>
+</li>
+<li>
+<p>第二步：生成 payload（msfvenom 命令中默认没有 apk 这种格式的文件。此处使用 R 来替代-f 和-o）</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716082433269.png" alt="image-20240716082433269"></p>
+<h3 id="为软件签名">为软件签名</h3>
+<ul>
+<li>第一步：使用 keytool 生成一个 key 文件。会让你输入该 key 的名称、单位、地址等等信息，最终生成一个 key 文件</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716083005825.png" alt="image-20240716083005825"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716083612843.png" alt="image-20240716083612843"></p>
+<p>未找到命令</p>
+<p>安装一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">apt-get upgrade</span><br><span class="line"></span><br><span class="line">apt-get install openjdk-11-jdk-headless</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716083910153.png" alt="image-20240716083910153"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716084431577.png" alt="image-20240716084431577"></p>
+<h3 id="开启主动端-等待被控端连接">开启主动端，等待被控端连接</h3>
+<p>使用msfconsole开启Metasploit</p>
+<p>主动端使用handler</p>
+<p>为handler设置参数（payload版本类型、IP地址、端口）</p>
+<p>开启监听（等待被控端接入）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716091252555.png" alt="image-20240716091252555"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092343553.png" alt="image-20240716092343553"></p>
+<h4 id="远程控制android手机拍照">远程控制Android手机拍照</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092511699.png" alt="image-20240716092511699"></p>
+<h4 id="远程控制android手机录视频">远程控制Android手机录视频</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092554977.png" alt="image-20240716092554977"></p>
+<h4 id="远程控制android手机录音">远程控制Android手机录音</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092631540.png" alt="image-20240716092631540"></p>
+<h4 id="查看android手机是否已经执行root权限">查看Android手机是否已经执行root权限</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092650787.png" alt="image-20240716092650787"></p>
+<h4 id="导出android手机的电话本">导出Android手机的电话本</h4>
+<p>我的模拟器没有联系人所以没有</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092721510.png" alt="image-20240716092721510"></p>
+<h4 id="导出android手机的短信记录">导出Android手机的短信记录</h4>
+<p>同上</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092749806.png" alt="image-20240716092749806"></p>
+<h4 id="远程控制目标手机发送短信">远程控制目标手机发送短信</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092846387.png" alt="image-20240716092846387"></p>
+<h4 id="对目标手机进行定位-查看目标手机位置信息">对目标手机进行定位，查看目标手机位置信息</h4>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../img/zuolao/10/image-20240716092949791.png" alt="image-20240716092949791"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/d1743c61.html">https://blog.w1ndys.top/posts/d1743c61.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E8%AE%AD/">网络安全实训</a><a class="post-meta__tags" href="/tags/Kali/">Kali</a><a class="post-meta__tags" href="/tags/Android/">Android</a><a class="post-meta__tags" href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/">远程控制</a></div><div class="post-share"><div class="social-share" data-image="https://mlmptcyihulf.i.optimole.com/hkHEVoo-hq1NuQ2M/w:auto/h:auto/q:100/https://vcube-sl.lk/wp-content/uploads/2020/06/14618887-1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/211bc68b.html" title="网络安全实训11——Pyinstaller打包逆向分析火绒免杀"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://th.bing.com/th/id/OIP.x3tnZNqCcUiJO16in9rbJAAAAA?rs=1&amp;pid=ImgDetMain" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">网络安全实训11——Pyinstaller打包逆向分析火绒免杀</div></div><div class="info-2"><div class="info-item-1">cs shellcode 打开 1java -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar  查看生成的 payload 123# length: 894 bytesbuf =...</div></div></div></a><a class="pagination-related" href="/posts/7432ba23.html" title="网络安全实训9——Office宏病毒"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tse2-mm.cn.bing.net/th/id/OIP-C.0PTLuvy0WEE-OL68_C4RMQHaFz?rs=1&amp;pid=ImgDetMain" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">网络安全实训9——Office宏病毒</div></div><div class="info-2"><div class="info-item-1">下载 CS 我这里之前网络安全协会讲座测试环境的时候装过一次汉化版，考虑到实验环境，再下个老师给的 CS  运行服务端 12345678给予服务端程序 teamserver 执行权限（在 linux 中复制进来的文件默认是没有执行权限的）chmod +x teamserver # 可以查看 kali 的 IP 地址（可选）ifconfig eth0 # # 运行服务端程序，192.168.0.104 是本机 IP，user   是要设置的连接密码（可改）./teamserver 192.168.0.104 user  报错了，搜了一下，配置 java 环境变量：java 安装常见问题之 Kali 永久配置环境变量_kali 环境变量-CSDN 博客  好吧还是不行，用我之前的版本的  新建配置文件，连接 CS 服务器 1java -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/211bc68b.html" title="网络安全实训11——Pyinstaller打包逆向分析火绒免杀"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://th.bing.com/th/id/OIP.x3tnZNqCcUiJO16in9rbJAAAAA?rs=1&pid=ImgDetMain" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-16</div><div class="info-item-2">网络安全实训11——Pyinstaller打包逆向分析火绒免杀</div></div><div class="info-2"><div class="info-item-1">cs shellcode 打开 1java -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar  查看生成的 payload 123# length: 894 bytesbuf =...</div></div></div></a><a class="pagination-related" href="/posts/e05ed2cb.html" title="网络安全实训3——远程控制"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://www.linuxprobe.com/wp-content/uploads/2023/04/1682539600914_0.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-12</div><div class="info-item-2">网络安全实训3——远程控制</div></div><div class="info-2"><div class="info-item-1">生成木马程序  设置 IP 和端口  运行木马  反弹 shell  ADD +DEL+UPLOAD+DOWNDOAD    </div></div></div></a><a class="pagination-related" href="/posts/1536eb66.html" title="网络安全实训1——网络钓鱼攻击"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://th.bing.com/th/id/OIP.xeYJki3WJOfp7jnGa3sS6QHaEK?w=287&h=180&c=7&r=0&o=5&pid=1.7" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-11</div><div class="info-item-2">网络安全实训1——网络钓鱼攻击</div></div><div class="info-2"><div class="info-item-1">网络钓鱼攻击  可能需要的：kali Linux 切换镜像源  安装并启动  利用 BeEF 进行网页钓鱼攻击  利用 nodejs 开启静态服务  补充利用 nodejs 开启静态服务 12sudo apt updatesudo apt install nodejs npm 安装完成后进入你的静态文件所在目录 开启命令行 1http-server    成功上线  发送警告命令  通过 flash 钓鱼获取目标控制权 1msf6 &gt; handler -H 127.0.0.1 -P 4444 -p windows/meterpreter/reverse_tcp       </div></div></div></a><a class="pagination-related" href="/posts/a3df68b9.html" title="网络安全实训2——ACL"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tse1-mm.cn.bing.net/th/id/OIP-C.MM_ZqhhW3L-tDzBzv2F8cAHaCk?w=296&h=121&c=7&r=0&o=5&pid=1.7" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-11</div><div class="info-item-2">网络安全实训2——ACL</div></div><div class="info-2"><div class="info-item-1">标准 IP 访问控制列表配置 实验目标   理解标准 IP 访问控制列表的原理及功能   掌握编号的标准 IP 访问控制列表的配置方法   实验背景 网络配置要求 公司的经理部、财务部和销售部门分属于不同的 3 个网段。三部门之间使用路由器进行信息传递。为了安全起见，公司领导要求以下访问控制：  销售部门不能对财务部进行访问。 经理部可以对财务部进行访问。  部门主机代表  PC1: 经理部的主机 PC2: 销售部的主机 PC3: 财务部的主机  技术原理 接入控制列表 (Access Control Lists, ACLs) 接入控制列表（ACLs），也称访问控制列表（Access Lists），俗称防火墙，在有的文档中还称包过滤。ACLs 通过定义一些规则对网络设备接口上的数据包进行控制，允许通过或丢弃，从而提高网络可管理性和安全性。 IP ACL 分类 IP ACL 分为两种：标准 IP 访问列表和扩展 IP 访问列表。  标准 IP 访问列表：编号范围为 1～99、1300～1999。可以根据数据包的源 IP 地址定义规则，进行数据包的过滤。 扩展 IP...</div></div></div></a><a class="pagination-related" href="/posts/bbe417ed.html" title="网络安全实训4——克隆网站"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic3.zhimg.com/v2-126e78c80316d82f84f5094f7f730aae_r.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-12</div><div class="info-item-2">网络安全实训4——克隆网站</div></div><div class="info-2"><div class="info-item-1">Web 站点克隆钓鱼 启动 SET  选择模块  Payload 选择  Payload 设置  返回数据   不知道为啥返回的是 HTML 源码，但是后台可以看到数据 把这段源码保存到本地打开就是登录界面  </div></div></div></a><a class="pagination-related" href="/posts/4702aed9.html" title="网络安全实训5——扩展访问控制列表"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj?20240712163900222" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-12</div><div class="info-item-2">网络安全实训5——扩展访问控制列表</div></div><div class="info-2"><div class="info-item-1">拓扑图  配置 PC0  配置 server0  配置路由器   ping测试  配置router1  ping测试  </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B-metasploit-%E5%B7%A5%E5%85%B7%E4%B8%AD%E5%8F%AF%E4%BB%A5%E5%9C%A8-android-%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%BD%BF%E7%94%A8%E7%9A%84-payload-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">查看 Metasploit 工具中可以在 Android 系统下使用的 payload 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">端口映射问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6-android-%E6%89%8B%E6%9C%BA%E6%BC%94%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">远程控制 Android 手机演示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-msfvenom-%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E8%A2%AB%E6%8E%A7%E7%AB%AF-payload"><span class="toc-number">3.1.</span> <span class="toc-text">使用 msfvenom 命令生成被控端 payload</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%AD%BE%E5%90%8D"><span class="toc-number">3.2.</span> <span class="toc-text">为软件签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E4%B8%BB%E5%8A%A8%E7%AB%AF-%E7%AD%89%E5%BE%85%E8%A2%AB%E6%8E%A7%E7%AB%AF%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.3.</span> <span class="toc-text">开启主动端，等待被控端连接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6android%E6%89%8B%E6%9C%BA%E6%8B%8D%E7%85%A7"><span class="toc-number">3.3.1.</span> <span class="toc-text">远程控制Android手机拍照</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6android%E6%89%8B%E6%9C%BA%E5%BD%95%E8%A7%86%E9%A2%91"><span class="toc-number">3.3.2.</span> <span class="toc-text">远程控制Android手机录视频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6android%E6%89%8B%E6%9C%BA%E5%BD%95%E9%9F%B3"><span class="toc-number">3.3.3.</span> <span class="toc-text">远程控制Android手机录音</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bandroid%E6%89%8B%E6%9C%BA%E6%98%AF%E5%90%A6%E5%B7%B2%E7%BB%8F%E6%89%A7%E8%A1%8Croot%E6%9D%83%E9%99%90"><span class="toc-number">3.3.4.</span> <span class="toc-text">查看Android手机是否已经执行root权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%87%BAandroid%E6%89%8B%E6%9C%BA%E7%9A%84%E7%94%B5%E8%AF%9D%E6%9C%AC"><span class="toc-number">3.3.5.</span> <span class="toc-text">导出Android手机的电话本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%87%BAandroid%E6%89%8B%E6%9C%BA%E7%9A%84%E7%9F%AD%E4%BF%A1%E8%AE%B0%E5%BD%95"><span class="toc-number">3.3.6.</span> <span class="toc-text">导出Android手机的短信记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9B%AE%E6%A0%87%E6%89%8B%E6%9C%BA%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1"><span class="toc-number">3.3.7.</span> <span class="toc-text">远程控制目标手机发送短信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%9B%AE%E6%A0%87%E6%89%8B%E6%9C%BA%E8%BF%9B%E8%A1%8C%E5%AE%9A%E4%BD%8D-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E6%A0%87%E6%89%8B%E6%9C%BA%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">3.3.8.</span> <span class="toc-text">对目标手机进行定位，查看目标手机位置信息</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><script src="/js/tw_cn.js?v=5.2.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => setTimeout(() => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        if (ele.children.length > 0) return
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }, 100)
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : btf.getScript('https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+  btf.addGlobalFn('encrypt', abcjsInit, 'abcjs')
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = {"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

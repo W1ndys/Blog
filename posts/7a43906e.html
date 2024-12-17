@@ -1,0 +1,1268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>HuYanSession2——壶言会话2使用手册 | W1ndysの小屋</title><meta name="author" content="W1ndys,w1ndys@outlook.com"><meta name="copyright" content="W1ndys"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="FFFAFA"><meta name="description" content="壶言手册发布页 自定义回复 权限id：session 参数 所有自定义回复都会携带作用域和匹配方式参数！ 支持更简洁的输入且都是可选！默认为精准和全局！ []和()指数学中的域，在本插件表示可填写和必填写； |为或，表示两边都可以用； 以下所有指令均适用于此表示方法!  [精准|1] 精准匹配 [模糊|2] 模糊匹配 [头部|3] 头部匹配 [结尾|4] 结尾匹配 [全局|0] 全局匹配 [当前|">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HuYanSession2——壶言会话2使用手册">
+<meta property="og:url" content="https://blog.w1ndys.top/posts/7a43906e.html">
+<meta property="og:site_name" content="W1ndysの小屋">
+<meta property="og:description" content="壶言手册发布页 自定义回复 权限id：session 参数 所有自定义回复都会携带作用域和匹配方式参数！ 支持更简洁的输入且都是可选！默认为精准和全局！ []和()指数学中的域，在本插件表示可填写和必填写； |为或，表示两边都可以用； 以下所有指令均适用于此表示方法!  [精准|1] 精准匹配 [模糊|2] 模糊匹配 [头部|3] 头部匹配 [结尾|4] 结尾匹配 [全局|0] 全局匹配 [当前|">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://t.mwm.moe/fj/?26">
+<meta property="article:published_time" content="2023-11-16T16:42:00.000Z">
+<meta property="article:modified_time" content="2024-12-17T11:15:24.197Z">
+<meta property="article:author" content="W1ndys">
+<meta property="article:tag" content="QQbot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://t.mwm.moe/fj/?26"><link rel="shortcut icon" href="/img/about/icon.jpg"><link rel="canonical" href="https://blog.w1ndys.top/posts/7a43906e.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//www.clarity.ms"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G2rPpjA8qhdAQYUqgC3WTFeaOfenZ71SWXKcg_WnOSk"/><meta name="baidu-site-verification" content="codeva-z19ndifHai"/><link rel="stylesheet" href="/css/index.css?v=5.2.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'FFFAFA')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?204a6d3bb0cb0e09978eff5ba3023104";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "kmd11rvmc3");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: W1ndys","link":"链接: ","source":"来源: W1ndysの小屋","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HuYanSession2——壶言会话2使用手册',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/card-info-btn.css"><script data-pjax charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script data-pjax>LA.init({id:"3HPYFt9znqKItrHZ",ck:"3HPYFt9znqKItrHZ",autoTrack:true})</script><link rel="stylesheet" type="text/css" href="/css/Capoo.css"><link rel="stylesheet" type="text/css" href="/css/foot.css"><link rel="stylesheet" type="text/css" href="/css/extra.css"><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="W1ndysの小屋" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="web_bg" style="background-image: url(https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://avatars.githubusercontent.com/u/109416673?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">184</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">145</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">78</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/about/icon.jpg" alt="Logo"><span class="site-name">W1ndysの小屋</span></a><a class="nav-page-title" href="/"><span class="site-name">HuYanSession2——壶言会话2使用手册</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heart"></i><span> 友链接力</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://travel.moe/go.html?travel=on"><i class="fa-fw fa fa-bomb"></i><span> 异次元之旅</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://beian.miit.cn.com/go.php#/"><i class="fa-fw fas fa-rotate-right"></i><span> MIIT Travel</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokelu.suijiboke.gs"><i class="fa-fw fas fa-tree"></i><span> 博客录</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://blogscn.fun/random.html"><i class="fa-fw fas fa-pen"></i><span> 笔墨迹</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://bokequan.cn/?suiji"><i class="fa-fw fas fa-car"></i><span> 博客圈</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-pencil"></i><span> 项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys/Easy-QFNU"><i class="fa-fw fa fa-book"></i><span> Easy-QFNU</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://github.com/W1ndys-bot/W1ndys-bot"><i class="fa-fw fa fa-robot"></i><span> W1ndys-bot</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-user"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></li><li><a class="site-page child" href="/words/"><i class="fa-fw fas fa-quote-left"></i><span> 一句话</span></a></li></ul></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://w1ndys.top/"><i class="fa-fw fas fa-bed"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://nav.w1ndys.top/"><i class="fa-fw fas fa-map"></i><span> 导航页</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HuYanSession2——壶言会话2使用手册<a class="post-edit-link" href="https://github.com/W1ndys/blog.w1ndys.top/edit/main/source/_posts/HuYanSession2——壶言会话2使用手册.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-16T16:42:00.000Z" title="发表于 2023-11-17 00:42:00">2023-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-17T11:15:24.197Z" title="更新于 2024-12-17 19:15:24">2024-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/QQbot/">QQbot</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:30,&quot;messagePrev&quot;:&quot;这篇文章已经有&quot;,&quot;messageNext&quot;:&quot;天没有更新了，请注意甄别时效性，可能有部分已失效&quot;,&quot;postUpdate&quot;:&quot;2024-12-17 19:15:24&quot;}" hidden></div><p><a target="_blank" rel="noopener" href="https://mirai.mamoe.net/topic/1377/%E5%A3%B6%E8%A8%802-huyansession2-%E5%A3%B6%E8%A8%80%E4%BC%9A%E8%AF%9D2">壶言手册发布页</a></p>
+<h2 id="自定义回复"><strong>自定义回复</strong></h2>
+<p><code>权限id：session</code></p>
+<h3 id="参数">参数</h3>
+<p>所有自定义回复都会携带作用域和匹配方式参数！<br>
+支持更简洁的输入且都是可选！默认为<code>精准</code>和<code>全局</code>！</p>
+<p><code>[]</code>和<code>()</code>指数学中的域，在本插件表示<code>可填写</code>和<code>必填写</code>；<br>
+<code>|</code>为或，表示两边都可以用；</p>
+<p><strong>以下所有指令均适用于此表示方法!</strong></p>
+<ul>
+<li><code>[精准|1]</code> 精准匹配</li>
+<li><code>[模糊|2]</code> 模糊匹配</li>
+<li><code>[头部|3]</code> 头部匹配</li>
+<li><code>[结尾|4]</code> 结尾匹配</li>
+<li><code>[全局|0]</code> 全局匹配</li>
+<li><code>[当前|-1]</code> 当前群匹配</li>
+<li><code>[群组(id)|gr(id)]</code> 指定群组匹配</li>
+</ul>
+<p>具体参数含义可以去壶言1查看</p>
+<hr>
+<h3 id="一对一回复-会话">一对一回复(会话)</h3>
+<p><code>权限id：sessionx</code></p>
+<p>直接上指令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>xx (触发内容) (回复内容) [参数]</code></td>
+<td style="text-align:left">快速添加关键字回复 参数可多填，以空格隔开</td>
+<td style="text-align:left"><code>xx 怎么办 凉拌 2 0</code></td>
+<td style="text-align:left"><code>学习 怎么办 凉拌 模糊 全局</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>xx：[触发内容]</code></td>
+<td style="text-align:left">查询所有已保存的关键词回复,冒号中英都支持，后续的触发内容填上就是查询对应的那条</td>
+<td style="text-align:left"><code>xx:</code></td>
+<td style="text-align:left"><code>查询 怎么办</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-xx：(触发内容)</code></td>
+<td style="text-align:left">删除对应的关键词</td>
+<td style="text-align:left"><code>-xx:怎么办</code></td>
+<td style="text-align:left"><code>删除 怎么办</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%xx</code></td>
+<td style="text-align:left">通过多次消息发送的形式添加对话,便于手机使用</td>
+<td style="text-align:left"><code>%xx</code></td>
+<td style="text-align:left"><code>学习对话</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-%xx</code></td>
+<td style="text-align:left">由于多次消息形式添加的对话的触发词可能含有空格，因此要用对应的方式删除</td>
+<td style="text-align:left"><code>-%xx</code></td>
+<td style="text-align:left"><code>删除对话</code></td>
+</tr>
+</tbody>
+</table>
+<p>学习对话参数：</p>
+<ul>
+<li><code>0 | 全局</code> 修改触发作用域为这个机器人的所有群</li>
+<li><code>1 | 精准</code> 只有发的消息跟触发词相同，才能触发回复，<code>不填写参数默认</code></li>
+<li><code>2 | 模糊</code> 发送消息包含触发词即可触发。</li>
+<li><code>3 | 头部</code> 发送消息的开头为触发词即可触发</li>
+<li><code>4 | 结尾</code> 发送消息的结尾为触发词即可触发</li>
+<li><code>5 | 正则</code> 以正则匹配触发消息，仅限<code>%xx</code>学习功能</li>
+<li><code>-1 | 当前</code> 修改触发作用域为当期这个群，<code>不填写参数默认</code></li>
+<li><code>gr(id) | 群组(id)</code> 修改作用域为对应的群组id，()不是指令，只是说明这个<code>id</code>必须填写，群组的使用方式在下方</li>
+</ul>
+<p>所有参数都在聊天指令的结尾以<code>(空格)(参数)</code>添加，无序。</p>
+<p>对话和多词条支持的动态消息：</p>
+<p>欢迎词支持的动态消息:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">动态消息类型</th>
+<th style="text-align:left">动态消息参数</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">匹配结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>at</code></td>
+<td style="text-align:left"><code>this</code></td>
+<td style="text-align:left">@(at)触发这条消息的人</td>
+<td style="text-align:left"><code>$at(this)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>qq</code></td>
+<td style="text-align:left">@群里的这个人，会固定@这个人</td>
+<td style="text-align:left"><code>$at(572490972)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>message</code></td>
+<td style="text-align:left"><code>this</code></td>
+<td style="text-align:left">这个人触发这条消息的内容</td>
+<td style="text-align:left"><code>$message(this)</code></td>
+<td style="text-align:left">不会写插件怎么办？</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>user</code></td>
+<td style="text-align:left"><code>name</code></td>
+<td style="text-align:left">获取这个人的名称</td>
+<td style="text-align:left"><code>$user(name)</code></td>
+<td style="text-align:left">放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left">获取这个人的qq</td>
+<td style="text-align:left"><code>$user(id)</code></td>
+<td style="text-align:left">572490972</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>avatar</code></td>
+<td style="text-align:left">获取这个人的头像</td>
+<td style="text-align:left"><code>$user(avatar)</code></td>
+<td style="text-align:left">[图片]</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>title</code></td>
+<td style="text-align:left">获取这个人的头衔，优先获取特殊头衔</td>
+<td style="text-align:left"><code>$user(title)</code></td>
+<td style="text-align:left">才不是放空了~</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>info</code></td>
+<td style="text-align:left">详细信息??</td>
+<td style="text-align:left"><code>$user(info)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>time</code></td>
+<td style="text-align:left"><code>now</code></td>
+<td style="text-align:left">获取当前时间，默认格式<code>yyyy-MM-dd HH:mm:ss</code></td>
+<td style="text-align:left"><code>$time(now)</code></td>
+<td style="text-align:left">2022-8-28 02:15:15</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>(时间格式)</code></td>
+<td style="text-align:left">按照指定的时间格式进行现在的时间输出</td>
+<td style="text-align:left"><code>$time(HH:mm:ss)</code></td>
+<td style="text-align:left">02:16:20</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="正则消息回流-仅限一对一回复">正则消息回流(仅限一对一回复)</h3>
+<p>请以<code>%xx</code>学习，学习内容为<code>(你的正则1)</code>，与之对应的回复内容为<code>$mate(1)</code>，<br>
+参数为5，也就是正则匹配，1对应第一个括号匹配的内容。</p>
+<p>案例：</p>
+<p>与之类似的，你只需要更改括号中正则，就可以达到你想要的东西。</p>
+<hr>
+<h3 id="一对多回复-多词条">一对多回复(多词条)</h3>
+<p><code>权限id：sessiondct</code><br>
+指令:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%dct</code></td>
+<td style="text-align:left">添加多词条</td>
+<td style="text-align:left"><code>%dct</code></td>
+<td style="text-align:left"><code>添加多词条</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dct:</code></td>
+<td style="text-align:left">查询所有多词条</td>
+<td style="text-align:left"><code>%dct</code></td>
+<td style="text-align:left"><code>查询多词条</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-dct:(id) [id]</code></td>
+<td style="text-align:left">删除多词条，id通过查询得到，第一个id是对应的多次条id，第二个id是对应回复语句id，如果填写，就是删除这个多次回复语句下的这条回复，支持空格隔开一次删除多条</td>
+<td style="text-align:left"><code>-dct：5</code></td>
+<td style="text-align:left"><code>删除：2 34 44 23</code></td>
+</tr>
+</tbody>
+</table>
+<p>在添加多词条消息的途中，<br>
+发送</p>
+<ul>
+<li><code>!!! | ！！！</code> 结束添加，不进行保存，直接结束这次操作</li>
+<li><code>!! | ！！</code> 在循环添加回复内容时，停止添加，退出进行多词条消息的保存</li>
+<li><code>! | ！</code> 删除上一条添加的内容</li>
+</ul>
+<p>添加多词条参数：</p>
+<ul>
+<li><code>1 | 精准</code> 只有发的消息跟触发词相同，才能触发回复，<code>不填写参数默认</code></li>
+<li><code>2 | 模糊</code> 发送消息包含触发词即可触发。</li>
+<li><code>3 | 头部</code> 发送消息的开头为触发词即可触发</li>
+<li><code>4 | 结尾</code> 发送消息的结尾为触发词即可触发</li>
+<li><code>lx | 轮询</code> 多个词条回复的顺序为轮询，就是一条一条发送去,<code>不填写参数默认</code></li>
+<li><code>sj | 随机</code> 修改回复顺序为随机,就是触发后随机从多词条中取一条拿来回复</li>
+<li><code>0 | 全局</code> 修改触发作用域为这个机器人的所有群</li>
+<li><code>gr(id) | 群组(id)</code> 修改作用域为对应的群组id，()不是指令，只是说明这个<code>id</code>必须填写</li>
+</ul>
+<p>单个多词条回复语句也支持动态消息，具体支持看上面的对话动态消息支持</p>
+<hr>
+<h2 id="群组">群组</h2>
+<p><code>权限id：list</code><br>
+用于设定特定几个群的群组系统，用于一些东西只在这几个群中触发，其他插件有个相反的功能叫群黑名单，我这个是正向的，只在那些群触发。</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>+gr:(id) (群号)</code></td>
+<td style="text-align:left">添加多个群为一个群组，群号支持多个</td>
+<td style="text-align:left"><code>+gr：1 780594692</code></td>
+<td style="text-align:left"><code>添加群组：1 780594692 390444068</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gr:[id]</code></td>
+<td style="text-align:left">查询所有群组信息，id填写后只查询对应的id所属群组信息</td>
+<td style="text-align:left"><code>gr：</code></td>
+<td style="text-align:left"><code>查询群组：1</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-gr:(id) [群号]</code></td>
+<td style="text-align:left">删除这个群组里面的某个群号，支持多个群号</td>
+<td style="text-align:left"><code>-gr:1</code></td>
+<td style="text-align:left"><code>删除群组：1 390444068 780594692</code></td>
+</tr>
+</tbody>
+</table>
+<p>与之类似，你只需要更换你的正则匹配就可以</p>
+<hr>
+<h2 id="定时器">定时器</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：ds</span><br></pre></td></tr></table></figure>
+<p>定时任务是指，按照指定的时间频率发送对应的消息，时间频率是<a target="_blank" rel="noopener" href="http://cron.ciding.cc/#/">cron表达式</a>，不懂的人可以花5分钟了解一下，基本能满足任何时间频率<br>
+cron输入格式<code>$cron(* * * * * ?)</code></p>
+<h3 id="定时管理">定时管理</h3>
+<p>指令:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%ds</code></td>
+<td style="text-align:left">添加定时任务，具体根据提示进行添加</td>
+<td style="text-align:left"><code>%ds</code></td>
+<td style="text-align:left"><code>添加定时器 | 添加定时任务</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-ds(id)</code></td>
+<td style="text-align:left">删除定时任务，id查询获得</td>
+<td style="text-align:left"><code>-ds：1</code></td>
+<td style="text-align:left"><code>删除定时器：1 | 删除定时任务：1</code></td>
+</tr>
+</tbody>
+</table>
+<p>在添加回复消息的途中，<br>
+发送</p>
+<ul>
+<li><code>!!! | ！！！</code> 结束添加，不进行保存，直接结束这次操作</li>
+<li><code>!! | ！！</code> 在循环添加回复内容时，停止添加，退出进行定时任务的保存</li>
+<li><code>! | ！</code> 删除上一条添加的内容</li>
+</ul>
+<p>定时任务的参数：</p>
+<ul>
+<li><code>hf | 回复</code> 定时器触发后只回复一条消息，<code>不填参数默认</code></li>
+<li><code>lx | 轮询</code> 定时器的回复内容将成为多词条的样式，并且回复词条顺序为轮询，与随机冲突！</li>
+<li><code>sj | 随机</code> 定时器的回复内容将成为多词条的样式，并且回复词条顺序为随机，与轮询冲突！</li>
+<li><code>-1 | 当前</code> 作用域-当前这个群 <code>默认</code></li>
+<li><code>0 | 全局</code> 作用域-全部群</li>
+<li><code>gr(id) | 群组(id)</code> 作用域-指定群组</li>
+</ul>
+<h3 id="定时器操作">定时器操作</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：dscz</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ds:</code></td>
+<td style="text-align:left">查询定时任务</td>
+<td style="text-align:left"><code>ds：</code></td>
+<td style="text-align:left"><code>查询定时器 | 查询定时任务</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%ds:(id)</code></td>
+<td style="text-align:left">切换定时任务的状态，如果已经开启，则切换为关闭，id查询获取</td>
+<td style="text-align:left"><code>%ds:1</code></td>
+<td style="text-align:left"><code>切换定时器:1 | 切换定时任务：1</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="群管理">群管理</h2>
+<p><code>权限id：group</code> <strong>此权限不是指令权限</strong></p>
+<p>对于几个检测群的功能，需要先将对于群添加为检测群</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/hy agroup (群号) <span class="comment">#添加</span></span><br><span class="line">/hy dgroup (群号) <span class="comment">#删除</span></span><br></pre></td></tr></table></figure>
+<p>依然支持在config文件手动添加</p>
+<hr>
+<h3 id="特殊头衔">特殊头衔</h3>
+<p>当你的机器人是群主时才可以使用,拥有<code>admin</code>、<code>group</code>权限的用户也可以用于使用。</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%@(user) (内容)</code></td>
+<td style="text-align:left">给这个人修改特殊头衔</td>
+<td style="text-align:left"><code>%@放空 才不是放空了~</code></td>
+<td style="text-align:left"><code>设置头衔@放空 才不是放空了~</code></td>
+</tr>
+</tbody>
+</table>
+<p>是群主才行哦~</p>
+<hr>
+<h3 id="群欢迎词">群欢迎词</h3>
+<p><code>权限id：grouphyc</code><br>
+当有人申请的时候，拥有管理员权限的机器人并且加入了检测的群<br>
+机器人会给出提示<br>
+在配置文件中有是否启用开关</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>开门 id|all</code></td>
+<td style="text-align:left">同意这个人的进群申请</td>
+<td style="text-align:left"><code>开门 1</code></td>
+<td style="text-align:left"><code>开门 all</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>同意 id|all</code></td>
+<td style="text-align:left">同意这个人的进群申请</td>
+<td style="text-align:left"><code>同意 1</code></td>
+<td style="text-align:left"><code>同意 all</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>关门 id|all</code></td>
+<td style="text-align:left">关门这个人的进群申请</td>
+<td style="text-align:left"><code>关门 1</code></td>
+<td style="text-align:left"><code>关门 all</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>拒绝 id|all</code></td>
+<td style="text-align:left">拒绝这个人的进群申请</td>
+<td style="text-align:left"><code>拒绝 1</code></td>
+<td style="text-align:left"><code>拒绝 all</code></td>
+</tr>
+</tbody>
+</table>
+<p>id是进群时所提示的门牌号</p>
+<p>欢迎词功能不需要检测群支持！<br>
+欢迎词指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%hyc</code></td>
+<td style="text-align:left">添加欢迎词</td>
+<td style="text-align:left"><code>%hyc</code></td>
+<td style="text-align:left"><code>添加欢迎词</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>hyc：</code></td>
+<td style="text-align:left">查询欢迎词词</td>
+<td style="text-align:left"><code>hyc:</code></td>
+<td style="text-align:left"><code>查询欢迎词</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-hyc:(id) [id]</code></td>
+<td style="text-align:left">删除欢迎，id查询获得，第二个id是对应的欢迎词集合中的某条欢迎词，不支持多条删除</td>
+<td style="text-align:left"><code>-hyc：2</code></td>
+<td style="text-align:left"><code>删除欢迎词：1 15</code></td>
+</tr>
+</tbody>
+</table>
+<p>参数:</p>
+<ul>
+<li><code>lx | 轮询</code> 欢迎词将以轮询的方式逐条发送，<code>默认</code></li>
+<li><code>sj | 随机</code> 欢迎词将随机发送</li>
+<li><code>0 | 全局</code> 作用域：全局</li>
+<li><code>gr(id) | 群组(id)</code> 作用域：群组</li>
+</ul>
+<p>欢迎词支持的动态消息:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">动态消息类型</th>
+<th style="text-align:left">动态消息参数</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">匹配结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>at</code></td>
+<td style="text-align:left"><code>this</code></td>
+<td style="text-align:left">@(at)这个进群的人</td>
+<td style="text-align:left"><code>$at(this)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>that</code></td>
+<td style="text-align:left">这个要请他的人，如果没有邀请的人则会at同意他进来的那个人</td>
+<td style="text-align:left"><code>$at(that)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>qq</code></td>
+<td style="text-align:left">@群里的这个人，会固定@这个人</td>
+<td style="text-align:left"><code>$at(572490972)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>message</code></td>
+<td style="text-align:left"><code>apply</code></td>
+<td style="text-align:left">获取这个人进群申请的消息</td>
+<td style="text-align:left"><code>$message(apply)</code></td>
+<td style="text-align:left">这个人什么都没说…</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>user</code></td>
+<td style="text-align:left"><code>name</code></td>
+<td style="text-align:left">获取这个人进群时的名称</td>
+<td style="text-align:left"><code>$user(name)</code></td>
+<td style="text-align:left">放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left">获取这个人的qq</td>
+<td style="text-align:left"><code>$user(id)</code></td>
+<td style="text-align:left">572490972</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>avatar</code></td>
+<td style="text-align:left">获取这个人的头像</td>
+<td style="text-align:left"><code>$user(avatar)</code></td>
+<td style="text-align:left">[图片]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>time</code></td>
+<td style="text-align:left">所有支持动态消息的都支持时间，具体用法在文档前面的对话</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="禁言">禁言</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：groupjy</span><br></pre></td></tr></table></figure>
+<p>此指令只有在你的机器人是管理员或群主才能触发</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>@某人(禁言时间)</code></td>
+<td style="text-align:left">在机器人有权限的情况下，对你@的这个人进行指定时间的禁言</td>
+<td style="text-align:left"><code>@放空 3m</code></td>
+<td style="text-align:left">``</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@某人 0s</code></td>
+<td style="text-align:left">解除禁言</td>
+<td style="text-align:left"><code>@放空</code></td>
+<td style="text-align:left">``</td>
+</tr>
+</tbody>
+</table>
+<p>时间频率：</p>
+<ul>
+<li><code>s</code> 秒</li>
+<li><code>m</code> 分钟</li>
+<li><code>h</code> 小时</li>
+<li><code>d</code> 天</li>
+</ul>
+<hr>
+<h3 id="违禁词">违禁词</h3>
+<p>不需要检测群支持。<br>
+此指令只有在你的机器人是管理员或群主才能起作用。</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>+wjc:(内容) [param]</code></td>
+<td style="text-align:left">添加违禁词，内容是触发内容，param是参数，具体可以查看下方</td>
+<td style="text-align:left"><code>+wjc:色图 ch 2m</code></td>
+<td style="text-align:left"><code>添加违禁词：色图 % jy</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-wjc:(id)</code></td>
+<td style="text-align:left">删除违禁词，id查询获得</td>
+<td style="text-align:left"><code>-wjc：2</code></td>
+<td style="text-align:left"><code>删除违禁词：2</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>wjc：</code></td>
+<td style="text-align:left">查询所有违禁词</td>
+<td style="text-align:left"><code>wjc：</code></td>
+<td style="text-align:left"><code>查询违禁词</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="参数的意义">参数的意义</h4>
+<ul>
+<li><code>ch</code> 违禁词默认撤回，当输入ch后，wjc将不撤回消息</li>
+<li><code>jy</code> 违禁词默认禁言，当输入jy后，wjc将不禁言</li>
+<li><code>3s</code> 修改禁言时间,具体时间格式<a href="#%E7%A6%81%E8%A8%80">查看禁言</a></li>
+<li><code>%</code> 重写回复语句,支持动态消息，具体支持动态消息查看下方</li>
+<li><code>[gr1 | 0 ]</code> 群组或全局，默认当前群</li>
+<li><code>1,2,3,4</code> 匹配方式，跟关键词回复的匹配同理</li>
+<li><code>hmd3</code> 开启触发3次后就会踢出群聊，数字可自选</li>
+</ul>
+<p>hmd参数输入后，将会开启小黑屋功能，不会提示！当某个人触发这个wjc到达次数，直接踢出本群，可以和下面的自动添加黑名单配合！</p>
+<p>违禁词回复消息支持动态消息：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">动态消息类型</th>
+<th style="text-align:left">动态消息参数</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">匹配结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>at</code></td>
+<td style="text-align:left"><code>this</code></td>
+<td style="text-align:left">@(at)触发这条消息的人</td>
+<td style="text-align:left"><code>$at(this)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>qq</code></td>
+<td style="text-align:left">@群里的这个人，会固定@这个人</td>
+<td style="text-align:left"><code>$at(572490972)</code></td>
+<td style="text-align:left">@放空</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>message</code></td>
+<td style="text-align:left"><code>this</code></td>
+<td style="text-align:left">这个人触发这条消息的内容</td>
+<td style="text-align:left"><code>$message(this)</code></td>
+<td style="text-align:left">不会写插件怎么办？</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>jyString</code></td>
+<td style="text-align:left">这条违禁词的禁言时间中文</td>
+<td style="text-align:left"><code>$message(jyString)</code></td>
+<td style="text-align:left">禁言2分钟</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>prohibitString</code></td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>null</code></td>
+<td style="text-align:left">不发送消息</td>
+<td style="text-align:left"><code>$message(null)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>user</code></td>
+<td style="text-align:left"><code>name</code></td>
+<td style="text-align:left">获取这个人的名称</td>
+<td style="text-align:left"><code>$user(name)</code></td>
+<td style="text-align:left">放空</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left">获取这个人的qq</td>
+<td style="text-align:left"><code>$user(id)</code></td>
+<td style="text-align:left">572490972</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>avatar</code></td>
+<td style="text-align:left">获取这个人的头像</td>
+<td style="text-align:left"><code>$user(avatar)</code></td>
+<td style="text-align:left">[图片]</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>title</code></td>
+<td style="text-align:left">获取这个人的头衔，优先获取特殊头衔</td>
+<td style="text-align:left"><code>$user(title)</code></td>
+<td style="text-align:left">才不是放空了~</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>info</code></td>
+<td style="text-align:left">详细信息??</td>
+<td style="text-align:left"><code>$user(info)</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>time</code></td>
+<td style="text-align:left"><code>now</code></td>
+<td style="text-align:left">获取当前时间，默认格式<code>yyyy-MM-dd HH:mm:ss</code></td>
+<td style="text-align:left"><code>$time(now)</code></td>
+<td style="text-align:left">2022-8-28 02:15:15</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>(时间格式)</code></td>
+<td style="text-align:left">按照指定的时间格式进行现在的时间输出</td>
+<td style="text-align:left"><code>$time(HH:mm:ss)</code></td>
+<td style="text-align:left">02:16:20</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="黑名单">黑名单</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：grouphmd</span><br></pre></td></tr></table></figure>
+<p>不需要检测群支持。<br>
+此指令只有在你的机器人是管理员或群主才能触发。<br>
+支持作用域！！设置为全局时，该用户将被你的bot封禁！</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>+hmd:@(user) [param]</code></td>
+<td style="text-align:left">添加黑名单，参数看下方</td>
+<td style="text-align:left"><code>+hmd:@放空 jy</code></td>
+<td style="text-align:left"><code>添加黑名单:@放空 %</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>hmd:</code></td>
+<td style="text-align:left">查询黑名单</td>
+<td style="text-align:left"><code>hmd:</code></td>
+<td style="text-align:left"><code>查询黑名单</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-hmd:(id)</code></td>
+<td style="text-align:left">删除黑名单,id查询获得</td>
+<td style="text-align:left"><code>-hmd:3</code></td>
+<td style="text-align:left"><code>删除黑名单:2</code></td>
+</tr>
+</tbody>
+</table>
+<p>参数：</p>
+<ul>
+<li><code>t</code> 默认检测到就踢出，携带参数不踢出</li>
+<li><code>jy</code> 默认禁言(优先踢出),携带参数不禁言</li>
+<li><code>ch</code> 默认撤回该用户的消息，携带不提出</li>
+<li><code>0 | gr(id)</code> 作用域不携带参数<code>默认当前群</code></li>
+<li><code>%</code> 重写封禁理由</li>
+</ul>
+<p>此功能需要检测群支持！<br>
+在配置文件blacklist有退群自动添加黑名单开关！<br>
+里面还有重写封禁理由！</p>
+<hr>
+<h3 id="撤回消息">撤回消息</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：groupch</span><br></pre></td></tr></table></figure>
+<p>用于撤回上面的群消息，机器人是管理员和群主才能使用</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>!recall</code></td>
+<td style="text-align:left">撤回上面这条消息</td>
+<td style="text-align:left"><code>!recall</code></td>
+<td style="text-align:left"><code>撤回</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>！recall (number)</code></td>
+<td style="text-align:left">撤回前面几条消息，不包含这条消息</td>
+<td style="text-align:left"><code>！recall 5</code></td>
+<td style="text-align:left"><code>撤回 5</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>!recall 1-5</code></td>
+<td style="text-align:left">撤回上面1到5条，从第0条算起，包含这条消息</td>
+<td style="text-align:left"><code>!recall 1-5</code></td>
+<td style="text-align:left"><code>撤回 25-55</code></td>
+</tr>
+</tbody>
+</table>
+<p>具体用法试一试就明白，撤回多条消息时，权限可能会有冲突。</p>
+<hr>
+<h3 id="踢人">踢人</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：grouptr</span><br></pre></td></tr></table></figure>
+<p>此指令只有在你的机器人是管理员或群主才能触发</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>tr@(user) [hmd]</code></td>
+<td style="text-align:left">踢人</td>
+<td style="text-align:left"><code>tr@放空</code></td>
+<td style="text-align:left"><code>踢人@放空</code></td>
+</tr>
+</tbody>
+</table>
+<p>参数：</p>
+<ul>
+<li><code>hmd</code> qq的踢人有个禁止此用户再次加群，输入后将禁止此用户再次加群</li>
+</ul>
+<hr>
+<h2 id="权限系统">权限系统</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限id：admin</span><br></pre></td></tr></table></figure>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>+@(user) (权限id)</code></td>
+<td style="text-align:left">赋予这个群的这个人的某个权限,权限id可在文档查看</td>
+<td style="text-align:left"><code>+@放空 admin</code></td>
+<td style="text-align:left"><code>添加@放空 all</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-@(user)</code></td>
+<td style="text-align:left">移除这个权限</td>
+<td style="text-align:left"><code>-@放空 all</code></td>
+<td style="text-align:left"><code>删除@放空 group</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>！power [param]</code></td>
+<td style="text-align:left">查询权限列表，参数如下</td>
+<td style="text-align:left"><code>!power all</code></td>
+<td style="text-align:left"><code>权限列表 all</code></td>
+</tr>
+</tbody>
+</table>
+<p>参数：</p>
+<ul>
+<li>``不填默认当前群</li>
+<li><code>@某人</code> 查看指定人在本群的权限</li>
+<li><code>all</code> 查询所有权限或添加所有权限或删除所有权限</li>
+</ul>
+<p>查询可以输入对应的群号 或者 qq号 来查询指定区域的权限信息<br>
+也可以直接 all 查询全部<br>
+然后通过 <code>上一页</code> 和 <code>下一页</code> 来进行翻译阅读</p>
+<hr>
+<h2 id="多机器人互冲">多机器人互冲</h2>
+<p>对于同时加载多个bot的使用者<br>
+容易存在一条指令两个bot触发，因此，加了一个‘暂停功能’</p>
+<p>指令：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+<th style="text-align:left">中文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>！pause @(bot)</code></td>
+<td style="text-align:left">你发的下一条消息，这个机器人将会忽略(包括触发)</td>
+<td style="text-align:left"><code>！pause@乌拉</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>!pause @(bot) 5</code></td>
+<td style="text-align:left">忽略下5条消息，消息数量自定</td>
+<td style="text-align:left"><code>！pause @乌拉 5</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>不带参数，默认忽略你的下一条消息<br>
+也可以自定义忽略下几条消息，这个记录是写在内存的，如果不小心输入多了（9999999999），重启就行。</p>
+<hr>
+<h2 id="插件指令">插件指令</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">指令</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">案例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/hy aGroup</code></td>
+<td style="text-align:left">添加一个监测群</td>
+<td style="text-align:left"><code>/hy aGroup 390444068</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/hy dGroup</code></td>
+<td style="text-align:left">删除一个监测群</td>
+<td style="text-align:left"><code>/hy dGroup 390444068</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/hy v</code></td>
+<td style="text-align:left">查询当前插件版本</td>
+<td style="text-align:left"><code>/hy v</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/hy transfer</code></td>
+<td style="text-align:left">转移一个所属bot的数据到另一个bot</td>
+<td style="text-align:left"><code>/hy transfer 2061954151 3630254205</code></td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top">W1ndys</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.w1ndys.top/posts/7a43906e.html">https://blog.w1ndys.top/posts/7a43906e.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.w1ndys.top" target="_blank">W1ndysの小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/QQbot/">QQbot</a></div><div class="post-share"><div class="social-share" data-image="https://t.mwm.moe/fj/?26" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/money/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/money/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/money/alipay.png" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/bc040c54.html" title="“卷卷”W1ndys_bot使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?56" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">“卷卷”W1ndys_bot使用手册</div></div><div class="info-2"><div class="info-item-1">主要功能 卷卷目前的功能主要有： 关键词回复      快捷群管理     违禁词监控    定时器     奇怪图片生成     点歌   猜群友小游戏 ChatLearning————学群友说话使用手册 Mirai Administrator使用手册 HuYanSession2——壶言会话2使用手册 MuteGames使用手册 关键词回复 相关指令请看这里 快捷群管理 相关指令请看这里 违禁词监控 相关指令请看这里 定时器 相关指令请看这里 奇怪图片生成 发送pet可以查看具体指令 根据提示操作即可 点歌 “#音乐 关键词” 自动搜索所有源以找出来找最佳音频来源 “#语音 关键词” 自动搜索所有源，以语音信息的形式发出 “#外链 关键词” 自动搜索所有源，以外链信息的形式发出 “#QQ 关键词” 搜索QQ音乐 “#网易 关键词” 搜索网易云音乐 “#网易电台 关键词” 搜索网易云电台，一般来说是直接选择找到的第一个节目，但是关键词可以以 “电台名称|节目名称”的格式指定电台节目 “#酷狗 关键词” 搜索酷狗音乐 “#千千...</div></div></div></a><a class="pagination-related" href="/posts/cdf7e434.html" title="CTF学习日记（每天学点新东西，就是成功）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?14" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">CTF学习日记（每天学点新东西，就是成功）</div></div><div class="info-2"><div class="info-item-1">（坚持一天一更新……可能吧） 2023年12月11日 今天学点不一样的 bat批处理相关知识 每次都要输入命令，我干脆直接用bat批处理，点一下就好了 https://blog.csdn.net/qq_41428418/article/details/132438144#/ https://blog.csdn.net/s_y_w123/article/details/111353912#/ https://github.com/Aloxaf/MirageTankGo#/ 解决了我没解决的问题 get√ 2023年12月9日 文件头文件尾的知识点https://w1ndys.top/2023/12/09/CTF-misc-fileheader/#/ 2023年11月14日 今天打技能兴鲁省赛线上初赛，有个很有意思的杂项题，附件解压是一个日历表 2023年11月13日 RE  Python字符串，列表，元组，字典的区别  特别提一下： flag创建为列表的时候用join函数拼接 flag创建为字符串的时候用+=拼接 Python 字符串 字符串是 Python...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/edeaa258.html" title="ChatLearning————学群友说话使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?10" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="info-item-2">ChatLearning————学群友说话使用手册</div></div><div class="info-2"><div class="info-item-1">开始使用  mirai-api-http 配置 http adapter ， singleMode 为 false 为了保证稳定性，请尽量使用mirai-api-http v2.3.3版本 配置 data.json  1234567&#123; &quot;Key&quot;: &quot;xxxxx&quot;, // 在mirai-api-http中设置的密钥,若使用singleMode也不需要校验,设置为&quot;&quot;即可 &quot;host&quot;: &quot;127.0.0.1&quot;, // mirai-api-http中设置的地址（若设置成0.0.0.0，请填写127.0.0.1） &quot;port&quot;: &quot;8080&quot;, // mirai-api-http中设置的端口 &quot;qq&quot;: &quot;xxx&quot;,  // 在mirai登陆的QQ号 &quot;session&quot;: &quot;xxx&quot; // 无需修改&#125;  Windows双击...</div></div></div></a><a class="pagination-related" href="/posts/369f16e7.html" title="Mirai Administrator 机器人管理插件，好友&#x2F;群管理，黑名单，宵禁"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?30" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-20</div><div class="info-item-2">Mirai Administrator 机器人管理插件，好友&#x2F;群管理，黑名单，宵禁</div></div><div class="info-2"><div class="info-item-1">Mirai Administrator  基于 Mirai Console 的 管理员 Bot 及其标准      使用前应该查阅的相关文档或项目  User Manual Permission Command Chat Command  本插件实现的功能有:  联系人相关 自动审批，指令查看，用户留言 消息相关 发送消息，撤回消息 群管理相关 群消息审核，自动宵禁，自动清理不发言，禁言自动退群  本插件提供服务接口以供其他插件拓展功能 例如使用 Mirai Content Censor 依靠百度API审查群消息 例如使用 Mirai Authenticator 验证加群请求 MCL 指令安装 请确认 mcl.jar 的版本是 2.1.0+ ./mcl --update-package xyz.cssxsh.mirai:mirai-administrator --channel maven-stable --type plugin 指令 注意: 使用前请确保可以...</div></div></div></a><a class="pagination-related" href="/posts/7183a269.html" title="MuteGames使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?31" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-06</div><div class="info-item-2">MuteGames使用手册</div></div><div class="info-2"><div class="info-item-1">MuteGames 一个以 Mirai-Console 为基础开发并为了满足群友PVP需求和抖M需求开发的禁言游戏集合 开始使用 插件需要以 Mirai-Console 为基础，你可以下载 MCL 作为你的Mirai插件载入器 与此同时，本插件需要 Mirai 官方插件 使用之前请先用参考权限节点来开启插件权限 请注意：当用户权限大于等于机器人所在权限时（如机器人是管理员用户为群主），机器人不会对游戏请求做任何回复 权限节点 123456|- com.evolvedghost.mutegames:*                      The base permission|  |- com.evolvedghost.mutegames:command.banme       自裁指令|  |- com.evolvedghost.mutegames:command.blackjack   21点（Blackjack）指令|  |- com.evolvedghost.mutegames:command.duel        决斗指令|  |-...</div></div></div></a><a class="pagination-related" href="/posts/542f29fd.html" title="docker部署GZCTF-QQBOT"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://github.com/GZTimeWalker/GZCTF/raw/develop/assets/banner.light.svg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-09</div><div class="info-item-2">docker部署GZCTF-QQBOT</div></div><div class="info-2"><div class="info-item-1">环境要求  Linux 服务器 docker docker compose  开始部署 相关链接：MoRan23/GZCTF-BOT-QQ: GZCTF 对接的 qq 机器人，基于 NapCat+Nonebot 框架 (github.com) 进入 GZBOTGithub 地址，由于服务器对于 Github 的网络连接会偶然连不上，这里使用 docker-compose 部署，Github 的 README 写的很详细了，这里多说几点易错点。   下方监听的赛事名是 GZCTF 的赛事名，不是赛事序号或赛事 ID，赛事名叫什么就写什么，比如下图中的赛事名就是 W1ndys的bot测试    把下面代码参数改好后保存为 docker-compose.yml 123456789101112131415161718192021222324252627version: &quot;3.7&quot;services:  napcat:    image: mlikiowa/napcat-docker:latest    restart: always    ports:      -...</div></div></div></a><a class="pagination-related" href="/posts/bc040c54.html" title="“卷卷”W1ndys_bot使用手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://t.mwm.moe/fj/?56" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-18</div><div class="info-item-2">“卷卷”W1ndys_bot使用手册</div></div><div class="info-2"><div class="info-item-1">主要功能 卷卷目前的功能主要有： 关键词回复      快捷群管理     违禁词监控    定时器     奇怪图片生成     点歌   猜群友小游戏 ChatLearning————学群友说话使用手册 Mirai Administrator使用手册 HuYanSession2——壶言会话2使用手册 MuteGames使用手册 关键词回复 相关指令请看这里 快捷群管理 相关指令请看这里 违禁词监控 相关指令请看这里 定时器 相关指令请看这里 奇怪图片生成 发送pet可以查看具体指令 根据提示操作即可 点歌 “#音乐 关键词” 自动搜索所有源以找出来找最佳音频来源 “#语音 关键词” 自动搜索所有源，以语音信息的形式发出 “#外链 关键词” 自动搜索所有源，以外链信息的形式发出 “#QQ 关键词” 搜索QQ音乐 “#网易 关键词” 搜索网易云音乐 “#网易电台 关键词” 搜索网易云电台，一般来说是直接选择找到的第一个节目，但是关键词可以以 “电台名称|节目名称”的格式指定电台节目 “#酷狗 关键词” 搜索酷狗音乐 “#千千...</div></div></div></a><a class="pagination-related" href="/posts/e35cbf79.html" title="基于Python + OneBot 11的QQ机器人模块加载器的实现"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-03</div><div class="info-item-2">基于Python + OneBot 11的QQ机器人模块加载器的实现</div></div><div class="info-2"><div class="info-item-1">源代码请看：W1ndys-bot/Module-Loader: 对接 OneBot 的 Python 模块加载器 (github.com) 对接 OneBot 的 Python 模块加载器 介绍及背景 Python 编写的模块加载器，使用 WebSocket 客户端模式对接上游服务，支持 OneBot 协议，如遇到问题请提 issue 本加载器不以插件的形式进行加载，而是以模块的形式进行加载。 这也就意味着，本加载器的功能增加，直接写代码即可，无需配置相关插件信息。  写这个加载器的原因是，了解到了 mf 师傅的插件式加载器，但我本人并不习惯这种方法，于是就写了这个模块式加载器，整个加载器的配置全部采用 Python 模块化编程，功能的开发模式完全基于原生 Onebot11。 有关插件式加载器的文档请参考：School-Robot/Plugin-Loader: 用于对接 OneBot 的 Python 插件加载器 (github.com)  加载器特色  模块化编程，易于维护 支持断线重连，无需手动重启 支持上线提醒（QQ），掉线提醒（钉钉） 支持 OneBot 11...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%9E%E5%A4%8D"><span class="toc-number">1.</span> <span class="toc-text">自定义回复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80%E5%9B%9E%E5%A4%8D-%E4%BC%9A%E8%AF%9D"><span class="toc-number">1.2.</span> <span class="toc-text">一对一回复(会话)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%B6%88%E6%81%AF%E5%9B%9E%E6%B5%81-%E4%BB%85%E9%99%90%E4%B8%80%E5%AF%B9%E4%B8%80%E5%9B%9E%E5%A4%8D"><span class="toc-number">1.3.</span> <span class="toc-text">正则消息回流(仅限一对一回复)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%9B%9E%E5%A4%8D-%E5%A4%9A%E8%AF%8D%E6%9D%A1"><span class="toc-number">1.4.</span> <span class="toc-text">一对多回复(多词条)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">群组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E7%AE%A1%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">定时管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">3.2.</span> <span class="toc-text">定时器操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">群管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%A4%B4%E8%A1%94"><span class="toc-number">4.1.</span> <span class="toc-text">特殊头衔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E6%AC%A2%E8%BF%8E%E8%AF%8D"><span class="toc-number">4.2.</span> <span class="toc-text">群欢迎词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%81%E8%A8%80"><span class="toc-number">4.3.</span> <span class="toc-text">禁言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9D%E7%A6%81%E8%AF%8D"><span class="toc-number">4.4.</span> <span class="toc-text">违禁词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">4.4.1.</span> <span class="toc-text">参数的意义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95"><span class="toc-number">4.5.</span> <span class="toc-text">黑名单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E5%9B%9E%E6%B6%88%E6%81%AF"><span class="toc-number">4.6.</span> <span class="toc-text">撤回消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B8%A2%E4%BA%BA"><span class="toc-number">4.7.</span> <span class="toc-text">踢人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.</span> <span class="toc-text">权限系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BA%92%E5%86%B2"><span class="toc-number">6.</span> <span class="toc-text">多机器人互冲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text">插件指令</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By W1ndys</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20238661" target="_blank">萌ICP备20238661号</a><br/><a target="_blank" rel="noopener" href="https://guan.ma/hao/2024000032/" title="官码2024000032号">官码2024000032号</a><br/><a target="_blank" rel="noopener" href="https://beian.miit.cn.com/gov/search.php?domain=blog.w1ndys.top" title="MIIT备20240341号">MIIT20240341号</a><br/><a target="_blank" title="51la网站统计" href="https://v6.51.la/report/overview?comId=401429">51la提供统计服务</a><br/><a target="_blank" rel="noopener" href="https://boke.lu" >博客录</a> || <a target="_blank" rel="noopener" href="https://blogwe.com/" >BlogMe</a> || <a target="_blank" rel="noopener" href="https://bf.zzxworld.com/" >BlogFinder</a><br/><a target="_blank" rel="noopener" href="https://app.netlify.com/teams/w1ndys/overview/">Netlify</a> || <a target="_blank" rel="noopener" href="https://vercel.com/dashboard/"> Vercel </a> || <a target="_blank" rel="noopener" href="https://dash.cloudflare.com/ffd1502e63a2eb2d1c6fbc47fab0a5ba/workers-and-pages">cloudflare pages</a> || <a target="_blank" rel="noopener" href="https://dashboard.render.com/">Render</a>|| <a target="_blank" rel="noopener" href="https://dash.zeabur.com/projects/660fb441a4799da57871453c/services/660fb4763b6b4a02865a1110?envID=660fb4414e5f07f892d24a42">Zeabur</a>提供部署服务<br/><a target="_blank" rel="noopener" href="https://v.blog.w1ndys.top/">Vercel镜像站</a> || <a target="_blank" rel="noopener" href="https://n.blog.w1ndys.top/">Netlify镜像站</a> || <a target="_blank" rel="noopener" href="https://r.blog.w1ndys.top/">Render镜像站</a> || <a target="_blank" rel="noopener" href="https://c.blog.w1ndys.top/">Cloudflare Pages镜像站</a>|| <a target="_blank" rel="noopener" href="https://z.blog.w1ndys.top/">Zeabur镜像站</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.2.2"></script><script src="/js/main.js?v=5.2.2"></script><script src="/js/tw_cn.js?v=5.2.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => setTimeout(() => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        if (ele.children.length > 0) return
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }, 100)
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : btf.getScript('https://cdn.jsdelivr.net/npm/abcjs@6.4.4/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+  btf.addGlobalFn('encrypt', abcjsInit, 'abcjs')
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = {"data-category":"Show and tell","data-mapping":"url","data-strict":0,"data-reactions-enabled":1,"data-emit-metadata":1,"data-input-position":"top","data-theme":"preferred_color_scheme","data-lang":"zh-CN","crossorigin":"anonymous"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'W1ndys/Blog',
+      'data-repo-id': 'R_kgDOLaRaXw',
+      'data-category-id': 'DIC_kwDOLaRaX84CeBp5',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script data-pjax src="/js/foot.js"></script><script data-pjax src="/js/ip.js"></script><script data-pjax src="/js/Capoo.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.4/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
