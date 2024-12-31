@@ -58,10 +58,10 @@ jobs:
             echo "删除旧的 ${{ secrets.GH_REPO }} 目录"
             rm -rf ${{ secrets.GH_REPO }}
             echo "克隆 gh-pages 分支"
-            git clone --depth 1 -b gh-pages https://github.com/${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git
+            git clone --depth 1 -b gh-pages git@github.com:${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPO }}.git
             echo "删除旧的 index 目录"
             rm -rf index
-            echo "移动克隆的仓库到 index 目录"
+            echo "移动克隆的仓库到 index 目录" 
             mv ${{ secrets.GH_REPO }} index
             cd index
             echo "删除 .git 目录"
