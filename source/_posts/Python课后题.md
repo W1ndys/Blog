@@ -2,7 +2,7 @@
 title: Python课后题
 tags: [Python]
 categories: [Python]
-cover: "https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7"
+cover: "https://python123.io/images/78/f5/5cd8b22e4c4bbabc81e6946002d8.png"
 abbrlink: 9974513c
 date: 2024-09-04 08:59:59
 ---

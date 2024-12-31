@@ -1,10 +1,12 @@
 ---
-title: "Python实验报告——13周习题课"
-tags: [Python]
-categories: [Python]
+title: Python实验报告——13周习题课
+tags:
+  - Python
+categories:
+  - Python
+cover: 'https://python123.io/images/78/f5/5cd8b22e4c4bbabc81e6946002d8.png'
+abbrlink: 5060bab6
 date: 2024-11-21 17:33:13
-cover: >-
-  https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7
 ---
 
 ## 第一题，计算圆和矩形
@@ -223,7 +225,7 @@ for i in range(3):
      ```python
      class MyError(Exception):
          pass
-  
+
      raise MyError("这是一个自定义错误")
      ```
 
