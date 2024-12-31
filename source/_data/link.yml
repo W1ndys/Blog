@@ -79,11 +79,6 @@
       avatar: https://q1.qlogo.cn/g?b=qq&nk=2181218792&s=640
       descr: 严哥带飞
 
-    - name: xlcm
-      link: https://xlcm001.com/
-      avatar: https://xlcm001.com/img/tubiao.jpg
-      descr: 夏恋初梦
-
     - name: ianwusb
       link: https://ianwusb.blog/
       avatar: https://ianwusb.blog/images/Logo.jpg
@@ -97,7 +92,7 @@
     - name: kiki1e
       link: https://kiki1e.github.io/link/
       avatar: https://cdn.jsdelivr.net/gh/kiki1e/imagess@main/img/43EjgPucSslDJxM.png
-      descr: 计算机爱好者（Pwn✌）
+      descr: Pwn✌
 
     - name: h3110w0r1d's Blog
       link: https://www.codexploit.cn/
@@ -123,8 +118,6 @@
       link: https://blog.aurobreeze.top/
       avatar: https://img.picui.cn/free/2024/12/31/67739eea32ef2.jpg
       descr: 等清风拂面，笑看人间
-
-
 
 # 锚点1
 # 同学/朋友/师哥/师姐/师弟/师妹，填在这上面，与上一个友链中间隔一个换行
@@ -159,6 +152,10 @@
       avatar: https://blog.xinshi.fun/assets/avatar.png
       descr: 今日启程 无畏向前
 
+    - name: Kengwang博客
+      link: https://blog.kengwang.com.cn
+      avatar: https://cdn.jsdelivr.net/gh/kengwang/CDN@main/avatar.png
+      descr: Stay Cool~
 # 锚点2
 # CTF大佬，填在这上面，与上一个友链中间隔一个换行
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
