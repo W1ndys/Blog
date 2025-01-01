@@ -4,7 +4,6 @@ tags:
   - QQbot
   - QQ机器人
   - Python
-  - Onebot11
   - NapCatQQ
 categories:
   - QQbot
