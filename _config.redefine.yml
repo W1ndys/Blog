@@ -394,7 +394,7 @@ footer:
   # 网站统计
   statistics: true # 是否显示网站统计 (总文章数，总字数)
   # 页脚信息
-  customize: 你说的对，但是《原神》是由米哈游自主研发的一款全新开放世界冒险游戏。
+  customize: Powered by <a href="https://github.com/W1ndys" target="_blank">W1ndys</a>
   # ICP 备案号。参见 https://beian.miit.gov.cn/
   icp:
     enable: false # 是否启用
