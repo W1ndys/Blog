@@ -20,7 +20,7 @@ title: 网络安全实验报告1——Wireshark抓包分析三次握手
 
 找到 IPv6 地址
 
-![image-20240327112720202](../img/CyberSecurity/1/image-20240327112720202.png)
+![image-20240327112720202](../images/CyberSecurity/1/image-20240327112720202.png)
 
 ## 过滤包
 
@@ -30,7 +30,7 @@ title: 网络安全实验报告1——Wireshark抓包分析三次握手
 ipv6.addr == 2001:250:581c:608:202:194:186:19 && tcp
 ```
 
-![image-20240327112750144](../img/CyberSecurity/1/image-20240327112750144.png)
+![image-20240327112750144](../images/CyberSecurity/1/image-20240327112750144.png)
 
 ## 分析 tcp 包
 

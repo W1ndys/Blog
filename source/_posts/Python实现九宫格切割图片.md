@@ -20,7 +20,7 @@ git clone https://github.com/W1ndys/1to9-image.git
 
 然后可以看到项目文件夹
 
-![image-20231204220532722](../img/Python/1-to-9/image-20231204220532722.png)
+![image-20231204220532722](../images/Python/1-to-9/image-20231204220532722.png)
 
 #### 使用方法
 

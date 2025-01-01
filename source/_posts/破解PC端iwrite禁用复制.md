@@ -25,4 +25,4 @@ AI 生成的作文不能粘贴？？？？
 
 > 一般是禁用 JavaScript 或者是停用 JavaScript，不同浏览器描述可能不同，但基本意思都一样，一眼就能看出来,之后就能粘贴了
 
-![recording](../img/iwrite/JavaScript.gif)
+![recording](../images/iwrite/JavaScript.gif)

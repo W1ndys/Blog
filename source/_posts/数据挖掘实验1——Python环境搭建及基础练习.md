@@ -3,7 +3,7 @@ title: 数据挖掘实验1——Python环境搭建及基础练习
 tags: [数据挖掘]
 categories: [数据挖掘, 实验报告]
 cover: >-
-  https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7
+  https://python123.io/images/78/f5/5cd8b22e4c4bbabc81e6946002d8.png
 abbrlink: 45db3590
 date: 2024-09-02 10:21:19
 ---

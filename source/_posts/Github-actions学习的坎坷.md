@@ -21,17 +21,17 @@ date: 2024-04-21 20:11:32
 
 已经不想说什么了，放几张图吧
 
-![ChatGPT1](../img/Github-actions/image.png)
+![ChatGPT1](../images/Github-actions/image.png)
 
-![ChatGPT2](../img/Github-actions/image-1.png)
+![ChatGPT2](../images/Github-actions/image-1.png)
 
-![ChatGPT3](../img/Github-actions/image-2.png)
+![ChatGPT3](../images/Github-actions/image-2.png)
 
-![ChatGPT4](../img/Github-actions/image-3.png)
+![ChatGPT4](../images/Github-actions/image-3.png)
 
-![ChatGPT5](../img/Github-actions/image-4.png)
+![ChatGPT5](../images/Github-actions/image-4.png)
 
-![ChatGPT6](../img/Github-actions/image-5.png)
+![ChatGPT6](../images/Github-actions/image-5.png)
 
 这些差不多是十分之一的 ChatGPT 的输出，我已经不想再继续了，除此之外，我还问了 copilot，Gemini，Claude3。。。n 个 AI，都没有帮上忙，我只能自己摸索了。
 
@@ -39,7 +39,7 @@ date: 2024-04-21 20:11:32
 
 无奈之下我只好回归了本心，自己看文档自己动手
 
-![Github-actions1](../img/Github-actions/image-6.png)
+![Github-actions1](../images/Github-actions/image-6.png)
 
 映入眼帘的英文啊，这对我一个四级都没过的人来说是莫大的痛苦，没办法，看呗
 
@@ -47,7 +47,7 @@ date: 2024-04-21 20:11:32
 
 去搜一点别的，找到了[ithub 中文社区](https://www.github-zh.com/getting-started/hello-github-actions#/)，这里有一个 Github actions 的教程，看了一下，跟着来了一遍，成功了，测试要通过了。
 
-![Github-actions2](../img/Github-actions/image-7.png)
+![Github-actions2](../images/Github-actions/image-7.png)
 
 > 说到底，还得是实操，光有理论啥也不是，只有实践才能学会。
 

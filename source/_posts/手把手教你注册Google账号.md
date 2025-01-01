@@ -4,7 +4,7 @@ categories:
 - 技术教程
 cover: https://t.mwm.moe/fj/?94
 date: 2023-12-23 00:58
-index_img: ../img/Google/logo.png
+index_img: ../images/Google/logo.png
 tags:
 - 手把手教程系列
 - Google-account
@@ -22,31 +22,31 @@ title: 手把手教你注册Google账号
 
 1. 我们使用浏览器打开谷歌邮箱官网（http://gmail.google.com/ ），进入谷歌邮箱的登录主页，我们点击左下方的创建账号按钮，选择个人用途（为我自己）
 
-![账号注册](../img/Google/Google1.png)
+![账号注册](../images/Google/Google1.png)
 
 3. 在进入的界面我们不要着急填写资料，我们先修改语言，点击左下方的简体中文。这个时候，会弹出国家语言列表，我们选择“English（United States）”。
 
-![语言](../img/Google/Google2.png)
+![语言](../images/Google/Google2.png)
 
 4. 这个时候，界面会变成英语。输入姓氏和名字，点击 Next
 
-![在这里插入图片描述](../img/Google/Google3.png)
+![在这里插入图片描述](../images/Google/Google3.png)
 
 4. 选择月份、日、年、性别，点击Next
 
-![日期](../img/Google/Google4.png)
+![日期](../images/Google/Google4.png)
 
 5. 选择Gmail邮箱地址，前两个是随机出的邮箱地址，可以勾选第三个自定义邮箱地址，输入邮箱地址后，点击 Next
 
-![在这里插入图片描述](../img/Google/Google5.png)
+![在这里插入图片描述](../images/Google/Google5.png)
 
 6. 输入密码，确认密码后，点击 Next
 
-   ![在这里插入图片描述](../img/Google/Google6.png)
+   ![在这里插入图片描述](../images/Google/Google6.png)
 
 7. 添加恢复电子邮件，账号异常或锁定时，Google 可以通过恢复电子邮件联系您。直接点击 Skip 跳过
 
-![在这里插入图片描述](../img/Google/Google7.png)
+![在这里插入图片描述](../images/Google/Google7.png)
 
 8. 选择中国，填写自己的手机号，点击Next
 
@@ -54,19 +54,19 @@ title: 手把手教你注册Google账号
 
 这个问题与我一开始写的第一步相呼应，开头切换英文主要就是为了解决这边
 
-![在这里插入图片描述](../img/Google/Google8.png)
+![在这里插入图片描述](../images/Google/Google8.png)
 
 9. 确认账户信息页面，没问题的话，点击 Next
 
-![在这里插入图片描述](../img/Google/Google9.png)
+![在这里插入图片描述](../images/Google/Google9.png)
 
 10. 隐私条款确认，拉取到底部，点击 I agree 我同意
 
-![image-20231223005705473](../img/Google/Google10.png)
+![image-20231223005705473](../images/Google/Google10.png)
 
 11. 如图，出现此界面，说明 Google 邮箱创建成果
 
-![在这里插入图片描述](../img/Google/Google11.png)
+![在这里插入图片描述](../images/Google/Google11.png)
 
 
 

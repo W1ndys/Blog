@@ -28,7 +28,7 @@ date: 2024-08-09 19:49:04
 
 1. 下方监听的赛事名是 GZCTF 的赛事名，**不是赛事序号或赛事 ID**，赛事名叫什么就写什么，比如下图中的赛事名就是 `W1ndys的bot测试`
 
-   ![image-20240809195548593](./../img/QQbot/GZCTF-BOT/image-20240809195548593.png)
+   ![image-20240809195548593](./../images/QQbot/GZCTF-BOT/image-20240809195548593.png)
 
 2. 把下面代码参数改好后保存为 `docker-compose.yml`
 
@@ -81,8 +81,8 @@ date: 2024-08-09 19:49:04
 
 这是 `赛事机器人` 的日志
 
-![image-20240809204053173](./../img/QQbot/GZCTF-BOT/image-20240809204053173.png)
+![image-20240809204053173](./../images/QQbot/GZCTF-BOT/image-20240809204053173.png)
 
 这是 `NapCatQQ` 的日志
 
-![image-20240809204210787](./../img/QQbot/GZCTF-BOT/image-20240809204210787.png)
+![image-20240809204210787](./../images/QQbot/GZCTF-BOT/image-20240809204210787.png)

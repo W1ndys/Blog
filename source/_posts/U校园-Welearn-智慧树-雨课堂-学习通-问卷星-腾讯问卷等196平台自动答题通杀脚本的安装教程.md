@@ -59,7 +59,7 @@ title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等19
 
 点击 `获取`，这边我已经安装过了，所以是显示 `删除`
 
-![image-20240307193538754](../img/classscript/image-20240307193538754.png)
+![image-20240307193538754](../images/classscript/image-20240307193538754.png)
 
 2. 进入下面地址，点击 `安装脚本`
 
@@ -69,17 +69,17 @@ title: U校园/Welearn/智慧树/雨课堂/学习通/问卷星/腾讯问卷等19
 
 https://scriptcat.org/zh-CN/script-show-page/174#/
 
-![image-20240307193748656](../img/classscript/image-20240307193748656.png)
+![image-20240307193748656](../images/classscript/image-20240307193748656.png)
 
-![image-20240307193817863](../img/classscript/image-20240307193817863.png)
+![image-20240307193817863](../images/classscript/image-20240307193817863.png)
 
 3. 刷新一下页面
 
-![image-20240307193852350](../img/classscript/image-20240307193852350.png)
+![image-20240307193852350](../images/classscript/image-20240307193852350.png)
 
 点击 `确认`
 
-![image-20240307194048489](../img/classscript/image-20240307194048489.png)
+![image-20240307194048489](../images/classscript/image-20240307194048489.png)
 
 出现中间登陆成功的字样，代表成功登陆
 
@@ -87,11 +87,11 @@ https://scriptcat.org/zh-CN/script-show-page/174#/
 
 1. 进入你要刷课的平台，我这里以 [U 校园](https://u.unipus.cn/user/student?school_id=9541#/) 为例, 登上你的账号，看到右下角（不一定），有个悬浮窗，点击设置
 
-![image-20240307194304461](../img/classscript/image-20240307194304461.png)
+![image-20240307194304461](../images/classscript/image-20240307194304461.png)
 
 点击账号操作
 
-![image-20240307194353048](../img/classscript/image-20240307194353048.png)
+![image-20240307194353048](../images/classscript/image-20240307194353048.png)
 
 如果你是 U 校园，输入邀请码 `VGKTEW` 领取 50 积分
 
@@ -103,28 +103,28 @@ https://scriptcat.org/zh-CN/script-show-page/174#/
 
 2. 之后点击 `自动答题	`
 
-![image-20240307195632874](../img/classscript/image-20240307195632874.png)
+![image-20240307195632874](../images/classscript/image-20240307195632874.png)
 
-![image-20240307195716103](../img/classscript/image-20240307195716103.png)
+![image-20240307195716103](../images/classscript/image-20240307195716103.png)
 
 点击 `搜索推荐答题配置`，显示【生效】代表生效成功，点击 `展开所有配置` 可以看到支持的所有平台，推荐 `答题间隔` 不要太低，建议 `打开`【手动搜题模式】，避免浪费积分
 
 3. 刷新页面，点击做题
 
-![image-20240307200109522](../img/classscript/image-20240307200109522.png)
+![image-20240307200109522](../images/classscript/image-20240307200109522.png)
 
 等待填完答案，就可以提交了
 
-![image-20240307200312763](../img/classscript/image-20240307200312763.png)
+![image-20240307200312763](../images/classscript/image-20240307200312763.png)
 
 ## 刷题结果
 
 放一下我自己刷的正确率，我个人觉得，这是我用过的题库最正确的脚本了，刷了十几套题，没有错的
 
-![d3b5459d33995b96a275e6aa3f33f295](../img/classscript/d3b5459d33995b96a275e6aa3f33f295.png)
+![d3b5459d33995b96a275e6aa3f33f295](../images/classscript/d3b5459d33995b96a275e6aa3f33f295.png)
 
-![d3b5459d33995b96a275e6aa3f33f295_0](../img/classscript/d3b5459d33995b96a275e6aa3f33f295_0.png)
+![d3b5459d33995b96a275e6aa3f33f295_0](../images/classscript/d3b5459d33995b96a275e6aa3f33f295_0.png)
 
-![edc36ed12d801db5092cf2312babd58a](../img/classscript/edc36ed12d801db5092cf2312babd58a.png)
+![edc36ed12d801db5092cf2312babd58a](../images/classscript/edc36ed12d801db5092cf2312babd58a.png)
 
-![image-20240307200522433](../img/classscript/image-20240307200522433.png)
+![image-20240307200522433](../images/classscript/image-20240307200522433.png)

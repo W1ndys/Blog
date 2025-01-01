@@ -19,7 +19,7 @@ title: 在你的网站中添加Capoo！（调皮的猫猫虫）
 
 ## 效果展示
 
-![recording](../img/Capoo/recording.gif)
+![recording](../images/Capoo/recording.gif)
 
 ## 创建 css
 
@@ -88,7 +88,7 @@ if (!isMobile()) { // 如果不是移动端
 
 此处不限类型，只要是图片都可以，jpg，png 等
 
-![](../img/Capoo/Capoo.gif)
+![](../images/Capoo/Capoo.gif)
 
 ## 引入
 
@@ -98,7 +98,7 @@ if (!isMobile()) { // 如果不是移动端
 
 ```
 - <link rel="stylesheet" type="text/css" href="/css/Capoo.css">
-- <img id="follow-img" src="../img/Capoo/Capoo.gif"/>
+- <img id="follow-img" src="../images/Capoo/Capoo.gif"/>
 - <script src="/js/Capoo.js"></script>
 ```
 

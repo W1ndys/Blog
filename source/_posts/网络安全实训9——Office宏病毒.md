@@ -17,7 +17,7 @@ date: 2024-07-15 08:07:28
 
 我这里之前网络安全协会讲座测试环境的时候装过一次汉化版，考虑到实验环境，再下个老师给的 CS
 
-![image-20240715081157188](../img/zuolao/9/image-20240715081157188.png)
+![image-20240715081157188](../images/zuolao/9/image-20240715081157188.png)
 
 ## 运行服务端
 
@@ -32,15 +32,15 @@ ifconfig eth0
 ./teamserver 192.168.0.104 user
 ```
 
-![image-20240715081739711](../img/zuolao/9/image-20240715081739711.png)
+![image-20240715081739711](../images/zuolao/9/image-20240715081739711.png)
 
 报错了，搜了一下，配置 java 环境变量：[java 安装常见问题之 Kali 永久配置环境变量_kali 环境变量-CSDN 博客](https://blog.csdn.net/woaipdd/article/details/130437412#/)
 
-![image-20240715082550903](../img/zuolao/9/image-20240715082550903.png)
+![image-20240715082550903](../images/zuolao/9/image-20240715082550903.png)
 
 好吧还是不行，用我之前的版本的
 
-![image-20240715084351396](../img/zuolao/9/image-20240715084351396.png)
+![image-20240715084351396](../images/zuolao/9/image-20240715084351396.png)
 
 新建配置文件，连接 CS 服务器 
 
@@ -52,21 +52,21 @@ admin
 
 user
 
-![image-20240715084531021](../img/zuolao/9/image-20240715084531021.png)
+![image-20240715084531021](../images/zuolao/9/image-20240715084531021.png)
 
-![image-20240715084717182](../img/zuolao/9/image-20240715084717182.png)
+![image-20240715084717182](../images/zuolao/9/image-20240715084717182.png)
 
 创建一个新的监听器 -> 填写监听器名称（随便写，不重复就行）-> 选择有效载荷/攻击模块/攻击方式
 
-![image-20240715085901127](../img/zuolao/9/image-20240715085901127.png)
+![image-20240715085901127](../images/zuolao/9/image-20240715085901127.png)
 
 添加 HTTP 主机
 
-![image-20240715085926582](../img/zuolao/9/image-20240715085926582.png)
+![image-20240715085926582](../images/zuolao/9/image-20240715085926582.png)
 
 添加要在开启监听的 HTTP 端口：*0-65535*  在这个取值范围中 1023 以下的端口已经分配给了常用的一些应用程序，建议往大的填，避免端口被占用（重复）--> 最后保存即可
 
-![image-20240715090035615](../img/zuolao/9/image-20240715090035615.png)
+![image-20240715090035615](../images/zuolao/9/image-20240715090035615.png)
 
 ## 攻击目标机器
 
@@ -74,19 +74,19 @@ user
 
 ### 生成 hta 文件 （木马文件）
 
-![image-20240715090201960](../img/zuolao/9/image-20240715090201960.png)
+![image-20240715090201960](../images/zuolao/9/image-20240715090201960.png)
 
-![image-20240715090220237](../img/zuolao/9/image-20240715090220237.png)
+![image-20240715090220237](../images/zuolao/9/image-20240715090220237.png)
 
 ### 文件下载
 
-![image-20240715090304128](../img/zuolao/9/image-20240715090304128.png)
+![image-20240715090304128](../images/zuolao/9/image-20240715090304128.png)
 
 我直接用本机测试了
 
-![image-20240715093608095](../img/zuolao/9/image-20240715093608095.png)
+![image-20240715093608095](../images/zuolao/9/image-20240715093608095.png)
 
-![image-20240715093656314](../img/zuolao/9/image-20240715093656314.png)
+![image-20240715093656314](../images/zuolao/9/image-20240715093656314.png)
 
 ### 攻击目标机器 - 操控目标机器
 
@@ -94,32 +94,32 @@ user
 
 选中要操作的目标主机 **->** 鼠标右键 **->** 进入 beacon（交互命令界面），在此使用 Beacon Commands 对目标主机执行各种操作。
 
-![image-20240715094102087](../img/zuolao/9/image-20240715094102087.png)
+![image-20240715094102087](../images/zuolao/9/image-20240715094102087.png)
 
-![image-20240715094135319](../img/zuolao/9/image-20240715094135319.png)
+![image-20240715094135319](../images/zuolao/9/image-20240715094135319.png)
 
 图形界面
 
-![image-20240715094210812](../img/zuolao/9/image-20240715094210812.png)
+![image-20240715094210812](../images/zuolao/9/image-20240715094210812.png)
 
 查看 IP
 
-![image-20240715094242078](../img/zuolao/9/image-20240715094242078.png)
+![image-20240715094242078](../images/zuolao/9/image-20240715094242078.png)
 
 使用文件管理
 
-![image-20240715094309859](../img/zuolao/9/image-20240715094309859.png)
+![image-20240715094309859](../images/zuolao/9/image-20240715094309859.png)
 
 #### 获取目标的进程
 
-![image-20240715094407929](../img/zuolao/9/image-20240715094407929.png)
+![image-20240715094407929](../images/zuolao/9/image-20240715094407929.png)
 
 ### 生成后门木马 - Office 宏病毒
 
 ##### **创建** Office 宏病毒 代码
 
-![image-20240715094926084](../img/zuolao/9/image-20240715094926084.png)
+![image-20240715094926084](../images/zuolao/9/image-20240715094926084.png)
 
 成功上线
 
-![image-20240715095102483](../img/zuolao/9/image-20240715095102483.png)
+![image-20240715095102483](../images/zuolao/9/image-20240715095102483.png)

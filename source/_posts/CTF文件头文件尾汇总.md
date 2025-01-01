@@ -63,9 +63,9 @@ title: CTF文件头文件尾汇总
 PNG文件，我们会发现，文件的结尾12个字符看起来总应该是这样的：00 00 00 00 49 45 4E 44 AE 42 60 82
 不难明白，由于数据块结构的定义，IEND数据块的长度总是0（00 00 00 00，除非人为加入信息），数据标识总是IEND（49 45 4E 44），因此，CRC码也总是AE 42 60 82。
 
-![img](../img/file-header/20201019175155622.png)![img](../img/file-header/20201019175206371.png)
+![img](../images/file-header/20201019175155622.png)![img](../images/file-header/20201019175206371.png)
 
-![img](../img/file-header/1.png)
+![img](../images/file-header/1.png)
 
 给大家举个例子：
 
@@ -73,7 +73,7 @@ PNG图像：321*332分辨率  321->00 00 01 41  332->00 00 01 4C (也可以搜�
 
 也可以根据位直接找到标志位，就是IHDR的后面4字节00 00 01 41为宽度 再后4字节00 00 01 4C为长度
 
-![img](../img/file-header/20201019175441812.png)
+![img](../images/file-header/20201019175441812.png)
 
  89 50 4E 47 0D 0A 1A 0A 是PNG头部署名域，表示这是一个PNG图片
 00 00 00 0D 描述IHDR头部的大小。
@@ -105,7 +105,7 @@ PNG图像：321*332分辨率  321->00 00 01 41  332->00 00 01 4C (也可以搜�
 压缩源文件数据区的全局加密应当为09 00 
 且压缩源文件目录区的全局方式位标记应当为09 00
 
-![img](../img/file-header/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FodXV1YQ==,size_16,color_FFFFFF,t_70)
+![img](../images/file-header/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FodXV1YQ==,size_16,color_FFFFFF,t_70)
 
 全局方式位标记的四个数字中只有第二个数字对其有影响，其它的不管为何值，都不影响它的加密属性！ 
 第二个数字为奇数时 –>加密 

@@ -51,7 +51,7 @@ cover: https://is4-ssl.mzstatic.com/image/thumb/Purple126/v4/ba/c4/30/bac4306a-4
 
 首先挂上魔法,进入[Poe 官网](https://poe.com/)
 
-![image-20240329165158784](../img/Poe/image-20240329165158784.png)
+![image-20240329165158784](../images/Poe/image-20240329165158784.png)
 
 这里有很自由的注册方式,你可以通过 Google 邮箱,也可以通过 Apple 账号(<font color="red">我没试过</font>),然后下面通过邮箱账号,可以是 outlook,甚至可以是 QQ 邮箱.
 
@@ -61,16 +61,16 @@ cover: https://is4-ssl.mzstatic.com/image/thumb/Purple126/v4/ba/c4/30/bac4306a-4
 
 成功之后就可以选择一个对话开始使用了，操作对新手及其的友好
 
-![image-20240329171152824](../img/Poe/image-20240329171152824.png)
+![image-20240329171152824](../images/Poe/image-20240329171152824.png)
 ### 演示
 
 #### 用Poe
 
-![image-20240329172035427](../img/Poe/image-20240329172035427.png)
+![image-20240329172035427](../images/Poe/image-20240329172035427.png)
 
 #### 用官方ChatGPT
 
-![image-20240329172058399](../img/Poe/image-20240329172058399.png)
+![image-20240329172058399](../images/Poe/image-20240329172058399.png)
 
 ---
 除此之外还可以下载Android，Windows应用，整体体验还算不错

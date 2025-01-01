@@ -49,7 +49,7 @@ docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://gith
 
 假设小号与大号创建了一个群聊，这里测试的是群聊中是否出现指定字符串，出现则发送一条消息，以“测试”和“测试成功”为例
 
-![image-20240728191204205](./../img/QQbot/image-20240728191204205.png)
+![image-20240728191204205](./../images/QQbot/image-20240728191204205.png)
 
 ## W1ndys-bot 的开发
 

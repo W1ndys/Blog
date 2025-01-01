@@ -1,10 +1,12 @@
 ---
-title: "Python实验八——面向对象编程"
-tags: [Python]
-categories: [Python]
+title: Python实验八——面向对象编程
+tags:
+  - Python
+categories:
+  - Python
+cover: 'https://python123.io/images/78/f5/5cd8b22e4c4bbabc81e6946002d8.png'
+abbrlink: 44cb2a
 date: 2024-11-20 08:07:21
-cover: >-
-  https://th.bing.com/th/id/OIP.dJToM1TiZiJA0GYwzDHwjQHaHY?w=179&h=180&c=7&r=0&o=5&pid=1.7
 ---
 
 ## 创建类计算数学

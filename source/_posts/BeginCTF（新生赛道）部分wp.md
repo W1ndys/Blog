@@ -72,7 +72,7 @@ base64 梭一下
 
 放在线网站里梭一下 <https://tuppers-formula.ovh/#/>
 
-![image-20240131144910393](../img/beginCTF/misc/image-20240131144910393.png)
+![image-20240131144910393](../images/beginCTF/misc/image-20240131144910393.png)
 
 > begin{T4UUPER!}
 

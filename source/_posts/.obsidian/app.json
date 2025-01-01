@@ -1,6 +1,6 @@
 {
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "../img/",
+  "attachmentFolderPath": "../images/",
   "pdfExportSettings": {
     "includeName": true,
     "pageSize": "Letter",

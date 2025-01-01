@@ -57,58 +57,58 @@ IP ACL 基于接口进行规则的应用，分为入栈应用和出栈应用。
 
 ### 完成拓扑图的搭建
 
-![image-20240711152958960](../img/zuolao/2/image-20240711152958960.png)
+![image-20240711152958960](../images/zuolao/2/image-20240711152958960.png)
 
 ### 配置 IP 地址
 
-![image-20240711154536048](../img/zuolao/2/image-20240711154536048.png)
+![image-20240711154536048](../images/zuolao/2/image-20240711154536048.png)
 
-![image-20240711154617966](../img/zuolao/2/image-20240711154617966.png)
+![image-20240711154617966](../images/zuolao/2/image-20240711154617966.png)
 
-![image-20240711154734117](../img/zuolao/2/image-20240711154734117.png)
+![image-20240711154734117](../images/zuolao/2/image-20240711154734117.png)
 
 ### 配置 router0 联通的端口
 
-![image-20240711154913010](../img/zuolao/2/image-20240711154913010.png)
+![image-20240711154913010](../images/zuolao/2/image-20240711154913010.png)
 
-![image-20240711154917468](../img/zuolao/2/image-20240711154917468.png)
+![image-20240711154917468](../images/zuolao/2/image-20240711154917468.png)
 
-![image-20240711155007277](../img/zuolao/2/image-20240711155007277.png)
+![image-20240711155007277](../images/zuolao/2/image-20240711155007277.png)
 
-![image-20240711155107908](../img/zuolao/2/image-20240711155107908.png)
+![image-20240711155107908](../images/zuolao/2/image-20240711155107908.png)
 
 ### 配置 router1 联通的端口
 
-![image-20240711155204230](../img/zuolao/2/image-20240711155204230.png)
+![image-20240711155204230](../images/zuolao/2/image-20240711155204230.png)
 
-![image-20240711155224150](../img/zuolao/2/image-20240711155224150.png)
+![image-20240711155224150](../images/zuolao/2/image-20240711155224150.png)
 
 ### 配置 router0 的路由 IP 转发表
 
-![image-20240711155357565](../img/zuolao/2/image-20240711155357565.png)
+![image-20240711155357565](../images/zuolao/2/image-20240711155357565.png)
 
 ### 配置 router1 的路由 IP 转发表
 
-![image-20240711155517735](../img/zuolao/2/image-20240711155517735.png)
+![image-20240711155517735](../images/zuolao/2/image-20240711155517735.png)
 
 ### PC0 ping 目标主机
 
-![image-20240711155609532](../img/zuolao/2/image-20240711155609532.png)
+![image-20240711155609532](../images/zuolao/2/image-20240711155609532.png)
 
 ### PC1 ping 目标主机
 
-![image-20240711155652847](../img/zuolao/2/image-20240711155652847.png)
+![image-20240711155652847](../images/zuolao/2/image-20240711155652847.png)
 
 ### 配置 router0 的 IP 准入
 
-![image-20240711155854183](../img/zuolao/2/image-20240711155854183.png)
+![image-20240711155854183](../images/zuolao/2/image-20240711155854183.png)
 
-![image-20240711155906453](../img/zuolao/2/image-20240711155906453.png)
+![image-20240711155906453](../images/zuolao/2/image-20240711155906453.png)
 
 ### PC0 ping 主机
 
-![image-20240711160037954](../img/zuolao/2/image-20240711160037954.png)
+![image-20240711160037954](../images/zuolao/2/image-20240711160037954.png)
 
 ### PC1 ping 主机
 
-![image-20240711160127681](../img/zuolao/2/image-20240711160127681.png)
+![image-20240711160127681](../images/zuolao/2/image-20240711160127681.png)

@@ -40,7 +40,7 @@ title: RSA的一些解密脚本
 
 **1、RSA算法需要的基础知识：**
 
-![img](../img/Crypto-RSA/e919d28a04e3408dadf817f324a9a3d8.png)
+![img](../images/Crypto-RSA/e919d28a04e3408dadf817f324a9a3d8.png)
 
 （5）判断互质数：	
 
@@ -90,9 +90,9 @@ title: RSA的一些解密脚本
 
 （3）RSA加密与解密
 
-![img](../img/Crypto-RSA/70a02a11bade4ecd8cb39dc976de7669.png)
+![img](../images/Crypto-RSA/70a02a11bade4ecd8cb39dc976de7669.png)
 
-![img](../img/Crypto-RSA/934d5831addc4e1bbdf45d0b7c43d937.png)
+![img](../images/Crypto-RSA/934d5831addc4e1bbdf45d0b7c43d937.png)
 
 （4）RSA算法的破解
 
@@ -144,7 +144,7 @@ print(binascii.unhexlify(hex(m)[2:]))
 
 #### 3.已知(p,q,dp,dq,c)，求m
 
-![img](../img/Crypto-RSA/c13f4126471c460e9566e37a4e5f77ac.png)
+![img](../images/Crypto-RSA/c13f4126471c460e9566e37a4e5f77ac.png)
 
 ```
 import gmpy2
@@ -165,7 +165,7 @@ print(binascii.unhexlify(hex(m)[2:]))
 
 #### 4.已知(e,dp,n,c)，求m
 
-![img](../img/Crypto-RSA/60178e8906e54a9b99bb29ec355f5ee9.png)
+![img](../images/Crypto-RSA/60178e8906e54a9b99bb29ec355f5ee9.png)
 
 ```
 import gmpy2
@@ -186,7 +186,7 @@ print(binascii.unhexlify(hex(m)[2:]))
 
 #### 5.已知(n,e1,e2,c1,c2)，求m
 
-![img](../img/Crypto-RSA/358a70c21c954c42bb1f180851d998aa.png)
+![img](../images/Crypto-RSA/358a70c21c954c42bb1f180851d998aa.png)
 
 ```
 import gmpy2
@@ -281,9 +281,9 @@ http://www.factordb.com/index.php
 
 注意：在factordb中因为数过大而显示不全时，可以点击show查看完整数据，但是在复制数据时注意它的每一行都有空格，粘贴后要去掉
 
-![img](../img/Crypto-RSA/9d7aa499bad5423189ad31ed01ab5267.png)
+![img](../images/Crypto-RSA/9d7aa499bad5423189ad31ed01ab5267.png)
 
-![img](../img/Crypto-RSA/b8f526c4255340a69671d2c54e87fd69.png)
+![img](../images/Crypto-RSA/b8f526c4255340a69671d2c54e87fd69.png)
 
 若以上都不好用，则用yafu计算
 
@@ -306,7 +306,7 @@ print(binascii.unhexlify(hex(m)[2:]))
 
 #### 9.已知(e,n,c)，求m（e极小，如3，低加密指数攻击）
 
-![img](../img/Crypto-RSA/a1c0f87f74c947a2a051aaad34821155.png)
+![img](../images/Crypto-RSA/a1c0f87f74c947a2a051aaad34821155.png)
 
 ```
 import gmpy2

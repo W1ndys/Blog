@@ -23,9 +23,9 @@ cover: https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&p
 
 ## 2022/2023 年 Github 生涯
 
-![image-20240407202632474](../img/Github/image-20240407202632474.png)
+![image-20240407202632474](../images/Github/image-20240407202632474.png)
 
-![image-20240407202707234](../img/Github/image-20240407202707234.png)
+![image-20240407202707234](../images/Github/image-20240407202707234.png)
 
 为什么我要把 22 年和 23 年放在一起说呢，因为我这两年时间还不如 24 年三天的活动多。没啥好回忆的。
 
@@ -47,7 +47,7 @@ cover: https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&p
 
 ## 2024 年 Github 生涯
 
-![image-20240407203333098](../img/Github/image-20240407203333098.png)
+![image-20240407203333098](../images/Github/image-20240407203333098.png)
 
 <div style="text-align: center;">
   <span style="color: #FF1493;">1314次，还挺浪漫的</span>
@@ -67,7 +67,7 @@ cover: https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&p
 
 此外我还获得了几个成就，看起来还蛮好看的，还学会了调用 API 美化自己的 Github 主页，蛮不错的
 
-![image-20240407205555472](../img/Github/image-20240407205555472.png)
+![image-20240407205555472](../images/Github/image-20240407205555472.png)
 
 到此也基本结束了
 

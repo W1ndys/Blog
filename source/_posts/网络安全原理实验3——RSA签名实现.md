@@ -62,4 +62,4 @@ if __name__ == "__main__":
 
 ## 实验截图
 
-![image-20240410104552422](../img/CyberSecurity/3-RSA/image-20240410104552422.png)
+![image-20240410104552422](../images/CyberSecurity/3-RSA/image-20240410104552422.png)

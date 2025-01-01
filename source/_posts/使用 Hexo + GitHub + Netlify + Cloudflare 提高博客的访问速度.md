@@ -83,37 +83,37 @@ title: 使用 Hexo + GitHub + Netlify + Cloudflare提高博客的访问速度
 
 输入邮箱密码注册账号，注册完成后登陆
 
-![注册](../img/VPN/注册账号.png)
+![注册](../images/VPN/注册账号.png)
 
 然后点击左侧购买订阅
 
-![订阅](../img/VPN/订阅.png)
+![订阅](../images/VPN/订阅.png)
 
 根据需求选择你合适的方案，如果你只是想尝鲜的话，毫无疑问，选最便宜的，能用就行
 
-![购买订阅](../img/VPN/购买订阅.png)
+![购买订阅](../images/VPN/购买订阅.png)
 
 我本人用的是 <font color="#FF0000"> 38.8 巨量不限时，推荐这个 </font>，大约可以用 2 年左右，平均下来大约 0.6/天，而且是实打实的买多少用多少，不会出现超时浪费
 
 买完之后点击左上方仪表盘可以看到你的已订阅
 
-![仪表盘](../img/VPN/仪表盘.png)
+![仪表盘](../images/VPN/仪表盘.png)
 
 然后点击仪表盘下方的使用文档
 
-![客户端安装](../img/VPN/客户端.png)
+![客户端安装](../images/VPN/客户端.png)
 
 选择你的系统安装客户端
 
 安装完之后登陆客户端就可以看到这样
 
-![安装完成](../img/VPN/安装完成.png)
+![安装完成](../images/VPN/安装完成.png)
 
 ### 连接节点
 
 目前为止已经基本结束了，点击连接，点进去选个绿色的节点，点全局，<font color="#FF0000"> 如果后续出现连接失败就换个节点 </font>
 
-![节点](../img/VPN/节点.png)
+![节点](../images/VPN/节点.png)
 
 ## GitHub 操作
 
@@ -123,7 +123,7 @@ title: 使用 Hexo + GitHub + Netlify + Cloudflare提高博客的访问速度
 
 我这里以 blog-Netlify-anzhiyu 为例，公有私有都行，你不想公开源码的话就私有
 
-![](../img/Netlify/repo.png)
+![](../images/Netlify/repo.png)
 
 直接 git clone 刚刚那个 repo
 
@@ -189,7 +189,7 @@ Hexo s
 
 刷新一下看看有没有推送上去
 
-![image-20240124135839416](../img/Netlify/image-20240124135839416.png)
+![image-20240124135839416](../images/Netlify/image-20240124135839416.png)
 
 至此 GitHub 上的操作就告一段落了，继续往下走
 
@@ -197,11 +197,11 @@ Hexo s
 
 来到 [Netlify 官网](https://app.netlify.com/)
 
-![image-20240124135949377](../img/Netlify/image-20240124135949377.png)
+![image-20240124135949377](../images/Netlify/image-20240124135949377.png)
 
 直接以 GitHub 注册便于导入仓库，然后点击继续，等待重定向
 
-![image-20240124140145461](../img/Netlify/image-20240124140145461.png)
+![image-20240124140145461](../images/Netlify/image-20240124140145461.png)
 
 然后点击左侧的 site，再点击 new site
 
@@ -209,27 +209,27 @@ Hexo s
 
 然后 Deploywith GitHub
 
-![image-20240124140316478](../img/Netlify/image-20240124140316478.png)
+![image-20240124140316478](../images/Netlify/image-20240124140316478.png)
 
 然后找到刚刚创建的 repo
 
 配置就按照我这个来写，注意分支，如果你是 master 填 master，如果你是 main 就填 main
 
-![image-20240124140806592](../img/Netlify/image-20240124140806592.png)
+![image-20240124140806592](../images/Netlify/image-20240124140806592.png)
 
 然后点击 deploy
 
 创建完成之后就可以访问了
 
-![image-20240124140856386](../img/Netlify/image-20240124140856386.png)
+![image-20240124140856386](../images/Netlify/image-20240124140856386.png)
 
 如果空白或者是啥也没有，请检查主题配置，一般是主题配置问题
 
-![image-20240124142940466](../img/Netlify/image-20240124142940466.png)
+![image-20240124142940466](../images/Netlify/image-20240124142940466.png)
 
 点击左侧的 domain 可以配置域名
 
-![image-20240124143013535](../img/Netlify/image-20240124143013535.png)
+![image-20240124143013535](../images/Netlify/image-20240124143013535.png)
 
 点击 add 可以添加自己的域名，点击右侧红框里可以自定义 Netlify 里的子域名
 
@@ -241,11 +241,11 @@ Hexo s
 
 首先进控制台 CNAME 指向 Netlify 的域名
 
-![image-20240124143314135](../img/Netlify/image-20240124143314135.png)
+![image-20240124143314135](../images/Netlify/image-20240124143314135.png)
 
 然后进入 [cloudflare 官网](https://www.cloudflare-cn.com/)
 
-![image-20240124143802475](../img/Netlify/image-20240124143802475.png)
+![image-20240124143802475](../images/Netlify/image-20240124143802475.png)
 
 添加站点，把你自己的域名填上，注意不要带 www.，填纯域名
 
@@ -253,7 +253,7 @@ Hexo s
 
 填写之后会看到让你改 DNS 服务器，我这里已经改过了
 
-![image-20240124144214920](../img/Netlify/image-20240124144214920.png)
+![image-20240124144214920](../images/Netlify/image-20240124144214920.png)
 
 这里就去控制台把域名的 DNS 服务器改掉就可以了
 
@@ -261,15 +261,15 @@ Hexo s
 
 审核完之后如图
 
-![image-20240124144042122](../img/Netlify/image-20240124144042122.png)
+![image-20240124144042122](../images/Netlify/image-20240124144042122.png)
 
 然后我们进入到 DNS 记录
 
-![image-20240124144102621](../img/Netlify/image-20240124144102621.png)
+![image-20240124144102621](../images/Netlify/image-20240124144102621.png)
 
 这里就根据你自己的域名，改成形如我这样的就可以了
 
-![image-20240124144141785](../img/Netlify/image-20240124144141785.png)
+![image-20240124144141785](../images/Netlify/image-20240124144141785.png)
 
 到这里已经结束了。
 

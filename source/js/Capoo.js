@@ -4,7 +4,7 @@ function createGifElement() {
     gifContainer.classList.add('gif-container');
 
     var gifImage = document.createElement('img');
-    gifImage.src = '../img/Capoo/Capoo.gif'; // 修改为你的GIF图像路径
+    gifImage.src = '../images/Capoo/Capoo.gif'; // 修改为你的GIF图像路径
     gifImage.alt = 'Capoo GIF Image'; // 修改为你的GIF图像的alt文本
 
     gifContainer.appendChild(gifImage);

@@ -95,46 +95,46 @@ if __name__ == "__main__":
 
 1.  查看子网名称和子网地址
 
-    ![子网名称和子网地址](../img/CyberSecurity/6-SYN-flood/image.png)
+    ![子网名称和子网地址](../images/CyberSecurity/6-SYN-flood/image.png)
 
 2.  进入 Ubuntu 虚拟机，打开终端
 
 3.  查看 IP 地址
 
-    ![IP地址](../img/CyberSecurity/6-SYN-flood/image-1.png)
+    ![IP地址](../images/CyberSecurity/6-SYN-flood/image-1.png)
 
 4.  关闭 SYN Cookies 机制
 
-    ![关闭SYN Cookies机制](../img/CyberSecurity/6-SYN-flood/image-2.png)
+    ![关闭SYN Cookies机制](../images/CyberSecurity/6-SYN-flood/image-2.png)
 
 5.  开启一个简易的 Web 服务
 
-        ![开启一个简易的Web服务](../img/CyberSecurity/6-SYN-flood/image-3.png)
+        ![开启一个简易的Web服务](../images/CyberSecurity/6-SYN-flood/image-3.png)
 
 6.  现在宿主主机就可以通过 IP 地址+端口号访问这个 Web 服务了。
 
-    ![访问Web服务](../img/CyberSecurity/6-SYN-flood/image-4.png)
+    ![访问Web服务](../images/CyberSecurity/6-SYN-flood/image-4.png)
 
 ### 抓包
 
 1.  打开 Wireshark，选择网卡，开始抓包
 
-    ![抓包](../img/CyberSecurity/6-SYN-flood/image-5.png)
+    ![抓包](../images/CyberSecurity/6-SYN-flood/image-5.png)
 
 2.  编辑攻击脚本，将目标 IP 地址和端口号改为宿主主机的 IP 地址和 Web 服务的端口号
 
-    ![修改攻击脚本](../img/CyberSecurity/6-SYN-flood/image-6.png)
+    ![修改攻击脚本](../images/CyberSecurity/6-SYN-flood/image-6.png)
 
 3.  运行攻击脚本，开始发送 SYN 包
 
-    ![运行攻击脚本](../img/CyberSecurity/6-SYN-flood/image-7.png)
+    ![运行攻击脚本](../images/CyberSecurity/6-SYN-flood/image-7.png)
 
 4.  访问 Web 服务，查看服务器的响应情况
 
-    ![访问Web服务](../img/CyberSecurity/6-SYN-flood/image-8.png)
+    ![访问Web服务](../images/CyberSecurity/6-SYN-flood/image-8.png)
 
 5.  停止抓包，查看攻击结果
 
-    ![停止抓包](../img/CyberSecurity/6-SYN-flood/image-9.png)
+    ![停止抓包](../images/CyberSecurity/6-SYN-flood/image-9.png)
 
 可以发现，Wireshark 捕捉到大量的 SYN 数据包，服务端由于大量的 SYN 请求，无法及时响应，导致连接超时。

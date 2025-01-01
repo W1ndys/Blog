@@ -1,9 +1,12 @@
 ---
-title: "绕过Cursor的机器绑定限制"
-tags: [cursor]
-categories: [cursor]
+title: 绕过Cursor的机器绑定限制
+tags:
+  - cursor
+categories:
+  - cursor
+cover: 'https://th.bing.com/th/id/OIP.l2acdvhk3LnjNEOvwSM9HwHaEo?rs=1&pid=ImgDetMain'
+abbrlink: 2b8fba96
 date: 2024-12-20 14:07:13
-cover: https://th.bing.com/th/id/OIP.l2acdvhk3LnjNEOvwSM9HwHaEo?rs=1&pid=ImgDetMain
 ---
 
 # 如何绕过 Cursor 免费版的机器绑定限制

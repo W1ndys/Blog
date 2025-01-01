@@ -154,4 +154,4 @@ input("按Ctrl+C退出")
 
 ## 【运行截图】
 
-![image-20240403103313875](../img/CyberSecurity/2-RSA/image-20240403103313875.png)
+![image-20240403103313875](../images/CyberSecurity/2-RSA/image-20240403103313875.png)

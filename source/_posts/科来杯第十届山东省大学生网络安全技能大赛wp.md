@@ -125,7 +125,7 @@ console.log(ff)
 
 频谱图
 
-![我应该去爱你](../img/科来杯10/我应该去爱你.png)
+![我应该去爱你](../images/科来杯10/我应该去爱你.png)
 
 ### 数独
 
@@ -137,21 +137,21 @@ console.log(ff)
 C:UsersAdministratorDesktopmisc脚本收集cloacked-pixel-master>python2 lsb.py extract C:UsersAdministratorDesktopmisc脚本收集cloacked-pixel-mastershudok.png-stego.png 1.txt 4132234132141423
 ```
 
-![数独](../img/科来杯10/数独.png)
+![数独](../images/科来杯10/数独.png)
 
 ### 莫生气
 
-![莫生气](../img/科来杯10/莫生气.png)
+![莫生气](../images/科来杯10/莫生气.png)
 
 提取出png，补上文件头，然后双图盲水印
 
-![莫生气2](../img/科来杯10/莫生气2.png)
+![莫生气2](../images/科来杯10/莫生气2.png)
 
 ## 取证
 
 ### 金刚大战哥斯拉
 
-![金刚大战哥斯拉](../img/科来杯10/哥斯拉.png)
+![金刚大战哥斯拉](../images/科来杯10/哥斯拉.png)
 
 ```php
 <?php
@@ -171,19 +171,19 @@ $data = 'fLluZmFmNmExNJEhWBG1b1XhCY%2BtGO2uCp6t3zK69FxYTKJQssNT1y5Cf45Hu3u%2Fivq
 echo base64_encode(gzdecode(encode(base64_decode(urldecode($data)),$key)));
 ```
 
-![金刚大战哥斯拉2](../img/科来杯10/哥斯拉2.png)
+![金刚大战哥斯拉2](../images/科来杯10/哥斯拉2.png)
 
 ### 啊吧啊吧的数据包
 
-![阿巴巴](../img/科来杯10/阿巴巴.png)
+![阿巴巴](../images/科来杯10/阿巴巴.png)
 
 命令的时间盲注，写脚本有点麻烦
 
-![阿巴巴2](../img/科来杯10/阿巴巴2.png)
+![阿巴巴2](../images/科来杯10/阿巴巴2.png)
 
 不如简单处理一下，然后手撕
 
-![阿巴巴3](../img/科来杯10/阿巴巴3.png)
+![阿巴巴3](../images/科来杯10/阿巴巴3.png)
 
 
 
@@ -193,7 +193,7 @@ flag{3563bdb1a59309e1a4e93b65152bfbba}
 
 取证大师提出个压缩包，备注是名字+生日，掩码爆破
 
-![小刘](../img/科来杯10/小刘.png)
+![小刘](../images/科来杯10/小刘.png)
 
 ## Web
 
@@ -331,7 +331,7 @@ print(long_to_bytes(m))
 
 找到加密逻辑，跟着跑一边就是了
 
-![人生模拟](../img/科来杯10/人生模拟.png)
+![人生模拟](../images/科来杯10/人生模拟.png)
 
 ```python
 v15=[0]*38

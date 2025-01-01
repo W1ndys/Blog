@@ -25,13 +25,13 @@ date: 2024-06-01 16:46:18
 
 ## 脱壳过程
 
-![image-20240601165151233](../img/CTF-Reverse-UPX-Litctf/image-20240601165151233.png)
+![image-20240601165151233](../images/CTF-Reverse-UPX-Litctf/image-20240601165151233.png)
 
 一开始脱壳失败，经过查资料发现解法
 
 拉进 winhex 发现文件被修改
 
-![image-20240601165348142](../img/CTF-Reverse-UPX-Litctf/image-20240601165348142.png)
+![image-20240601165348142](../images/CTF-Reverse-UPX-Litctf/image-20240601165348142.png)
 
 正常的文件应该是大写的`UPX`
 
@@ -39,11 +39,11 @@ date: 2024-06-01 16:46:18
 
 再用工具`upx -d` 脱壳即可
 
-![image-20240601165451837](../img/CTF-Reverse-UPX-Litctf/image-20240601165451837.png)
+![image-20240601165451837](../images/CTF-Reverse-UPX-Litctf/image-20240601165451837.png)
 
 ## 解密
 
-![image-20240601165532103](../img/CTF-Reverse-UPX-Litctf/image-20240601165532103.png)
+![image-20240601165532103](../images/CTF-Reverse-UPX-Litctf/image-20240601165532103.png)
 
 分析可得，flag 就是 v4+i
 

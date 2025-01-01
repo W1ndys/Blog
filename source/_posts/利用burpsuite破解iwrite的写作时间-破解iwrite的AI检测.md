@@ -6,7 +6,7 @@ tags:
   - burpsuite
 categories:
   - 技术教程
-cover: "../img/iwrite/iwrite&bp.png"
+cover: "../images/iwrite/iwrite&bp.png"
 abbrlink: 4d6a074b
 date: 2024-04-16 22:02:30
 ---
@@ -31,7 +31,7 @@ Additionally, navigating the professional landscape demands adaptability and res
 In conclusion, the transition from academia to the professional realm is fraught with multifaceted challenges. However, with perseverance, continuous learning, and a resilient mindset, graduates can overcome these obstacles and carve a fulfilling career path for themselves.
 ```
 
-![原文](../img/iwrite/1713282497160.png)
+![原文](../images/iwrite/1713282497160.png)
 
 ### 翻译成日语
 
@@ -53,13 +53,13 @@ In addition, adaptability and toughness are necessary for the field of control. 
 
 In short, the transition from academic to professional is full of challenges. But with patience, continuous learning and tough psychological conditions, graduates can overcome these obstacles and open up a profitable career for themselves.
 
-![翻译之后](../img/iwrite/PixPin_2024-04-16_23-50-49.png)
+![翻译之后](../images/iwrite/PixPin_2024-04-16_23-50-49.png)
 
 ## 如何用 burpsuite 抓包破解 iwrite 的写作时间？
 
 ### 成品
 
-![成品](../img/iwrite/image.png)
+![成品](../images/iwrite/image.png)
 
 > 首先你需要两个工具
 >
@@ -79,11 +79,11 @@ In short, the transition from academic to professional is full of challenges. Bu
 
    一定要出现`自动保存`的提示,不然不会保存到服务器
 
-   ![自动保存](../img/iwrite/PJ/image.png)
+   ![自动保存](../images/iwrite/PJ/image.png)
 
 4. 打开拦截
 
-   ![拦截](../img/iwrite/PJ/image-1.png)
+   ![拦截](../images/iwrite/PJ/image-1.png)
 
 5. 点提交作文
 
@@ -91,21 +91,21 @@ In short, the transition from academic to professional is full of challenges. Bu
 
    一开始这个不用管,都是些班级,任务,学生信息之类的东西
 
-   ![这个不用管](../img/iwrite/PJ/image-2.png)
+   ![这个不用管](../images/iwrite/PJ/image-2.png)
 
    把这个包`放行`
 
-   ![放行请求包](../img/iwrite/PJ/image-3.png)
+   ![放行请求包](../images/iwrite/PJ/image-3.png)
 
    下面这个继续放行
 
-   ![继续放行](../img/iwrite/PJ/image-4.png)
+   ![继续放行](../images/iwrite/PJ/image-4.png)
 
 7. 修改请求包
 
    到这里才是需要修改的东西,这里可以看到你写的作文题目和正文
 
-   ![真正的请求包](../img/iwrite/PJ/image-5.png)
+   ![真正的请求包](../images/iwrite/PJ/image-5.png)
 
    我们需要修改的是时间戳,把它改成以前的时间,这样就能修改你的写作耗时
 
@@ -139,14 +139,14 @@ In short, the transition from academic to professional is full of challenges. Bu
 
    修改之后放行
 
-   ![放行修改后的请求包](../img/iwrite/PJ/image-6.png)
+   ![放行修改后的请求包](../images/iwrite/PJ/image-6.png)
 
    继续放行
 
 #### 二次修改
 
   
-   ![继续提交](../img/iwrite/PJ/image-7.png)
+   ![继续提交](../images/iwrite/PJ/image-7.png)
 
    这里也要提交，跟之前一样，总共修改两次
 
@@ -154,4 +154,4 @@ In short, the transition from academic to professional is full of challenges. Bu
 
 ### 看成品
 
-![成品](../img/iwrite/PJ/image-8.png)
+![成品](../images/iwrite/PJ/image-8.png)

@@ -146,7 +146,7 @@ buttons = [
 
 ## 效果展示
 
-![recording](../img/Typora_plugin/MarkdownToCode/recording.gif)
+![recording](../images/Typora_plugin/MarkdownToCode/recording.gif)
 
 ---
 
