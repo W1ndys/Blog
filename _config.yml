@@ -114,7 +114,11 @@ theme: redefine
 # 部署
 ## 文档: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ""
+  type: git
+  repository:
+    github: git@github.com:W1ndys/Blog.git
+    # gitee: git@gitee.com:W1ndys/blog.git
+  branch: gh-pages
 
 mathjax:
   tags: none # 或 'ams' 或 'all'
@@ -139,10 +143,3 @@ feed:
   autodiscovery: true
   template:
 
-# 部署
-deploy:
-  type: git
-  repository:
-    github: git@github.com:W1ndys/Blog.git
-    # gitee: git@gitee.com:W1ndys/blog.git
-  branch: gh-pages
