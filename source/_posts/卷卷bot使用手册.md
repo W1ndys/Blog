@@ -1,5 +1,5 @@
 ---
-title: "卷卷bot使用手册"
+title: 卷卷bot使用手册
 tags:
   - QQbot
   - QQ机器人
@@ -7,8 +7,9 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
+cover: 'https://t.mwm.moe/fj?20250101194825186'
+abbrlink: fbd9a8fd
 date: 2025-01-01 19:48:25
-cover: https://t.mwm.moe/fj?20250101194825186
 ---
 
 ## 卷卷 bot
