@@ -1,0 +1,282 @@
+# 友链添加说明↓🤔🤔🤔
+# 欢迎来到W1ndys小屋的友链添加pr页面
+# 如果你是博客作者的同学/朋友/师哥师姐师弟师妹，请在页面内搜索：锚点1，快速定位并编辑
+# 如果你是CTF大佬，请在页面内搜索：锚点2，快速定位编辑
+# 如果你是来自各路的大佬，请在页面内搜索：锚点3，快速定位编辑
+# 友链格式为：
+
+###########################
+# - name: 你的网站名称
+#   link: 你的网站链接
+#   avatar:  你的站点头像
+#   desrc: 你的站点描述
+###########################
+
+- links_category: 博客
+  has_thumbnail: false
+  list:
+    - name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      description: 快速、简单且强大的博客框架
+
+    - name: Butterfly开发文档
+      link: https://butterfly.js.org/posts/21cfbf15/#/
+      avatar: https://butterfly.js.org/img/avatar.png
+      description: A Simple and Card UI Design theme for Hexo
+
+#
+#
+#
+#
+# 下面是师哥师姐师弟师妹同学朋友，请下滑找到空位置添加
+# ——————————————————————————————————————————————————————————————————————————————————————————————
+- links_category: 漫漫求学路，同窗夜下读
+  class_desc: 大佬们的聚集地
+  list:
+    #   - name: 曲阜师范大学
+    #     link: https://www.qfnu.edu.cn/
+    #     avatar: https://q1.qlogo.cn/g?b=qq&nk=1623557647&s=640
+    #     description: 学而不厌，诲人不倦
+
+    #   - name: 曲阜师范大学网络空间安全学院
+    #     link: https://cyber.qfnu.edu.cn/
+    #     avatar: https://q1.qlogo.cn/g?b=qq&nk=3309083558&s=640
+    #     description: 以梦为码，不负韶华
+
+    - name: Naiteiy'blog
+      link: https://www.naiteiy.site/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1820031511&s=640
+      description: 🍃风带来故事的种子📖 ⌚时间使之发芽🌱
+
+    - name: 尔康康康康
+      link: https://erkangkang.top/
+      avatar: https://erkangkang.top/img/red.jpg#/
+      description: 康哥的博客
+
+    - name: nakaii
+      link: https://nakaii.top/#/
+      avatar: https://s1.imagehub.cc/images/2023/03/31/d3fd3e1ae052e956155fc1711cdccbd2.jpeg#/
+      description: 寒哥的博客
+
+    - name: xiaowaaa'blog
+      link: http://xiaowaaa.asia/#/
+      avatar: https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fefe7c481-d5a1-4e42-9614-393c8dfce519%2Fb52b3819-8161-401e-bd5e-f43d3c9f7c03%2F47382af47a274a14ada2db05bb8e5e9.jpg?table=collection&id=d06a509a-0089-4eb5-9042-d0e27a173dd9&t=d06a509a-0089-4eb5-9042-d0e27a173dd9&width=800&cache=v2
+      description: 兵哥的博客
+
+    - name: lukzia'blog
+      link: https://www.lukzia.site/
+      avatar: https://www.lukzia.site/wp-content/uploads/2023/03/me.jpg
+      description: 人如果没有梦想,那和深度神经网络有什么区别
+
+    - name: Ed-Ryan'blog
+      link: https://edryan.top/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2993482892&s=640
+      description: 想暂停时间
+
+    - name: chi11i
+      link: http://blog.chi11i.fun/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2181218792&s=640
+      description: 严哥带飞
+
+    - name: ianwusb
+      link: https://ianwusb.blog/
+      avatar: https://ianwusb.blog/images/Logo.jpg
+      description: 编程魅力在于无尽创造与无限可能，生物魅力深藏于生命奥秘之中
+
+    - name: Giant_GKL
+      link: https://giantgkl.xyz/
+      avatar: https://giantgkl.xyz/wp-content/uploads/2024/03/8814bff3c9cbc4cecfaaf32d92b984f0.gif
+      description: 有朝一日，我们必将理解那些不能理解的东西
+
+    - name: kiki1e
+      link: https://kiki1e.github.io/link/
+      avatar: https://cdn.jsdelivr.net/gh/kiki1e/imagess@main/img/43EjgPucSslDJxM.png
+      description: Pwn✌
+
+    - name: h3110w0r1d's Blog
+      link: https://www.codexploit.cn/
+      avatar: https://strongwillpro.oss-cn-beijing.aliyuncs.com/img/QQ%E5%9B%BE%E7%89%8720240111033823.jpg
+      description: 堃门！
+
+    - name: 茕茕の博客
+      link: https://blog.azhf8.top/
+      avatar: https://zhf-picture.oss-cn-qingdao.aliyuncs.com/picture/logo.jpg
+      description: 热爱学习和生活的程序员
+
+    - name: 上杉九月的博客
+      link: https://blog.sakurasep.site/
+      avatar: https://bu.dusays.com/2023/03/13/640dfc9720adc.png
+      description: 知识本就应该没有门槛，这才是互联网的意义
+
+    - name: Sevinの小窝
+      link: https://sevin.cn/
+      avatar: https://q.qlogo.cn/g?b=qq&nk=2720269770&s=640
+      description: 不断为梦想拼搏中……
+
+    - name: AuroBreeze
+      link: https://blog.aurobreeze.top/
+      avatar: https://img.picui.cn/free/2024/12/31/67739eea32ef2.jpg
+      description: 等清风拂面，笑看人间
+
+# 锚点1
+# 同学/朋友/师哥/师姐/师弟/师妹，填在这上面，与上一个友链中间隔一个换行
+# ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+#
+#
+#
+# 下面是CTF大佬，请下滑找到空位置添加
+# ——————————————————————————————————————————————————————————————————————————————————————————————
+
+- links_category: CTF大佬
+  class_desc: 带带我
+  list:
+    - name: Liu✌🏻
+      link: https://ctfrookie.top/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=3039375674&s=640
+      description: Liu✌🏻Liu✌🏻带我走吧
+
+    - name: 一清
+      link: http://www.yiqing.asia/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=2383170770&s=640
+      description: 密码的神
+
+    - name: Asteri5m
+      link: https://asteri5m.icu/
+      avatar: https://asteri5m.icu/upload/20af907e-4769-4251-8e8c-0f0b52355380.png
+      description: 别等时间不够的时候再后悔
+
+    - name: LilRan
+      link: https://blog.xinshi.fun/
+      avatar: https://blog.xinshi.fun/assets/avatar.png
+      description: 今日启程 无畏向前
+
+    - name: Kengwang博客
+      link: https://blog.kengwang.com.cn
+      avatar: https://cdn.jsdelivr.net/gh/kengwang/CDN@main/avatar.png
+      description: Stay Cool~
+# 锚点2
+# CTF大佬，填在这上面，与上一个友链中间隔一个换行
+# ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+#
+#
+#
+#
+# 下面是各路大佬，请下滑找到空位置添加
+# ——————————————————————————————————————————————————————————————————————————————————————————————
+- links_category: 大佬的聚集地
+  class_desc: 咕咕咕（摸鱼中）
+  list:
+    - name: 安知鱼
+      link: https://blog.anheyu.com/
+      avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+      description: 生活明朗，万物可爱
+
+    - name: 张洪Heo
+      link: https://blog.zhheo.com/
+      avatar: https://bu.dusays.com/2022/12/28/63ac2812183aa.png
+      description: 分享设计与科技生活
+
+    - name: Akilarの糖果屋
+      link: https://akilar.top/
+      siteshot: https://npm.elemecdn.com/akilar-friends@latest/siteshot/akilar.top.jpg
+      avatar: https://npm.elemecdn.com/akilar-friends@latest/avatar/akilar.top.jpg
+      description: 欢迎光临糖果屋
+
+    - name: Efu
+      link: https://www.efu.me
+      description: An Open Source worker.
+      avatar: https://s3.qjqq.cn/47/660a7ece07609.webp!color
+
+    - name: 偷掉月亮的阿硕
+      link: https://moonshuo.cn/#/
+      avatar: https://moonshuo.cn/img/avatar.gif
+      description: 偷掉月亮-我们一起去偷月亮吧
+
+    # - name: 追梦境
+    #   link: https://hexo.dreamerhe.qianxun7747.eu.org/
+    #   avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
+    #   description: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
+
+    - name: 浪浪山的染念
+      link: https://dyedd.cn/
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1176996982&s=640
+      description: 炼丹难，炼丹苦
+
+    - name: baokker
+      link: https://baokker-blog.top/
+      avatar: https://baokker-oss-blog-hangzhou.oss-cn-hangzhou.aliyuncs.com/cdn_for_blog/blog_default_imgs/avatar.jpg
+      description: 回忆这理想不够理想，沿途逛世间一趟只有向上。
+
+    - name: 苍岚
+      link: https://www.zywvvd.com/
+      avatar: https://www.zywvvd.com/image/avatar.png
+      description: 蓝天依旧，明眸如初
+
+    - name: Mcenahle的个人博客
+      link: https://mcenahle.com
+      avatar: https://mcenahle.com/wp-content/uploads/2023/12/IMG_7687.png#/
+      description: 这是Mcenahle的个人博客，记录美好生活。
+
+    - name: MUKAPP
+      link: https://www.mukapp.top/
+      avatar: https://www.mukapp.top/pic/muk/small.webp#/
+      description: MUK的小窝
+
+    - name: Mojade@破站
+      avatar: https://data.chahuyun.cn/config/a520573c8f012816539af41fbd8ecc65.jpg#/
+      link: https://chahuyun.cn/
+      description: 放空每一天~
+
+    - name: 顾梦
+      link: https://blog.gumengyo.top
+      avatar: https://cloud.gumengyo.top/avatar.png
+      description: 不想满心遗憾，那就全力以赴.
+
+    - name: 皓子的小站
+      link: https://howiehz.top
+      avatar: https://howiehz.top/upload/ico.ico
+      description: 互联网上的一座小岛
+
+    - name: 未知之旅
+      link: https://blog.xenosp.cn/
+      avatar: https://cravatar.cn/avatar/4EA126708E5063621186D6B5895D2684
+      description: 在未知中成长，超越自我
+
+    - name: Wcowin's Web
+      link: https://wcowin.work/
+      avatar: https://s2.loli.net/2024/02/01/gaE47y5fKM6kosV.png
+      description: 循此苦旅，以达星辰
+
+    - name: Lenny's Web
+      link: https://lennychen.top/
+      avatar: https://s2.loli.net/2024/03/31/Ht3QBqhgLYNAuwj.png
+      description: 天地不仁，以万物为刍狗
+
+    - name: QiuSYan's Blog
+      link: https://blog.qiusyan.top
+      avatar: https://blog.qiusyan.top/img/avatar.jpg
+      description: 我来到，我看见，我记录。
+
+    - name: Jitsuの空
+      link: https://blog.jitsu.top
+      description: 愿无岁月可回头，山高路远行未休
+      avatar: https://cdn.jitsu.top/img/blog/blog.jpeg
+
+    - name: Zaydenの树屋
+      link: https://lures2019.github.io/
+      avatar: https://cdn.jsdelivr.net/gh/lures2019/Typora_image_CDN/PicGo/202408291909996.png
+      description: 路是走出来的，少说多做！
+
+    - name: RLt's Blog | 万象泉
+      link: https://blog.akyuu.cn/
+      avatar: https://blog.akyuu.cn/potato-resources/resources/fluid.png
+      description: 幻想与现实的交界线
+#
+#
+#
+# ______________________________________________________________________________________________
+# 锚点3
+# 请将我的友链加入到你的博客，然后在上方添加你的友链配置数据，注意，请与上一条间隔一个换行

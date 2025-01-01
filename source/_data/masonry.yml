@@ -1,0 +1,7 @@
+- image: 图片 URL
+  title: 图片标题
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod
+
+- image: https://picsum.photos/id/12/2500/1800
+  title: Lorem ipsum
+  description: Lorem ipsum dolor sit amet
