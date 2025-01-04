@@ -200,7 +200,7 @@ navbar:
       path: /tags
       icon: fa-regular fa-tags
     友链接力:
-      icon: fa-train-subway
+      icon: fa-solid fa-train-subway
       submenus:
         异次元之旅: https://travel.moe/go.html?travel=on
         MIIT Travel: https://beian.miit.cn.com/go.php#/
