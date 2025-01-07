@@ -51,7 +51,7 @@ template: links
 <!-- tab butterfly -->
 
 ```yml
-- name: W1ndysの小屋
+- name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
@@ -63,7 +63,7 @@ template: links
 
 ```yml
 - {
-    title: "W1ndysの小屋",
+    title: "W1ndys小屋",
     intro: "欲戴皇冠，必承其重",
     link: "https://blog.w1ndys.top/",
     avatar: "https://avatars.githubusercontent.com/u/109416673?v=4",
@@ -75,7 +75,7 @@ template: links
 <!-- tab anzhiyu -->
 
 ```yml
-- name: W1ndysの小屋
+- name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
@@ -86,7 +86,7 @@ template: links
 <!-- tab ☀️Volantis-->
 
 ```yml
-- name: W1ndysの小屋
+- name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
   descr: 欲戴皇冠，必承其重
@@ -98,7 +98,7 @@ template: links
 
 | 名称       | 数值                                                  |
 | ---------- | ----------------------------------------------------- |
-| 站点名称   | W1ndys の 小屋                                         |
+| 站点名称   | W1ndys  小屋                                         |
 | 站点链接   | https://blog.w1ndys.top/                              |
 | 站长头像   | https://avatars.githubusercontent.com/u/109416673?v = 4 |
 | 站点描述   | 欲戴皇冠，必承其重                                    |
