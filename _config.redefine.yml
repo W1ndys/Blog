@@ -10,7 +10,7 @@
 # 文档: https://redefine-docs.ohevan.com/basic/info
 info:
   # 网站标题
-  title: W1ndysの小屋
+  title: W1ndys小屋
   # 网站副标题
   subtitle: 欲戴皇冠，必承其重
   # 作者姓名
@@ -85,12 +85,12 @@ global:
   # 是否启用首页全屏加载动画
   preloader:
     enable: true
-    custom_message: 欢迎来到W1ndysの小屋 # 自定义消息。如果为空，将显示网站标题
+    custom_message: 欢迎来到W1ndys小屋 # 自定义消息。如果为空，将显示网站标题
   # 是否启用开放图谱
   open_graph:
     enable: true
     image: /images/redefine-og.webp # 默认 og:image
-    description: W1ndysの小屋
+    description: W1ndys小屋
   # Google Analytics
   google_analytics:
     enable: false # 是否启用 Google Analytics
@@ -122,7 +122,7 @@ home_banner:
     light: https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png # 亮模式
     dark: https://pic1.zhimg.com/80/v2-b4e05912f591b51b9fa3e8aa4b9cba45.png # 暗模式
   # 首页横幅标题
-  title: W1ndysの小屋
+  title: W1ndys小屋
   # 首页横幅副标题
   subtitle:
     text: ["一言加载中..."] # 副标题文本，数组
