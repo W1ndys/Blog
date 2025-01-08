@@ -54,7 +54,7 @@ template: links
 - name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
-  descr: 欲戴皇冠，必承其重
+  description: 欲戴皇冠，必承其重
 ```
 
 <!-- endtab -->
@@ -78,7 +78,7 @@ template: links
 - name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
-  descr: 欲戴皇冠，必承其重
+  description: 欲戴皇冠，必承其重
 ```
 
 <!-- endtab -->
@@ -89,7 +89,7 @@ template: links
 - name: W1ndys小屋
   link: https://blog.w1ndys.top/
   avatar: https://avatars.githubusercontent.com/u/109416673?v=4
-  descr: 欲戴皇冠，必承其重
+  description: 欲戴皇冠，必承其重
 ```
 
 <!-- endtab -->
