@@ -47,6 +47,10 @@ def update_markdown_images(md_file_path):
             logging.info(f"将图片链接 {image_path} 替换为 {new_image_link}")
             # 替换Markdown中的图片链接
             content = content.replace(image_path, new_image_link)
+
+            # 删除图片源文件
+            os.remove(absolute_image_path)
+            logging.info(f"已删除图片源文件: {absolute_image_path}")
         else:
             logging.warning(f"图片路径 {absolute_image_path} 不存在")
 
