@@ -432,6 +432,24 @@ date: 2025-01-01 19:48:25
 - **获取今日词云**: 在群聊中发送 `今日词云`，如果有数据，将会收到当天的词云图。
 - **查看词云菜单**: 在群聊中发送 `wordcloud`，将会收到词云功能的详细菜单说明。
 
+### 哔哩哔哩直播动态监控（BilibiliPush）使用手册
+
+#### 介绍
+
+哔哩哔哩直播动态监控是卷卷 bot 的一个功能，可以监控哔哩哔哩直播动态，并将其推送到指定群。
+
+开源地址：https://github.com/W1ndysBot/BilibiliPush#/
+
+#### 命令
+
+| 命令 | 描述 | 示例 |
+| bilipush | 开启或关闭哔哩哔哩直播动态监控 | bilipush |
+| 订阅动态 xxx | 订阅动态 uid | bilipushuid 123456 |
+| 取消订阅动态 xxx | 取消订阅动态 uid | bilipushuid 123456 |
+| 订阅直播 xxx | 订阅直播 uid | bilipushlive 123456 |
+| 取消订阅直播 xxx | 取消订阅直播 uid | bilipushlive 123456 |
+| 查询订阅 | 查询订阅动态或直播 | bilipushuid |
+
 ### 群互联（GroupLink）使用手册
 
 #### 介绍
