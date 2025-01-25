@@ -30,19 +30,23 @@ date: 2024-07-28 17:57:32
 
 ## 安装方法
 
-我推荐使用 Linux docker 容器安装，如果运行环境崩了可以重新导入镜像
+~~我推荐使用 Linux docker 容器安装，如果运行环境崩了可以重新导入镜像~~
 
-docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://github.com/NapNeko/NapCat-Docker)
+~~docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://github.com/NapNeko/NapCat-Docker)~~
 
-一键安装脚本：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/guide/getting-started#一键安装)
+~~一键安装脚本：[NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/guide/getting-started#一键安装)~~
+
+拾雪（NapCatQQ 作者）更新了新的说明文档，安装这一部分可以直接看官方文档了，写的很明白
+
+[NapCat | NapCatQQ](https://napneko.github.io/guide/start-install)
 
 进行完这一步可以直接跳到 [实现功能](#实现功能) 部分
 
 ## 实现功能
 
-我自己用的机器人的所有代码都开源在 [W1ndys/W1ndys_QQ_Bot: 基于 Python 和 NapcatQQ 的 QQ 机器人 (github.com)](https://github.com/W1ndys-bot/W1ndys-bot)，可以参考更方便理解
+我自己用的机器人的所有代码都开源在 [W1ndysBot](https://github.com/W1ndysBot)，可以参考更方便理解
 
-2024 年 8 月 3 日我学习模块化编程之后，写出了模块加载器，[W1ndys-bot/Module-Loader: 对接 OneBot 的 Python 模块加载器 (github.com)](https://github.com/W1ndys-bot/Module-Loader)，可以前往模块加载器继续开发
+2024 年 8 月 3 日我学习模块化编程之后，写出了模块加载器, [W1ndysBot/ModuleLoader: 对接 OneBot 的 Python 模块加载器](https://github.com/W1ndysBot/ModuleLoader#/)，可以前往模块加载器继续开发
 
 ### 测试消息发送
 
@@ -50,12 +54,12 @@ docker 安装：[NapNeko/NapCat-Docker: NapCat-Docker (github.com)](https://gith
 
 ![image-20240728191204205](./../images/QQbot/image-20240728191204205.png)
 
-## W1ndys-bot 的开发
+## W1ndysBot 的开发
 
 请看我的其他博客，待更新
 
 ## 致谢
 
-[ChatGPT](https://chatgpt.com/)
-
 [NapCatQQ (napneko.github.io)](https://napneko.github.io/zh-CN/)
+
+[Cursor - The AI Code Editor](https://www.cursor.com/)
