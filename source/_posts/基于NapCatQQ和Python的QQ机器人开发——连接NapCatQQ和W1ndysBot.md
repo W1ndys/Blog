@@ -11,23 +11,23 @@ date: 2025-01-25 20:51:30
 cover: https://t.mwm.moe/fj?20250125205130983
 ---
 
-## 部署消息框架
+## 部署 NapCatQQ
+
+### Windows 安装
 
 {% note info %}
-你也可以选择 NapCatQQ 的无头绿色版本，内置 QQ，不需要下载 QQ 本体，直接下载框架即可。实测可能与安装 QQ 后的环境有冲突，且绿色包的部署方法几乎无难度，这里不详细介绍。
+下面是无头非绿色版本，你也可以选择 NapCatQQ 的无头绿色版本，内置 QQ，不需要下载 QQ 本体，直接下载框架即可。实测可能与安装 QQ 后的环境有冲突，且绿色包的部署方法几乎无难度，这里不详细介绍。
 {% endnote %}
 
-### 下载 QQ 本体
+#### 下载 QQ 本体
 
 直接去 QQ 官网下载 QQ 本体，必须是 NT 的新版 QQ
 
 下载地址 [QQ-轻松做自己](https://im.qq.com/index/#downloadAnchor)
 
-### 安装框架
+#### 安装框架
 
-去这个地址下载 [框架下载地址](https://github.com/NapNeko/NapCatQQ/releases/download/v4.4.7/NapCat.Shell.zip)
-
-如果网络不行就在这个地址里下：[备用下载地址](https://ghfast.top/https://github.com/NapNeko/NapCatQQ/releases/download/v4.4.7/NapCat.Shell.zip)
+去 NapCatQQ 的 release 页下载 [框架下载地址](https://github.com/NapNeko/NapCatQQ/releases/)
 
 下载之后解压看到下面一些文件
 
@@ -38,13 +38,13 @@ cover: https://t.mwm.moe/fj?20250125205130983
 1. 确保 QQ 版本安装且最新
 2. 双击目录下 launcher.bat 即可启动 如果是 win10 则使用 launcher-win10.bat
 
-### 登录
+#### 登录
 
 运行上面所属文件之后，你将看到如下界面，你有两种方法进行登录，推荐第一种
 
 ![image-20250125122103940](https://pica.zhimg.com/80/v2-2effa5a8e0a5e1f6fac1df06e003148d.png)
 
-#### 登录方法一
+##### 登录方法一
 
 上方红框里有两个链接，复制到浏览器里
 
@@ -56,13 +56,13 @@ cover: https://t.mwm.moe/fj?20250125205130983
 
 登录成功后将会进入首页
 
-#### 登录方法二
+##### 登录方法二
 
 直接扫描控制台里的二维码（但由于不同电脑字符不一样，有的电脑显示的二维码可能不能扫，在上方图片下面的红框里，有一个地址和一个路径，把地址转换为二维码扫描或直接打开路径的二维码文件都可以获取到可以扫的二维码）
 
 这种方法也可以登录，但由于后续步骤还需要打开方法一的链接，所以不推荐这种登录方法
 
-### 配置协议连接
+#### 配置协议连接
 
 在上面的网页里登录成功后将看到下面内容
 
@@ -80,7 +80,40 @@ cover: https://t.mwm.moe/fj?20250125205130983
 > [network] 配置加载
 > WebSocket 服务: 0.0.0.0:3001, : 已启动
 
+### docker 安装
+
+> 我是比较喜欢 docker 的，因为我平时用都会在 linux 服务器上运行，docker 会更方便一些
+
+docker 部署命令，W1ndysBot 有大量的我写好的 docker 运行脚本，可以直接参考着使用
+
+[W1ndysBot/linux_run_napcat_docker.sh at main · W1ndysBot/W1ndysBot](https://github.com/W1ndysBot/W1ndysBot/blob/main/linux_run_napcat_docker.sh#/)
+
+还有更新镜像的 shell 脚本：[W1ndysBot/linux_update_napcat.sh at main · W1ndysBot/W1ndysBot](https://github.com/W1ndysBot/W1ndysBot/blob/main/linux_update_napcat.sh)
+
+```sh
+# 启动 Docker 容器
+docker run -d \
+  --rm \
+  --network host \
+  -e NAPCAT_GID=$NAPCAT_GID \
+  -e NAPCAT_UID=$NAPCAT_UID \
+  -p 3000:3000 \
+  -p 3001:3001 \
+  -p 6099:6099 \
+  --name napcat \
+  --restart=always \
+  -v ./napcat/app/.config/QQ:/app/.config/QQ \
+  -v ./napcat/app/napcat:/app/napcat \
+  mlikiowa/napcat-docker
+```
+
+拉完镜像剩下的就跟前面步骤一模一样了
+
+> 其他的我就不多说了，你都会用 docker 了，其他还有什么错误是解决不了的
+
 ## 部署处理程序
+
+W1ndysBot 开源地址 [W1ndysBot/W1ndysBot: 基于 NapCatQQ 和 Python 的 QQ 机器人实现](https://github.com/W1ndysBot/W1ndysBot)
 
 ### 解压程序到本地
 
