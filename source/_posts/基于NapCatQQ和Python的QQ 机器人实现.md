@@ -1,5 +1,5 @@
 ---
-title: 基于 Python 和 Onebot11 的 QQ 机器人实现
+title: 基于NapCatQQ和Python的 QQ 机器人实现
 tags:
   - QQbot
   - QQ机器人

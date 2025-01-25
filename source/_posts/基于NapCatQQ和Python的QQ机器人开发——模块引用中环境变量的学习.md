@@ -1,5 +1,5 @@
 ---
-title: 基于 Python 和 Onebot11 的QQ机器人开发——模块引用中环境变量的学习
+title: 基于NapCatQQ和Python的QQ机器人开发——模块引用中环境变量的学习
 tags:
   - QQbot
   - QQ机器人

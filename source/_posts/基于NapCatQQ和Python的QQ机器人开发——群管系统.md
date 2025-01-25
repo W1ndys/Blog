@@ -1,5 +1,5 @@
 ---
-title: 基于 Python 和 Onebot11 的QQ机器人开发——群管系统
+title: 基于NapCatQQ和Python的QQ机器人开发——群管系统
 tags:
   - QQbot
   - QQ机器人

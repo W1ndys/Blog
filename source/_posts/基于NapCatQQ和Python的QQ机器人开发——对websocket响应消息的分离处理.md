@@ -1,5 +1,5 @@
 ---
-title: 基于 Python 和 Onebot11 的QQ机器人开发——对websocket响应消息的分离处理
+title: 基于NapCatQQ和Python的QQ机器人开发——对websocket响应消息的分离处理
 tags:
   - QQbot
   - QQ机器人
@@ -7,10 +7,16 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
-cover: 'https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg'
+cover: "https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg"
 abbrlink: 8b45af9c
 date: 2024-08-24 19:05:04
 ---
+
+{% note warning %}
+
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发——（NapCatQQ）猫猫的传参特性](https://w1ndys.github.io/posts/基于NapCatQQ和Python的QQ机器人开发——（NapCatQQ）猫猫的传参特性/)
+
+{% endnote %}
 
 ## 前言
 
