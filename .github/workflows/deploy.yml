@@ -43,14 +43,13 @@ jobs:
           hexo generate
           hexo deploy
 
-      - name: ECS clone # 连接服务器并克隆
-        uses: cross-the-world/ssh-pipeline@master
-        env:
-          WELCOME: "ssh pipeline"
+      - name: ECS clone
+        uses: appleboy/ssh-action@v0.1.5
         with:
-          host: ${{ secrets.USER_HOST }} # 服务器的 IP 地址
-          user: ${{ secrets.USER_NAME }} # 服务器的用户名
-          pass: ${{ secrets.USER_PASS }} # 服务器的密码
-          connect_timeout: 10s
+          host: ${{ secrets.USER_HOST }}
+          username: ${{ secrets.USER_NAME }}
+          password: ${{ secrets.USER_PASS }}
+          port: 22
           script: |
             sh /home/W1ndys/BlogTools/update_site.sh
+          timeout: 10s
