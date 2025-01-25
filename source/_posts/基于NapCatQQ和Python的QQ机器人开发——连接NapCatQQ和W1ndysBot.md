@@ -142,7 +142,7 @@ W1ndysBot 开源地址 [W1ndysBot/W1ndysBot: 基于 NapCatQQ 和 Python 的 QQ �
 可以用专用的编辑器打开，也可以用记事本打开
 
 ```python
-config.py
+# config.py
 
 owner_id = ["<your_owner_id>"]  # 机器人 root 管理员 QQ 号
 
