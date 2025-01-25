@@ -14,7 +14,12 @@ date: 2024-08-24 19:05:04
 
 {% note warning %}
 
-本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发——（NapCatQQ）猫猫的传参特性](https://w1ndys.github.io/posts/基于NapCatQQ和Python的QQ机器人开发——（NapCatQQ）猫猫的传参特性/)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
+本文已过时，请参考最新文章：[基于 NapCatQQ 和 Python 的 QQ 机器人开发 —— 对 websocket 响应消息的回应处理 2025.1.25](/posts/1ef8783.html)
 
 {% endnote %}
 
