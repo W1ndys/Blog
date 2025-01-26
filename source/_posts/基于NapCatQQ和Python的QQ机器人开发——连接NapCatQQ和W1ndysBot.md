@@ -143,10 +143,12 @@ W1ndysBot 开源地址 [W1ndysBot/W1ndysBot: 基于 NapCatQQ 和 Python 的 QQ �
 
 可以用专用的编辑器打开，也可以用记事本打开
 
+注意！！！配置好之后，需要重启程序，否则配置不会生效
+
 ```python
 # config.py
 
-owner_id = ["<your_owner_id>"]  # 机器人 root 管理员 QQ 号
+owner_id = ["<your_owner_id>"]  # 机器人 root 管理员 QQ 号，可以多个，多个用逗号分隔，例如：owner_id = ["123456", "123457"]，注意！！！这个是 QQ 号不是机器人的QQ号，是你控制机器人用的大号
 
 report_group_id = "<your_report_group_id>"  # 上报群
 
@@ -160,7 +162,7 @@ token = None  # 如果需要认证，请填写认证 token
 
 修改上面配置，下面是一个修改好的例子
 
-```
+```python
 # config.py
 
 owner_id = ["123456"]  # 机器人root管理员 QQ 号
