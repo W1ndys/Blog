@@ -52,7 +52,17 @@ jobs:
           port: 22
           script: |
             echo "开始更新博客站点..."
-            cd /home/W1ndys/BlogTools
+            echo "当前目录: $(pwd)"
+            cd /home/W1ndys/BlogTools || {
+              echo "切换目录失败"
+              exit 1
+            }
+            echo "切换后目录: $(pwd)"
+            echo "检查Python版本:"
+            python3 --version
+            echo "检查脚本是否存在:"
+            ls -l update_site.py
+            echo "执行更新脚本:"
             python3 update_site.py || {
               echo "更新失败，错误码: $?"
               exit 1
