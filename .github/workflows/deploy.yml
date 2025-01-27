@@ -50,9 +50,9 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           password: ${{ secrets.USER_PASS }}
           port: 22
-          command_timeout: "10m"
+          command_timeout: "1m"
           script: |
             cd /home/W1ndys/BlogTools
             python3 update_site.py
             exit 0
-          timeout: 5s
+          timeout: 10s
