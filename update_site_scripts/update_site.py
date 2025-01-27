@@ -7,7 +7,6 @@ import requests
 import json
 from datetime import datetime
 import zipfile
-from pathlib import Path
 
 
 class SiteUpdater:
@@ -169,6 +168,9 @@ class SiteUpdater:
             self.send_dingtalk_message(True)
             print("更新完成！")
 
+            # 正常退出
+            sys.exit(0)
+
         except Exception as e:
             error_msg = str(e)
             print(f"错误: {error_msg}")
@@ -176,6 +178,7 @@ class SiteUpdater:
             # 确保清理临时文件
             if os.path.exists(self.work_dir):
                 shutil.rmtree(self.work_dir)
+            # 异常退出
             sys.exit(1)
 
 
