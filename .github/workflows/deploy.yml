@@ -51,5 +51,5 @@ jobs:
           password: ${{ secrets.USER_PASS }}
           port: 22
           script: |
-            sh /home/W1ndys/BlogTools/update_site.sh
+            python3 /home/W1ndys/BlogTools/update_site.py
           timeout: 10s
