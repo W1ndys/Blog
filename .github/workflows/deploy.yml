@@ -50,22 +50,9 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           password: ${{ secrets.USER_PASS }}
           port: 22
+          command_timeout: "10m"
           script: |
-            echo "开始更新博客站点..."
-            echo "当前目录: $(pwd)"
-            cd /home/W1ndys/BlogTools || {
-              echo "切换目录失败"
-              exit 1
-            }
-            echo "切换后目录: $(pwd)"
-            echo "检查Python版本:"
-            python3 --version
-            echo "检查脚本是否存在:"
-            ls -l update_site.py
-            echo "执行更新脚本:"
-            python3 update_site.py || {
-              echo "更新失败，错误码: $?"
-              exit 1
-            }
-            echo "更新完成"
+            cd /home/W1ndys/BlogTools
+            python3 update_site.py
+            exit 0
           timeout: 30s
