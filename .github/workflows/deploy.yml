@@ -43,13 +43,19 @@ jobs:
           hexo generate
           hexo deploy
 
-      - name: ECS clone
+      - name: Deploy to ECS
         uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.USER_HOST }}
           username: ${{ secrets.USER_NAME }}
-          password: ${{ secrets.USER_PASS }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            python3 /home/W1ndys/BlogTools/update_site.py
-          timeout: 10s
+            echo "开始更新博客站点..."
+            cd /home/W1ndys/BlogTools
+            python3 update_site.py || {
+              echo "更新失败，错误码: $?"
+              exit 1
+            }
+            echo "更新完成"
+          timeout: 30s
