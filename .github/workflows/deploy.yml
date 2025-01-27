@@ -48,7 +48,7 @@ jobs:
         with:
           host: ${{ secrets.USER_HOST }}
           username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.USER_PASS }}
           port: 22
           script: |
             echo "开始更新博客站点..."
