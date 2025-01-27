@@ -20,7 +20,7 @@ template: links
 #### 法一（Pull request）（有 Github 基础的推荐用此方法）
 
 1. 在您的博客中添加本博客的友链，并在申请时提供友链位置。
-2. 点击进入链接 [在 GitHub 编辑 ↗️](https://github.com/W1ndys/Blog/main/source/_data/links.yml)
+2. 点击进入链接 [在 GitHub 编辑 ↗️](https://github.com/W1ndys/Blog/blob/main/source/_data/links.yml)
 3. 阅读页面开头的说明
 4. 在相应位置填写你的友链配置参数，提交 pr 等待合并
 5. 请注意查看注释的添加须知
