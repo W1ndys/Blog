@@ -52,6 +52,5 @@ jobs:
           port: 22
           script: |
             cd /home/W1ndys/BlogTools
-            python3 update_site.py
-            exit 0
+            sh update_site.sh
           timeout: 10s
