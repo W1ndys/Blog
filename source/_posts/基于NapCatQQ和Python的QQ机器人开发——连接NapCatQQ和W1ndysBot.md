@@ -1,5 +1,5 @@
 ---
-title: "基于NapCatQQ和Python的QQ机器人开发——连接NapCatQQ和W1ndysBot"
+title: 基于NapCatQQ和Python的QQ机器人开发——连接NapCatQQ和W1ndysBot
 tags:
   - QQbot
   - QQ机器人
@@ -7,8 +7,9 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
+cover: 'https://t.mwm.moe/fj?20250125205130983'
+abbrlink: cdcbc710
 date: 2025-01-25 20:51:30
-cover: https://t.mwm.moe/fj?20250125205130983
 ---
 
 ## 部署 NapCatQQ

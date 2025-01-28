@@ -1,13 +1,14 @@
 ---
-title: "域名配置中 www 的两种实现方式详解"
+title: 域名配置中 www 的两种实现方式详解
 categories:
   - 技术教程
 tags:
   - DNS
   - 域名配置
   - 网站部署
+cover: 'https://t.mwm.moe/fj?20250123221850366'
+abbrlink: 8f735965
 date: 2025-01-23 22:18:50
-cover: https://t.mwm.moe/fj?20250123221850366
 ---
 
 {% notel blue 提示 %}

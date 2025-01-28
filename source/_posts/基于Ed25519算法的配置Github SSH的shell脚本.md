@@ -1,15 +1,16 @@
 ---
-title: '基于Ed25519算法的配置Github SSH的shell脚本'
-tags: 
+title: 基于Ed25519算法的配置Github SSH的shell脚本
+tags:
   - GitHub
   - SSH
   - Shell
   - Ed25519
-categories: 
+categories:
   - 技术教程
   - Github
+cover: 'https://t.mwm.moe/fj?20250128001951962'
+abbrlink: 65dfe81d
 date: 2025-01-28 00:19:51
-cover: https://t.mwm.moe/fj?20250128001951962
 ---
 
 ## 前言
