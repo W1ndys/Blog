@@ -10,6 +10,10 @@ from datetime import datetime
 
 class SiteUpdater:
     def __init__(self):
+        # 设置输出无缓冲
+        sys.stdout = os.fdopen(sys.stdout.fileno(), "w", buffering=1)
+        sys.stderr = os.fdopen(sys.stderr.fileno(), "w", buffering=1)
+
         # 基础配置
         self.work_dir = "/tmp/blog-temp"
         self.target_dir = (
