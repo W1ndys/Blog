@@ -72,9 +72,9 @@ class SiteUpdater:
             print("正在设置权限...")
             os.system(
                 f"""
-                chown -R 1000:1000 {self.target_dir} && \
-                chmod -R 644 {self.target_dir} && \
-                find {self.target_dir} -type d -exec chmod 755 {{}} \;
+                chown -R 1000:1000 {self.target_dir} && \\
+                chmod -R 644 {self.target_dir} && \\
+                find {self.target_dir} -type d -exec chmod 755 {{}} \\;
             """
             )
 
