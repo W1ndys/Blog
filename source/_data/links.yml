@@ -151,6 +151,11 @@
       link: https://blog.kengwang.com.cn
       avatar: https://cdn.jsdelivr.net/gh/kengwang/CDN@main/avatar.png
       description: Stay Cool~
+
+    - name: 清酒
+      avatar: http://clearwine.online/images/qingjiu.jpg
+      link: http://clearwine.online/
+      description: 旅途还在继续，谁也不知道他会在什么时候到达终点
 # 锚点2
 # CTF大佬，填在这上面，与上一个友链中间隔一个换行
 # ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
