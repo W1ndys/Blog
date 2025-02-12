@@ -203,11 +203,13 @@ navbar:
       icon: fa-solid fa-train-subway
       submenus:
         异次元之旅: https://travel.moe/go.html?travel=on
-        MIIT Travel: https://beian.miit.cn.com/go.php#/
+        MIIT Travel: https://beian.miit.cn.com/go.php
+        虫洞 | 十年之约: https://foreverblog.cn/go.html
         博客录: https://bokelu.suijiboke.gs
         笔墨迹: https://blogscn.fun/random.html
         博客圈: https://bokequan.cn/?suiji
         开往: https://www.travellings.cn/go.html
+
 
     # 相册:
     #   path: /masonry
