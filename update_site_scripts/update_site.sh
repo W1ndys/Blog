@@ -19,6 +19,9 @@ log() {
     rm -rf "$WORK_DIR" && \
     mkdir -p "$WORK_DIR" && \
     
+    # 开启clash
+    clashon
+
     # 尝试通过 SSH 克隆仓库
     log "尝试通过 SSH 克隆仓库: $REPO_URL"
     if ! git clone --depth 1 -b gh-pages "$REPO_URL" "$WORK_DIR"; then
@@ -47,6 +50,10 @@ log() {
 
     log "部署完成"
     # 如果所有命令成功执行，调用Python脚本报告成功
+
+    # 关闭clash
+    clashoff
+    
     python3 update_site.py --status success
 } || {
     # 如果有任何命令失败，调用Python脚本报告错误
