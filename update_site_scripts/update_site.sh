@@ -10,6 +10,15 @@ log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
+# 定义开启和关闭clash的函数
+clashon() {
+    systemctl start clash
+}
+
+clashoff() {
+    systemctl stop clash
+}
+
 # 执行部署操作并捕获错误
 {
     log "开始部署流程..."
@@ -20,8 +29,11 @@ log() {
     mkdir -p "$WORK_DIR" && \
     
     # 开启clash
+    log "开启Clash代理"
     clashon
 
+    ping -c 4 google.com
+    
     # 尝试通过 SSH 克隆仓库
     log "尝试通过 SSH 克隆仓库: $REPO_URL"
     if ! git clone --depth 1 -b gh-pages "$REPO_URL" "$WORK_DIR"; then
@@ -53,6 +65,8 @@ log() {
 
     # 关闭clash
     clashoff
+
+    ping -c 4 google.com
     
     python3 update_site.py --status success
 } || {
