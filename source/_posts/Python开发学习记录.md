@@ -1,10 +1,11 @@
 ---
-title: 'Python开发学习记录'
+title: Python开发学习记录
 tags:
   - Python
   - 开发
 categories:
   - Python
+abbrlink: f30b492
 date: 2025-02-08 19:19:53
 ---
 
