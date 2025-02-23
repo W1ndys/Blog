@@ -2,7 +2,6 @@
 abbrlink: b138fb0c
 categories:
 - C++
-cover: https://t.mwm.moe/fj/?8
 date: 2023-10-05 13:52
 tags:
 - C++

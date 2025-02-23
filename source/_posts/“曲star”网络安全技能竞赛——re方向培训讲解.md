@@ -3,7 +3,6 @@ abbrlink: 450391f2
 categories:
   - CTF
   - QFNUCTF
-cover: https://t.mwm.moe/fj/?57
 date: 2024-03-03 12:30:59
 tags:
   - QFNU

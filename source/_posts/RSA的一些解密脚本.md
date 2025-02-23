@@ -3,7 +3,6 @@ abbrlink: 10f5a405
 categories:
 - CTF
 - Crypto
-cover: https://t.mwm.moe/fj/?46
 date: 2023-11-23 23:14
 tags:
 - CTF

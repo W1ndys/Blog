@@ -7,7 +7,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: https://th.bing.com/th/id/OIP.NjzuRyg-a1vMWMZOPXZ8_wHaEo?w=269&h=180&c=7&r=0&o=5&pid=1.7
 abbrlink: b81117d1
 date: 2024-07-13 08:06:00
 ---

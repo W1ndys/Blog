@@ -3,7 +3,6 @@ abbrlink: 6bbcb18e
 categories:
 - Python
 - 语法
-cover: https://t.mwm.moe/fj/?39
 date: 2024-02-18 21:30:11
 tags:
 - Python

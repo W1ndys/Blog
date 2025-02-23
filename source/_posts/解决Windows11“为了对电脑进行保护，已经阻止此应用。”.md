@@ -3,7 +3,6 @@ abbrlink: 8847716f
 categories:
 - 技术教程
 - Windows
-cover: https://t.mwm.moe/fj/?123
 date: 2023-12-08 22:08
 tags:
 - Windows技术分享

@@ -6,7 +6,6 @@ tags:
   - burpsuite
 categories:
   - 技术教程
-cover: "../images/iwrite/iwrite&bp.png"
 abbrlink: 4d6a074b
 date: 2024-04-16 22:02:30
 ---

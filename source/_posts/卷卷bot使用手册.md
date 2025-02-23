@@ -7,7 +7,6 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
-cover: "https://github.html.zone/W1ndysBot/W1ndysBot"
 abbrlink: fbd9a8fd
 date: 2025-01-01 19:48:25
 ---

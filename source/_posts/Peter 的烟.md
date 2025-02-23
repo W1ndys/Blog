@@ -3,7 +3,6 @@ abbrlink: 80cc5efe
 categories:
 - Python
 - 蓝桥
-cover: https://t.mwm.moe/fj/?37
 date: 2024-02-02 15:19:36
 tags:
 - Python

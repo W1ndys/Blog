@@ -3,7 +3,6 @@ abbrlink: 831f896e
 categories:
 - 技术教程
 - Windows
-cover: https://t.mwm.moe/fj/?118
 date: 2023-09-23 16:14
 tags:
 - Windows技术分享

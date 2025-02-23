@@ -3,7 +3,6 @@ abbrlink: 9b07533a
 categories:
 - 技术教程
 - Windows
-cover: https://t.mwm.moe/fj/?79
 date: 2023-09-22 21:52
 tags:
 - Windows

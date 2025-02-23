@@ -2,7 +2,6 @@
 title: 扔掉你的watt toolikt！使用ssh拉取推送Github代码~
 tags: []
 categories: []
-cover: "https://t.mwm.moe/fj?20250128141641281"
 abbrlink: 4561bfdb
 date: 2025-01-28 14:16:41
 ---

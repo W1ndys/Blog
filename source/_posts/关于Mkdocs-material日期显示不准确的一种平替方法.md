@@ -7,7 +7,6 @@ tags:
   - Vercel
 categories:
   - 技术教程
-cover: "https://img2.imgtp.com/2024/05/01/w6bIr0g4.png"
 abbrlink: 512a6b20
 date: 2024-04-30 23:25:19
 ---

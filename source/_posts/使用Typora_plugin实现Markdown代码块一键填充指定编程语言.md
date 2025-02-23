@@ -3,7 +3,6 @@ abbrlink: 979ed90f
 categories:
 - 技术教程
 - Typora
-cover: https://t.mwm.moe/fj/?72
 date: 2024-02-18 18:31:25
 tags:
 - Typora

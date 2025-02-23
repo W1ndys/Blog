@@ -2,7 +2,6 @@
 abbrlink: cdf7e434
 categories:
 - CTF
-cover: https://t.mwm.moe/fj/?14
 date: 2023-11-11 21:50
 tags:
 - CTF

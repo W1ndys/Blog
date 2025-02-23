@@ -3,7 +3,6 @@ abbrlink: 232a9003
 categories:
 - 网络安全
 - 实验报告
-cover: https://t.mwm.moe/fj/?120
 date: 2024-04-03 10:15:00
 tags:
 - 网络安全原理实验报告

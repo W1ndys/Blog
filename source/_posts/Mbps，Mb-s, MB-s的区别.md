@@ -7,7 +7,6 @@ tags:
 categories:
   - 学习笔记
   - 计算机网络
-cover: "https://pic3.zhimg.com/v2-e4e9f9d71a9aa54f3730d0a39fa67a22_r.jpg"
 abbrlink: 66b2f6fd
 date: 2024-05-18 14:55:38
 ---

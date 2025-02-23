@@ -3,7 +3,6 @@ abbrlink: bc236d8e
 categories:
 - CTF
 - 工具
-cover: https://t.mwm.moe/fj/?73
 date: 2023-10-11 20:24
 tags:
 - CTF

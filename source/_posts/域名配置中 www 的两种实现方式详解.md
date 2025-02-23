@@ -6,7 +6,6 @@ tags:
   - DNS
   - 域名配置
   - 网站部署
-cover: 'https://t.mwm.moe/fj?20250123221850366'
 abbrlink: 8f735965
 date: 2025-01-23 22:18:50
 ---

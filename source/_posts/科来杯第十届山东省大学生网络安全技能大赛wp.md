@@ -4,7 +4,6 @@ categories:
 - CTF
 - WP
 - 第十届科来杯
-cover: https://t.mwm.moe/fj/?117
 date: 2023-10-23 21:24
 tags:
 - CTF

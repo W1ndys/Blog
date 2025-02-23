@@ -2,7 +2,6 @@
 abbrlink: 1ff200e1
 categories:
   - 技术教程
-cover: https://t.mwm.moe/fj/?48
 date: 2024-03-07 19:26:05
 tags:
   - QFNU

@@ -3,7 +3,6 @@ abbrlink: cb064b79
 categories:
 - 技术教程
 - Hexo
-cover: https://t.mwm.moe/fj/?69
 date: 2024-01-24 11:31:37
 tags:
 - Hexo

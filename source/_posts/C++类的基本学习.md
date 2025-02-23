@@ -2,7 +2,6 @@
 abbrlink: a8f20fc2
 categories:
 - C++
-cover: https://t.mwm.moe/fj/?9
 date: 2023-09-17 18:47
 tags:
 - C++

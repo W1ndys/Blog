@@ -3,7 +3,6 @@ abbrlink: 51225c3e
 categories:
 - 技术教程
 - 多吉云
-cover: https://t.mwm.moe/fj/?38
 date: 2024-02-10 23:40:31
 tags:
 - Hexo

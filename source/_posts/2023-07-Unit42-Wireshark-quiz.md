@@ -2,7 +2,6 @@
 title: Crossing the Line Unit 42 Wireshark Quiz for RedLine Stealer
 tags: [流量分析]
 categories: [流量分析]
-cover: "https://t.mwm.moe/fj?20240712154333861"
 abbrlink: dbf9c8f7
 date: 2024-07-12 15:43:33
 ---

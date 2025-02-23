@@ -8,7 +8,6 @@ categories:
   - CTF入门指北
 abbrlink: 2d075872
 date: 2024-03-27 10:17:37
-cover: https://img.pcsoft.com.cn/soft/202103/103606-603c53167495b.jpg
 ---
 
 # Wireshark 使用教程

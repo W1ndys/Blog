@@ -7,7 +7,6 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
-cover: 'https://t.mwm.moe/fj?20250125205130983'
 abbrlink: cdcbc710
 date: 2025-01-25 20:51:30
 ---

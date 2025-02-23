@@ -3,7 +3,6 @@ abbrlink: 3073af94
 categories:
 - Linux
 - kali
-cover: https://t.mwm.moe/fj/?29
 date: 2023-10-01 15:03
 tags:
 - Linux

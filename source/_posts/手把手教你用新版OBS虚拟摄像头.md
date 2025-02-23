@@ -2,7 +2,6 @@
 abbrlink: f885f05a
 categories:
 - 技术教程
-cover: https://t.mwm.moe/fj/?95
 date: 2023-12-10 20:30
 tags:
 - 手把手教程系列

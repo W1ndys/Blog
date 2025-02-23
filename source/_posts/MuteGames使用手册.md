@@ -2,7 +2,6 @@
 abbrlink: 7183a269
 categories:
 - QQbot
-cover: https://t.mwm.moe/fj/?31
 date: 2023-12-06 21:09
 tags: QQbot
 title: MuteGames使用手册

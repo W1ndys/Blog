@@ -3,7 +3,6 @@ abbrlink: 3d80d4a2
 categories:
 - 学习笔记
 - Python
-cover: https://t.mwm.moe/fj/?43
 date: 2023-12-04 22:02
 tags:
 - Python小工具

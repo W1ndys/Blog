@@ -7,7 +7,6 @@ tags:
   - NapCatQQ
 categories:
   - QQbot
-cover: https://vip.helloimg.com/i/2024/08/05/66b06a6b8b0c2.jpg
 abbrlink: 55d6cfbc
 date: 2024-08-04 16:47:17
 ---

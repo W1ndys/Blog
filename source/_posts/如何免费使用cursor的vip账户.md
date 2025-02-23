@@ -4,7 +4,6 @@ tags:
   - cursor
 categories:
   - cursor
-cover: 'https://th.bing.com/th/id/OIP.l2acdvhk3LnjNEOvwSM9HwHaEo?rs=1&pid=ImgDetMain'
 abbrlink: f63a776d
 date: 2024-12-20 13:33:27
 ---

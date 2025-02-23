@@ -8,7 +8,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: https://th.bing.com/th/id/OIP.x3tnZNqCcUiJO16in9rbJAAAAA?rs=1&pid=ImgDetMain
 abbrlink: 211bc68b
 date: 2024-07-16 14:33:49
 ---

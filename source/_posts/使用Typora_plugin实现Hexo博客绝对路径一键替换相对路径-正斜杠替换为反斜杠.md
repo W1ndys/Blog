@@ -3,7 +3,6 @@ abbrlink: 520cc65
 categories:
 - 技术教程
 - Typora
-cover: https://t.mwm.moe/fj/?71
 date: 2024-02-08 15:24:23
 tags:
 - Typora

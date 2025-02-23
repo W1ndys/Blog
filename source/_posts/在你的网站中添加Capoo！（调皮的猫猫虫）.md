@@ -3,7 +3,6 @@ abbrlink: 3a360f71
 categories:
 - 技术教程
 - Hexo
-cover: https://t.mwm.moe/fj/?78
 date: 2024-02-11 21:49:37
 tags:
 - Hexo

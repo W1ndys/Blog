@@ -3,7 +3,6 @@ abbrlink: c4767082
 categories:
 - CTF
 - WP
-cover: https://t.mwm.moe/fj/?7
 date: 2024-01-31 14:45:51
 tags:
 - CTF

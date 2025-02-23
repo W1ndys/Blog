@@ -2,7 +2,6 @@
 abbrlink: f286f4f8
 categories:
 - 技术教程
-cover: https://t.mwm.moe/fj/?94
 date: 2023-12-23 00:58
 index_img: ../images/Google/logo.png
 tags:

@@ -8,7 +8,6 @@ categories:
   - CTF
   - WP
   - 0xGame2024
-cover: 'https://ctf.njupt.edu.cn/wp-content/uploads/2020/09/2020092712314778.png'
 abbrlink: 2fabe180
 date: 2024-10-06 17:48:47
 ---

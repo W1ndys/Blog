@@ -4,7 +4,6 @@ categories:
 - AI
 - ChatGPT
 - 人工智能
-cover: https://t.mwm.moe/fj/?128
 date: 2024-02-18 13:09:45
 tags:
 - AI

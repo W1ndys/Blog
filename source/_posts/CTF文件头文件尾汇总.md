@@ -3,7 +3,6 @@ abbrlink: 4db76617
 categories:
 - CTF
 - Misc
-cover: https://t.mwm.moe/fj/?17
 date: 2023-12-09 14:25
 tags:
 - CTF

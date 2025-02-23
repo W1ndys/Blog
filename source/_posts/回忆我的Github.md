@@ -6,7 +6,6 @@ categories:
   - Github
 abbrlink: 471190f
 date: 2024-04-07 20:08:47
-cover: https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&pid=ImgDetMain
 ---
 
 # 回忆我的 Github

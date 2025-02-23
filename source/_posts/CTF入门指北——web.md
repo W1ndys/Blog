@@ -3,7 +3,6 @@ abbrlink: c162917a
 categories:
 - CTF
 - CTF入门指北
-cover: https://t.mwm.moe/fj/?13
 date: 2023-09-15 01:01
 tags: CTF
 title: CTF入门指北——web

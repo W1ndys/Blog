@@ -6,7 +6,6 @@ tags:
 categories:
   - 技术教程
   - Github
-cover: "https://miro.medium.com/v2/resize:fit:720/format:webp/0*YheSSavGXXmi-Md0.png"
 abbrlink: dce14753
 date: 2024-04-29 17:34:12
 ---

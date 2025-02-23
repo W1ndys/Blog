@@ -4,7 +4,6 @@ categories:
 - CTF
 - WP
 - QFNUCTF
-cover: https://t.mwm.moe/fj/?45
 date: 2023-10-13 00:25
 tags:
 - CTF

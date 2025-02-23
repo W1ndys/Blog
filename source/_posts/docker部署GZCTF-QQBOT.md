@@ -8,7 +8,6 @@ tags:
   - nonebot2
 categories:
   - QQbot
-cover: "https://github.com/GZTimeWalker/GZCTF/raw/develop/assets/banner.light.svg"
 abbrlink: 542f29fd
 date: 2024-08-09 19:49:04
 ---

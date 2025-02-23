@@ -3,7 +3,6 @@ abbrlink: 8217ff3e
 categories:
 - Hexo
 - 文档
-cover: https://t.mwm.moe/fj/?25
 date: 2023-09-30 20:52
 tags:
 - Hexo

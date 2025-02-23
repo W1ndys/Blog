@@ -7,7 +7,6 @@ categories:
   - 语法
 abbrlink: b46ab514
 date: 2024-02-29 20:43:41
-cover: https://tse3-mm.cn.bing.net/th/id/OIP-C.maHs8WCcxDYl90idsxeXGgHaDt?rs=1&pid=ImgDetMain
 ---
 
 # Python 中的列表推导式

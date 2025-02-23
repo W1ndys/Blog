@@ -9,7 +9,6 @@ tags:
   - Python
   - SYN Flood攻击
   - QFNU
-cover: 'https://repository-images.githubusercontent.com/265141058/fcc8fa00-a38c-11ea-8c49-332680847b31'
 abbrlink: 8790bb83
 date: 2024-04-28 11:32:51
 ---

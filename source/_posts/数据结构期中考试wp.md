@@ -4,7 +4,6 @@ categories:
 - 学习笔记
 - 数据结构作业
 - 考试
-cover: https://t.mwm.moe/fj/?101
 date: 2023-11-03 14:16
 message: 作业答案被加密了，快暴揍W1ndys让他说出密码(输完按回车解开)
 tags: 数据结构作业

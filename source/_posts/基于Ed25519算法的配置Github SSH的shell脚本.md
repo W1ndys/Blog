@@ -8,7 +8,6 @@ tags:
 categories:
   - 技术教程
   - Github
-cover: 'https://t.mwm.moe/fj?20250128001951962'
 abbrlink: 65dfe81d
 date: 2025-01-28 00:19:51
 ---

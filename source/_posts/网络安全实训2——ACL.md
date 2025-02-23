@@ -8,7 +8,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: "https://tse1-mm.cn.bing.net/th/id/OIP-C.MM_ZqhhW3L-tDzBzv2F8cAHaCk?w=296&h=121&c=7&r=0&o=5&pid=1.7"
 abbrlink: a3df68b9
 date: 2024-07-11 14:34:27
 ---

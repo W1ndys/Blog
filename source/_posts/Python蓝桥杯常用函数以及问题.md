@@ -3,7 +3,6 @@ abbrlink: 7bb4fcd
 categories:
 - Python
 - 蓝桥
-cover: https://t.mwm.moe/fj/?44
 date: 2024-02-17 18:37:18
 tags:
 - Python

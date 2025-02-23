@@ -1,7 +1,6 @@
 ---
 abbrlink: e0155dca
 categories: QFNU
-cover: https://t.mwm.moe/fj/?115
 date: 2023-08-25 22:45
 tags: QFNU
 title: 用C++调用MIDI演奏曲阜师范大学校歌

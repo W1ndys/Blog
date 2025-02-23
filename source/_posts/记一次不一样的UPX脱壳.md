@@ -8,7 +8,6 @@ tags:
 categories:
   - CTF
   - Reverse
-cover: 'https://t.mwm.moe/fj?20240601164618157'
 abbrlink: 44452f5b
 date: 2024-06-01 16:46:18
 ---

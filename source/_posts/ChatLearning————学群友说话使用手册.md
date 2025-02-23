@@ -2,7 +2,6 @@
 abbrlink: edeaa258
 categories:
 - QQbot
-cover: https://t.mwm.moe/fj/?10
 date: 2023-12-13 14:51
 tags: QQbot
 title: ChatLearning————学群友说话使用手册

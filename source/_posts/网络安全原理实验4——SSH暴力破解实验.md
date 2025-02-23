@@ -6,7 +6,6 @@ tags:
 categories:
   - 网络安全
   - 实验报告
-cover: 'https://t.mwm.moe/fj?20240417101810774'
 abbrlink: '97781668'
 date: 2024-04-17 10:18:10
 ---

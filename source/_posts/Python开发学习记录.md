@@ -6,7 +6,6 @@ tags:
 categories:
   - Python
 date: 2025-02-08 19:19:53
-cover: https://t.mwm.moe/fj?20250208191953191
 ---
 
 ## 前言

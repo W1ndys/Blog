@@ -2,7 +2,6 @@
 abbrlink: 7a43906e
 categories:
 - QQbot
-cover: https://t.mwm.moe/fj/?26
 date: 2023-11-17 00:42
 tags: QQbot
 title: HuYanSession2——壶言会话2使用手册
