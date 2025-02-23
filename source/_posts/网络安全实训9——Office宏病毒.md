@@ -7,8 +7,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: >-
-  https://tse2-mm.cn.bing.net/th/id/OIP-C.0PTLuvy0WEE-OL68_C4RMQHaFz?rs=1&pid=ImgDetMain
 abbrlink: 7432ba23
 date: 2024-07-15 08:07:28
 ---

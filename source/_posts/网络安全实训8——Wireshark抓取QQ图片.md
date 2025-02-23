@@ -7,8 +7,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: >-
-  https://img-blog.csdnimg.cn/20201101000954631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xsc25iNjY2,size_16,color_FFFFFF,t_70#pic_center
 abbrlink: 16b47dd5
 date: 2024-07-14 07:54:25
 ---

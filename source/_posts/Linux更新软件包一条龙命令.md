@@ -4,8 +4,6 @@ tags:
   - Linux
 categories:
   - Linux
-cover: >-
-  https://th.bing.com/th/id/OIP.g3gmaS793eFivbWIoJDEyQHaEy?w=274&h=180&c=7&r=0&o=5&pid=1.7
 abbrlink: 82a71d79
 date: 2024-07-11 08:08:20
 ---

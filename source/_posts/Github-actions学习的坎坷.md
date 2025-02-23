@@ -5,8 +5,6 @@ tags:
   - Github
 categories:
   - Github
-cover: >-
-  https://tse2-mm.cn.bing.net/th/id/OIP-C.fqZ9-PPqcG_cm0k3JfoINQAAAA?rs=1&pid=ImgDetMain
 abbrlink: adaea106
 date: 2024-04-21 20:11:32
 ---

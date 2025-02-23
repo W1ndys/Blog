@@ -9,8 +9,6 @@ categories:
   - 网络安全
   - 实训
   - 实验报告
-cover: >-
-  https://mlmptcyihulf.i.optimole.com/hkHEVoo-hq1NuQ2M/w:auto/h:auto/q:100/https://vcube-sl.lk/wp-content/uploads/2020/06/14618887-1.jpg
 abbrlink: d1743c61
 date: 2024-07-16 08:01:31
 ---

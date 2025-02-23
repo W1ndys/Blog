@@ -4,8 +4,6 @@ tags:
   - Python
 categories:
   - Python
-cover: >-
-  https://python123.io/images/78/f5/5cd8b22e4c4bbabc81e6946002d8.png
 abbrlink: f73f64dd
 date: 2024-11-13 08:49:32
 ---

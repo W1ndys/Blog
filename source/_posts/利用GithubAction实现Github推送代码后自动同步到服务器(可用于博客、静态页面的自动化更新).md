@@ -7,8 +7,6 @@ tags:
 categories:
   - 技术教程
   - Github
-cover: >-
-  https://picx.zhimg.com/70/v2-077dc9abad692effc0db50db4309a355_1440w.avis?source=172ae18b&biz_tag=Post
 abbrlink: c0fcf8f3
 date: 2024-09-27 15:30:21
 ---
