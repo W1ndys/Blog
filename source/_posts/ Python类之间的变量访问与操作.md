@@ -1,6 +1,5 @@
 ---
 title: Python类之间的变量访问与操作
-date: 2023-11-15 14:30:00
 tags:
   - Python
   - 面向对象编程
@@ -8,6 +7,8 @@ tags:
   - 变量访问
 categories:
   - 编程技术
+abbrlink: f007d414
+date: 2025-04-02 11:15:00
 ---
 
 {% note info %}
