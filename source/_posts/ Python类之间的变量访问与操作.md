@@ -2,23 +2,23 @@
 title: Python类之间的变量访问与操作
 date: 2023-11-15 14:30:00
 tags:
-- Python
-- 面向对象编程
-- 类
-- 变量访问
+  - Python
+  - 面向对象编程
+  - 类
+  - 变量访问
 categories:
-- 编程技术
+  - 编程技术
 ---
 
 {% note info %}
 
-本文含有LLM辅助，请谨慎参考。
+本文含有 LLM 辅助，请谨慎参考。
 
 {% endnote %}
 
-# Python类之间的变量访问与操作详解
+# Python 类之间的变量访问与操作详解
 
-在面向对象编程中，类是组织代码的重要方式，但很多初学者对于类之间如何共享和访问变量感到困惑。本文将详细解析Python类的变量访问机制，以及不同类之间如何实现数据共享与操作。
+在面向对象编程中，类是组织代码的重要方式，但很多初学者对于类之间如何共享和访问变量感到困惑。本文将详细解析 Python 类的变量访问机制，以及不同类之间如何实现数据共享与操作。
 
 ## 类函数与普通函数的区别
 
@@ -30,7 +30,7 @@ categories:
 
 - 有"记忆"能力：实例变量会一直保存在内存中
 - 共享数据：同一个实例的所有方法可以访问相同的实例变量
-- 不必重复传参：只需要通过self就能访问实例的所有属性
+- 不必重复传参：只需要通过 self 就能访问实例的所有属性
 
 ### 普通函数的特点
 
@@ -41,11 +41,13 @@ categories:
 ### 形象比喻
 
 **类实例就像一个"工具箱"**：
+
 - 工具箱里放着各种工具（实例属性）
 - 工具箱有不同的使用方法（实例方法）
 - 所有的方法都可以拿到工具箱里的任何工具
 
 **普通函数像是"独立工人"**：
+
 - 每次工作都需要给他所有必要的工具
 - 工作完成后会把工具还回去
 - 下次再做同样的工作还需要重新给他工具
@@ -59,7 +61,7 @@ class TextAnalyzer:
     def __init__(self, word_manager):
         # 存储word_manager作为实例属性
         self.word_manager = word_manager
-        
+
     def analyze_text(self, text, group_id, threshold):
         # 可以直接使用self.word_manager，不需要再传递
         words_dict = self.word_manager.get_merged_words(group_id)
@@ -77,9 +79,9 @@ def analyze_text(word_manager, text, group_id, threshold):
     return total_score, risk_level, triggered_words
 ```
 
-## self的访问范围
+## self 的访问范围
 
-很多人误解self可以访问任何类的变量，实际上self只能访问"自己的"变量。
+很多人误解 self 可以访问任何类的变量，实际上 self 只能访问"自己的"变量。
 
 ### 正确理解
 
@@ -98,7 +100,7 @@ class WordManager:
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.global_words = {} # 只属于WordManager实例的属性
-        
+
     def get_merged_words(self, group_id):
         # 只能访问自己的属性
         return self.global_words.copy()
@@ -108,7 +110,7 @@ class TextAnalyzer:
     def __init__(self, word_manager):
         # 保存WordManager实例作为自己的属性
         self.word_manager = word_manager # 建立关联
-        
+
     def analyze_text(self, text, group_id, threshold):
         # 可以访问word_manager的方法和属性
         words_dict = self.word_manager.get_merged_words(group_id)
@@ -129,10 +131,10 @@ class TextAnalyzer:
 class 数据类:
     def __init__(self):
         self.内部数据 = "重要数据"
-        
+
     def 获取数据(self):
         return self.内部数据
-        
+
     def 设置数据(self, 新数据):
         self.内部数据 = 新数据
 
@@ -140,7 +142,7 @@ class 操作类:
     def __init__(self, 数据实例):
         # 保存另一个类的实例作为属性
         self.数据 = 数据实例
-        
+
     def 处理(self):
         # 1. 读取另一个类的数据
         当前数据 = self.数据.获取数据()
@@ -155,6 +157,7 @@ class 操作类:
 ```
 
 **优点**：
+
 - 代码解耦，易于测试
 - 依赖关系明确
 - 灵活性高
@@ -167,18 +170,18 @@ class 操作类:
 class A类:
     def __init__(self):
         self.私有数据 = 100
-        
+
     # 提供访问方法
     def 获取数据(self):
         return self.私有数据
-        
+
     def 设置数据(self, 值):
         self.私有数据 = 值
 
 class B类:
     def __init__(self, a实例):
         self.a = a实例
-        
+
     def 操作(self):
         # 通过方法访问和修改
         当前值 = self.a.获取数据()
@@ -186,6 +189,7 @@ class B类:
 ```
 
 **优点**：
+
 - 保持封装性
 - 可以添加验证逻辑
 - 接口稳定
@@ -198,7 +202,7 @@ class B类:
 class 生成器:
     def __init__(self):
         self.内部计数 = 0
-        
+
     def 生成数据(self):
         self.内部计数 += 1
         return f"数据-{self.内部计数}"
@@ -211,6 +215,7 @@ class 处理器:
 ```
 
 **优点**：
+
 - 简单直接
 - 无需保存引用
 - 适合一次性操作
@@ -226,10 +231,10 @@ class 处理器:
 class 数据管理器:
     def __init__(self):
         self.共享数据 = {}
-        
+
     def 设置(self, 键, 值):
         self.共享数据[键] = 值
-        
+
     def 获取(self, 键):
         return self.共享数据.get(键)
 
@@ -246,6 +251,7 @@ def 初始化系统():
 ```
 
 **缺点**：
+
 - 全局状态难以测试
 - 依赖关系不明确
 - 可能导致意外修改
@@ -258,7 +264,7 @@ def 初始化系统():
 class 基础类:
     def __init__(self):
         self.共享数据 = "基础数据"
-        
+
     def 基础方法(self):
         return self.共享数据
 
@@ -266,13 +272,14 @@ class 扩展类(基础类):
     def __init__(self):
         super().__init__() # 调用父类初始化
         self.扩展数据 = "扩展数据"
-        
+
     def 扩展方法(self):
         # 可以直接访问继承的属性
         return f"{self.共享数据} + {self.扩展数据}"
 ```
 
 **适用场景**：
+
 - 真正的"是一个"关系
 - 需要复用大量代码
 - 有明确的层次结构
@@ -289,4 +296,4 @@ class 扩展类(基础类):
 
 理解类之间的变量访问和操作是掌握面向对象编程的关键。通过选择合适的方式在类之间共享数据，可以使代码更加模块化、可维护和可测试。依赖注入作为最推荐的方式，不仅提供了灵活性，还保持了良好的代码结构和测试性。
 
-希望本文能帮助你更好地理解Python类之间的变量访问机制，编写出更优雅的面向对象代码。
+希望本文能帮助你更好地理解 Python 类之间的变量访问机制，编写出更优雅的面向对象代码。
