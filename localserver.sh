@@ -30,3 +30,16 @@ hexo s
 
 # 提示性语句
 printf "${GREEN}INFO ${RESET} Hexo Server 已启动\n"
+
+# 浏览器打开
+if command -v xdg-open > /dev/null; then
+    xdg-open http://localhost:4000 &
+elif command -v open > /dev/null; then
+    open http://localhost:4000 &
+elif command -v start > /dev/null; then
+    start http://localhost:4000 &
+else
+    printf "${GREEN}INFO ${RESET} 请手动打开浏览器访问: http://localhost:4000\n"
+fi
+
+printf "${GREEN}INFO ${RESET} 已尝试在浏览器中打开 http://localhost:4000\n"

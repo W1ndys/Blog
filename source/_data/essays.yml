@@ -1,5 +1,16 @@
-- content: 第一条说说内容
-  date: 2019-01-01 10:00:00 #说说日期
+- content: |
+    我的技术栈：
+    ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+    ![前端](https://img.shields.io/badge/-前端-E34F26?style=flat-square&logo=html5&logoColor=white)
+    ![网络安全](https://img.shields.io/badge/-网络安全-FF5050?style=flat-square&logo=hackaday&logoColor=white)
+    ![Shell](https://img.shields.io/badge/-Shell-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
+    ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+    ![Markdown](https://img.shields.io/badge/-Markdown-000000?style=flat-square&logo=markdown&logoColor=white)
+    ![Vue](https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+    ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+    ![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat-square&logo=css3&logoColor=white)
+    ![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
+  date: 2025-04-09 10:00:00 #说说日期
 
 - content: 第二条说说内容
   date: 2019-01-02 10:00:00
