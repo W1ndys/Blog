@@ -195,11 +195,6 @@
       avatar: https://moonshuo.cn/img/avatar.gif
       description: 偷掉月亮-我们一起去偷月亮吧
 
-    # - name: 追梦境
-    #   link: https://hexo.dreamerhe.qianxun7747.eu.org/
-    #   avatar: https://hexo.dreamerhe.qianxun7747.eu.org/LOGO/logo.png
-    #   description: 梦境之浩瀚，追寻之困难，努力之辛苦，实现之甘甜!
-
     - name: 浪浪山的染念
       link: https://dyedd.cn/
       avatar: https://q1.qlogo.cn/g?b=qq&nk=1176996982&s=640
@@ -279,12 +274,26 @@
       link: https://notes.fe-mm.com
       avatar: https://notes.fe-mm.com/logo.png
       description: 茂茂的成长之路，包含前端常用知识、源码阅读笔记、各种奇淫技巧、日常提效工具等
-      
+
     - name: the0n3
       link: https://the0n3.top
       avatar: https://the0n3.top/medias/friends/syz.png
       description: 快乐是选择
-      
+
+    - name: iFluxArt
+      link: https://iflux.art
+      avatar: https://iflux.art/favicon.ico
+      description: 斐启智境 · 流韵新生
+
+    - name: 短巷与雨
+      link: https://www.hudi.space
+      avatar: https://www.hudi.space/img/avator.jpg
+      description: 为学日益，为道日损。
+
+    - name: Mnznの小窝
+      link: https://mnzn.me
+      avatar: https://q1.qlogo.cn/g?b=qq&nk=1315744643&s=100
+      description: 顺遂无虞，皆得所愿
 #
 #
 #
