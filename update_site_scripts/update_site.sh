@@ -74,3 +74,5 @@ clashoff() {
     log "部署过程失败"
     python3 update_site.py --status error --message "部署过程出错"
 } 
+
+python3 feishu.py --status error --message "部署过程出错"
