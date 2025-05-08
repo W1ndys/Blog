@@ -61,5 +61,5 @@ def update_markdown_images(md_file_path):
 
 
 # 使用示例
-markdown_file_path = r"source\_posts\如何使用Pull Request交付代码.md"
+markdown_file_path = r"source\_posts\Python爬虫、自动化脚本与QQ机器人.md"
 update_markdown_images(markdown_file_path)
