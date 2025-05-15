@@ -21,9 +21,9 @@ log() {
     
     # 尝试通过 SSH 克隆仓库
     log "尝试通过 SSH 克隆仓库: $REPO_URL"
-    if ! git clone --depth 1 -b gh-pages "$REPO_URL" "$WORK_DIR"; then
+    if ! git clone --depth 1 --single-branch -b gh-pages "$REPO_URL" "$WORK_DIR"; then
         log "SSH 克隆失败，尝试使用备用 HTTPS 地址克隆"
-        if ! git clone --depth 1 -b gh-pages "$BACKUP_REPO_URL" "$WORK_DIR"; then
+        if ! git clone --depth 1 --single-branch -b gh-pages "$BACKUP_REPO_URL" "$WORK_DIR"; then
             log "HTTPS 克隆也失败，退出部署"
             python3 feishu.py --status error --message "仓库克隆失败"
             exit 1
