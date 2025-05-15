@@ -6,6 +6,7 @@ import requests
 import json
 import os
 import logging
+import argparse
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -72,15 +73,38 @@ def feishu(title: str, post_content_elements: list) -> dict:
 
 
 if __name__ == "__main__":
-    example_content = [
-        [{"tag": "text", "text": "✅ 博客更新成功，请查看"}],
-        [
-            {"tag": "text", "text": "🔗 "},
-            {
-                "tag": "a",
-                "text": "http://blog.w1ndys.top/",
-                "href": "http://blog.w1ndys.top/",
-            },
-        ],
-    ]
-    feishu("🚀 博客更新", example_content)
+    # 配置命令行参数
+    parser = argparse.ArgumentParser(description="发送飞书通知")
+    parser.add_argument(
+        "--status",
+        required=True,
+        choices=["success", "error"],
+        help="通知状态: success 或 error",
+    )
+    parser.add_argument("--message", help="自定义通知消息内容，可选")
+    args = parser.parse_args()
+
+    if args.status == "success":
+        title = "🚀 博客更新成功"
+        content = [
+            [{"tag": "text", "text": "✅ 博客更新部署成功，请查看"}],
+            [
+                {"tag": "text", "text": "🔗 "},
+                {
+                    "tag": "a",
+                    "text": "http://blog.w1ndys.top/",
+                    "href": "http://blog.w1ndys.top/",
+                },
+            ],
+        ]
+    else:  # error
+        error_message = args.message if args.message else "未知错误"
+        title = "❌ 博客更新失败"
+        content = [
+            [{"tag": "text", "text": f"❌ 博客更新部署失败: {error_message}"}],
+            [
+                {"tag": "text", "text": "请检查日志获取更多信息"},
+            ],
+        ]
+
+    feishu(title, content)

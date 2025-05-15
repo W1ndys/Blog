@@ -10,15 +10,6 @@ log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
-# 定义开启和关闭clash的函数
-clashon() {
-    systemctl start clash
-}
-
-clashoff() {
-    systemctl stop clash
-}
-
 # 执行部署操作并捕获错误
 {
     log "开始部署流程..."
@@ -28,19 +19,13 @@ clashoff() {
     rm -rf "$WORK_DIR" && \
     mkdir -p "$WORK_DIR" && \
     
-    # 开启clash
-    log "开启Clash代理"
-    clashon
-
-    ping -c 4 google.com
-    
     # 尝试通过 SSH 克隆仓库
     log "尝试通过 SSH 克隆仓库: $REPO_URL"
     if ! git clone --depth 1 -b gh-pages "$REPO_URL" "$WORK_DIR"; then
         log "SSH 克隆失败，尝试使用备用 HTTPS 地址克隆"
         if ! git clone --depth 1 -b gh-pages "$BACKUP_REPO_URL" "$WORK_DIR"; then
             log "HTTPS 克隆也失败，退出部署"
-            python3 update_site.py --status error --message "仓库克隆失败"
+            python3 feishu.py --status error --message "仓库克隆失败"
             exit 1
         fi
         log "使用备用 HTTPS 地址克隆成功"
@@ -61,18 +46,11 @@ clashoff() {
     rm -rf "$WORK_DIR"
 
     log "部署完成"
-    # 如果所有命令成功执行，调用Python脚本报告成功
-
-    # 关闭clash
-    clashoff
-
-    ping -c 4 google.com
+    # 如果所有命令成功执行，调用飞书脚本报告成功
     
-    python3 update_site.py --status success
+    python3 feishu.py --status success
 } || {
-    # 如果有任何命令失败，调用Python脚本报告错误
+    # 如果有任何命令失败，调用飞书脚本报告错误
     log "部署过程失败"
-    python3 update_site.py --status error --message "部署过程出错"
-} 
-
-python3 feishu.py --status error --message "部署过程出错"
+    python3 feishu.py --status error --message "部署过程出错"
+}
