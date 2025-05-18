@@ -1,7 +1,10 @@
 ---
-title: "Python的函数传参规则"
-tags: [Python]
-categories: [Python]
+title: Python的函数传参规则
+tags:
+  - Python
+categories:
+  - Python
+abbrlink: de3b9b4c
 date: 2025-05-15 08:59:59
 ---
 

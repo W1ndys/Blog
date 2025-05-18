@@ -1,7 +1,13 @@
 ---
-title: "Python爬虫、自动化脚本与QQ机器人"
-tags: [Python, 爬虫, 自动化, QQ机器人]
-categories: [Python]
+title: Python爬虫、自动化脚本与QQ机器人
+tags:
+  - Python
+  - 爬虫
+  - 自动化
+  - QQ机器人
+categories:
+  - Python
+abbrlink: f6c10002
 date: 2025-05-08 21:52:51
 ---
 
