@@ -350,8 +350,6 @@ body .navbar-shrink {
 ul,
 ol,
 li {
-  padding: 0;
-  margin: 0;
   list-style: none;
 }
 a {
@@ -739,6 +737,7 @@ button {
   width: 100%;
   overflow: auto;
   margin-bottom: 1.2rem;
+  margin-top: 1rem;
   box-shadow: var(--redefine-box-shadow-flat);
   border-radius: 14px;
 }
