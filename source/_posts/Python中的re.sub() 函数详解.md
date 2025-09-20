@@ -1,8 +1,12 @@
 ---
 title: Python中的re.sub() 函数详解
+tags:
+  - Python
+  - 正则表达式
+categories:
+  - 编程
+abbrlink: fe4ab0b
 date: 2025-06-28 16:22:00
-tags: [Python, 正则表达式]
-categories: [编程]
 ---
 
 `re.sub()` 函数是 Python 的 `re` 模块中用于替换字符串的函数。它功能强大，可以实现各种复杂的文本处理需求。

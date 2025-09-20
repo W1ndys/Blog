@@ -42,15 +42,3 @@ jobs:
           hexo clean
           hexo generate
           hexo deploy
-
-      - name: Deploy to ECS
-        uses: appleboy/ssh-action@v0.1.5
-        with:
-          host: ${{ secrets.USER_HOST }}
-          username: ${{ secrets.USER_NAME }}
-          password: ${{ secrets.USER_PASS }}
-          port: 22
-          script: |
-            cd /home/Blog-update-site-tools
-            sh update_site.sh
-          timeout: 10s

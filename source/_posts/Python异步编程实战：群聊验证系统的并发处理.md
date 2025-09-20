@@ -1,7 +1,12 @@
 ---
-title: "Python异步编程实战：群聊验证系统的并发处理"
-tags: [Python, 异步编程, 并发处理]
-categories: [Python]
+title: Python异步编程实战：群聊验证系统的并发处理
+tags:
+  - Python
+  - 异步编程
+  - 并发处理
+categories:
+  - Python
+abbrlink: 8687e59f
 date: 2025-06-14 00:27:15
 ---
 

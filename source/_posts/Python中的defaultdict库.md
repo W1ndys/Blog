@@ -1,7 +1,10 @@
 ---
-title: "Python中的defaultdict库"
-tags: [Python]
-categories: [Python]
+title: Python中的defaultdict库
+tags:
+  - Python
+categories:
+  - Python
+abbrlink: d3508373
 date: 2025-05-24 21:33:30
 ---
 
