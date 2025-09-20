@@ -10,6 +10,10 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout source
@@ -23,14 +27,7 @@ jobs:
           node-version: "20"
 
       - name: Setup Hexo
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "w1ndys@outlook.com"
           git config --global user.name "W1ndys"
           git config --global init.defaultBranch main
