@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>W1ndys小屋</title>
+  <icon>https://blog.w1ndys.top/icon.png</icon>
+  <subtitle>欲戴皇冠，必承其重</subtitle>
+  <link href="https://blog.w1ndys.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.w1ndys.top/"/>
+  <updated>2025-09-20T10:10:23.102Z</updated>
+  <id>https://blog.w1ndys.top/</id>
+  
+  <author>
+    <name>W1ndys</name>
+    <email>w1ndys@outlook.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中的re.sub() 函数详解</title>
+    <link href="https://blog.w1ndys.top/posts/fe4ab0b.html"/>
+    <id>https://blog.w1ndys.top/posts/fe4ab0b.html</id>
+    <published>2025-06-28T08:22:00.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;re.sub()&lt;/code&gt; 函数是 Python 的 &lt;code&gt;re&lt;/code&gt; 模块中用于替换字符串的函数。它功能强大，可以实现各种复杂的文本处理需求。&lt;/p&gt;
+&lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://blog.w1ndys.top/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="正则表达式" scheme="https://blog.w1ndys.top/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python异步编程实战：群聊验证系统的并发处理</title>
+    <link href="https://blog.w1ndys.top/posts/8687e59f.html"/>
+    <id>https://blog.w1ndys.top/posts/8687e59f.html</id>
+    <published>2025-06-13T16:27:15.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python-异步编程实战：群聊验证系统的并发处理&quot;&gt;&lt;a href=&quot;#Python-异步编程实战：群聊验证系统的并发处理&quot; class=&quot;headerlink&quot; title=&quot;Python 异步编程实战：群聊验证系统的并发处理&quot;&gt;&lt;/a&gt;Python</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="异步编程" scheme="https://blog.w1ndys.top/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="并发处理" scheme="https://blog.w1ndys.top/tags/%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的defaultdict库</title>
+    <link href="https://blog.w1ndys.top/posts/d3508373.html"/>
+    <id>https://blog.w1ndys.top/posts/d3508373.html</id>
+    <published>2025-05-24T13:33:30.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;defaultdict&lt;/code&gt; 是 Python 标准库 &lt;code&gt;collections&lt;/code&gt; 模块中的一个类，它是内置 &lt;code&gt;dict&lt;/code&gt; 类型的子类，提供了一种在字典中处理缺失键的便捷方式。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中的datatime和time库</title>
+    <link href="https://blog.w1ndys.top/posts/739a905d.html"/>
+    <id>https://blog.w1ndys.top/posts/739a905d.html</id>
+    <published>2025-05-18T12:57:38.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 Python 中，&lt;code&gt;datetime&lt;/code&gt; 和 &lt;code&gt;time&lt;/code&gt; 是两个用于处理日期和时间的常用模块，但它们的功能和用途有所不同。以下是它们的详细对比：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;datetime-模块&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python中shutil和os库的区别</title>
+    <link href="https://blog.w1ndys.top/posts/c846834c.html"/>
+    <id>https://blog.w1ndys.top/posts/c846834c.html</id>
+    <published>2025-05-18T12:38:15.000Z</published>
+    <updated>2025-09-20T10:10:23.101Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 Python 中，&lt;code&gt;shutil&lt;/code&gt; 和 &lt;code&gt;os&lt;/code&gt; 都是处理文件和目录操作的核心库，但它们的职责和适用场景有所不同。以下是它们的区别及应用场景的总结：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;os-模块&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的函数传参规则</title>
+    <link href="https://blog.w1ndys.top/posts/de3b9b4c.html"/>
+    <id>https://blog.w1ndys.top/posts/de3b9b4c.html</id>
+    <published>2025-05-15T00:59:59.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-核心传递机制&quot;&gt;&lt;a href=&quot;#1-核心传递机制&quot; class=&quot;headerlink&quot; title=&quot;1. 核心传递机制&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python爬虫、自动化脚本与QQ机器人</title>
+    <link href="https://blog.w1ndys.top/posts/f6c10002.html"/>
+    <id>https://blog.w1ndys.top/posts/f6c10002.html</id>
+    <published>2025-05-08T13:52:51.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安全声明&quot;&gt;&lt;a href=&quot;#安全声明&quot; class=&quot;headerlink&quot; title=&quot;安全声明&quot;&gt;&lt;/a&gt;安全声明&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;重要：&lt;/strong&gt; 本课程内容仅限于学习、研究和技术交流目的，在</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="爬虫" scheme="https://blog.w1ndys.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+    <category term="自动化" scheme="https://blog.w1ndys.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+    <category term="QQ机器人" scheme="https://blog.w1ndys.top/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python类之间的变量访问与操作</title>
+    <link href="https://blog.w1ndys.top/posts/f007d414.html"/>
+    <id>https://blog.w1ndys.top/posts/f007d414.html</id>
+    <published>2025-04-02T03:15:00.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+  &lt;div class=&quot;note p-4 mb-4 rounded-small info&quot;&gt;
+    &lt;p&gt;本文含有 LLM 辅助，请谨慎参考。&lt;/p&gt;
+
+  &lt;/div&gt;
+
+&lt;h1 id=&quot;Python-类之间的变量访问与操作详解&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="编程技术" scheme="https://blog.w1ndys.top/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="面向对象编程" scheme="https://blog.w1ndys.top/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="类" scheme="https://blog.w1ndys.top/tags/%E7%B1%BB/"/>
+    
+    <category term="变量访问" scheme="https://blog.w1ndys.top/tags/%E5%8F%98%E9%87%8F%E8%AE%BF%E9%97%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用Pull Request交付代码</title>
+    <link href="https://blog.w1ndys.top/posts/c011cf82.html"/>
+    <id>https://blog.w1ndys.top/posts/c011cf82.html</id>
+    <published>2025-03-12T07:22:21.000Z</published>
+    <updated>2025-09-20T10:10:23.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;如何使用-Pull-Request-交付代码&quot;&gt;&lt;a href=&quot;#如何使用-Pull-Request-交付代码&quot; class=&quot;headerlink&quot; title=&quot;如何使用 Pull Request 交付代码&quot;&gt;&lt;/a&gt;如何使用 Pull Request</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BurpSuite抓包微信浏览器微信小程序教程</title>
+    <link href="https://blog.w1ndys.top/posts/806f3993.html"/>
+    <id>https://blog.w1ndys.top/posts/806f3993.html</id>
+    <published>2025-02-09T04:58:51.000Z</published>
+    <updated>2025-09-20T10:10:23.100Z</updated>
+    
+    
+    
+    
+    <category term="技术教程" scheme="https://blog.w1ndys.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="BurpSuite" scheme="https://blog.w1ndys.top/tags/BurpSuite/"/>
+    
+    <category term="微信小程序抓包" scheme="https://blog.w1ndys.top/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%93%E5%8C%85/"/>
+    
+    <category term="微信浏览器抓包" scheme="https://blog.w1ndys.top/tags/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8A%93%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python开发学习记录</title>
+    <link href="https://blog.w1ndys.top/posts/f30b492.html"/>
+    <id>https://blog.w1ndys.top/posts/f30b492.html</id>
+    <published>2025-02-08T11:19:53.000Z</published>
+    <updated>2025-09-20T10:10:23.102Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本文持续记录 Python 学习中遇到的一些小知识点，难题等内容，包括但不仅限于 Python 开发、Python 爬虫、JSON、Web</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="开发" scheme="https://blog.w1ndys.top/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>扔掉你的watt toolikt！使用ssh拉取推送Github代码~</title>
+    <link href="https://blog.w1ndys.top/posts/4561bfdb.html"/>
+    <id>https://blog.w1ndys.top/posts/4561bfdb.html</id>
+    <published>2025-01-28T06:16:41.000Z</published>
+    <updated>2025-09-20T10:10:23.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作者在 Github 拉取代码推送代码的时候，一直使用的是 watt toolikt，在昨天尝试给服务器挂代理的时候，配置了 ssh</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基于Ed25519算法的配置Github SSH的shell脚本</title>
+    <link href="https://blog.w1ndys.top/posts/65dfe81d.html"/>
+    <id>https://blog.w1ndys.top/posts/65dfe81d.html</id>
+    <published>2025-01-27T16:19:51.000Z</published>
+    <updated>2025-09-20T10:10:23.105Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在使用 GitHub 时，SSH 是一种更安全和便捷的认证方式。本文将介绍一个基于 Ed25519 算法的 GitHub SSH</summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://blog.w1ndys.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="Github" scheme="https://blog.w1ndys.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/Github/"/>
+    
+    
+    <category term="GitHub" scheme="https://blog.w1ndys.top/tags/GitHub/"/>
+    
+    <category term="SSH" scheme="https://blog.w1ndys.top/tags/SSH/"/>
+    
+    <category term="Shell" scheme="https://blog.w1ndys.top/tags/Shell/"/>
+    
+    <category term="Ed25519" scheme="https://blog.w1ndys.top/tags/Ed25519/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于NapCatQQ和Python的QQ机器人开发——连接NapCatQQ和W1ndysBot</title>
+    <link href="https://blog.w1ndys.top/posts/cdcbc710.html"/>
+    <id>https://blog.w1ndys.top/posts/cdcbc710.html</id>
+    <published>2025-01-25T12:51:30.000Z</published>
+    <updated>2025-09-20T10:10:23.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;部署-NapCatQQ&quot;&gt;&lt;a href=&quot;#部署-NapCatQQ&quot; class=&quot;headerlink&quot; title=&quot;部署 NapCatQQ&quot;&gt;&lt;/a&gt;部署 NapCatQQ&lt;/h2&gt;&lt;h3 id=&quot;Windows-安装&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/categories/QQbot/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/tags/QQbot/"/>
+    
+    <category term="QQ机器人" scheme="https://blog.w1ndys.top/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+    <category term="NapCatQQ" scheme="https://blog.w1ndys.top/tags/NapCatQQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于NapCatQQ和Python的QQ机器人开发——对websocket响应消息的回应处理2025.1.25</title>
+    <link href="https://blog.w1ndys.top/posts/1ef8783.html"/>
+    <id>https://blog.w1ndys.top/posts/1ef8783.html</id>
+    <published>2025-01-25T08:32:41.000Z</published>
+    <updated>2025-09-20T10:10:23.105Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在之前 &lt;a href=&quot;https://blog.w1ndys.top/posts/8b45af9c.html&quot;&gt;基于 NapCatQQ</summary>
+        
+      
+    
+    
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/categories/QQbot/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/tags/QQbot/"/>
+    
+    <category term="QQ机器人" scheme="https://blog.w1ndys.top/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+    <category term="NapCatQQ" scheme="https://blog.w1ndys.top/tags/NapCatQQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域名配置中 www 的两种实现方式详解</title>
+    <link href="https://blog.w1ndys.top/posts/8f735965.html"/>
+    <id>https://blog.w1ndys.top/posts/8f735965.html</id>
+    <published>2025-01-23T14:18:50.000Z</published>
+    <updated>2025-09-20T10:10:23.105Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+  &lt;div class=&quot;note-large blue&quot;&gt;
+    &lt;div class=&quot;notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center&quot;&gt;
+     </summary>
+        
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://blog.w1ndys.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="DNS" scheme="https://blog.w1ndys.top/tags/DNS/"/>
+    
+    <category term="域名配置" scheme="https://blog.w1ndys.top/tags/%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="网站部署" scheme="https://blog.w1ndys.top/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>曲阜师范大学教务系统成绩监控（无需服务器）</title>
+    <link href="https://blog.w1ndys.top/posts/4fee17c4.html"/>
+    <id>https://blog.w1ndys.top/posts/4fee17c4.html</id>
+    <published>2025-01-11T09:23:51.000Z</published>
+    <updated>2025-09-20T10:10:23.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;曲阜师范大学教务系统成绩监控&quot;&gt;&lt;a href=&quot;#曲阜师范大学教务系统成绩监控&quot; class=&quot;headerlink&quot; title=&quot;曲阜师范大学教务系统成绩监控&quot;&gt;&lt;/a&gt;曲阜师范大学教务系统成绩监控&lt;/h2&gt;&lt;h4</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>曲师大在校生论坛抓包分析</title>
+    <link href="https://blog.w1ndys.top/posts/7c3c27d6.html"/>
+    <id>https://blog.w1ndys.top/posts/7c3c27d6.html</id>
+    <published>2025-01-07T15:42:14.000Z</published>
+    <updated>2025-09-20T10:10:23.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在校生论坛，野生平台，爬着玩玩&lt;br&gt;推荐阅读：【微信小程序Burp+Proxifter抓包详细教程 - CSDN App】&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="QFNU" scheme="https://blog.w1ndys.top/categories/QFNU/"/>
+    
+    <category term="在校生论坛" scheme="https://blog.w1ndys.top/categories/QFNU/%E5%9C%A8%E6%A0%A1%E7%94%9F%E8%AE%BA%E5%9D%9B/"/>
+    
+    
+    <category term="QFNU" scheme="https://blog.w1ndys.top/tags/QFNU/"/>
+    
+    <category term="在校生论坛" scheme="https://blog.w1ndys.top/tags/%E5%9C%A8%E6%A0%A1%E7%94%9F%E8%AE%BA%E5%9D%9B/"/>
+    
+    <category term="抓包" scheme="https://blog.w1ndys.top/tags/%E6%8A%93%E5%8C%85/"/>
+    
+    <category term="分析" scheme="https://blog.w1ndys.top/tags/%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学引论复习</title>
+    <link href="https://blog.w1ndys.top/posts/a5daf678.html"/>
+    <id>https://blog.w1ndys.top/posts/a5daf678.html</id>
+    <published>2025-01-04T06:35:22.000Z</published>
+    <updated>2025-09-20T10:10:23.106Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;密码体制分类-P7&quot;&gt;&lt;a href=&quot;#密码体制分类-P7&quot; class=&quot;headerlink&quot; title=&quot;密码体制分类 P7&quot;&gt;&lt;/a&gt;密码体制分类</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://blog.w1ndys.top/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="密码学" scheme="https://blog.w1ndys.top/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="复习" scheme="https://blog.w1ndys.top/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卷卷bot使用手册</title>
+    <link href="https://blog.w1ndys.top/posts/fbd9a8fd.html"/>
+    <id>https://blog.w1ndys.top/posts/fbd9a8fd.html</id>
+    <published>2025-01-01T11:48:25.000Z</published>
+    <updated>2025-09-20T10:10:23.105Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;卷卷-bot&quot;&gt;&lt;a href=&quot;#卷卷-bot&quot; class=&quot;headerlink&quot; title=&quot;卷卷 bot&quot;&gt;&lt;/a&gt;卷卷 bot&lt;/h2&gt;&lt;p&gt;&lt;img  
+                     lazyload
+                </summary>
+        
+      
+    
+    
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/categories/QQbot/"/>
+    
+    
+    <category term="Python" scheme="https://blog.w1ndys.top/tags/Python/"/>
+    
+    <category term="QQbot" scheme="https://blog.w1ndys.top/tags/QQbot/"/>
+    
+    <category term="QQ机器人" scheme="https://blog.w1ndys.top/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+    <category term="NapCatQQ" scheme="https://blog.w1ndys.top/tags/NapCatQQ/"/>
+    
+  </entry>
+  
+</feed>
